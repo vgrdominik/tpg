@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\BitbagCMSPlugin\Entity;
 
-use BitBag\SyliusCmsPlugin\Entity\Block;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 use Sylius\Component\Resource\Model\ToggleableTrait;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -30,6 +29,11 @@ class LandingElement implements LandingElementInterface
      * @var string
      */
     protected $name = '';
+
+    /**
+     * @var string
+     */
+    protected $type = '';
 
     /**
      * @var bool
@@ -88,6 +92,18 @@ class LandingElement implements LandingElementInterface
     public function setName(?string $name): void
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    public function setType(): void
+    {
     }
 
     /**

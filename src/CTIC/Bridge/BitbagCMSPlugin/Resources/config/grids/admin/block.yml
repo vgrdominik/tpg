@@ -3,4 +3,4 @@ sylius_grid:
         bitbag_sylius_cms_plugin_admin_block:
             fields:
                 sections:
-                     enabled: false
+                    enabled: false

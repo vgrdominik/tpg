@@ -13,11 +13,11 @@
 {% block content %}
 {{ sonata_block_render_event(event_prefix ~ '.before_header', {'resource': resource}) }}
 
-{% include '@SyliusAdmin/Crud/Update/_header.html.twig' %}
+{% include '@CTICBridgeBitbagCMSPlugin/Block/Crud/Update/_header.html.twig' %}
 
 {{ sonata_block_render_event(event_prefix ~ '.after_header', {'resource': resource}) }}
 
-{% include '@SyliusAdmin/Crud/Update/_content.html.twig' %}
+{% include '@CTICBridgeBitbagCMSPlugin/Block/Crud/Update/_content.html.twig' %}
 
 {{ sonata_block_render_event(event_prefix ~ '.after_content', {'resource': resource}) }}
 {% endblock %}

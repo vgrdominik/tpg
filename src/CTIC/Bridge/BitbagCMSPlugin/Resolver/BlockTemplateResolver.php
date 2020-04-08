@@ -4,29 +4,27 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\BitbagCMSPlugin\Resolver;
 
-use BitBag\SyliusCmsPlugin\Entity\BlockInterface as BitBagBlockInterface;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockInterface;
-use BitBag\SyliusCmsPlugin\Exception\TemplateTypeNotFound;
-use BitBag\SyliusCmsPlugin\Resolver\BlockTemplateResolverInterface as BitBagBlockTemplateResolverInterface;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderInterface;
+use Symfony\Component\Translation\Exception\NotFoundResourceException;
 
-final class BlockTemplateResolver implements BlockTemplateResolverInterface, BitBagBlockTemplateResolverInterface
+final class BlockTemplateResolver implements BlockTemplateResolverInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function resolveTemplate(BitBagBlockInterface $block): string
+    public function resolveTemplate(BlockInterface $block): string
     {
-        if (BitBagBlockInterface::TEXT_BLOCK_TYPE === $block->getType()) {
-            return BitBagBlockTemplateResolverInterface::TEXT_BLOCK_TEMPLATE;
+        if (BlockInterface::TEXT_BLOCK_TYPE === $block->getType()) {
+            return BlockTemplateResolverInterface::TEXT_BLOCK_TEMPLATE;
         }
 
-        if (BitBagBlockInterface::HTML_BLOCK_TYPE === $block->getType()) {
-            return BitBagBlockTemplateResolverInterface::HTML_BLOCK_TEMPLATE;
+        if (BlockInterface::HTML_BLOCK_TYPE === $block->getType()) {
+            return BlockTemplateResolverInterface::HTML_BLOCK_TEMPLATE;
         }
 
-        if (BitBagBlockInterface::IMAGE_BLOCK_TYPE === $block->getType()) {
-            return BitBagBlockTemplateResolverInterface::IMAGE_BLOCK_TEMPLATE;
+        if (BlockInterface::IMAGE_BLOCK_TYPE === $block->getType()) {
+            return BlockTemplateResolverInterface::IMAGE_BLOCK_TEMPLATE;
         }
 
         if (BlockSliderInterface::SLIDER_BLOCK_TYPE === $block->getType()) {
@@ -41,6 +39,6 @@ final class BlockTemplateResolver implements BlockTemplateResolverInterface, Bit
             return BlockTemplateResolverInterface::PAGE_BLOCK_TEMPLATE;
         }
 
-        throw new TemplateTypeNotFound($block->getType());
+        throw new NotFoundResourceException();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace CTIC\Bridge\BitbagCMSPlugin\Form\Type;
 
-use BitBag\SyliusCmsPlugin\Entity\BlockInterface as BitBagBlockInterface;
+use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockInterface as BitBagBlockInterface;
 use BitBag\SyliusCmsPlugin\Form\Type\BlockType;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockInterface;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderInterface;
@@ -74,5 +74,14 @@ final class BlockTypeExtension extends AbstractTypeExtension
     public function getExtendedType(): string
     {
         return BlockType::class;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getExtendedTypes(): array
+    {
+        //return array('text', 'html', 'image', 'slider', 'taxon', 'page');
+        return array(BlockType::class);
     }
 }

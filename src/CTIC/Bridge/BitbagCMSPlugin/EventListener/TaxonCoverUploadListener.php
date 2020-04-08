@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\BitbagCMSPlugin\EventListener;
 
-use BitBag\SyliusCmsPlugin\Entity\BlockInterface;
+use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockInterface;
 use BitBag\SyliusCmsPlugin\Entity\BlockTranslationInterface;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonCover;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonInterface;

@@ -1,7 +1,2 @@
 imports:
     - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/grids/admin.yml" }
-
-sylius_grid:
-    templates:
-        action:
-            create_block: "@CTICBridgeBitbagCMSPlugin/Block/Action/_create.html.twig"

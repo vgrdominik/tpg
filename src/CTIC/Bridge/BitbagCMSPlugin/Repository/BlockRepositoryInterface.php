@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\BitbagCMSPlugin\Repository;
 
-use BitBag\SyliusCmsPlugin\Entity\BlockInterface;
+use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockInterface;
 use Doctrine\ORM\QueryBuilder;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 

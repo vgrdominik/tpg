@@ -45,7 +45,7 @@ CTIC\Bridge\BitbagCMSPlugin\Entity\LandingElement:
             cascade: ["persist", "remove"]
     manyToOne:
         block:
-            targetEntity: BitBag\SyliusCmsPlugin\Entity\Block
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Block
             joinColumns:
                 block_id:
                     referencedColumnName: id

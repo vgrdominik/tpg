@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\BitbagCMSPlugin\Controller;
 
-use BitBag\SyliusCmsPlugin\Entity\Block;
+use CTIC\Bridge\BitbagCMSPlugin\Entity\Block;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSlider;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderElement;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderInterface;
@@ -30,6 +30,33 @@ final class BlockController extends ResourceController
      * @var BlockRepository
      */
     protected $repository;
+
+    public function indexAction(Request $request): Response
+    {
+        $configuration = $this->requestConfigurationFactory->create($this->metadata, $request);
+
+        $this->isGrantedOr403($configuration, ResourceActions::INDEX);
+        $resources = $this->resourcesCollectionProvider->get($configuration, $this->repository);
+
+        $this->eventDispatcher->dispatchMultiple(ResourceActions::INDEX, $configuration, $resources);
+
+        $view = View::create($resources);
+
+        if ($configuration->isHtmlRequest()) {
+            $view
+                ->setTemplate($configuration->getTemplate(ResourceActions::INDEX . '.html'))
+                ->setTemplateVar($this->metadata->getPluralName())
+                ->setData([
+                    'configuration' => $configuration,
+                    'metadata' => $this->metadata,
+                    'resources' => $resources,
+                    $this->metadata->getPluralName() => $resources,
+                ])
+            ;
+        }
+
+        return $this->viewHandler->handle($configuration, $view);
+    }
 
     private function getBlockSliderErrors(BlockSliderInterface $blockSlider)
     {

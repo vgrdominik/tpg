@@ -2,7 +2,7 @@ bitbag_sylius_cms_plugin_admin_block:
     resource: |
         alias: bitbag_sylius_cms_plugin.block
         section: admin
-        templates: BitBagSyliusCmsPlugin:Block
+        templates: CTICBridgeBitbagCMSPlugin:Block\Crud
         except: ['show']
         redirect: update
         grid: bitbag_sylius_cms_plugin_admin_block
@@ -20,6 +20,23 @@ bitbag_sylius_cms_plugin_admin_block:
                     code: $type
     type: sylius.resource
 
+bitbag_sylius_cms_plugin_admin_block_index:
+    path: /blocks/
+    methods: [GET]
+    defaults:
+        _controller: bitbag_sylius_cms_plugin.controller.block:indexAction
+        _sylius:
+            section: admin
+            grid: bitbag_sylius_cms_plugin_admin_block
+            template: CTICBridgeBitbagCMSPlugin:Block:index.html.twig
+            permission: true
+            vars:
+                header: bitbag_sylius_cms_plugin.ui.blocks_header
+                subheader: bitbag_sylius_cms_plugin.ui.blocks_subheader
+                route:
+                    parameters:
+                        type: $type
+
 bitbag_sylius_cms_plugin_admin_block_create:
     path: /blocks/new/{type}
     methods: [GET, POST]
@@ -32,9 +49,6 @@ bitbag_sylius_cms_plugin_admin_block_create:
                 route: bitbag_sylius_cms_plugin_admin_block_update
                 parameters: ~
             permission: true
-            factory:
-                method: createWithType
-                arguments: [$type]
             vars:
                 header: bitbag_sylius_cms_plugin.ui.blocks_header
                 subheader: bitbag_sylius_cms_plugin.ui.blocks_subheader
@@ -44,7 +58,7 @@ bitbag_sylius_cms_plugin_admin_block_create:
                     parameters:
                         type: $type
     requirements:
-        type: text|html|image|slider|taxon
+        type: text|html|image|slider|taxon|page
 
 bitbag_sylius_cms_plugin_admin_block_update:
     path: /blocks/{id}/edit

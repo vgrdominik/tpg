@@ -2,7 +2,7 @@ bitbag_sylius_cms_plugin_admin_page:
     resource: |
         alias: bitbag_sylius_cms_plugin.page
         section: admin
-        templates: BitBagSyliusCmsPlugin:Page
+        templates: CTICBridgeBitbagCMSPlugin:Page\Crud
         redirect: update
         grid: bitbag_sylius_cms_plugin_admin_page
         except: ['show']
@@ -16,3 +16,17 @@ bitbag_sylius_cms_plugin_admin_page:
             index:
                 icon: sticky note
     type: sylius.resource
+
+bitbag_sylius_cms_plugin_admin_page_index:
+    path: /pages/
+    methods: [GET]
+    defaults:
+        _controller: bitbag_sylius_cms_plugin.controller.page:indexAction
+        _sylius:
+            section: admin
+            grid: bitbag_sylius_cms_plugin_admin_page
+            template: CTICBridgeBitbagCMSPlugin:Page:index.html.twig
+            permission: true
+            vars:
+                header: bitbag_sylius_cms_plugin.ui.pages_header
+                subheader: bitbag_sylius_cms_plugin.ui.pages_subheader

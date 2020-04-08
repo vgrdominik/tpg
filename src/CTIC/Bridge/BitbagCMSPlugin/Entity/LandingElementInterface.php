@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\BitbagCMSPlugin\Entity;
 
-use BitBag\SyliusCmsPlugin\Entity\Block;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\ToggleableInterface;
 use Sylius\Component\Resource\Model\TimestampableInterface;

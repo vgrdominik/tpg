@@ -3,7 +3,7 @@ sylius_resource:
         bitbag_sylius_cms_plugin.block:
             driver: doctrine/orm
             classes:
-                model: BitBag\SyliusCmsPlugin\Entity\Block
+                model: CTIC\Bridge\BitbagCMSPlugin\Entity\Block
                 form: BitBag\SyliusCmsPlugin\Form\Type\BlockType
                 repository: CTIC\Bridge\BitbagCMSPlugin\Repository\BlockRepository
                 controller: CTIC\Bridge\BitbagCMSPlugin\Controller\BlockController

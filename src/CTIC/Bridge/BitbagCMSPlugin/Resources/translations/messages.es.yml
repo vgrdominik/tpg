@@ -1,5 +1,6 @@
 bitbag_sylius_cms_plugin:
     ui:
+        default: Por defecto
         blocks: Bloques
         pages: Páginas
         content_management: Gestión de contenidos

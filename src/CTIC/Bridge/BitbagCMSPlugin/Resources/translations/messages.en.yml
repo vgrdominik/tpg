@@ -3,6 +3,7 @@ ctic:
         shop_now: Shop Now
 ctic_bridge_bitbag_cms_plugin:
     ui:
+        default: Default
         page: Page
         cover: Cover
         taxon: Category

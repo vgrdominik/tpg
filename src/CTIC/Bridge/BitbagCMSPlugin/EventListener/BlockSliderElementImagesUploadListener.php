@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\BitbagCMSPlugin\EventListener;
 
-use BitBag\SyliusCmsPlugin\Entity\Block;
+use CTIC\Bridge\BitbagCMSPlugin\Entity\Block;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSlider;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockTranslation;
 use Sylius\Component\Core\Model\ImagesAwareInterface;
