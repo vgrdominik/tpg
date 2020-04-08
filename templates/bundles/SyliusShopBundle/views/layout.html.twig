@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="{{ app.request.locale|slice(0, 2) }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% block title %}{{ 'ctic.ui.your_store'|trans }}{% endblock %}</title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    {% if sylius.localeCode == 'es' %}
+        <meta property="og:locale" content="es_ES" />
+    {% else %}
+        <meta property="og:locale" content="{{ sylius.localeCode }}" />
+    {% endif %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ block('title') }}" />
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:site_name" content="{{ 'ctic.ui.your_store'|trans }}" />
+    <meta property="fb:app_id" content="{{ 'ctic.ui.facebook.app_id'|trans }}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ block('title') }}" />
+
+    {% block metatags %}
+        <meta name="description" content="{{ sylius.channel.description }}">
+
+        <meta property="og:description" content="{{ sylius.channel.description }}" />
+        <meta property="og:image" content="{{ absolute_url('/assets/shop/img/logoCuadrado.png') }}" />
+        <meta property="og:image:secure_url" content="{{ absolute_url('/assets/shop/img/logoCuadrado.png') }}" />
+
+        <meta property="twitter:description" content="{{ sylius.channel.description }}" />
+        <meta property="twitter:image" content="{{ absolute_url('/assets/shop/img/logoCuadrado.png') }}" />
+    {% endblock %}
+
+    {% if sylius.localeCode == 'es' %}
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TPGKJKZ');</script>
+        <!-- End Google Tag Manager -->
+    {% else %}
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-M7BCHFZ');</script>
+        <!-- End Google Tag Manager -->
+    {% endif %}
+
+    {% block stylesheets %}
+        {% include '@SyliusUi/_stylesheets.html.twig' with {'path': 'assets/shop/css/style.css'} %}
+
+        {{ sonata_block_render_event('sylius.shop.layout.stylesheets') }}
+    {% endblock %}
+
+    {{ sonata_block_render_event('sylius.shop.layout.head') }}
+</head>
+
+<body class="animsition">
+{{ sonata_block_render_event('sylius.shop.layout.before_body') }}
+
+{% if sylius.localeCode == 'es' %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPGKJKZ"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+{% else %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7BCHFZ"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+{% endif %}
+
+{% block header %}
+    <header>
+        {% include '@SyliusShop/_header.html.twig' %}
+
+        {{ sonata_block_render_event('sylius.shop.layout.after_header') }}
+    </header>
+{% endblock %}
+
+{% block flash_content %}
+    {% include '@SyliusShop/_flashes.html.twig' %}
+{% endblock %}
+
+{{ sonata_block_render_event('sylius.shop.layout.before_content') }}
+
+{% block content %}
+{% endblock %}
+
+{{ sonata_block_render_event('sylius.shop.layout.after_content') }}
+
+{% block footer %}
+    {% include '@SyliusShop/_footer.html.twig' %}
+{% endblock %}
+
+<div class="privacy-cookie-banner" id="privacy-cookie-banner">
+    <div class="privacy-cookie-banner__message">
+        {{ 'ctic.ui.cookies_privacy'|trans }}
+    </div>
+    <div class="privacy-cookie-banner__action">
+        <a class="privacy-cookie-banner__close pos-relative float-r" id="privacy-cookie-banner__privacy-close" href="javascript:void(0)" title="Close">
+            <i class="privacy-cookie-banner__icon-close"></i>
+        </a>
+
+        <a class="privacy-cookie-banner__learn-more pos-relative float-r" href="https://www.ciclotic.com/sobre-ciclotic.php#privacidad" title="Más información">
+            {{ 'ctic.ui.cookies_privacy_button'|trans }}
+        </a>
+
+        <a class="privacy-cookie-banner__btn btn pos-relative float-r" id="privacy-cookie-banner__privacy-accept" href="javascript:void(0)" title="Agrree">
+            OK
+        </a>
+    </div>
+</div>
+
+<!-- Back to top -->
+<div class="btn-back-to-top" id="myBtn">
+    <span class="symbol-btn-back-to-top">
+        <i class="zmdi zmdi-chevron-up"></i>
+    </span>
+</div>
+
+{% block javascripts %}
+    {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/shop/js/app.js'} %}
+
+    {{ sonata_block_render_event('sylius.shop.layout.javascripts') }}
+{% endblock %}
+<script>(function(){var privacyCookieBanner=new eZ.PrivacyCookieBanner({cookieName:'privacidadCookies',days:365,path:'/'});setTimeout(function(){privacyCookieBanner.show()},1000);})();</script>
+
+{% include '@SyliusUi/Modal/_confirmation.html.twig' %}
+{{ sonata_block_render_event('sylius.shop.layout.after_body') }}
+</body>
+</html>

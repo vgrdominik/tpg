@@ -1,0 +1,78 @@
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+
+<!--Cart-->
+
+<div class="wrap-header-cart js-panel-cart">
+    <div class="s-full js-hide-cart"></div>
+
+    <div class="header-cart flex-col-l p-l-65 p-r-25">
+        <div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl1">
+					{{ 'ctic.ui.your_cart'|trans }}
+				</span>
+
+            <div class="fs-35 lh-10 cl1 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+                <i class="zmdi zmdi-close"></i>
+            </div>
+        </div>
+
+        {{ sonata_block_render_event('sylius.shop.partial.cart.summary.before_popup_content', {'cart': cart}) }}
+
+        {% if cart.empty %}
+            {{ 'sylius.ui.your_cart_is_empty'|trans }}.
+        {% else %}
+            <div class="header-cart-content flex-w js-pscroll">
+                <ul class="header-cart-wrapitem w-full">
+                    {% for item in cart.items %}
+                        {% set product = item.product %}
+                        {% set product_variant = item.variant %}
+
+                        {% if product.imagesByType('main') is not empty %}
+                            {% set source_path = product.imagesByType('main').first.path %}
+                            {% set path = source_path|imagine_filter(filter|default('sylius_shop_product_large_thumbnail')) %}
+                        {% elseif product.images.first %}
+                            {% set source_path = product.images.first.path %}
+                            {% set path = source_path|imagine_filter(filter|default('sylius_shop_product_large_thumbnail')) %}
+                        {% else %}
+                            {% set path = original_path %}
+                        {% endif %}
+
+                        <li class="header-cart-item flex-w flex-t m-b-12">
+                            <div class="header-cart-item-img">
+                                <img src="{{ path }}" id="main-image" alt="{{ product.name }}" />
+                            </div>
+
+                            <div class="header-cart-item-txt p-t-8">
+                                <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+                                    {{ item.product }}
+                                </a>
+
+                                <span class="header-cart-item-info">
+								{{ item.quantity }} x {{ money.convertAndFormat(item.unitPrice) }}
+							</span>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <div class="w-full">
+                    <div class="header-cart-total w-full p-tb-40">
+                        {{ 'sylius.ui.subtotal'|trans }}: {{ money.convertAndFormat(cart.itemsTotal) }}
+                    </div>
+
+                    <div class="header-cart-buttons flex-w w-full">
+                        <a href="{{ path('sylius_shop_cart_summary') }}" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+                            {{ 'sylius.ui.view_and_edit_cart'|trans }}
+                        </a>
+
+                        <a href="{{ path('sylius_shop_checkout_start') }}" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+                            {{ 'sylius.ui.checkout'|trans }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {{ sonata_block_render_event('sylius.shop.partial.cart.summary.after_popup_content', {'cart': cart}) }}
+    </div>
+</div>

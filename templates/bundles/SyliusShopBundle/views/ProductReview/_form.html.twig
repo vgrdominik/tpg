@@ -1,0 +1,34 @@
+<!-- Add review -->
+<h5 class="mtext-108 cl2 p-b-7">
+    {{ 'sylius.ui.write_your_own_review'|trans }}
+</h5>
+<p class="stext-102 cl6">
+    {{ 'sylius.ui.you_are_reviewing'|trans }} <strong>{{ product.name }}</strong>.
+</p>
+
+<div class="flex-w flex-m p-t-50 p-b-23">
+    {{ form_errors(form.rating) }}
+    {{ form_widget(form.rating, {'attr': {'style': 'display: none'} }) }}
+</div>
+
+<div class="row p-b-25">
+    <div class="col-12 p-b-5">
+        {{ form_widget(form.title, {'attr': {'placeholder': 'sylius.ui.title'|trans, 'class': 'size-111 bor8 stext-102 cl2 p-lr-20'} }) }}
+        {{ form_errors(form.title) }}
+    </div>
+</div>
+<div class="row p-b-25">
+    <div class="col-12 p-b-5">
+        {{ form_widget(form.comment, {'attr': {'placeholder': 'sylius.ui.write_your_own_review'|trans, 'class': 'size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10'} }) }}
+        {{ form_errors(form.comment) }}
+    </div>
+</div>
+
+{% if not is_granted("IS_AUTHENTICATED_FULLY") %}
+    <div class="row p-b-25">
+        <div class="col-12 p-b-5">
+            {{ form_widget(form.author.email, {'attr': {'placeholder': 'sylius.ui.email'|trans, 'class': 'size-111 bor8 stext-102 cl2 p-lr-20'}}) }}
+            {{ form_errors(form.author.email) }}
+        </div>
+    </div>
+{% endif %}

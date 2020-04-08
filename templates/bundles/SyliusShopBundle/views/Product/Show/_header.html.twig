@@ -1,0 +1,12 @@
+{% set taxon = product.mainTaxon %}
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="{% if taxon.cover is not null and taxon.cover.path is not null and taxon.cover.path != '' %}background-image: url('{{ taxon.cover.path|imagine_filter('cover') }}');{% else %}background-color: #D3D3D3;{% endif %}">
+    <h1 class="ltext-105 cl0 txt-center">
+        {{ product.name }}
+    </h1>
+</section>
+
+<div class="bg0 m-t-20 p-b-20">
+    <div class="container center-layer">
+        {% include '@SyliusShop/Product/Show/_breadcrumb.html.twig' %}
+    </div>
+</div>

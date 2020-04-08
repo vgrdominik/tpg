@@ -1,0 +1,61 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderElement:
+    type: entity
+    table: ctic_cms_block_sliderelement
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            column: name
+            type: string
+            nullable: false
+        position:
+            column: position
+            type: integer
+            nullable: false
+        title:
+            column: title
+            type: string
+            nullable: false
+        titleAnimation:
+            column: title_animation
+            type: string
+            nullable: false
+        mainPhrase:
+            column: main_phrase
+            type: string
+            nullable: false
+        mainPhraseAnimation:
+            column: main_phrase_animation
+            type: string
+            nullable: false
+        link:
+            column: link
+            type: string
+            nullable: false
+        linkAnimation:
+            column: link_animation
+            type: string
+            nullable: false
+        linkText:
+            column: link_text
+            type: string
+            nullable: false
+    oneToMany:
+        images:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderElementImage
+            mappedBy: owner
+            orphanRemoval: true
+            cascade:
+                - all
+    manyToOne:
+        owner:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSlider
+            inversedBy: elements
+            joinColumns:
+                parent_id:
+                    referencedColumnName: id
+                    nullable: true

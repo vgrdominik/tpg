@@ -1,0 +1,10 @@
+<!-- Details -->
+{% include '@SyliusShop/Product/Show/Tabs/_details.html.twig' %}
+
+{% if product.attributes|length > 0 %}
+    <!-- Attributes -->
+    {% include '@SyliusShop/Product/Show/Tabs/_attributes.html.twig' %}
+{% endif %}
+
+<!-- Reviews -->
+{% include '@SyliusShop/Product/Show/Tabs/_reviews.html.twig' %}

@@ -1,0 +1,24 @@
+<div class="flex-w flex-sb-m">
+    <div class="flex-w flex-l-m filter-tope-group m-tb-10">
+        <a href="{{ path('sylius_shop_homepage') }}" class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5">{{ 'sylius.ui.home'|trans }}</a>
+        <div class="divider"> / </div>
+        {% if product.mainTaxon is not null %}
+            {% set taxon = product.mainTaxon %}
+            {% set ancestors = taxon.ancestors|reverse %}
+
+            {% for ancestor in ancestors %}
+                {% if ancestor.isRoot() %}
+                    <div class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5 section">{{ ancestor.name }}</div>
+                {% else %}
+                    <a href="{{ path('bitbag_sylius_elasticsearch_plugin_shop_list_products', {'slug': ancestor.slug, '_locale': ancestor.translation.locale}) }}" class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5 section">{{ ancestor.name }}</a>
+                {% endif %}
+                <div class="divider"> / </div>
+            {% endfor %}
+
+            <a href="{{ path('bitbag_sylius_elasticsearch_plugin_shop_list_products', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}" class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5 section">{{ taxon.name }}</a>
+            <div class="divider"> / </div>
+        {% endif %}
+
+        <div class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5 how-active1 active section">{{ product.name }}</div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div id="create-block-dropdown" class="ui labeled icon top right floating dropdown button primary link">
+    <i class="plus icon"></i>
+    <span class="text">{{ 'sylius.ui.create'|trans }}</span>
+    <div class="menu">
+        <div class="header">
+            <i class="cube icon"></i>
+            {{ 'sylius.ui.type'|trans }}
+        </div>
+        <div class="divider"></div>
+        <a href="{{ path('bitbag_sylius_cms_plugin_admin_block_create', { 'type': 'text' }) }}" class="item">
+            {{ 'bitbag_sylius_cms_plugin.ui.text_block'|trans }}
+        </a>
+        <a href="{{ path('bitbag_sylius_cms_plugin_admin_block_create', { 'type': 'html' }) }}" class="item">
+            {{ 'bitbag_sylius_cms_plugin.ui.html_block'|trans }}
+        </a>
+        <a href="{{ path('bitbag_sylius_cms_plugin_admin_block_create', { 'type': 'image' }) }}" class="item">
+            {{ 'bitbag_sylius_cms_plugin.ui.image_block'|trans }}
+        </a>
+        <a href="{{ path('bitbag_sylius_cms_plugin_admin_block_create', { 'type': 'page' }) }}" class="item">
+            {{ 'ctic_bridge_bitbag_cms_plugin.ui.page'|trans }}
+        </a>
+        <a href="{{ path('bitbag_sylius_cms_plugin_admin_block_create', { 'type': 'taxon' }) }}" class="item">
+            {{ 'ctic_bridge_bitbag_cms_plugin.ui.taxon'|trans }}
+        </a>
+        <a href="{{ path('bitbag_sylius_cms_plugin_admin_block_create', { 'type': 'slider' }) }}" class="item">
+            {{ 'ctic_bridge_bitbag_cms_plugin.ui.slider_block'|trans }}
+        </a>
+    </div>
+</div>

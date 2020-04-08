@@ -1,0 +1,23 @@
+<div class="flex-w flex-t p-b-68">
+    <div class="size-207">
+        <div class="flex-w flex-sb-m p-b-17">
+            <span class="mtext-107 cl2 p-r-20">
+                {{ review.author.firstName }}
+            </span>
+
+            <span class="fs-18 cl11">
+                <span class="wrap-rating fs-18 cl11 pointer">
+                    <i class="zmdi zmdi-star{% if review.rating > 0 %}-outline{% endif %}"></i>
+                    <i class="zmdi zmdi-star{% if review.rating > 1 %}-outline{% endif %}"></i>
+                    <i class="zmdi zmdi-star{% if review.rating > 2 %}-outline{% endif %}"></i>
+                    <i class="zmdi zmdi-star{% if review.rating > 3 %}-outline{% endif %}"></i>
+                    <i class="zmdi zmdi-star{% if review.rating > 4 %}-outline{% endif %}"></i>
+                </span>
+            </span>
+        </div>
+
+        <p class="stext-102 cl6">
+            {{ review.comment }}
+        </p>
+    </div>
+</div>

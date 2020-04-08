@@ -6,6 +6,17 @@ imports:
 
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
 
+    #BitBag Repositories
+    - { resource: "@BitBagSyliusCmsPlugin/Resources/config/config.yml" }
+    - { resource: "@BitBagSyliusElasticsearchPlugin/Resources/config/config.yml" }
+    - { resource: "@SitemapPlugin/Resources/config/config.yml" }
+
+    #Own
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/config.yml" }
+    - { resource: "@CTICBridgeSyliusBundle/Resources/config/config.yml" }
+    - { resource: "@CTICBridgeSyliusComponent/Resources/config/config.yml" }
+    - { resource: "@CTICBridgeFOSImportExportPlugin/Resources/config/config.yml" }
+
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
 
@@ -253,3 +264,45 @@ sylius_theme:
             scan_depth: 1
             directories:
                 - "%kernel.project_dir%/themes"
+
+fos_sylius_import_export:
+    importer:
+        web_ui:               true
+        batch_size:           0
+        fail_on_incomplete:   false
+        stop_on_failure:      false
+    exporter:
+        web_ui:               true
+    message_queue:
+        service_id: 'enqueue_fs'
+
+twig:
+    globals:
+        google_ecommerce_key: '%env(resolve:ctic_google_ecommerce_key)%' 
+
+sitemap:
+    providers:
+        products: true
+        taxons: true
+        static: true
+    template:             '@SitemapPlugin/show.xml.twig'
+    index_template:       '@SitemapPlugin/index.xml.twig'
+    exclude_taxon_root:   true
+    absolute_url:         true
+    hreflang:             false
+
+fos_elastica:
+    clients:
+        cloud:
+            host: '%env(resolve:ctic_elasticsearch_host)%'
+            port: '%env(resolve:ctic_elasticsearch_port)%'
+            transport: '%env(resolve:ctic_elasticsearch_transport)%'
+            headers:
+                Authorization: '%env(resolve:ctic_elasticsearch_authorization)%' 
+    indexes:
+        bitbag_attribute_taxons:
+            client: cloud
+        bitbag_shop_product:
+            client: cloud
+        bitbag_option_taxons:
+            client: cloud

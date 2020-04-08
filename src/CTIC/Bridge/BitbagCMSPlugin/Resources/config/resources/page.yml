@@ -1,0 +1,5 @@
+sylius_resource:
+    resources:
+        bitbag_sylius_cms_plugin.page:
+            classes:
+                model: CTIC\Bridge\BitbagCMSPlugin\Entity\Page

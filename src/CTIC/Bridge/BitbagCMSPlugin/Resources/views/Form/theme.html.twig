@@ -1,0 +1,166 @@
+{% extends '@SyliusUi/Form/theme.html.twig' %}
+
+{% block form_row -%}
+    <div class="{% if required %}required {% endif %}field{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
+        {{- form_label(form) -}}
+        {{- form_widget(form) -}}
+        {% for attrname, attrvalue in attr %}
+            {% if attrname == 'help' %}
+                <span class="help-block">{{ attrvalue|trans }}</span>
+            {% endif %}
+        {% endfor %}
+        {{- form_errors(form) -}}
+    </div>
+{%- endblock form_row %}
+
+{% block checkbox_attributes -%}
+    {%- for attrname, attrvalue in attr -%}
+        {{- " " -}}
+        {%- if attrname == 'checked' -%}
+            {% set currentPath = path(app.request.attributes.get('_route'),
+                app.request.attributes.get('_route_params')) %}
+            {%- if 'new' in currentPath -%}
+                {{- attrname }}="{{ attrvalue }}"
+            {%- endif -%}
+        {%- elseif attrname in ['placeholder', 'title'] -%}
+            {{- attrname }}="{{ translation_domain is same as(false) ? attrvalue : attrvalue|trans({}, translation_domain) }}"
+        {%- elseif attrvalue is same as(true) -%}
+            {{- attrname }}="{{ attrname }}"
+        {%- elseif attrvalue is not same as(false) -%}
+            {{- attrname }}="{{ attrvalue }}"
+        {%- endif -%}
+    {%- endfor -%}
+{%- endblock checkbox_attributes -%}
+
+{%- block checkbox_widget_attributes -%}
+    id="{{ id }}" name="{{ full_name }}"
+    {%- if disabled %} disabled="disabled"{% endif -%}
+    {%- if required %} required="required"{% endif -%}
+    {{ block('checkbox_attributes') }}
+{%- endblock checkbox_widget_attributes -%}
+
+{%- block checkbox_widget -%}
+    <input type="checkbox" {{ block('checkbox_widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{%- endblock checkbox_widget -%}
+
+{% block checkbox_row -%}
+    <div class="field{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
+        <div class="ui toggle checkbox">
+            {{- form_widget(form) -}}
+            {{- form_label(form) -}}
+            {% for attrname, attrvalue in attr %}
+                {% if attrname == 'help' %}
+                    <span class="help-block">{{ attrvalue|trans }}</span>
+                {% endif %}
+            {% endfor %}
+            {{- form_errors(form) -}}
+        </div>
+    </div>
+{%- endblock checkbox_row %}
+
+{% block sylius_taxon_autocomplete_choice_row %}
+    {{ form_row(form, {'remote_url': path('sylius_admin_ajax_taxon_by_name_phrase'), 'load_edit_url': path('sylius_admin_ajax_taxon_by_code')}) }}
+{% endblock %}
+
+{% block ctic_bridge_bitbag_block_autocomplete_choice_row %}
+    {{ form_row(form, {'remote_url': path('ctic_bridget_bitbag_cms_plugin_admin_ajax_block_by_name_phrase'), 'load_edit_url': ''}) }}
+{% endblock %}
+
+{% block ctic_bridge_bitbag_landing_autocomplete_choice_row %}
+    {{ form_row(form, {'remote_url': path('ctic_bridget_bitbag_cms_plugin_admin_ajax_landing_by_name_phrase'), 'load_edit_url': path('ctic_bridge_bitbag_cms_plugin_admin_ajax_landing_by_code')}) }}
+{% endblock %}
+
+{% block sylius_product_autocomplete_choice_row %}
+    {{ form_row(form, {'remote_url': path('bitbag_sylius_cms_plugin_admin_ajax_product_by_name_phrase'), 'load_edit_url': path('sylius_admin_ajax_product_by_code')}) }}
+{% endblock %}
+
+{% block ctic_bridge_bitbag_block_landingelement_widget %}
+    {{ form_row(form.name) }}
+    {{ form_row(form.position) }}
+    {{ form_row(form.columns) }}
+    {{ form_row(form.isContainer) }}
+    {{ form_row(form.block) }}
+    {{ form_row(form.children) }}
+{% endblock %}
+
+{% block collection_row -%}
+    <div class="ui grid">
+        <div class="ui sixteen wide column">
+            {{- form_label(form) -}}
+        </div>
+        {% for attrname, attrvalue in attr %}
+            {% if attrname == 'help' %}
+                <div class="ui sixteen wide column">
+                    <span class="help-block">{{ attrvalue|trans }}</span>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {{- form_widget(form) -}}
+    {{- form_errors(form) -}}
+{%- endblock collection_row %}
+
+{% block collection_widget -%}
+    {% from 'SyliusResourceBundle:Macros:notification.html.twig' import error %}
+    {% import _self as self %}
+    {% set attr = attr|merge({'class': attr.class|default ~ ' controls collection-widget ui sixteen wide column'}) %}
+    {% set name = form.vars.name %}
+
+    {% spaceless %}
+        <div data-form-type="collection" {{ block('widget_container_attributes') }}
+                {% if prototype is defined and allow_add %}
+                    data-prototype='{{ self.collection_item(prototype, allow_delete, button_delete_label, '__name__', name)|e }}'
+                {%- endif -%}
+        >
+            {{ error(form.vars.errors) }}
+
+            {% if prototypes|default is iterable %}
+                {% for key, subPrototype in prototypes %}
+                    <input type="hidden" data-form-prototype="{{ key }}" value="{{ self.collection_item(subPrototype, allow_delete, button_delete_label, '__name__')|e }}" />
+                {% endfor %}
+            {% endif %}
+
+            <div class="ui grid" data-form-collection="list">
+                {% for child in form %}
+                    {{ self.collection_item(child, allow_delete, button_delete_label, loop.index0, name) }}
+                {% endfor %}
+            </div>
+
+            {% if prototype is defined and allow_add %}
+                <div class="ui grid">
+                    <div class="ui sixteen wide column">
+                        <a href="#" class="ui labeled icon button" data-form-collection="add">
+                            <i class="plus square outline icon"></i>
+                            {{ button_add_label|trans }}
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+    {% endspaceless %}
+{%- endblock collection_widget %}
+
+{% macro collection_item(form, allow_delete, button_delete_label, index, parent_name) %}
+    {% import '@BitBagSyliusCmsPlugin/Macro/imageWidget.html.twig' as image %}
+
+    {% spaceless %}
+        <div class="ui eight wide column" data-form-collection="item" data-form-collection-index="{{ index }}">
+            {% if 'images' == parent_name %}
+                {{ image.imageWidget(form) }}
+            {% else %}
+                {{ form_widget(form) }}
+            {% endif %}
+            {% if allow_delete %}
+                <div class="ui grid">
+                    <div class="ui sixteen wide column">
+                        <a href="#" data-form-collection="delete" class="ui red labeled icon button" style="margin-bottom: 1em;">
+                            <i class="trash icon"></i>
+                            {{ button_delete_label|trans }}
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    {% endspaceless %}
+{% endmacro %}

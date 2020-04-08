@@ -1,0 +1,18 @@
+bitbag_sylius_cms_plugin_admin_frequently_asked_question:
+    resource: |
+        alias: bitbag_sylius_cms_plugin.frequently_asked_question
+        section: admin
+        templates: SyliusAdminBundle:Crud
+        redirect: update
+        grid: bitbag_sylius_cms_plugin_admin_frequently_asked_question
+        except: ['show']
+        permission: true
+        vars:
+            all:
+                header: bitbag_sylius_cms_plugin.ui.faq_header
+                subheader: bitbag_sylius_cms_plugin.ui.faq_subheader
+                templates:
+                    form: CTICBridgeBitbagCMSPlugin:FrequentlyAskedQuestion:Crud/_form.html.twig
+            index:
+                icon: help
+    type: sylius.resource

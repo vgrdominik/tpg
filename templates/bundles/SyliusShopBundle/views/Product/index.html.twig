@@ -1,0 +1,25 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block title %}{{ taxon.name }} - {{ 'ctic.ui.your_store'|trans }}{% endblock %}
+
+{% block metatags %}
+    {% set taxonImage = taxon.images|last %}
+
+    <meta name="description" content="{{ taxon.description }} {{ 'ctic.ui.page'|trans }} {{ app.request.get('page', '1') }}. {{ sylius.channel.description }}">
+
+    <meta property="og:description" content="{{ taxon.description }} {{ 'ctic.ui.page'|trans }} {{ app.request.get('page', '1') }}. {{ sylius.channel.description }}" />
+
+    {% if taxonImage != '' %}
+        <meta property="og:image" content="{{ taxonImage.path|imagine_filter('taxon') }}" />
+        <meta property="og:image:secure_url" content="{{ taxonImage.path|imagine_filter('taxon') }}" />
+        <meta property="twitter:image" content="{{ taxonImage.path|imagine_filter('taxon') }}" />
+    {% endif %}
+
+    <meta property="twitter:description" content="{{ taxon.description }} {{ 'ctic.ui.page'|trans }} {{ app.request.get('page', '1') }}. {{ sylius.channel.description }}" />
+{% endblock %}
+
+{% block content %}
+{% include '@SyliusShop/Product/Index/_header.html.twig' %}
+{% include '@SyliusShop/Product/Index/_sidebar.html.twig' %}
+{% include '@SyliusShop/Product/Index/_main.html.twig' %}
+{% endblock %}

@@ -1,0 +1,20 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\LandingElement:
+    properties:
+        name:
+            - NotBlank:
+                message: 'ctic_bridge_bitbag_cms_plugin.landing.name.not_blank'
+                groups: ['cticbridgebitbag']
+            - Length:
+                min: 2
+                max: 250
+                minMessage: 'ctic_bridge_bitbag_cms_plugin.landing.name.min_length'
+                maxMessage: 'ctic_bridge_bitbag_cms_plugin.landing.name.max_length'
+                groups: ['cticbridgebitbag']
+        position:
+            - NotBlank:
+                message: 'ctic_bridge_bitbag_cms_plugin.landingelement.position.not_blank'
+                groups: ['cticbridgebitbag']
+        columns:
+            - NotBlank:
+                message: 'ctic_bridge_bitbag_cms_plugin.landingelement.columns.not_blank'
+                groups: ['cticbridgebitbag']

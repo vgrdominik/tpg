@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@CTICBridgeSyliusComponent/Resources/config/services.yml" }

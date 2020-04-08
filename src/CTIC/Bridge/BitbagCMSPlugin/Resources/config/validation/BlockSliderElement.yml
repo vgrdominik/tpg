@@ -1,0 +1,18 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderElement:
+    properties:
+        name:
+            - NotBlank:
+                message: 'ctic_bridge_bitbag_cms_plugin.sliderelement.name.not_blank'
+                groups: ['cticbridgebitbag']
+            - Length:
+                min: 2
+                max: 250
+                minMessage: 'ctic_bridge_bitbag_cms_plugin.sliderelement.name.min_length'
+                maxMessage: 'ctic_bridge_bitbag_cms_plugin.sliderelement.name.max_length'
+                groups: ['cticbridgebitbag']
+        position:
+            - NotBlank:
+                message: 'ctic_bridge_bitbag_cms_plugin.sliderelement.position.not_blank'
+                groups: ['cticbridgebitbag']
+        images:
+            - Valid: ~

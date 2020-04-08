@@ -1,0 +1,39 @@
+imports:
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/resources.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/grids.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/services.yml" }
+
+jms_serializer:
+    metadata:
+        directories:
+            ctic_bridge_bitbagcmsplugin:
+                namespace_prefix: "BitBag\\SyliusCmsPlugin"
+                path: "@CTICBridgeBitbagCMSPlugin/Resources/config/serializer"
+
+liip_imagine:
+    filter_sets:
+        slide:
+            filters:
+                thumbnail: { size: [1920, 930], mode: inset }
+        taxon:
+            filters:
+                thumbnail: { size: [547, 355], mode: inset }
+        page:
+            filters:
+                thumbnail: { size: [1140, 615], mode: inset }
+        cover:
+            filters:
+                thumbnail: { size: [1920, 239], mode: inset }
+        sylius_shop_product_original: ~
+        sylius_shop_product_tiny_thumbnail:
+            filters:
+                thumbnail: { size: [64, 64], mode: outbound }
+        sylius_shop_product_small_thumbnail:
+            filters:
+                thumbnail: { size: [150, 112], mode: outbound }
+        sylius_shop_product_thumbnail:
+            filters:
+                thumbnail: { size: [315, 390], mode: outbound }
+        sylius_shop_product_large_thumbnail:
+            filters:
+                thumbnail: { size: [600, 743], mode: outbound }

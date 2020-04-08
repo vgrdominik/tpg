@@ -1,0 +1,11 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonCover:
+    type: entity
+    table: sylius_taxon_cover
+    oneToOne:
+        owner:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Taxon
+            inversedBy: cover
+            cascade: [ALL]
+            joinColumn:
+                name: owner_id
+                referencedColumnName: id

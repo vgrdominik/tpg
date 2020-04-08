@@ -1,0 +1,7 @@
+ctic_bridge_bitbag_cms_plugin_admin:
+    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/admin.yml"
+    prefix: /admin
+
+ctic_bridge_bitbag_cms_plugin_shop:
+    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/shop.yml"
+    prefix: /

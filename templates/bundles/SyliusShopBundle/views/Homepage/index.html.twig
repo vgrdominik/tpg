@@ -1,0 +1,17 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block title %}Home - {{ 'ctic.ui.your_store'|trans }}{% endblock %}
+
+{% block content %}
+
+{{ render(url('ctic_bridge_bitbag_cms_plugin_shop_home_render')) }}
+
+<section class="sec-relate-product bg0 p-t-45 p-b-105">
+    <div class="container center-layer">
+        <div class="p-b-45">
+            <h3 class="ltext-106 cl5 txt-center">{{ 'sylius.ui.latest_products'|trans }}</h3>
+        </div>
+        {{ render(url('sylius_shop_partial_product_index_latest', {'count': 4, 'template': '@SyliusShop/Product/_horizontalList.html.twig'})) }}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,5 @@
+sylius_resource:
+    resources:
+        bitbag_sylius_cms_plugin.frequently_asked_question:
+            classes:
+                model: CTIC\Bridge\BitbagCMSPlugin\Entity\FrequentlyAskedQuestion

@@ -1,0 +1,122 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block title %}{{ product.name }} - {{ 'ctic.ui.your_store'|trans }}{% endblock %}
+
+{% block metatags %}
+    {% set productImage = product.images|last %}
+
+    {% if product.mainTaxon is not null %}
+        <meta name="description" content="{{ product.description }}. {{ product.mainTaxon.description }} {{ sylius.channel.description }}">
+
+        <meta property="og:description" content="{{ product.description }}. {{ product.mainTaxon.description }} {{ sylius.channel.description }}" />
+
+        <meta property="twitter:description" content="{{ product.description }}. {{ product.mainTaxon.description }} {{ sylius.channel.description }}" />
+    {% else %}
+        <meta name="description" content="{{ product.description }}. {{ sylius.channel.description }}">
+
+        <meta property="og:description" content="{{ product.description }}. {{ sylius.channel.description }}" />
+
+        <meta property="twitter:description" content="{{ product.description }}. {{ sylius.channel.description }}" />
+    {% endif %}
+
+
+    {% if productImage != '' %}
+        <meta property="og:image" content="{{ productImage.path|imagine_filter('taxon') }}" />
+        <meta property="og:image:secure_url" content="{{ productImage.path|imagine_filter('taxon') }}" />
+        <meta property="twitter:image" content="{{ productImage.path|imagine_filter('taxon') }}" />
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+{% include '@SyliusShop/Product/Show/_header.html.twig' %}
+
+{{ sonata_block_render_event('sylius.shop.product.show.after_product_header', {'product': product}) }}
+
+<section class="sec-product-detail bg0 p-t-65 p-b-60">
+    <div class="container center-layer">
+        <div class="sui">
+            <div class="ui four column doubling stackable grid">
+
+                {{ sonata_block_render_event('sylius.shop.product.show.before_images', {'product': product}) }}
+
+                {% include '@SyliusShop/Product/Show/_images.html.twig' %}
+
+                {{ sonata_block_render_event('sylius.shop.product.show.after_images', {'product': product}) }}
+
+                <div class="ui ten wide column">
+                    <div class="p-r-50 p-t-5 p-lr-0-lg">
+                        {% include '@SyliusShop/Product/Show/_reviews.html.twig' %}
+
+                        {{ sonata_block_render_event('sylius.shop.product.show.after_reviews', {'product': product}) }}
+
+                        {% if not product.variants.empty() %}
+                            {% include '@SyliusShop/Product/Show/_price.html.twig' %}
+                        {% endif %}
+                        {% if product.isConfigurable() and product.getVariantSelectionMethod() == 'match' and not product.variants.empty() %}
+                            {% include '@SyliusShop/Product/Show/_variantsPricing.html.twig' with {'pricing': sylius_product_variant_prices(product, sylius.channel)} %}
+                        {% endif %}
+
+                        {{ sonata_block_render_event('sylius.shop.product.show.after_price', {'product': product}) }}
+
+                        <p class="stext-102 cl3 p-t-23">
+                            {{ product.shortDescription }}
+                        </p>
+
+                        {{ sonata_block_render_event('sylius.shop.product.show.after_description', {'product': product}) }}
+
+                        {% include '@SyliusShop/Product/Show/_inventory.html.twig' %}
+
+                        {{ sonata_block_render_event('sylius.shop.product.show.after_add_to_cart', {'product': product}) }}
+
+                        <!--  -->
+                        <div class="flex-w flex-m p-l-100 p-t-40 respon7">
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ sonata_block_render_event('sylius.shop.product.show.before_tabs', {'product': product}) }}
+
+        {% include '@SyliusShop/Product/Show/_tabs.html.twig' %}
+    </div>
+    <div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
+			<span class="stext-107 cl6 p-lr-25">
+				{{ 'ctic.ui.sku'|trans }}: {{ product.code }}
+			</span>
+
+        <span class="stext-107 cl6 p-lr-25">
+            {{ 'ctic.ui.taxons'|trans }}:
+            {% if product.mainTaxon is not null %}
+                {% set taxon = product.mainTaxon %}
+                {% set ancestors = taxon.ancestors|reverse %}
+
+                {% for ancestor in ancestors %}
+                    <a href="{{ path('bitbag_sylius_elasticsearch_plugin_shop_list_products', {'slug': ancestor.slug, '_locale': ancestor.translation.locale}) }}" class="stext-106 cl6 hov1 m-l-5 section">{{ ancestor.name }}</a>,
+                {% endfor %}
+
+                    <a href="{{ path('bitbag_sylius_elasticsearch_plugin_shop_list_products', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}" class="stext-106 cl6 hov1 m-l-5 section">{{ taxon.name }}</a>
+            {% endif %}
+			</span>
+    </div>
+</section>
+
+{{ sonata_block_render_event('sylius.shop.product.show.before_associations', {'product': product}) }}
+
+{% include '@SyliusShop/Product/Show/_associations.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% endblock %}

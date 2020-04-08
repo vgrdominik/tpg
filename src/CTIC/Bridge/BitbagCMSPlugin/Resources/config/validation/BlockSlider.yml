@@ -1,0 +1,6 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSlider:
+    properties:
+        accessibility:
+            - NotBlank:
+                message: 'ctic_bridge_bitbag_cms_plugin.slider.accessibility.not_blank'
+                groups: ['cticbridgebitbag']

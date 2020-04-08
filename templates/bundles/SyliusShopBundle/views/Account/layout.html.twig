@@ -1,0 +1,36 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block title %}{{ path('sylius_shop_account_dashboard') }} - {{ 'ctic.ui.your_store'|trans }}{% endblock %}
+
+{% block flash_content %}
+{% endblock %}
+
+{% block content %}
+    <div class="container center-layer p-t-90 p-b-30">
+        <div class="sui">
+            <div class="p-b-20">
+                {% block breadcrumb %}
+                {% endblock %}
+            </div>
+
+            {% include '@SyliusShop/_flashes.html.twig' %}
+            <div class="ui stackable grid">
+                <div class="four wide column">
+                    {{ sonata_block_render_event('sylius.shop.account.layout.before_menu') }}
+
+                    {{ knp_menu_render('sylius.shop.account', {'template': '@SyliusUi/Menu/simple.html.twig'}) }}
+
+                    {{ sonata_block_render_event('sylius.shop.account.layout.after_menu') }}
+                </div>
+                <div class="twelve wide column">
+                    {{ sonata_block_render_event('sylius.shop.account.layout.before_subcontent') }}
+
+                    {% block subcontent %}
+                    {% endblock %}
+
+                    {{ sonata_block_render_event('sylius.shop.account.layout.after_subcontent') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

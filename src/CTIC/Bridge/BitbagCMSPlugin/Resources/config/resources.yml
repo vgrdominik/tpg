@@ -1,0 +1,10 @@
+imports:
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/resources/home.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/resources/block.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/resources/block_slider_element_image.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/resources/landing.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/resources/landing_element.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/resources/page.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/resources/frequently_asked_question.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/resources/attribute.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/resources/sylius_taxonomy.yml" }

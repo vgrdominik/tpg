@@ -1,0 +1,14 @@
+{% form_theme form '@CTICBridgeBitbagCMSPlugin/Form/theme.html.twig' %}
+
+<div class="ui grid">
+    {{ form_errors(form) }}
+    <div class="ui eight wide column">
+        {{ form_row(form.landing) }}
+    </div>
+    <div class="ui eight wide column">
+        {{ form_row(form.channel) }}
+    </div>
+    <div class="ui eight wide column">
+        {{ form_row(form.enabled) }}
+    </div>
+</div>

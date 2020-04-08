@@ -1,0 +1,103 @@
+ctic:
+    radge:
+        menu:
+            campaign: Campanya
+            videos: Videos
+            schedule: Programació
+            rol: Rol
+    ui:
+        taxons: Categories
+        sku: SKU
+        filter: Filtrar
+        search: Cercar
+        cancel: Cancelar
+        apply: Aplicar
+        shop_now: Comprar Ara
+        top_phrase: Enviament gratuït en comandes superiors a 50EUR
+        your_store: Radge
+        faqs: Preguntes freqüents
+        your_cart: La teva cistella
+        help: Ajuda
+        track_order: Seguiment de comandes
+        returns: Devolucions
+        shipping: Enviament
+        get_in_touch: Estem en contacte
+        get_in_touch_phrase: Alguna pregunta? Pots utilitzar les nostres xarxes socials o el nostre contacte a ryu@radge.cat
+        link_sn_facebook: https://www.facebook.com/chanzaStore
+        link_sn_instagram: https://www.instagram.com/chanzastore
+        link_sn_twitter: https://www.twitter.com
+        newsletter: Newsletter
+        subscribe: Subscriu-te
+        remove: Eliminar
+        product_options: Opcions
+        product_attributes: Atributs
+        product_price: Preu
+        condiciones: Condicions de Venda
+        privacidad: Privacitat de Dades
+        proximamente: Pròximament.
+        aceptar_condiciones: Al continuar acceptes les condicions de venda de Radge. Les pots consultar en el següent enllaç
+        cookies_privacy: Aquest site utilitza cookies. Si continues navegant considarem que acceptes el seu ús.
+        cookies_privacy_button: Més informació
+        facebook:
+            app_id: 269763246989784
+        page: Pàgina
+
+sylius:
+    lightbox:
+        image_album_label: 'Imatge %1 de %2'
+    menu:
+        shop:
+            account:
+                address_book: 'Llibreta de direccions'
+                change_password: 'Canviar contrasenya'
+                dashboard: 'Panell general'
+                header: 'la teava compta'
+                order_history: 'Historial de comandes'
+                personal_information: 'Dades personals'
+    form:
+        login:
+            username: Nom d'usuari
+            password: Contrasenya
+            remember_me: Recordar
+    ui:
+        logout: Logout
+        add_your_review: Envia la teva resenya
+        view_more: Veure Més
+        login: Iniciar sessió
+        register: Registrar-se
+        your_cart_is_empty: La seva cistella és buida
+        latest_products: Últims productes
+        powered_by: Creat per
+        confirm_your_action: Confirma aquesta acció
+        are_your_sure_you_want_to_perform_this_action: Estas segur de fer aquesta acció?
+        no_label: no
+        yes_label: Sí
+        your_shopping_cart: El teu carro
+        edit_your_items_apply_coupon_or_proceed_to_the_checkout: Edita els teus articles, aplica un cupó o procedeix amb el pagament
+        you_may_also_like: També et podria agradar
+        need_assistance: Necessites Ajuda? Truca'ns!
+        call_us: 646 615 577
+        access_your_store_account_or_create_a_new_one: Accedeix al teu compte o crea un de nou
+        forgot_password: Has oblidat la contrasenya?
+        new_customers: Nous clients
+        create_an_account: Crea el teu compte
+        view_and_edit_cart: Veure i modificar el carro
+        subtotal: Subtotal
+        if_you_have_an_account_sign_in_with_your_email_address: Si tens un compte, inicia sessió amb el teu correu electrònic.
+        by_position: Per posició
+        newest_first: Nous primer
+        oldest_first: Vells primer
+        cheapest_first: Barats primer
+        most_expensive_first: Cars primer
+
+bitbag_sylius_elasticsearch_plugin:
+    ui:
+        filter: Filtrar
+        min_price: Mínim
+        max_price: Màxim
+
+fos:
+    import_export:
+        ui:
+            import: Importar
+            import_data: Importar dades

@@ -1,0 +1,26 @@
+{% set image = block.translation.taxon.images|last %}
+<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
+    <div class="block1 wrap-pic-w">
+        {% if image != '' %}
+            <img src="{{ image.path|imagine_filter('taxon') }}" alt="{{ block.translation.taxon.name }}">
+        {% endif %}
+
+        <a href="{{ path('bitbag_sylius_elasticsearch_plugin_shop_list_products', {'slug': block.translation.taxon.slug, '_locale': block.translation.taxon.translation.locale}) }}" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+            <div class="block1-txt-child1 flex-col-l">
+                <span class="block1-name ltext-102 trans-04 p-b-8">
+                    {{ block.translation.taxon.name }}
+                </span>
+
+                <span class="block1-info stext-102 trans-04">
+                    {{ block.translation.taxon.description }}
+                </span>
+            </div>
+
+            <div class="block1-txt-child2 p-b-4 trans-05">
+                <div class="block1-link stext-101 cl0 trans-09">
+                    {{ 'ctic.ui.shop_now'|trans }}
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

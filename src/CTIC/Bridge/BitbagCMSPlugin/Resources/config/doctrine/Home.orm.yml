@@ -1,0 +1,40 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\Home:
+    type: mappedSuperclass
+    table: ctic_cms_home
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        enabled:
+            column: enabled
+            type: boolean
+        createdAt:
+            column: created_at
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: create
+        updatedAt:
+            column: updated_at
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: update
+    manyToOne:
+        landing:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Landing
+            joinColumns:
+                landing_id:
+                    referencedColumnName: id
+                    nullable: false
+        channel:
+            targetEntity: Sylius\Component\Channel\Model\Channel
+            joinColumns:
+                channel_id:
+                    referencedColumnName: id
+                    nullable: false

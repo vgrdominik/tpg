@@ -1,0 +1,17 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\Landing:
+    exclusion_policy: ALL
+    xml_root_name: landing
+    properties:
+        id:
+            expose: true
+            type: integer
+            xml_attribute: true
+            groups: [Autocomplete]
+        name:
+            expose: true
+            type: string
+            groups: [Autocomplete]
+    virtual_properties:
+        getName:
+           serialized_name: name
+           groups: [Autocomplete]

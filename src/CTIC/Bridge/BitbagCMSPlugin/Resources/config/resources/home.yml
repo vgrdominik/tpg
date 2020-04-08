@@ -1,0 +1,9 @@
+sylius_resource:
+    resources:
+        ctic_bridge_bitbag_cms_plugin.home:
+            driver: doctrine/orm
+            classes:
+                model: CTIC\Bridge\BitbagCMSPlugin\Entity\Home
+                repository: CTIC\Bridge\BitbagCMSPlugin\Repository\HomeRepository
+                form: CTIC\Bridge\BitbagCMSPlugin\Form\Type\HomeType
+                controller: CTIC\Bridge\BitbagCMSPlugin\Controller\HomeController

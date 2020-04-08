@@ -1,0 +1,143 @@
+bitbag_sylius_cms_plugin:
+    ui:
+        blocks: Bloques
+        pages: Páginas
+        content_management: Gestión de contenidos
+        cms: Gestión de contenidos
+        enabled: Activo
+        blocks_header: Bloques
+        blocks_subheader: Gestiona tus bloques
+        text_block: Bloque de texto
+        html_block: Bloque HTML
+        image_block: Bloque de imagen
+        pages_header: Página
+        pages_subheader: Gestiona tus páginas
+        products: Productos
+        page_related_products: Productos relacionados de página
+        name: Nombre
+        slug: Slug
+        meta_keywords: Meta keywords
+        meta_description: Meta description
+        content: Contenido
+        faq: FAQ
+        code: Código
+        contents: Contenidos
+        images: Imágenes
+        image: Imagen
+        link: Link
+        faq_header: FAQ
+        faq_subheader: Gestionar preguntas frequentes
+        frequently_asked_questions: Preguntas prequentes
+        question: Pregunta
+        answer: Respuesta
+        sections: Secciones
+        sections_header: Secciones
+        sections_subheader: Gestiona tus secciones
+        position: Posición
+ctic:
+    ui:
+        shop_now: Comprar Ahora
+ctic_bridge_bitbag_cms_plugin:
+    ui:
+        page: Página
+        cover: Portada
+        taxon: Categoría
+        block: Bloque
+        name: Nombre
+        home: Home
+        homes: Home
+        home_header: Home
+        home_subheader: Gestiona tus home
+        enabled: Activado
+        channel: Canal
+        landing: Landing
+        landings: Landings
+        landings_header: Landings
+        landings_subheader: Gestiona tus landings
+        landingelement: Elemento de la landing
+        landingelementadd: Añadir elemento de la landing
+        landingelementdelete: Eliminar elemento de la landing
+        landingelementcointainer: Contenedor - Elemento de la landing
+        landingelementcointaineradd: Contenedor - Añadir elemento de la landing
+        landingelementcointainerdelete: Contenedor - Delete landing element
+        landinghelp: La posición determina el orden de los elementos. Las columnas el tamaño de cada uno. Hay 16 columnas por fila.
+        landingpreview: Previsualización
+        refreshlandingpreview: Refrescar previsualización
+        errorrefreshlandingpreview: Error al refrescar previsualixación
+        is_container: Es un contenedor
+        position: Posición
+        num_columns: Número de columnas
+        slider_block: Slider
+        animationchoice: Animación
+        animationchoiceplaceholder: Seleccionar animación
+        select: Selecciona una opción
+        sliderelement:
+            name: Nombre
+            position: Posición
+            title: Título
+            title_animation: Animación del título
+            main_phrase: Frase principal
+            main_phrase_animation: Animación de la frase principal
+            link: Enlace
+            link_animation: Animación del enlace
+            link_text: Texto del enlace
+            image: Imagen
+            images_help: El sistema actual solo coge la última imagen en cada slide
+        slider:
+            accessibility: Accesibilidad
+            accessibility_help: Habilita los tabs y las flechas de navegación
+            adaptive_height: Altura adaptativa
+            adaptive_height_help: Habilita la altura adaptativa para un solo slider horizontal
+            autoplay: Autoplay
+            autoplay_help: Habilita el autoplay
+            autoplay_speed: Velocidad de autoplay
+            autoplay_speed_help: Velocidad de autoplay en milisegundos (Por defecto 3000)
+            arrows: Flechas
+            arrows_help: Anterior/Próxima flechas
+            center_mode: Modo central
+            center_mode_help: Habilita la vista central con una vista parcial de la slide anterior/siguiente. Usado en conjunto con el parámetro slides para ver
+            center_padding: Padding central
+            center_padding_help: El padding en modo central (En px o %) (Por defecto 50px)
+            dots: Puntos
+            dots_help: Hablilita los puntos identificativos de slide
+            draggable: Arrastrable
+            draggable_help: Habilita la posibilidad de arrastrar con el ratón
+            fade: Descolorarse
+            fade_help: Habilita la descoloración
+            infinite: Infinito
+            infinite_help: Habilita los slides infinitos
+            pause_on_focus: Pausa al hacer focus
+            pause_on_focus_help: Pausa el autoplay al hacer focus
+            pause_on_hover: Pausa al pasar por encima
+            pause_on_hover_help: Pausa el autoplay al pasar por encima
+            pause_on_dots_hover: Pausa al pasar por encima de los puntos
+            pause_on_dots_hover_help: Pausa el autoplay cuando se está encima de un punto
+            rows: Filas
+            rows_help: Configurar el parámetro en más de 1 inicializa el modo celdas.
+            slides_per_row: Slides por fila
+            slides_per_row_help: Con el modo celdas habilitado, este parámetro indica el número de slides por fila (Por defecto 1)
+            slides_to_show: Slides a mostrar
+            slides_to_show_help: Número de slides que se muestran (Por defecto 1)
+            slides_to_scroll: Slides por scroll
+            slides_to_scroll_help: Número de slides por scroll (Por defecto 1)
+            speed: Velocidad
+            speed_help: Velocidad de pase de slide (Por defecto 300)
+            swipe: Swipe
+            swipe_help: Habilita el swipe (Mobile)
+            swipe_to_slide: Swipe hacia slide
+            swipe_to_slide_help: Permitir a los usuarios arrastrar o deslizar directamente a una diapositiva, independientemente de los slides por scroll
+            touch_move: Mover por toque
+            touch_move_help: Habilita el cambio de slide por toque
+            variable_width: Ancho variable
+            variable_width_help: Ancho variable de slide
+            vertical: Vertical
+            vertical_help: Habilita el modo slide en vertical
+            vertical_swiping: Vertical swipe
+            vertical_swiping_help: Habilita el swipe en vertical
+            rtl: De derecha a izquierda
+            rtl_help: Modifica la dirección de los slides de derecha a izquierda
+            wait_for_animate: Esperar por animación
+            wait_for_animate_help: Ignora las peticiones de cambio de slide mientras haya una animación de slide
+            blocksliderelement: Elementos del block slider
+            blocksliderelementadd: Añadir elemento del slider
+            blocksliderelementdelete: Eliminar elmento del slider

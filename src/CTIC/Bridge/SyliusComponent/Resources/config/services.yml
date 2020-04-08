@@ -1,0 +1,10 @@
+services:
+    sylius.locale_converter:
+        class: CTIC\Bridge\SyliusComponent\Locale\Converter\LocaleConverter
+        arguments: ['@sylius.context.locale']
+
+# override target entities
+doctrine:
+    orm:
+        resolve_target_entities:
+            Sylius\Component\Locale\Model\Locale: CTIC\Bridge\SyliusComponent\Locale\Model\Locale

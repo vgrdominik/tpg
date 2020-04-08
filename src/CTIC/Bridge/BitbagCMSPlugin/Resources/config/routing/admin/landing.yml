@@ -1,0 +1,57 @@
+ctic_bridge_bitbag_cms_plugin_admin_landing:
+    resource: |
+        alias: ctic_bridge_bitbag_cms_plugin.landing
+        section: admin
+        templates: CTICBridgeBitbagCMSPlugin:Landing
+        except: ['show']
+        redirect: update
+        grid: ctic_bridge_bitbag_cms_plugin_admin_landing
+        permission: true
+        vars:
+            all:
+                header: ctic_bridge_bitbag_cms_plugin.ui.landings_header
+                subheader: ctic_bridge_bitbag_cms_plugin.ui.landings_subheader
+                templates:
+                    form: CTICBridgeBitbagCMSPlugin:Landing:Crud/_form.html.twig
+            index:
+                icon: block layout
+    type: sylius.resource
+
+ctic_bridge_bitbag_cms_plugin_admin_landing_create:
+    path: /landings/new
+    methods: [GET, POST]
+    defaults:
+        _controller: ctic_bridge_bitbag_cms_plugin.controller.landing:createAction
+        _sylius:
+            section: admin
+            template: CTICBridgeBitbagCMSPlugin:Landing:create.html.twig
+            redirect:
+                route: ctic_bridge_bitbag_cms_plugin_admin_landing_update
+                parameters: ~
+            permission: true
+            vars:
+                header: ctic_bridge_bitbag_cms_plugin.ui.landings_header
+                subheader: ctic_bridge_bitbag_cms_plugin.ui.landings_subheader
+                templates:
+                    form: CTICBridgeBitbagCMSPlugin:Landing:Crud/_form.html.twig
+
+ctic_bridge_bitbag_cms_plugin_admin_landing_preview:
+    path: /landings/preview/{id}
+    methods: [POST, PUT]
+    controller: ctic_bridge_bitbag_cms_plugin.controller.landing:previewAction
+    defaults:
+        id: NULL
+
+ctic_bridget_bitbag_cms_plugin_admin_ajax_landing_by_name_phrase:
+    path: /ajax/landings/search
+    methods: [GET]
+    defaults:
+        _format: json
+        _controller: ctic_bridge_bitbag_cms_plugin.controller.landing:searchAction
+
+ctic_bridge_bitbag_cms_plugin_admin_ajax_landing_by_code:
+    path: /ajax/landings/get
+    methods: [GET]
+    defaults:
+        _format: json
+        _controller: ctic_bridge_bitbag_cms_plugin.controller.landing:getAction

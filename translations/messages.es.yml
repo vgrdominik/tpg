@@ -1,0 +1,73 @@
+ctic:
+    radge:
+        menu:
+            campaign: Campaña
+            videos: Videos
+            schedule: Programación
+            rol: Rol
+    ui:
+        taxons: Categoríes
+        sku: Referència
+        filter: Filtrar
+        search: Buscar
+        cancel: Cancelar
+        apply: Aplicar
+        shop_now: Comprar Ahora
+        top_phrase: Envío gratis en pedidos superiores a 50EUR
+        your_store: Radge
+        faqs: Preguntas frequentes
+        your_cart: Tu Carrito
+        help: Ayuda
+        track_order: Seguimiento de pedidos
+        returns: Devoluciones
+        shipping: Envío
+        get_in_touch: Estamos en contacto
+        get_in_touch_phrase: ¿Alguna pregunta? Puedes usar nuestras redes sociales o nuestro contacto en ryu@radge.cat
+        link_sn_facebook: https://www.facebook.com/chanzaStore
+        link_sn_instagram: https://www.instagram.com/chanzastore
+        link_sn_twitter: https://www.twitter.com
+        newsletter: Newsletter
+        subscribe: Suscribirse
+        remove: Eliminar
+        product_options: Opciones
+        product_attributes: Atributos
+        product_price: Precio
+        condiciones: Condiciones de Venta
+        privacidad: Privacidad de Datos
+        proximamente: Próximamente.
+        aceptar_condiciones: Al continuar estas aceptado las condiciones de venta de Radge. Las puedes consultar en el siguiente enlace
+        cookies_privacy: Este sitio web utiliza cookies. Si continúas navegando consideramos que aceptas su uso.
+        cookies_privacy_button: Más información
+        facebook:
+            app_id: 269763246989784
+        page: Página
+
+sylius:
+    form:
+        login:
+            username: Nombre de usuario
+            password: Contraseña
+            remember_me: Recuérdame
+    ui:
+        login: Login
+        logout: Logout
+        add_your_review: Envia tu reseña
+        your_shopping_cart: Tu carrito
+        edit_your_items_apply_coupon_or_proceed_to_the_checkout: Edita tus artículos, aplica un cupón o procede con el pago
+        you_may_also_like: También te podría gustar
+        call_us: 646 615 577
+        access_your_store_account_or_create_a_new_one: Accede a tu cuenta o crea una nueva
+        forgot_password: ¿Has olvidado tu contraseña?
+        if_you_have_an_account_sign_in_with_your_email_address: Si tienes una cuenta, inicia sesión con tu correo electrónico.
+
+bitbag_sylius_elasticsearch_plugin:
+    ui:
+        filter: Filtrar
+        min_price: Mínimo
+        max_price: Máximo
+
+fos:
+    import_export:
+        ui:
+            import: Importar
+            import_data: Importar datos

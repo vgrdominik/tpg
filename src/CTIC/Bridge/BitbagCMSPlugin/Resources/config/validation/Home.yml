@@ -1,0 +1,10 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\Home:
+    properties:
+        landing:
+            - NotBlank:
+                message: 'ctic_bridge_bitbag_cms_plugin.home.name.not_blank'
+                groups: ['cticbridgebitbag']
+        channel:
+            - NotBlank:
+                message: 'ctic_bridge_bitbag_cms_plugin.home.name.not_blank'
+                groups: ['cticbridgebitbag']

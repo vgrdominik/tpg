@@ -1,0 +1,123 @@
+imports:
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/services/form.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/services/twig.yml" }
+
+services:
+# add post persist landing and landing element event
+    CTIC\Bridge\BitbagCMSPlugin\EventListener\BlockTranslationEventListener:
+        tags:
+            - { name: doctrine.event_listener, event: postFlush }
+            - { name: doctrine.event_listener, event: prePersist }
+
+    CTIC\Bridge\BitbagCMSPlugin\EventListener\BlockSliderEventListener:
+        tags:
+            - { name: doctrine.event_listener, event: postFlush }
+            - { name: doctrine.event_listener, event: prePersist }
+
+    CTIC\Bridge\BitbagCMSPlugin\EventListener\LandingEventListener:
+        tags:
+            - { name: doctrine.event_listener, event: postFlush }
+            - { name: doctrine.event_listener, event: prePersist }
+
+    CTIC\Bridge\BitbagCMSPlugin\EventListener\LandingElementEventListener:
+        tags:
+            - { name: doctrine.event_listener, event: postFlush }
+            - { name: doctrine.event_listener, event: prePersist }
+
+# add image upload listener
+    ctic_bridge_bitbag_cms_plugin.event_listener.block_slider_upload:
+        class: CTIC\Bridge\BitbagCMSPlugin\EventListener\BlockSliderElementImagesUploadListener
+        parent: sylius.listener.images_upload
+        autowire: true
+        autoconfigure: false
+        public: false
+        tags:
+            - { name: kernel.event_listener, event: bitbag_sylius_cms_plugin.block.pre_create, method: uploadImages }
+            - { name: kernel.event_listener, event: bitbag_sylius_cms_plugin.block.pre_update, method: uploadImages }
+
+    ctic_bridge_bitbag_cms_plugin.event_listener.taxon_cover_upload:
+        class: CTIC\Bridge\BitbagCMSPlugin\EventListener\TaxonCoverUploadListener
+        arguments:
+            - "@sylius.image_uploader"
+        tags:
+            - { name: kernel.event_listener, event: sylius.taxon.pre_create, method: uploadImage }
+            - { name: kernel.event_listener, event: sylius.taxon.pre_update, method: uploadImage }
+
+# add admin options to menu
+    ctic_bridge_bitbag_cms_plugin.menu.content_management:
+        class: CTIC\Bridge\BitbagCMSPlugin\Menu\ContentManagementMenuBuilder
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.main, method: buildMenu }
+
+# form extensions
+    ctic.bridge.bitbagcmsplugin.form.type.attribute:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\AttributeTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\ProductBundle\Form\Type\ProductAttributeType }
+
+    ctic.bridge.bitbagcmsplugin.form.type.taxon:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\TaxonTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\TaxonomyBundle\Form\Type\TaxonType }
+
+    ctic.bridge.bitbagcmsplugin.form.type.frequentlyaskedquestion:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\FrequentlyAskedQuestionTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: BitBag\SyliusCmsPlugin\Form\Type\FrequentlyAskedQuestionType }
+
+    ctic.bridge.bitbagcmsplugin.form.datatransformer.landingtransformer:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\DataTransformer\LandingTransformer
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+    ctic.bridge.bitbagcmsplugin.form.type.selectattributevaluetranslations:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\SelectAttributeValueTranslationsTypeExtension
+        arguments:
+            - "@sylius.translation_locale_provider"
+            - "@ctic.bridge.bitbagcmsplugin.form.datatransformer.landingtransformer"
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\AttributeBundle\Form\Type\AttributeType\Configuration\SelectAttributeValueTranslationsType }
+
+    ctic.bridge.bitbagcmsplugin.form.type.page:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\PageTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: BitBag\SyliusCmsPlugin\Form\Type\PageType }
+
+    ctic.bridge.bitbagcmsplugin.form.type.block:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\BlockTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: BitBag\SyliusCmsPlugin\Form\Type\BlockType }
+
+    ctic.bridge.bitbagcmsplugin.form.type.translation.htmlblock:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\Translation\CTICHtmlBlockTranslationType
+        arguments:
+            - "%bitbag_sylius_cms_plugin.model.block.class%"
+            - ['bitbag']
+        tags:
+            - { name: form.type_extension, extended_type: BitBag\SyliusCmsPlugin\Form\Type\Translation\HtmlBlockTranslationType }
+
+    ctic.bridge.bitbagcmsplugin.form.type.translation.page:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\Translation\CTICPageTranslationType
+        arguments:
+            - "%bitbag_sylius_cms_plugin.model.page_translation.class%"
+            - ['bitbag']
+        tags:
+            - { name: form.type_extension, extended_type: BitBag\SyliusCmsPlugin\Form\Type\Translation\PageTranslationType }
+
+    ctic.bridge.bitbagcmsplugin.form.type.translation.frequentlyaskedquestion:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\Translation\CTICFrequentlyAskedQuestionTranslationType
+        arguments:
+            - "%bitbag_sylius_cms_plugin.model.frequently_asked_question_translation.class%"
+            - ['bitbag']
+        tags:
+            - { name: form.type_extension, extended_type: BitBag\SyliusCmsPlugin\Form\Type\Translation\FrequentlyAskedQuestionTranslationType }
+
+# override block template resolver
+    bitbag_sylius_cms_plugin.resolver.block_template:
+        class: CTIC\Bridge\BitbagCMSPlugin\Resolver\BlockTemplateResolver
+
+# override target entities
+doctrine:
+    orm:
+        resolve_target_entities:
+            BitBag\SyliusCmsPlugin\Entity\BlockTranslation: CTIC\Bridge\BitbagCMSPlugin\Entity\BlockTranslation

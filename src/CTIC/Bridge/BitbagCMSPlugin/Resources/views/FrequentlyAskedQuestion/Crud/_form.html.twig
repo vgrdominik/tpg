@@ -1,0 +1,17 @@
+{% from '@SyliusAdmin/Macro/translationForm.html.twig' import translationForm %}
+{% form_theme form '@CTICBridgeBitbagCMSPlugin/Form/theme.html.twig' %}
+
+{{ form_errors(form) }}
+
+<div class="ui segment">
+    <div class="two fields">
+        {{ form_row(form.code) }}
+        {{ form_row(form.position) }}
+    </div>
+    <div class="two fields">
+        {{ form_row(form.enabled) }}
+        {{ form_row(form.landing) }}
+    </div>
+</div>
+
+{{ translationForm(form.translations) }}

@@ -1,0 +1,81 @@
+services:
+    ctic_bridge_bitbag_cms_plugin.form.type.homr:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\HomeType
+        arguments:
+            - "%ctic_bridge_bitbag_cms_plugin.model.home.class%"
+            - ['cticbridgebitbag']
+        tags:
+            - { name: form.type }
+
+    ctic_bridge_bitbag_cms_plugin.form.type.landing:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\LandingType
+        arguments:
+            - "%ctic_bridge_bitbag_cms_plugin.model.landing.class%"
+            - ['cticbridgebitbag']
+        tags:
+            - { name: form.type }
+
+    ctic_bridge_bitbag_cms_plugin.form.type.landingelement:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\LandingElementType
+        arguments:
+            - "%ctic_bridge_bitbag_cms_plugin.model.landingelement.class%"
+            - ['cticbridgebitbag']
+        tags:
+            - { name: form.type }
+
+    ctic_bridge_bitbag_cms_plugin.form.type.landingelementcontainer:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\LandingElementContainerType
+        arguments:
+            - "%ctic_bridge_bitbag_cms_plugin.model.landingelement.class%"
+            - ['cticbridgebitbag']
+        tags:
+            - { name: form.type }
+
+    ctic_bridge_bitbag_cms_plugin.form.type.translation.slider_block:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\Translation\BlockSliderTranslationType
+        arguments:
+            - "%bitbag_sylius_cms_plugin.model.block_translation.class%"
+        tags:
+            - { name: form.type }
+
+    ctic_bridge_bitbag_cms_plugin.form.type.block_slider:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\BlockSliderType
+        arguments:
+            - CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSlider
+            - ['cticbridgebitbag']
+        tags:
+            - { name: form.type }
+
+    ctic_bridge_bitbag_cms_plugin.form.type.translation.taxon_block:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\Translation\BlockTaxonTranslationType
+        arguments:
+            - "%bitbag_sylius_cms_plugin.model.block_translation.class%"
+        tags:
+            - { name: form.type }
+
+    ctic_bridge_bitbag_cms_plugin.form.type.block_sliderelement:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\BlockSliderElementType
+        arguments:
+            - CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderElement
+            - ['cticbridgebitbag']
+        tags:
+            - { name: form.type }
+
+    ctic_bridge_bitbag_cms_plugin.form.type.animationchoice:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\AnimationChoiceType
+        tags:
+            - { name: form.type }
+
+    ctic_bridge_bitbag_cms_plugin.form.type.block_sliderelementimage:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\BlockSliderElementImageType
+        tags:
+            - { name: form.type }
+        arguments: ['%ctic_bridge_bitbag_cms_plugin.model.sliderelementimage.class%']
+
+    ctic_bridge_bitbag_cms_plugin.form.type.taxon_cover:
+        class: CTIC\Bridge\BitbagCMSPlugin\Form\Type\TaxonCoverType
+        arguments:
+            - CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonCover
+            - ['cticbridgebitbag']
+        tags:
+            - { name: form.type }

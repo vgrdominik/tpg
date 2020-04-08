@@ -1,0 +1,10 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\ProductAttribute:
+    type: mappedSuperclass
+    table: sylius_product_attribute
+    manyToOne:
+        landing:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Landing
+            joinColumns:
+                landing_id:
+                    referencedColumnName: id
+                    nullable: true

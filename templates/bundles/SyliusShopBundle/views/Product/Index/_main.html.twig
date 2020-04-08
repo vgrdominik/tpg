@@ -1,0 +1,32 @@
+{% import '@SyliusUi/Macro/messages.html.twig' as messages %}
+{% import '@SyliusUi/Macro/pagination.html.twig' as pagination %}
+
+{% include '@SyliusShop/Product/Index/_search.html.twig' %}
+
+<div class="ui clearing hidden divider"></div>
+
+{{ sonata_block_render_event('sylius.shop.product.index.before_list', {'products': products}) }}
+
+<div class="container center-layer">
+    {% if products|length > 0 %}
+        <div class="row isotope-grid">
+
+            {% for product in products %}
+                {% include '@SyliusShop/Product/_box.html.twig' %}
+            {% endfor %}
+
+            {{ sonata_block_render_event('sylius.shop.product.index.before_pagination', {'products': products}) }}
+        </div>
+
+        <div class="sui">
+            {{ pagination.simple(products) }}
+        </div>
+    {% else %}
+        <div class="row isotope-grid p-b-100">
+            <div class="sui">
+                {{ messages.info('sylius.ui.no_results_to_display') }}
+            </div>
+        </div>
+    {% endif %}
+    <br>
+</div>

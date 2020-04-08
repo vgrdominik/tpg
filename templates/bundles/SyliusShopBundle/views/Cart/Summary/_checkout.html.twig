@@ -1,0 +1,19 @@
+<div class="w-full m-t-10">
+    <button type="button"  data-url="{{ path('sylius_shop_checkout_start') }}" id="checkout-btn" class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+        <i class="check icon"></i> {{ 'sylius.ui.checkout'|trans }}
+    </button>
+</div>
+
+<script type="application/javascript">
+
+    function checkoutBtnClick()
+    {
+        window.location = document.getElementById('checkout-btn').dataset.url;
+    }
+
+    if (document.addEventListener) {                // For all major browsers, except IE 8 and earlier
+        document.getElementById('checkout-btn').addEventListener("click", checkoutBtnClick);
+    } else if (document.attachEvent) {              // For IE 8 and earlier versions
+        document.getElementById('checkout-btn').attachEvent("onclick", checkoutBtnClick);
+    }
+</script>

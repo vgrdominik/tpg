@@ -1,0 +1,10 @@
+{% if locales|length > 1 %}
+    <a href="#" class="flex-c-m trans-04 p-lr-25 underlined">{{ active|sylius_locale_name }}</a>
+    {% for code in locales %}
+        {% if code is not same as(active) %}
+            <a href="{{ path('sylius_shop_switch_locale', {'code': code}) }}" class="flex-c-m trans-04 p-lr-25">
+                {{ code|sylius_locale_name }}
+            </a>
+        {% endif %}
+    {% endfor %}
+{% endif %}

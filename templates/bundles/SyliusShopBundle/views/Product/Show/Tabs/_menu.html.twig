@@ -1,0 +1,9 @@
+<div class="ui top attached large tabular menu">
+    <div class="center-layer">
+        <a class="item active float-l" data-tab="details">{{ 'sylius.ui.details'|trans }}</a>
+        {% if product.attributes|length > 0 %}
+            <a class="item float-l" data-tab="attributes">{{ 'sylius.ui.attributes'|trans }}</a>
+        {% endif %}
+        <a class="item float-l" data-tab="reviews">{{ 'sylius.ui.reviews'|trans }} ({{ product.acceptedReviews|length }})</a>
+    </div>
+</div>

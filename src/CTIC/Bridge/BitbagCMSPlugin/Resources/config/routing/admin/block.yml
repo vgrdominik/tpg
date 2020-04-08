@@ -1,0 +1,79 @@
+bitbag_sylius_cms_plugin_admin_block:
+    resource: |
+        alias: bitbag_sylius_cms_plugin.block
+        section: admin
+        templates: BitBagSyliusCmsPlugin:Block
+        except: ['show']
+        redirect: update
+        grid: bitbag_sylius_cms_plugin_admin_block
+        permission: true
+        vars:
+            all:
+                header: bitbag_sylius_cms_plugin.ui.blocks_header
+                subheader: bitbag_sylius_cms_plugin.ui.blocks_subheader
+                templates:
+                    form: CTICBridgeBitbagCMSPlugin:Block:Crud/_form.html.twig
+            index:
+                icon: block layout
+            route:
+                parameters:
+                    code: $type
+    type: sylius.resource
+
+bitbag_sylius_cms_plugin_admin_block_create:
+    path: /blocks/new/{type}
+    methods: [GET, POST]
+    defaults:
+        _controller: bitbag_sylius_cms_plugin.controller.block:createAction
+        _sylius:
+            section: admin
+            template: CTICBridgeBitbagCMSPlugin:Block:create.html.twig
+            redirect:
+                route: bitbag_sylius_cms_plugin_admin_block_update
+                parameters: ~
+            permission: true
+            factory:
+                method: createWithType
+                arguments: [$type]
+            vars:
+                header: bitbag_sylius_cms_plugin.ui.blocks_header
+                subheader: bitbag_sylius_cms_plugin.ui.blocks_subheader
+                templates:
+                    form: CTICBridgeBitbagCMSPlugin:Block:Crud/_form.html.twig
+                route:
+                    parameters:
+                        type: $type
+    requirements:
+        type: text|html|image|slider|taxon
+
+bitbag_sylius_cms_plugin_admin_block_update:
+    path: /blocks/{id}/edit
+    methods: [GET, PUT]
+    defaults:
+        _controller: bitbag_sylius_cms_plugin.controller.block:updateAction
+        _sylius:
+            section: admin
+            template: CTICBridgeBitbagCMSPlugin:Block:update.html.twig
+            redirect:
+                route: bitbag_sylius_cms_plugin_admin_block_update
+                parameters: ~
+            permission: true
+            vars:
+                header: bitbag_sylius_cms_plugin.ui.blocks_header
+                subheader: bitbag_sylius_cms_plugin.ui.blocks_subheader
+                templates:
+                    form: CTICBridgeBitbagCMSPlugin:Block:Crud/_form.html.twig
+
+ctic_bridget_bitbag_cms_plugin_admin_ajax_block_by_name_phrase:
+    path: /ajax/blocks/search
+    methods: [GET]
+    defaults:
+        _format: json
+        _controller: bitbag_sylius_cms_plugin.controller.block:searchAction
+
+ctic_bridge_bitbag_cms_plugin_admin_ajax_block_by_code:
+    path: /ajax/blocks/get
+    methods: [GET]
+    defaults:
+        _format: json
+        _controller: bitbag_sylius_cms_plugin.controller.block:getAction

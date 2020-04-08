@@ -1,0 +1,83 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% form_theme form '@SyliusUi/Form/theme.html.twig' %}
+
+{% import '@SyliusUi/Macro/messages.html.twig' as messages %}
+{% import '@SyliusUi/Macro/headers.html.twig' as headers %}
+
+{% set header = 'sylius.ui.your_shopping_cart' %}
+
+{% block title %}{{ parent() }} | {{ header|trans }}{% endblock %}
+
+{% block flash_content %}
+{% endblock %}
+
+{% block content %}
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-color: #D3D3D3;">
+        <h1 class="ltext-105 cl0 txt-center">
+            {{ header|trans }}
+        </h1>
+        <h2 class="ltext-102 cl0 txt-center">
+            {{ 'sylius.ui.edit_your_items_apply_coupon_or_proceed_to_the_checkout'|trans }}
+        </h2>
+    </section>
+    {% if not cart.empty %}
+        {% include '@SyliusShop/Cart/Summary/_header.html.twig' %}
+
+        {{ sonata_block_render_event('sylius.shop.cart.summary.after_content_header', {'cart': cart}) }}
+
+        <div class="bg0 p-t-15 p-b-85">
+            <div class="container center-layer">
+                <div class="row sui">
+                    {% include '@SyliusShop/_flashes.html.twig' %}
+                    <div class="ui grid">
+                        <div class="ui sixteen wide column m-lr-auto m-b-50">
+                            {{ sonata_block_render_event('sylius.shop.cart.summary.before_items', {'cart': cart}) }}
+
+                            {% include '@SyliusShop/Cart/Summary/_items.html.twig' %}
+
+                            {{ sonata_block_render_event('sylius.shop.cart.summary.after_items', {'cart': cart}) }}
+                        </div>
+
+                        <div class="ui eleven wide column m-lr-auto m-b-50">
+                            <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm ui four column doubling stackable grid">
+                                <h4 class="ui sixteen wide column mtext-109 cl2 p-b-30">
+                                    {{ 'sylius.ui.summary'|trans }}
+                                </h4>
+
+                                <div class="ui ten wide column">
+                                    {{ sonata_block_render_event('sylius.shop.cart.summary.before_totals', {'cart': cart}) }}
+
+                                    {% include '@SyliusShop/Cart/Summary/_totals.html.twig' %}
+
+                                    {{ sonata_block_render_event('sylius.shop.cart.summary.after_totals', {'cart': cart}) }}
+                                </div>
+
+                                <div class="ui six wide column">
+                                    <p>
+                                        {{ 'ctic.ui.aceptar_condiciones'|trans }}
+                                        <a href="https://www.ciclotic.com/sobre-ciclotic.php#condiciones" target="_blank" title="{{ 'ctic.ui.condiciones'|trans }}" class="stext-107 cl7 hov-cl1 trans-04">
+                                            {{ 'ctic.ui.condiciones'|trans }}
+                                        </a>.
+                                    </p>
+                                    {% include '@SyliusShop/Cart/Summary/_checkout.html.twig' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{ sonata_block_render_event('sylius.shop.cart.summary.before_suggestions', {'cart': cart}) }}
+
+                {% include '@SyliusShop/Cart/Summary/_suggestions.html.twig' %}
+            </div>
+        </div>
+    {% else %}
+        <div class="container center-layer">
+            <div class="sui">
+                {% include '@SyliusShop/_flashes.html.twig' %}
+                {{ messages.info('sylius.ui.your_cart_is_empty') }}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderElementImage:
+    properties:
+        file:
+            - Image:
+                groups: ['cticbridgebitbag']
+                maxHeight: 2500
+                maxSize: 10240000
+                maxWidth: 2500
+                mimeTypes:
+                  - "image/png"
+                  - "image/jpg"
+                  - "image/jpeg"
+                  - "image/gif"
+                mimeTypesMessage: 'This file format is not allowed. Please use PNG, JPG or GIF files.'
+                minHeight: 100
+                minWidth: 100

@@ -1,0 +1,6 @@
+sylius_grid:
+    grids:
+        bitbag_sylius_cms_plugin_admin_block:
+            fields:
+                sections:
+                     enabled: false

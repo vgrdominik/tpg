@@ -1,0 +1,12 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderElementImage:
+    type: entity
+    table: ctic_cms_block_sliderelementimage
+    manyToOne:
+        owner:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderElement
+            inversedBy: images
+            joinColumn:
+                name: owner_id
+                referencedColumnName: id
+                nullable: false
+                onDelete: CASCADE

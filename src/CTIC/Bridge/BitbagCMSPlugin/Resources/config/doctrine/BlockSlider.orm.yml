@@ -1,0 +1,123 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSlider:
+    type: entity
+    table: ctic_cms_block_slider
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        accessibility:
+            column: accessibility
+            type: boolean
+            nullable: false
+        adaptiveHeight:
+            column: adaptive_height
+            type: boolean
+            nullable: false
+        autoplay:
+            column: autoplay
+            type: boolean
+            nullable: false
+        autoplaySpeed:
+            column: autoplay_speed
+            type: integer
+        arrows:
+            column: arrows
+            type: boolean
+            nullable: false
+        centerMode:
+            column: center_mode
+            type: boolean
+            nullable: false
+        centerPadding:
+            column: center_padding
+            type: string
+        dots:
+            column: dots
+            type: boolean
+            nullable: false
+        draggable:
+            column: draggable
+            type: boolean
+            nullable: false
+        fade:
+            column: fade
+            type: boolean
+            nullable: false
+        infinite:
+            column: infinite
+            type: boolean
+            nullable: false
+        pauseOnFocus:
+            column: pause_on_focus
+            type: boolean
+            nullable: false
+        pauseOnHover:
+            column: pause_on_hover
+            type: boolean
+            nullable: false
+        pauseOnDotsHover:
+            column: pause_on_dots_hover
+            type: boolean
+            nullable: false
+        rows:
+            column: slide_rows
+            type: integer
+        slidesPerRow:
+            column: slides_per_row
+            type: integer
+        slidesToShow:
+            column: slides_to_show
+            type: integer
+        slidesToScroll:
+            column: slides_to_scroll
+            type: integer
+        speed:
+            column: speed
+            type: integer
+        swipe:
+            column: swipe
+            type: boolean
+            nullable: false
+        swipeToSlide:
+            column: swipe_to_slide
+            type: boolean
+        touchMove:
+            column: touch_move
+            type: boolean
+            nullable: false
+        variableWidth:
+            column: variable_width
+            type: boolean
+            nullable: false
+        vertical:
+            column: vertical
+            type: boolean
+            nullable: false
+        verticalSwiping:
+            column: vertical_swiping
+            type: boolean
+            nullable: false
+        rtl:
+            column: rtl
+            type: boolean
+            nullable: false
+        waitForAnimate:
+            column: wait_for_animate
+            type: boolean
+            nullable: false
+    oneToOne:
+        slideOwner:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\BlockTranslation
+            inversedBy: slider
+            cascade: [ALL]
+            joinColumn:
+                name: owner_id
+                referencedColumnName: id
+    oneToMany:
+        elements:
+            targetEntity: BlockSliderElement
+            mappedBy: owner
+            cascade: ["persist", "remove"]

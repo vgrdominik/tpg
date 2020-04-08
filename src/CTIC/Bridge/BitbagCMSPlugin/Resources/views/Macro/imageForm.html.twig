@@ -1,0 +1,8 @@
+{% macro imageForm(field, resource) %}
+    {% import '@BitBagSyliusCmsPlugin/Macro/imageWidget.html.twig' as image %}
+
+    <div class="ui segment">
+        <h3 class="ui dividing header">{{ form_label(field) }}</h3>
+        {{ image.imageWidget(field) }}
+    </div>
+{% endmacro %}

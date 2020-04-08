@@ -1,0 +1,25 @@
+<div class="sui">
+    <div class="ui grid">
+        {% for element in landing.elements %}
+            <div class="ui {{ ctic_bitbag_cms_plugin_number_column(element.columns|number_format) }} wide column {% if element.block is not null and element.block.type == 'slider' %}p-0-lg{% endif %}">
+                {% if element.isContainer == TRUE %}
+                    <div class="ui container">
+                        <div class="ui four doubling stackable grid">
+                            {% for elementChildren in element.children %}
+                                <div class="ui {{ ctic_bitbag_cms_plugin_number_column(elementChildren.columns|number_format) }} wide column">
+                                    {% if elementChildren.block is not null %}
+                                        {{ bitbag_cms_render_block(elementChildren.block.code) }}
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    {% if element.block is not null %}
+                        {{ bitbag_cms_render_block(element.block.code) }}
+                    {% endif %}
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

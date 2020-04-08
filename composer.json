@@ -1,9 +1,12 @@
 {
-    "keywords": ["symfony", "sylius", "distribution", "ecommerce", "cart", "shopping"],
+    "keywords": ["tpg", "symfony", "sylius", "distribution", "ecommerce", "cart", "shopping"],
     "type": "project",
-    "license": "proprietary",
-    "homepage": "https://sylius.com",
+    "license": "public domain or sylius license",
+    "homepage": "https://twitter.com/search?q=%23tpg&src=typed_query",
     "authors": [
+        {
+            "name": "Ryu"
+        },
         {
             "name": "Paweł Jędrzejewski"
         },
@@ -14,9 +17,21 @@
             "name": "Community contributions"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vgrdominik/Sylius"
+        }
+    ],
     "require": {
         "php": "^7.3",
-        "vgrdominik/sylius": "~1.7.0@rc",
+        "bitbag/cms-plugin": "^2.3",
+        "bitbag/elasticsearch-plugin": "^1.5",
+        "enqueue/fs": "^0.8.24",
+        "friendsofsylius/sylius-import-export-plugin": "^0.18.0",
+        "portphp/csv": "^1.1",
+        "portphp/excel": "^1.1",
+        "sylius/sylius": "~1.7.0@rc",
         "symfony/dotenv": "^4.4",
         "symfony/flex": "^1.2"
     },
@@ -49,15 +64,16 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+
+
+            "Tpg\\": "src/Tpg/",
+            "CTIC\\": "src/CTIC/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/",
-
-
-            "Tpg\\": "src/Tpg/"
+            "App\\Tests\\": "tests/"
         },
         "classmap": ["src/Kernel.php"]
     },

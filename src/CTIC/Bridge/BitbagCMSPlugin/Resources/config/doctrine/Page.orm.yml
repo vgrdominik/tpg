@@ -1,0 +1,16 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\Page:
+    type: mappedSuperclass
+    table: bitbag_cms_page
+    oneToMany:
+        blocks:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\BlockTranslation
+            mappedBy: page
+            fetch: EXTRA_LAZY
+            cascade: [ALL]
+    manyToOne:
+        landing:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Landing
+            joinColumns:
+                landing_id:
+                    referencedColumnName: id
+                    nullable: true

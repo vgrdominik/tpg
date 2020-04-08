@@ -1,0 +1,14 @@
+sylius:
+    ui:
+        bulk_actions: Acciones masivas
+        option: Opción
+    form:
+        promotion_rule:
+            taxonomy: Categoría
+        channel:
+            taxonomies: Categorías
+    menu:
+        admin:
+            main:
+                catalog:
+                    taxons: Categorías

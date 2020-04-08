@@ -1,0 +1,58 @@
+{% form_theme form '@CTICBridgeBitbagCMSPlugin/Form/theme.html.twig' %}
+
+<div class="ui grid">
+    {{ form_errors(form) }}
+    <div class="ui sixteen wide column">
+        <p>
+            {{ 'ctic_bridge_bitbag_cms_plugin.ui.landinghelp'|trans }}
+        </p>
+    </div>
+    <div class="ui eight wide column">
+        {{ form_row(form.name) }}
+    </div>
+    <div class="ui sixteen wide column">
+        &nbsp;
+    </div>
+    {{ form_row(form.elements) }}
+</div>
+
+<div class="ui grid">
+    <div class="ui sixteen wide column">
+        <p>
+            {{ 'ctic_bridge_bitbag_cms_plugin.ui.landingpreview'|trans }}
+        </p>
+        <p>
+            <a href="#" id="preview" class="ui labeled icon button">
+                <i class="spinner icon"></i>
+                {{ 'ctic_bridge_bitbag_cms_plugin.ui.refreshlandingpreview'|trans }}
+            </a>
+        </p>
+    </div>
+    <div id="landingPreview" class="ui sixteen wide column">
+        {{ ctic_bridge_bitbag_render_landing(resource) }}
+    </div>
+</div>
+
+<script type="application/javascript">
+    document.addEventListener('DOMContentLoaded', function(){
+        $('#preview').on('click', function(e){
+            e.preventDefault();
+
+            $('#landingPreview').html('<i class="huge spinner loading icon"></i>');
+
+            var formData = $('form[name="ctic_bridge_bitbag_block_landing"]').serializeArray();
+
+            $.ajax({
+                url: '{{ path('ctic_bridge_bitbag_cms_plugin_admin_landing_preview', {'id': resource.id}) }}',
+                method: 'POST',
+                data: formData
+            })
+                .done(function(result){
+                    $('#landingPreview').html(result);
+                })
+                .fail(function(){
+                    $('#landingPreview').html("<p>{{ 'ctic_bridge_bitbag_cms_plugin.ui.errorrefreshlandingpreview'|trans }}</p>");
+                });
+        });
+    }, false);
+</script>

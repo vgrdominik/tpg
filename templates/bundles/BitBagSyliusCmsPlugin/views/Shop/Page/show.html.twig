@@ -1,0 +1,61 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block metatags %}
+    {% if page.metaKeywords is not empty %}
+        <meta name="keywords" content="{{ page.metaKeywords }}"/>
+    {% endif %}
+    {% if page.metaDescription is not empty %}
+        <meta name="description" content="{{ page.metaDescription }}"/>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-color: #D3D3D3;">
+        <h1 class="ltext-105 cl0 txt-center">
+            {{ page.name }}
+        </h1>
+    </section>
+
+    {% if page.landing is not null %}
+        {{ render(url('ctic_bridge_bitbag_cms_plugin_shop_preview_render', {'id': page.landing.id})) }}
+    {% endif %}
+
+    <div class="bg0 m-t-20 p-b-20">
+        <div class="container center-layer">
+            <div class="flex-w flex-sb-m">
+                <div class="flex-w flex-l-m filter-tope-group m-tb-10">
+                    <a href="{{ path('sylius_shop_homepage') }}" class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5">{{ 'sylius.ui.home'|trans }}</a>
+                    <div class="divider"> / </div>
+                    <div class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5 how-active1 active section">{{ page.name }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container center-layer">
+        <div class="sui">
+            <div class="ui segment">
+                <h1 class="ui dividing header bitbag-page-name">{{ page.name }}</h1>
+
+                {% if page.image %}
+                    {% set path = '/media/image/'~page.image.path %}
+                    <img class="page-image ui fluid image" src="{{ path }}" alt="">
+                {% endif %}
+
+                <div class="bitbag-page-content">{{ page.content|raw }}</div>
+                <div class="ui dividing header"></div>
+                <div class="bitbag-page-sections">
+                    {% include '@BitBagSyliusCmsPlugin/Shop/Page/Show/_sections.html.twig' %}
+                </div>
+            </div>
+            {% if page.products|length > 0 %}
+                <h2>
+                    {{ 'bitbag_sylius_cms_plugin.ui.page_related_products'|trans }}
+                </h2>
+                <div class="bitbag-page-products">
+                    {% include '@SyliusShop/Product/_horizontalList.html.twig' with {'products': page.products} %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

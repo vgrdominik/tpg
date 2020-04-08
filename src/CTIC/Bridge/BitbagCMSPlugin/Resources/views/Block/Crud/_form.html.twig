@@ -1,0 +1,19 @@
+{% from '@BitBagSyliusCmsPlugin/Macro/translationForm.html.twig' import translationForm %}
+{% form_theme form '@CTICBridgeBitbagCMSPlugin/Form/theme.html.twig' %}
+
+<div class="ui two column stackable grid">
+    <div class="column">
+        <div class="ui segment">
+            {{ form_errors(form) }}
+            {{ form_row(form.code) }}
+            {{ form_row(form.enabled) }}
+            {{ form_row(form.products) }}
+        </div>
+    </div>
+</div>
+
+<div class="ui one column stackable grid">
+    <div class="column" id="ctic-block-slider">
+        {{ translationForm(form.translations, resource) }}
+    </div>
+</div>

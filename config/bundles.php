@@ -55,4 +55,22 @@ return [
     Nelmio\Alice\Bridge\Symfony\NelmioAliceBundle::class => ['dev' => true, 'test' => true, 'test_cached' => true],
     FriendsOfBehat\SymfonyExtension\Bundle\FriendsOfBehatSymfonyExtensionBundle::class => ['test' => true, 'test_cached' => true],
     Sylius\Behat\Application\SyliusTestPlugin\SyliusTestPlugin::class => ['test' => true, 'test_cached' => true],
+
+    FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
+    SitemapPlugin\SitemapPlugin::class => ['all' => true],
+
+    // BitBag
+    BitBag\SyliusCmsPlugin\BitBagSyliusCmsPlugin::class => ['all' => true],
+    FOS\ElasticaBundle\FOSElasticaBundle::class => ['all' => true],
+    BitBag\SyliusElasticsearchPlugin\BitBagSyliusElasticsearchPlugin::class => ['all' => true],
+
+    // Friends Of Sylius
+    FriendsOfSylius\SyliusImportExportPlugin\FOSSyliusImportExportPlugin::class => ['all' => true],
+
+
+    // OWN
+    CTIC\Bridge\BitbagCMSPlugin\CTICBridgeBitbagCMSPlugin::class => ['all' => true],
+    CTIC\Bridge\SyliusBundle\CTICBridgeSyliusBundle::class => ['all' => true],
+    CTIC\Bridge\SyliusComponent\CTICBridgeSyliusComponent::class => ['all' => true],
+    CTIC\Bridge\FOSImportExportPlugin\CTICBridgeFOSImportExportPlugin::class => ['all' => true],
 ];

@@ -1,0 +1,10 @@
+{% set image = block.translation.page.iamge %}
+<div class="col-md-12">
+    {% if image != '' %}
+        <img src="{{ image.path|imagine_filter('page') }}" alt="{{ block.translation.page.name }}">
+    {% endif %}
+
+    <a href="{{ path('bitbag_sylius_cms_plugin_shop_page_show', {'slug': block.translation.page.slug, '_locale': block.translation.taxon.translation.locale}) }}">
+        {{ block.translation.page.name }}
+    </a>
+</div>

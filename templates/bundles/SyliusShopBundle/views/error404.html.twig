@@ -1,0 +1,22 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block flash_content %}
+{% endblock %}
+
+{% block content %}
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-color: #D3D3D3;">
+        <h1 class="ltext-105 cl0 txt-center">
+            <div class="sui">
+                <img src="{{ asset('assets/shop/img/logo.png') }}" alt="Error 404" class="ui small image" />
+            </div>
+            <br/><br/>
+            {{ 'sylius.ui.the_page_you_are_looking_for_does_not_exist'|trans }}
+        </h1>
+    </section>
+
+    <div class="container center-layer">
+        <div class="sui">
+            {% include '@SyliusShop/_flashes.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

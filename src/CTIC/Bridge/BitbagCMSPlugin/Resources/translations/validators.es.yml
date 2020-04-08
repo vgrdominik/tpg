@@ -1,0 +1,25 @@
+ctic_bridge_bitbag_cms_plugin:
+    landing:
+        name:
+            unique: Ya hay otra landing con el mismo nombre
+            not_blank: El nombre no puede estar vacío
+            min_length: Como mínimo debe haber 2 carácteres
+            max_length: Como máximo puede haber 255 carácteres
+    landingelement:
+        position:
+            not_blank: La posición no puede estar vacía
+        columns:
+            not_blank: La propiedad columnas no puede estar vacía
+    home:
+        name:
+            not_blank: El nombre no puede estar vacío
+    slider:
+        accessibility:
+            not_blank: El campo accesibilidad no puede estar en blanco
+    sliderelement:
+        name:
+            not_blank: El nombre no puede estar vacío
+            min_length: Como mínimo debe haber 2 carácteres
+            max_length: Como máximo puede haber 250 carácteres
+        position:
+            not_blank: La posición no puede estar vacía

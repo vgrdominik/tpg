@@ -1,0 +1,36 @@
+ctic_bridge_bitbag_cms_plugin_admin_home:
+    resource: |
+        alias: ctic_bridge_bitbag_cms_plugin.home
+        section: admin
+        templates: CTICBridgeBitbagCMSPlugin:Home
+        except: ['show']
+        redirect: update
+        grid: ctic_bridge_bitbag_cms_plugin_admin_home
+        permission: true
+        vars:
+            all:
+                header: ctic_bridge_bitbag_cms_plugin.ui.home_header
+                subheader: ctic_bridge_bitbag_cms_plugin.ui.home_subheader
+                templates:
+                    form: CTICBridgeBitbagCMSPlugin:Home:Crud/_form.html.twig
+            index:
+                icon: block layout
+    type: sylius.resource
+
+ctic_bridge_bitbag_cms_plugin_admin_home_create:
+    path: /home/new
+    methods: [GET, POST]
+    defaults:
+        _controller: ctic_bridge_bitbag_cms_plugin.controller.home:createAction
+        _sylius:
+            section: admin
+            template: CTICBridgeBitbagCMSPlugin:Home:create.html.twig
+            redirect:
+                route: ctic_bridge_bitbag_cms_plugin_admin_home_update
+                parameters: ~
+            permission: true
+            vars:
+                header: ctic_bridge_bitbag_cms_plugin.ui.home_header
+                subheader: ctic_bridge_bitbag_cms_plugin.ui.home_subheader
+                templates:
+                    form: CTICBridgeBitbagCMSPlugin:Home:Crud/_form.html.twig

@@ -1,0 +1,5 @@
+ctic_bridge_bitbag_cms_plugin_shop_preview_render:
+    path: /landing/{id}
+    methods: [GET]
+    defaults:
+        _controller: ctic_bridge_bitbag_cms_plugin.controller.landing:renderPreviewAction

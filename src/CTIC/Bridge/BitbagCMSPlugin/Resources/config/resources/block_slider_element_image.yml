@@ -1,0 +1,7 @@
+sylius_resource:
+    resources:
+        ctic_bridge_bitbag_cms_plugin.sliderelementimage:
+            driver: doctrine/orm
+            classes:
+                model: CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSliderElementImage
+                form: CTIC\Bridge\BitbagCMSPlugin\Form\Type\BlockSliderElementImageType

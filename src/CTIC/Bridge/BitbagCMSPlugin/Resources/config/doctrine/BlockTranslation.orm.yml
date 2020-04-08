@@ -1,0 +1,22 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\BlockTranslation:
+    type: mappedSuperclass
+    table: bitbag_cms_block_translation
+    oneToOne:
+        slider:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\BlockSlider
+            mappedBy: slideOwner
+            fetch: EXTRA_LAZY
+            cascade: [ALL]
+    manyToOne:
+        taxon:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Taxon
+            inversedBy: blocks
+            joinColumn:
+                name: taxon_id
+                referencedColumnName: id
+        page:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Page
+            inversedBy: blocks
+            joinColumn:
+                name: page_id
+                referencedColumnName: id

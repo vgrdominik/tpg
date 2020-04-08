@@ -1,0 +1,20 @@
+ctic_bridge_bitbag_cms_plugin_admin_landing:
+    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/admin/landing.yml"
+
+ctic_bridge_bitbag_cms_plugin_admin_home:
+    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/admin/home.yml"
+
+ctic_bridge_bitbag_cms_plugin_admin_block:
+    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/admin/block.yml"
+
+ctic_bridge_bitbag_cms_plugin_admin_page:
+    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/admin/page.yml"
+
+ctic_bridge_bitbag_cms_plugin_admin_productattribute:
+    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/admin/product_attribute.yml"
+
+ctic_bridge_bitbag_cms_plugin_admin_taxon:
+    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/admin/taxon.yml"
+
+ctic_bridge_bitbag_cms_plugin_admin_frequestlyaskedquestion:
+    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/admin/frequently_asked_question.yml"

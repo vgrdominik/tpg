@@ -1,0 +1,11 @@
+{% import '@SyliusUi/Macro/messages.html.twig' as messages %}
+
+{% if product_reviews|length > 0 %}
+    {% for review in product_reviews %}
+        {% include '@SyliusShop/ProductReview/_single.html.twig' %}
+    {% endfor %}
+{% else %}
+    <div class="flex-w flex-t p-b-68">
+        {{ messages.info('sylius.ui.there_are_no_reviews') }}
+    </div>
+{% endif %}

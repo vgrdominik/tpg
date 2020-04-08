@@ -1,0 +1,206 @@
+// Base style
+.card {
+  margin-bottom: $card-margin;
+  box-shadow: $card-box-shadow;
+
+  &-header {
+    border-color: rgba($black, .1);
+
+    .card-title {
+      margin-bottom: 0;
+    }
+  }
+
+  &-title {
+    margin-bottom: 8px;
+    font-size: $font-size-base;
+    line-height: 1.4;
+    height: 45px;
+    text-align: center;
+
+    i {
+      margin-right: 2px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 17px;
+      line-height: 1.2;
+    }
+  }
+
+  &-price {
+    height: 22px;
+    margin-bottom: 8px;
+    font-size: $font-size-base;
+    line-height: 1.4;
+
+    i {
+      margin-right: 2px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 17px;
+      line-height: 1.2;
+    }
+  }
+
+  &-body .separator span {
+    background-color: $white;
+  }
+
+  &-img {
+    width: auto;
+    height: 280px;
+    margin: 10px 10px 0;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    &-top {
+      // stylelint-disable-next-linedeclaration-no-important
+      @include border-radius(0 !important);
+    }
+
+    .badge {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      z-index: 2;
+      padding: 7px 10px;
+    }
+
+    .card-meta span {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      left: auto;
+      display: inline-block;
+      padding: 3px 6px;
+      font-size: 12px;
+      font-weight: $font-weight-normal;
+      color: $white;
+      background-color: rgba(25, 25, 25, 1);
+      @include border-radius(4px);
+    }
+  }
+
+  &-meta {
+    margin-bottom: 15px;
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+
+    &-item {
+      color: rgba($black, .55);
+
+      i {
+        margin-right: 3px;
+      }
+
+      &::after {
+        display: inline-block;
+        margin: 0 6px;
+        content: "\2022";
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+
+  &-tex {
+    height: 150px;
+    overflow: hidden;
+  }
+
+  &-footer {
+    display: flex;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: #6d6c6e;
+    background-color: transparent;
+    border-color: rgba($black, .08);
+
+    i {
+      margin-right: 3px;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-bottom: 20px;
+  }
+}
+
+// Secondary
+.card-secondary {
+  background-color: darken($body-bg, 2%);
+  border-color: #e0e0e0;
+}
+
+// Default
+.card-default {
+  background-color: $body-bg;
+  border-color: #e0e0e0;
+  box-shadow: none;
+
+  .card-header {
+    background-color: rgba($black, .02);
+    border-color: #e0e0e0;
+  }
+
+  .card-body {
+    .separator span {
+      background-color: $body-bg;
+    }
+  }
+}
+
+// Card img sizes
+.img,
+.card-img {
+  &-xl {
+    height: 26.5625rem;
+  }
+
+  &-lg {
+    height: 18.75rem;
+  }
+
+  &-md {
+    height: 15.625rem;
+  }
+
+  &-sm {
+    height: 11.25rem;
+
+    @include media-breakpoint-down(xs) {
+      height: 13rem;
+    }
+  }
+}
+
+// Card sm
+.card-slick{
+  padding: 0 15px;
+}
+.card-sm {
+  .card-body {
+    padding: 15px 10px;
+  }
+
+  .card-footer {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  a {
+    color: #2c3e50;
+  }
+  a:hover {
+    color: #2c3e50;
+  }
+}

@@ -1,0 +1,84 @@
+{% form_theme form '@CTICBridgeBitbagCMSPlugin/Form/theme.html.twig' %}
+
+<div class="sui w-full">
+    <div class="ui three column doubling stackable grid">
+        <div class="ui three wide column">
+            <div class="mtext-102 cl2 p-b-15">
+                {{ 'ctic.ui.product_options'|trans }}
+            </div>
+
+            {{ form_widget(form.options) }}
+        </div>
+
+        <div class="ui two wide column">
+            <div class="mtext-102 cl2 p-b-15">
+                {{ 'ctic.ui.product_price'|trans }}
+            </div>
+
+            {{ form_widget(form.price) }}
+        </div>
+
+        {% include '@SyliusShop/Product/Index/_pagination.html.twig' %}
+        {% include '@SyliusShop/Product/Index/_sorting.html.twig' %}
+
+        <div class="ui sixteen wide column" id="customedAttributes">
+            <div class="ui four column doubling stackable grid">
+                {% for attribute in form.attributes %}
+                    <div id="{{ attribute.vars.id }}" class="ui four doubling stackable grid w-full">
+                        <div class="ui sixteen wide column mtext-102 cl2 p-b-15">
+                            {{ form_label(attribute) }}
+                        </div>
+                        <div class="ui four wide column">
+                            {% set num_child = 0 %}
+                            {% for attribute_child in attribute %}
+                                {% if num_child == 5 %}
+                                    {% set num_child = 0 %}
+
+                                    </div>
+                                    <div class="ui four wide column">
+                                {% endif %}
+                                {{ form_row(attribute_child) }}
+                                {% set num_child = num_child + 1 %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row w-full">
+    <div class="filter-col1 p-r-15 p-b-27 center-layer">
+        <button type="submit" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">{{ 'bitbag_sylius_elasticsearch_plugin.ui.filter'|trans }}</button>
+    </div>
+</div>
+
+
+<script type="application/javascript">
+    var numericTypeUpdateCallback = function(){
+        var priceMinPrice = $('#price_min_price');
+        var priceMinPriceValue = priceMinPrice.val();
+        priceMinPrice.attr('type', 'number');
+        priceMinPrice.attr('value', $.number(parseInt(priceMinPriceValue), 0, '', ''));
+
+
+        var priceMaxPrice = $('#price_max_price');
+        var priceMaxPriceValue = priceMaxPrice.val();
+        priceMaxPrice.attr('type', 'number');
+        priceMaxPrice.attr('value', $.number(parseInt(priceMaxPriceValue), 0, '', ''));
+
+        $('#attributes_attribute_referencia_proveedor').hide()
+    };
+
+    if (document.readyState === "complete"){
+        numericTypeUpdateCallback();
+    }else if (document.addEventListener){
+        document.addEventListener('DOMContentLoaded', numericTypeUpdateCallback);
+    }else document.attachEvent('onreadystatechange', function(){
+        // IE <= 8
+        if (document.readyState=='complete'){
+            numericTypeUpdateCallback();
+        }
+    });
+</script>

@@ -4,37 +4,23 @@ Tienda virtual (Terminal punto de gestión) generada apartir de la api y el admi
 
 ESTE README ESTÁ EN EDICIÖN
 
-## Known bugs
-* TPG DOESNOT INIT TO HOME
-* When back to TPV images don't show
-
-## TODO
-* Advanced pay.
-
 ## Project setup
 ```
-npm install
+php bin/console sylius:install
+php bin/console doctrine:migrations:diff
+php bin/console doctrine:migrations:migrate
+php bin/console assets:install --symlink
+php bin/console sylius:theme:assets:install --symlink
+yarn install
+yarn build
+//npm install
 ```
 
-### Compiles and hot-reloads for development
+## Launch application
 ```
-npm run serve // To vue website
-npm run electron:serve // To executable app
+symfony serve
+open http://127.0.0.1:8000/admin
 ```
-
-### Compiles and minifies for production
-```
-npm run build // To vue website
-npm run electron:build // To executable app
-```
-
-### Lints and fixes files
-```
-npm run lint // Not tested
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### License
 

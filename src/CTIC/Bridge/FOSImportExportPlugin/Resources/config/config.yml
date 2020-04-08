@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@CTICBridgeFOSImportExportPlugin/Resources/config/services.yml" }

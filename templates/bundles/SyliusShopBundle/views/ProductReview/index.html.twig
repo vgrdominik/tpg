@@ -1,0 +1,33 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+<section class="sec-product-review-list bg0 p-t-65 p-b-60">
+    <div class="container center-layer">
+        <div class="row">
+            {{ sonata_block_render_event('sylius.shop.product_review.index.before_product_box', {'product_reviews': product_reviews}) }}
+
+            {{
+                render(url('sylius_shop_partial_product_show_by_slug', {
+                    'slug': app.request.attributes.get('slug'),
+                    'template': '@SyliusShop/Product/_box.html.twig'
+                }))
+            }}
+
+            {{ sonata_block_render_event('sylius.shop.product_review.index.after_product_box', {'product_reviews': product_reviews}) }}
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+                <div class="p-b-30 m-lr-15-sm">
+                    {{ sonata_block_render_event('sylius.shop.product_review.index.before_list', {'product_reviews': product_reviews}) }}
+
+                    {% include '@SyliusShop/ProductReview/_list.html.twig' %}
+
+                    {{ sonata_block_render_event('sylius.shop.product_review.index.after_list', {'product_reviews': product_reviews}) }}
+                    <a href="{{ path('sylius_shop_product_review_create', {'slug': app.request.get('slug')}) }}">
+                        <div class="ui blue labeled icon button"><i class="icon plus"></i> {{ 'sylius.ui.add_your_review'|trans }}</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\FrequentlyAskedQuestion:
+    type: mappedSuperclass
+    table: bitbag_cms_faq
+    manyToOne:
+        landing:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Landing
+            joinColumns:
+                landing_id:
+                    referencedColumnName: id
+                    nullable: true

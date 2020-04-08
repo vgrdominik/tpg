@@ -1,0 +1,21 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\Taxon:
+    type: mappedSuperclass
+    table: sylius_taxon
+    oneToMany:
+        blocks:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\BlockTranslation
+            mappedBy: taxon
+            fetch: EXTRA_LAZY
+            cascade: [ALL]
+    oneToOne:
+        cover:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonCover
+            mappedBy: owner
+            cascade: [ALL]
+    manyToOne:
+        landing:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Landing
+            joinColumns:
+                landing_id:
+                    referencedColumnName: id
+                    nullable: true

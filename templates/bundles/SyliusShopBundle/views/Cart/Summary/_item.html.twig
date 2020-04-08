@@ -1,0 +1,62 @@
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+
+{% set product = item.product %}
+{% set product_variant = item.variant %}
+
+<tr>
+    <td class="photo">
+        {% if product.images|length > 0 %}
+            {% set image = product.images|first %}
+            {% set thumb_path = image.path is not null ? image.path|imagine_filter('sylius_shop_product_large_thumbnail') : '//placehold.it/200x200' %}
+            <div class="how-itemcart1">
+                <img src="{{ thumb_path }}" alt="{{ product.name }}">
+            </div>
+        {% endif %}
+    </td>
+    <td class="description">
+        <div class="sylius-product-name">{{ item.productName }}</div>
+        <span class="sub header sylius-product-variant-code">
+            {{ product_variant.code }}
+        </span>
+        {% if product.hasOptions() %}
+            <div class="ui horizontal divided list sylius-product-options">
+                {% for optionValue in product_variant.optionValues %}
+                    <div class="item" data-sylius-option-name="{{ optionValue.name }}">
+                        {{ optionValue.value }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% elseif item.variantName is not null %}
+            <div class="ui horizontal divided list">
+                <div class="item sylius-product-variant-name">
+                    {{ item.variantName }}
+                </div>
+            </div>
+        {% endif %}
+    </td>
+    <td class="clear">
+        {% if item.unitPrice != item.discountedUnitPrice %}
+            <span class="sylius-regular-unit-price">{{ money.convertAndFormat(item.unitPrice) }}</span>
+        {% endif %}
+        <span class="sylius-unit-price">{{ money.convertAndFormat(item.discountedUnitPrice) }}</span>
+    </td>
+    <td class="qty">
+        <div class="wrap-num-product flex-w m-l-auto m-r-0">
+            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                <i class="fs-16 zmdi zmdi-minus"></i>
+            </div>
+
+            {{ form_widget(form.quantity, {'attr': {'class': 'mtext-104 cl3 txt-center num-product'}}) }}
+
+            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                <i class="fs-16 zmdi zmdi-plus"></i>
+            </div>
+        </div>
+    </td>
+    <td class="total">
+        <span class="sylius-total">{{ money.convertAndFormat(item.subtotal) }}</span>
+    </td>
+    <td class="remove">
+        <button type="button" data-redirect="{{ path('sylius_shop_cart_summary') }}" data-url="{{ path('sylius_shop_ajax_cart_item_remove', {'id': item.id}) }}" class="ui circular icon button sylius-cart-remove-button" data-csrf-token="{{ csrf_token(item.id) }}"><i class="remove icon"></i></button>
+    </td>
+</tr>

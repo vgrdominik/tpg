@@ -1,0 +1,64 @@
+bitbag_sylius_cms_plugin:
+    resource: "@BitBagSyliusCmsPlugin/Resources/config/routing.yml"
+
+bitbag_sylius_elasticsearch_plugin:
+    resource: "@BitBagSyliusElasticsearchPlugin/Resources/config/routing.yml"
+
+bitbag_sylius_elasticsearch_plugin_shop_list_products:
+    path: /productos/{slug}
+    defaults:
+        _controller: bitbag_sylius_elasticsearch_plugin.controller.action.shop.list_products
+        template: "@BitBagSyliusElasticsearchPlugin/Shop/Product/index.html.twig"
+    requirements:
+        slug: .+
+
+bitbag_sylius_cms_plugin_shop_page_show:
+    path: /info/{slug}
+    methods: [GET]
+    defaults:
+        _controller: bitbag_sylius_cms_plugin.controller.page:showAction
+        _sylius:
+            template: "@BitBagSyliusCmsPlugin/Shop/Page/show.html.twig"
+            repository:
+                method: findOneEnabledBySlug
+                arguments:
+                    - $slug
+                    - "expr:service('sylius.context.locale').getLocaleCode()"
+
+bitbag_sylius_cms_plugin_shop_page_show_link_by_code:
+    path: /info/codigo/{code}
+    methods: [GET]
+    defaults:
+        _controller: bitbag_sylius_cms_plugin.controller.page:renderLinkAction
+        _sylius:
+            template: $template
+            repository:
+                method: findOneEnabledByCode
+                arguments:
+                    - $code
+                    - "expr:service('sylius.context.locale').getLocaleCode()"
+
+bitbag_sylius_cms_plugin_shop_page_index_by_section_code:
+    path: /toda-la-info/{sectionCode}
+    methods: [GET]
+    defaults:
+        _controller: bitbag_sylius_cms_plugin.controller.page:indexAction
+        _sylius:
+            template: "@BitBagSyliusCmsPlugin/Shop/Page/index.html.twig"
+            grid: bitbag_sylius_cms_plugin_shop_page
+
+sylius_sitemap:
+    resource: "@SitemapPlugin/Resources/config/routing.yml"
+
+sylius_import_export:
+    resource: "@FOSSyliusImportExportPlugin/Resources/config/routing.yml"
+    prefix: /admin
+
+ctic_bridge_bitbag_cms_plugin:
+    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing.yml"
+
+ctic_bridge_sylius_bundle:
+    resource: "@CTICBridgeSyliusBundle/Resources/config/routing.yml"
+
+ctic_bridge_fos_import_export_plugin:
+    resource: "@CTICBridgeFOSImportExportPlugin/Resources/config/routing.yml"

@@ -1,0 +1,5 @@
+imports:
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/grids/admin/landing.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/grids/admin/home.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/grids/admin/page.yml" }
+    - { resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/grids/admin/block.yml" }

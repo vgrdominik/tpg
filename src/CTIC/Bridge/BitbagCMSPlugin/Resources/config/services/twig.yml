@@ -1,0 +1,18 @@
+services:
+    ctic_bridge_bitbag_cms_plugin.twig.extension.numbercolumns:
+        class: CTIC\Bridge\BitbagCMSPlugin\Twig\Extension\NumberColumnsExtension
+        public: false
+        tags:
+            - { name: twig.extension }
+
+    ctic_bridge_bitbag_cms_plugin.twig.extension.renderlanding:
+        class: CTIC\Bridge\BitbagCMSPlugin\Twig\Extension\RenderLandingExtension
+        public: false
+        tags:
+            - { name: twig.extension }
+
+    ctic.twig.extension.string:
+        class: CTIC\Bridge\BitbagCMSPlugin\Twig\Extension\CTICStringExtension
+        public: false
+        tags:
+            - { name: twig.extension }

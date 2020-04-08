@@ -1,0 +1,19 @@
+{{ sonata_block_render_event('sylius.shop.taxon.header.before', {'taxon': taxon}) }}
+
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="{% if taxon.cover is not null and taxon.cover.path is not null and taxon.cover.path != '' %}background-image: url('{{ taxon.cover.path|imagine_filter('cover') }}');{% else %}background-color: #D3D3D3;{% endif %}">
+    <h1 class="ltext-105 cl0 txt-center">
+        {{ taxon.name }}
+    </h1>
+</section>
+
+<div class="bg0 m-t-20 p-b-20">
+    <div class="container center-layer">
+        {% include '@SyliusShop/Taxon/_breadcrumb.html.twig' %}
+    </div>
+</div>
+
+{% if taxon.landing is not null %}
+    {{ render(url('ctic_bridge_bitbag_cms_plugin_shop_preview_render', {'id': taxon.landing.id})) }}
+{% endif %}
+
+{{ sonata_block_render_event('sylius.shop.taxon.header.after', {'taxon': taxon}) }}

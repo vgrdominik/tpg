@@ -1,0 +1,79 @@
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+
+
+
+{{ sonata_block_render_event('sylius.shop.cart.summary.totals', {'cart': cart}) }}
+
+<!--<div class="flex-w flex-t bor12 p-b-13 p-t-13">
+    <div class="size-209">
+        <span class="stext-110 cl2">
+            {{ 'sylius.ui.tax'|trans }}:
+        </span>
+    </div>
+
+    <div class="size-208">
+        <span class="mtext-110 cl2" id="sylius-cart-tax-total">
+            {{ money.convertAndFormat(cart.taxTotal) }}
+        </span>
+    </div>
+</div>-->
+
+<div class="flex-w flex-t bor12 p-b-13 p-t-13">
+    <div class="size-209">
+        <span class="stext-110 cl2">
+            {{ 'sylius.ui.shipping'|trans }}:
+        </span>
+    </div>
+
+    <div class="size-208">
+        <span class="mtext-110 cl2" id="sylius-cart-shipping-total">
+            {{ money.convertAndFormat(cart.shippingTotal) }}
+        </span>
+    </div>
+</div>
+
+{% if cart.orderPromotionTotal %}
+    <div class="flex-w flex-t bor12 p-b-13 p-t-13">
+        <div class="size-209">
+        <span class="stext-110 cl2">
+            {{ 'sylius.ui.discount'|trans }}:
+        </span>
+        </div>
+
+        <div class="size-208">
+        <span class="mtext-110 cl2" id="sylius-cart-promotion-total">
+            {{ money.convertAndFormat(cart.orderPromotionTotal) }}
+        </span>
+        </div>
+    </div>
+{% endif %}
+
+<div class="flex-w flex-t bor12 p-b-13 p-t-13">
+    <div class="size-209">
+        <span class="stext-110 cl2">
+            {{ 'sylius.ui.order_total'|trans }}:
+        </span>
+    </div>
+
+    <div class="size-208">
+        <span class="mtext-110 cl2" id="sylius-cart-grand-total">
+            {{ money.convertAndFormat(cart.total) }}
+        </span>
+    </div>
+</div>
+
+{% if cart.currencyCode is not same as(sylius.currencyCode) %}
+    <div class="flex-w flex-t bor12 p-b-13 p-t-13">
+        <div class="size-209">
+            <span class="stext-110 cl2">
+                {{ 'sylius.ui.base_currency_order_total'|trans }}:
+            </span>
+        </div>
+
+        <div class="size-208">
+            <span class="mtext-110 cl2" id="sylius-cart-base-grand-total">
+                {{ money.format(cart.total, cart.currencyCode) }}
+            </span>
+        </div>
+    </div>
+{% endif %}

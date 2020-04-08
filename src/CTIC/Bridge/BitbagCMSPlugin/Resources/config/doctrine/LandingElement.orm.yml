@@ -1,0 +1,66 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\LandingElement:
+    type: mappedSuperclass
+    table: ctic_cms_landingelement
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        enabled:
+            column: enabled
+            type: boolean
+        name:
+            column: name
+            type: string
+            nullable: false
+        isContainer:
+            column: is_container
+            type: boolean
+        position:
+            column: position
+            type: integer
+        columns:
+            column: columns
+            type: integer
+        createdAt:
+            column: created_at
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: create
+        updatedAt:
+            column: updated_at
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: update
+    oneToMany:
+        children:
+            targetEntity: LandingElement
+            mappedBy: parent
+            cascade: ["persist", "remove"]
+    manyToOne:
+        block:
+            targetEntity: BitBag\SyliusCmsPlugin\Entity\Block
+            joinColumns:
+                block_id:
+                    referencedColumnName: id
+                    nullable: true
+        landing:
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Landing
+            inversedBy: elements
+            joinColumns:
+                landing_id:
+                    referencedColumnName: id
+                    nullable: true
+        parent:
+            targetEntity: LandingElement
+            inversedBy: children
+            joinColumns:
+                parent_id:
+                    referencedColumnName: id
+                    nullable: true

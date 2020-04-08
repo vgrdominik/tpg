@@ -1,0 +1,14 @@
+{
+  "name": "ctic/yukio-theme",
+  "authors": [
+    {
+      "name": "Valentí Gàmez Rojas",
+      "email": "vgr.gamez@gmail.com"
+    }
+  ],
+  "extra": {
+    "sylius-theme": {
+      "title": "Yukio Theme"
+    }
+  }
+}

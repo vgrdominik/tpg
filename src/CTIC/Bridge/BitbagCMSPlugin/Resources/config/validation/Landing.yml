@@ -1,0 +1,17 @@
+CTIC\Bridge\BitbagCMSPlugin\Entity\Landing:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [name]
+            groups: ['cticbridgebitbag']
+            message: 'ctic_bridge_bitbag_cms_plugin.landing.name.unique'
+    properties:
+        name:
+            - NotBlank:
+                message: 'ctic_bridge_bitbag_cms_plugin.landing.name.not_blank'
+                groups: ['cticbridgebitbag']
+            - Length:
+                min: 2
+                max: 250
+                minMessage: 'ctic_bridge_bitbag_cms_plugin.landing.name.min_length'
+                maxMessage: 'ctic_bridge_bitbag_cms_plugin.landing.name.max_length'
+                groups: ['cticbridgebitbag']

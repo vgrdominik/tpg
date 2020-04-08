@@ -1,0 +1,108 @@
+ctic:
+    ui:
+        shop_now: Shop Now
+ctic_bridge_bitbag_cms_plugin:
+    ui:
+        page: Page
+        cover: Cover
+        taxon: Category
+        name: Name
+        home: Home
+        homes: Home
+        home_header: Home
+        home_subheader: Manage your home
+        enabled: Enabled
+        channel: Channel
+        landing: Landing
+        landings: Landings
+        landings_header: Landings
+        landings_subheader: Manage your landings
+        landingelement: Landing element
+        landingelementadd: Add landing element
+        landingelementdelete: Delete landing element
+        landingelementcointainer: Container - Landing element
+        landingelementcointaineradd: Container - Add landing element
+        landingelementcointainerdelete: Container - Delete landing element
+        landinghelp: Position determine elements order. Columns determine elements size. Every row contains 16 columns.
+        landingpreview: Preview
+        refreshlandingpreview: Refresh preview
+        errorrefreshlandingpreview: Error to refresh preview
+        is_container: Is container
+        position: Position
+        num_columns: Number of columns
+        block: Block
+        slider_block: Slider
+        animationchoice: Animation
+        animationchoiceplaceholder: Select animation
+        select: Select an option
+        sliderelement:
+            name: Name
+            position: Position
+            title: Title
+            title_animation: Title animation
+            main_phrase: Main phrase
+            main_phrase_animation: Main phrase animation
+            link: Link
+            link_animation: Link animation
+            link_text: Text link
+            image: Image
+            images_help: Currently system only get the last image per slide
+        slider:
+            accessibility: Accessibility
+            accessibility_help: Enables tabbing and arrow key navigation
+            adaptive_height: Adaptive height
+            adaptive_height_help: Enables adaptive height for single slide horizontal carousels
+            autoplay: Autoplay
+            autoplay_help: Enables autoplay
+            autoplay_speed: Autoplay speed
+            autoplay_speed_help: Autoplay Speed in milliseconds (Default 3000)
+            arrows: Arrows
+            arrows_help: Prev/Next Arrows
+            center_mode: Center mode
+            center_mode_help: Enables centered view with partial prev/next slides. Use with odd numbered slidesToShow counts
+            center_padding: Center padding
+            center_padding_help: Side padding when in center mode (px or %) (Default 50px)
+            dots: Dots
+            dots_help: Show dot indicators
+            draggable: Draggable
+            draggable_help: Enable mouse dragging
+            fade: Fade
+            fade_help: Enable fade
+            infinite: Infinite
+            infinite_help: Infinite loop sliding
+            pause_on_focus: Pause on focus
+            pause_on_focus_help: Pause Autoplay On Focus
+            pause_on_hover: Pause on hover
+            pause_on_hover_help: Pause Autoplay On Hover
+            pause_on_dots_hover: Pause on dots hover
+            pause_on_dots_hover_help: Pause Autoplay when a dot is hovered
+            rows: Rows
+            rows_help: Setting this to more than 1 initializes grid mode. Use slidesPerRow to set how many slides should be in each row
+            slides_per_row: Slides per row
+            slides_per_row_help: With grid mode intialized via the rows option, this sets how many slides are in each grid row (Default 1).
+            slides_to_show: Slides to show
+            slides_to_show_help: Number of slides to show (Default 1).
+            slides_to_scroll: Slides to scroll
+            slides_to_scroll_help: Number of slides to scroll (Default 1).
+            speed: Speed
+            speed_help: Slide/Fade animation speed (Default 300)
+            swipe: Swipe
+            swipe_help: Enable swiping
+            swipe_to_slide: Swipe to slide
+            swipe_to_slide_help: Allow users to drag or swipe directly to a slide irrespective of slidesToScroll
+            touch_move: Touch move
+            touch_move_help: Enable slide motion with touch
+            variable_width: Variable width
+            variable_width_help: Variable width slides
+            vertical: Vertical
+            vertical_help: Vertical slide mode
+            vertical_swiping: Vertical swiping
+            vertical_swiping_help: Vertical swipe mode
+            rtl: Right to left
+            rtl_help: Change the slider's direction to become right-to-left
+            wait_for_animate: Wait for animate
+            wait_for_animate_help: Ignores requests to advance the slide while animating
+            blocksliderelement: Slider elements
+            blocksliderelementadd: Add slider element
+            blocksliderelementdelete: Delete slider element
+

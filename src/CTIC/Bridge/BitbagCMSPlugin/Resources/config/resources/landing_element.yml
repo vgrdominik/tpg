@@ -1,0 +1,9 @@
+sylius_resource:
+    resources:
+        ctic_bridge_bitbag_cms_plugin.landingelement:
+            driver: doctrine/orm
+            classes:
+                model: CTIC\Bridge\BitbagCMSPlugin\Entity\LandingElement
+                repository: CTIC\Bridge\BitbagCMSPlugin\Repository\LandingElementRepository
+                form: CTIC\Bridge\BitbagCMSPlugin\Form\Type\LandingElementType
+#                controller: CTIC\Bridge\BitbagCMSPlugin\Controller\LandingElementController

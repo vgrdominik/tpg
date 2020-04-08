@@ -1,0 +1,12 @@
+services:
+    ctic.bridge.sylius.eventlistener.themerequest:
+        class: CTIC\Bridge\SyliusBundle\EventListener\ThemeRequestEventListener
+        arguments: ['@sylius.repository.theme', '@sylius.theme.context.settable']
+        tags:
+          - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+    sylius.sitemap_provider.taxon:
+        class: CTIC\Bridge\SyliusBundle\Provider\TaxonUrlProvider
+        arguments: ['@sylius.repository.taxon', '@router', '@sylius.sitemap_url_factory', '@sylius.context.locale', '%sylius.sitemap_exclude_taxon_root%']
+        tags:
+          - { name: sylius.sitemap_provider }
