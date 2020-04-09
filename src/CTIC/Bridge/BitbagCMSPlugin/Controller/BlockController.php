@@ -145,11 +145,12 @@ final class BlockController extends ResourceController
     {
         $configuration = $this->requestConfigurationFactory->create($this->metadata, $request);
 
-        $type = $request->query->get('type');
+        $type = $request->get('type');
 
         $this->isGrantedOr403($configuration, ResourceActions::CREATE);
         /** @var Block $block */
         $block = $this->newResourceFactory->create($configuration, $this->factory);
+        $block->setType($type);
 
         $form = $this->resourceFormFactory->create($configuration, $block);
 
