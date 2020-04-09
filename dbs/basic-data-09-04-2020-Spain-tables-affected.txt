@@ -3,10 +3,6 @@ _zone
 _zone_member
 _product_attribute
 _product_attribute_translation
-_product_option
-_product_option_translation
-_product_option_value
-_product_option_value_translation
 _province
 _shipping_method
 _shipping_method_channles

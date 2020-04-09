@@ -14,8 +14,28 @@ use Sylius\Component\Product\Model\ProductAttribute as BaseProductAttribute;
  */
 class ProductAttribute extends BaseProductAttribute
 {
+
+    /** @var int|null */
+    protected $landing;
+
     protected function createTranslation(): AttributeTranslationInterface
     {
         return new ProductAttributeTranslation();
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getLanding(): ?int
+    {
+        return $this->landing;
+    }
+
+    /**
+     * @param int|null $landing
+     */
+    public function setLanding(?int $landing): void
+    {
+        $this->landing = $landing;
     }
 }
