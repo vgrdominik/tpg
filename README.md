@@ -16,6 +16,8 @@ yarn build
 //npm install
 ```
 
+OPTIONAL: Can load /dbs/basic-data***.sql to your db. Must drop current data on affected tables, /dbs/basic-data***-tables-affected.txt
+
 ## Launch application
 ```
 symfony serve
