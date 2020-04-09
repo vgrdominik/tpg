@@ -49,6 +49,13 @@ sylius:
             password: Contraseña
             remember_me: Recuérdame
     ui:
+        toggle_all: Marcar/Desmarcar todo
+        get_support: Soporte
+        documentation: Documentación
+        join_slack: Unirse al chat
+        join_forum: Unirse al forum
+        issue_tracker: Reportar bug
+        youtube: Youtube
         login: Login
         logout: Logout
         add_your_review: Envia tu reseña
@@ -69,5 +76,6 @@ bitbag_sylius_elasticsearch_plugin:
 fos:
     import_export:
         ui:
+            export: Exportar
             import: Importar
             import_data: Importar datos

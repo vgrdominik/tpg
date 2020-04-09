@@ -6,6 +6,12 @@ ctic:
             schedule: Programació
             rol: Rol
     ui:
+        get_support: Suport
+        documentation: Documentació
+        join_slack: Unir-se al chat
+        join_forum: Unir-se al forum
+        issue_tracker: Reportar bug
+        youtube: Youtube
         taxons: Categories
         sku: SKU
         filter: Filtrar
@@ -60,6 +66,7 @@ sylius:
             password: Contrasenya
             remember_me: Recordar
     ui:
+        toggle_all: Marcar/Desmarcar tot
         logout: Logout
         add_your_review: Envia la teva resenya
         view_more: Veure Més
@@ -99,5 +106,6 @@ bitbag_sylius_elasticsearch_plugin:
 fos:
     import_export:
         ui:
+            export: Exportar
             import: Importar
             import_data: Importar dades

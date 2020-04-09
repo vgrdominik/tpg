@@ -1,102 +1,103 @@
 bitbag_sylius_cms_plugin:
     ui:
-        media: Ficheros
-        default: Por defecto
-        blocks: Bloques
-        pages: Páginas
-        content_management: Gestión de contenidos
-        cms: Gestión de contenidos
-        enabled: Activo
-        blocks_header: Bloques
-        blocks_subheader: Gestiona tus bloques
-        text_block: Bloque de texto
-        html_block: Bloque HTML
-        image_block: Bloque de imagen
-        pages_header: Página
-        pages_subheader: Gestiona tus páginas
-        products: Productos
-        page_related_products: Productos relacionados de página
-        name: Nombre
+        media: Fitxers
+        default: Per defecte
+        blocks: Blocs
+        pages: Pàgines
+        content_management: Gestió de continguts
+        cms: Gestió de continguts
+        enabled: Actiu
+        blocks_header: Blocs
+        blocks_subheader: Gestiona els teus blocs
+        text_block: Bloc de text
+        html_block: Bloc HTML
+        image_block: Bloc d'imatge
+        pages_header: Pàgina
+        pages_subheader: Gestiona les teves pàgines
+        products: Productes
+        page_related_products: Productes relacionats a la pàgina
+        name: Nom
         slug: Slug
-        meta_keywords: Meta keywords
-        meta_description: Meta description
-        content: Contenido
+        meta_keywords: Paraules clau
+        meta_description: Meta descripció
+        content: Contingut
         faq: FAQ
-        code: Código
-        contents: Contenidos
-        images: Imágenes
-        image: Imagen
-        link: Link
+        code: Còdi
+        contents: Continguts
+        images: Imatges
+        image: Imatge
+        link: Enllaç
         faq_header: FAQ
-        faq_subheader: Gestionar preguntas frequentes
-        frequently_asked_questions: Preguntas frequentes
+        faq_subheader: Gestionar preguentes freqüents
+        frequently_asked_questions: Preguntes freqüents
         question: Pregunta
-        answer: Respuesta
-        sections: Secciones
-        sections_header: Secciones
-        sections_subheader: Gestiona tus secciones
-        position: Posición
+        answer: Resposta
+        sections: Seccions
+        sections_header: Seccions
+        sections_subheader: Gestiona les teves seccions
+        position: Posició
 ctic:
     ui:
-        shop_now: Comprar Ahora
+        shop_now: Comprar ara
 ctic_bridge_bitbag_cms_plugin:
     ui:
-        page: Página
+        page: Pàgina
         cover: Portada
-        taxon: Categoría
-        block: Bloque
-        name: Nombre
-        home: Home
-        homes: Home
-        home_header: Home
-        home_subheader: Gestiona tus home
-        enabled: Activado
+        taxon: Categoria
+        block: Bloc
+        name: Nom
+        home: Inici
+        homes: Inicis
+        home_header: Inici
+        home_subheader: Gestiona els teus inicis
+        enabled: Activat
         channel: Canal
         landing: Landing
         landings: Landings
         landings_header: Landings
-        landings_subheader: Gestiona tus landings
-        landingelement: Elemento de la landing
-        landingelementadd: Añadir elemento de la landing
-        landingelementdelete: Eliminar elemento de la landing
-        landingelementcointainer: Contenedor - Elemento de la landing
-        landingelementcointaineradd: Contenedor - Añadir elemento de la landing
-        landingelementcointainerdelete: Contenedor - Delete landing element
-        landinghelp: La posición determina el orden de los elementos. Las columnas el tamaño de cada uno. Hay 16 columnas por fila.
-        landingpreview: Previsualización
-        refreshlandingpreview: Refrescar previsualización
-        errorrefreshlandingpreview: Error al refrescar previsualixación
-        is_container: Es un contenedor
-        position: Posición
-        num_columns: Número de columnas
+        landings_subheader: Gestiona les teves landings
+        landingelement: Element de la landing
+        landingelementadd: Afegir element de la landing
+        landingelementdelete: Eliminar element de la landing
+        landingelementcointainer: Contenidor - Element de la landing
+        landingelementcointaineradd: Contenidor - Afegir elemento de la landing
+        landingelementcointainerdelete: Contenidor - Eliminar landing element
+        landinghelp: La posició determina l'ordre dels elements. LEs columnes el tamany de cada un. Hi ha 16 columnes per fila.
+        landingpreview: Previsualització
+        refreshlandingpreview: Actualitzar previsualització
+        errorrefreshlandingpreview: Error al actualitzar previsualització
+        is_container: És un contenidor
+        position: Posició
+        num_columns: Número de columnes
         slider_block: Slider
-        animationchoice: Animación
-        animationchoiceplaceholder: Seleccionar animación
-        select: Selecciona una opción
+        animationchoice: Animació
+        animationchoiceplaceholder: Seleccionar animació
+        select: Seleccionar una opció
         sliderelement:
-            name: Nombre
-            position: Posición
-            title: Título
-            title_animation: Animación del título
+            name: Nom
+            position: Posició
+            title: Títol
+            title_animation: Animació del títol
             main_phrase: Frase principal
-            main_phrase_animation: Animación de la frase principal
-            link: Enlace
-            link_animation: Animación del enlace
-            link_text: Texto del enlace
-            image: Imagen
-            images_help: El sistema actual solo coge la última imagen en cada slide
+            main_phrase_animation: Animació de la frase principal
+            link: Enllaç
+            link_animation: Animació del enllaç
+            link_text: Text del enllaç
+            image: Imatge
+            images_help: El sistema actual només agafa l'última imatge en cada slide
         slider:
-            accessibility: Accesibilidad
-            accessibility_help: Habilita los tabs y las flechas de navegación
+            accessibility: Accessibilitat
+            accessibility_help: Habilita els tabs i les fletxes de navegació
             adaptive_height: Altura adaptativa
-            adaptive_height_help: Habilita la altura adaptativa para un solo slider horizontal
+            adaptive_height_help: Habilita la alçada per un sol slider horitzontal
             autoplay: Autoplay
-            autoplay_help: Habilita el autoplay
-            autoplay_speed: Velocidad de autoplay
-            autoplay_speed_help: Velocidad de autoplay en milisegundos (Por defecto 3000)
-            arrows: Flechas
-            arrows_help: Anterior/Próxima flechas
-            center_mode: Modo central
+            autoplay_help: Habilita l'autoplay
+            autoplay_speed: Velocitat d'autoplay
+            autoplay_speed_help: Velocitat d'autoplay en milisegons (Per defecte 3000)
+            arrows: Fletxes
+            arrows_help: Anterior/Següent fletxes
+            center_mode: Mode central
+            # TODO From here translate from spanish to catalan
             center_mode_help: Habilita la vista central con una vista parcial de la slide anterior/siguiente. Usado en conjunto con el parámetro slides para ver
             center_padding: Padding central
             center_padding_help: El padding en modo central (En px o %) (Por defecto 50px)
