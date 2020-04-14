@@ -1,5 +1,5 @@
 ctic_bridge_bitbag_cms_plugin_shop_home_render:
-    path: /home
+    path: /{_locale}/home
     methods: [GET]
     defaults:
         _controller: ctic_bridge_bitbag_cms_plugin.controller.home:renderHomeAction

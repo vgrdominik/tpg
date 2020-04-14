@@ -1,4 +1,4 @@
-BitBag\SyliusCmsPlugin\Entity\Block:
+CTIC\Bridge\BitbagCMSPlugin\Entity\Block:
     exclusion_policy: ALL
     xml_root_name: block
     properties:

@@ -43,6 +43,12 @@ ctic:
         page: Página
 
 sylius:
+    homepage:
+        newsletter: Boletín de noticias
+        newsletter_description: Infórmate de todas las novedades de la comunidad
+        subscribe: Suscríbete
+        about_us: Sobre mi
+        about_us_content: Puedes encontrarme en las redes sociales como @iamvalentigamez
     form:
         login:
             username: Nombre de usuario

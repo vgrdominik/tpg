@@ -1,5 +1,5 @@
 bitbag_sylius_cms_plugin_shop_page_show:
-    path: /page/{slug}
+    path: /{_locale}/page/{slug}
     methods: [GET]
     defaults:
         _controller: bitbag_sylius_cms_plugin.controller.page:showAction
@@ -12,7 +12,7 @@ bitbag_sylius_cms_plugin_shop_page_show:
                     - "expr:service('sylius.context.locale').getLocaleCode()"
 
 bitbag_sylius_cms_plugin_shop_page_show_link_by_code:
-    path: /page/link/{code}
+    path: /{_locale}/page/link/{code}
     methods: [GET]
     defaults:
         _controller: bitbag_sylius_cms_plugin.controller.page:renderLinkAction
@@ -25,7 +25,7 @@ bitbag_sylius_cms_plugin_shop_page_show_link_by_code:
                     - "expr:service('sylius.context.locale').getLocaleCode()"
 
 bitbag_sylius_cms_plugin_shop_page_index_by_section_code:
-    path: /info/{sectionCode}
+    path: /{_locale}/info/{sectionCode}
     methods: [GET]
     defaults:
         _controller: bitbag_sylius_cms_plugin.controller.page:indexAction

@@ -49,6 +49,12 @@ ctic:
         page: Pàgina
 
 sylius:
+    homepage:
+        newsletter: Butlletí de notícies
+        newsletter_description: Informa't de totes les novetats de la comunitat
+        subscribe: Subscriu-te
+        about_us: Sobre mi
+        about_us_content: Pots trobar-me a les xarxes socials com a @iamvalentigamez
     lightbox:
         image_album_label: 'Imatge %1 de %2'
     menu:

@@ -25,42 +25,66 @@
             }
         });
 
-        $('#sylius_checkout_address_customer_email').apiToggle({
+        const syliusCheckoutAddressCustomerEmail = $('#sylius_checkout_address_customer_email')
+        if (syliusCheckoutAddressCustomerEmail && typeof syliusCheckoutAddressCustomerEmail.apiToggle === 'function') {
+          syliusCheckoutAddressCustomerEmail.apiToggle({
             dataType: 'json',
             method: 'GET',
             throttle: 1500,
 
             beforeSend: function (settings) {
-                var email = $('#sylius_checkout_address_customer_email').val();
+              var email = $('#sylius_checkout_address_customer_email').val();
 
-                if (email.length < 3) {
-                    return false;
-                }
+              if (email.length < 3) {
+                return false;
+              }
 
-                settings.data = {
-                    email: email
-                };
+              settings.data = {
+                email: email
+              };
 
-                return settings;
+              return settings;
             },
 
             successTest: function (response) {
-                return $('#sylius_checkout_address_customer_email').val() === response.username;
+              return $('#sylius_checkout_address_customer_email').val() === response.username;
             }
-        }, $('#sylius-api-login-form'));
+          }, $('#sylius-api-login-form'));
+        }
 
-        $('#sylius-api-login').apiLogin({
+        const syliusApiLogin = $('#sylius-api-login')
+        if (syliusApiLogin && typeof syliusApiLogin.apiLogin === 'function') {
+          syliusApiLogin.apiLogin({
             method: 'POST',
             throttle: 500
-        });
+          });
+        }
 
-        $('.sylius-cart-remove-button').removeFromCart();
-        $('#sylius-product-adding-to-cart').addToCart();
+        const syliusCartRemoveButton = $('.sylius-cart-remove-button')
+        if (syliusCartRemoveButton && typeof syliusCartRemoveButton.removeFromCart === 'function') {
+          syliusCartRemoveButton.removeFromCart();
+        }
+        const syliusProductAddingToCart = $('#sylius-product-adding-to-cart')
+        if (syliusProductAddingToCart && typeof syliusProductAddingToCart.addToCart === 'function') {
+          syliusProductAddingToCart.addToCart();
+        }
 
-        $('#sylius-shipping-address').addressBook();
-        $('#sylius-billing-address').addressBook();
-        $(document).provinceField();
-        $(document).variantPrices();
-        $(document).variantImages();
+        const syliusShippingAddress = $('#sylius-shipping-address')
+        if (syliusShippingAddress && typeof syliusShippingAddress.addressBook === 'function') {
+          syliusShippingAddress.addressBook();
+        }
+        const syliusBillingAddress = $('#sylius-billing-address')
+        if (syliusBillingAddress && typeof syliusBillingAddress.addressBook === 'function') {
+          $('#sylius-billing-address').addressBook();
+        }
+        if (typeof $(document).provinceField === 'function') {
+          $(document).provinceField();
+        }
+        if (typeof $(document).variantPrices === 'function') {
+          $(document).variantPrices();
+        }
+        if (typeof $(document).variantImages === 'function') {
+          $(document).variantImages();
+        }
     });
 })(jQuery);

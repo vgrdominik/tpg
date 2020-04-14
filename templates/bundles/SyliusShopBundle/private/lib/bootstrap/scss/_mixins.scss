@@ -33,3 +33,9 @@
 @import "mixins/box-shadow";
 @import "mixins/gradients";
 @import "mixins/transition";
+
+// // Layout
+@import "mixins/clearfix";
+@import "mixins/grid-framework";
+@import "mixins/grid";
+@import "mixins/float";
