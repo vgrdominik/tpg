@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const state = () => ({
   token: '',
-  user: null,
+  user: null
 })
 
 export const actions = {
@@ -11,32 +11,34 @@ export const actions = {
     store.commit('updateToken', token)
   },
 
-  fetchUser (store) {
+  fetchUser(store) {
     if (store.state.token) {
-      axios.get('http://api-radge.valentigamez.com/api/user', {
-        headers: { Authorization: 'Bearer ' + store.state.token }
-      })
+      axios
+        .get('http://api-radge.valentigamez.com/api/user', {
+          headers: { Authorization: 'Bearer ' + store.state.token }
+        })
         .then((response) => {
           if (response.data && response.data.data) {
-            window.document.cookie = 'user=' + JSON.stringify(response.data.data)
+            window.document.cookie =
+              'user=' + JSON.stringify(response.data.data)
             store.commit('updateUser', response.data.data)
           } else {
             store.commit('removeUser')
           }
         })
-        .catch(() => store.state.user = null)
+        .catch(() => (store.state.user = null))
     }
-  },
+  }
 }
 
 export const mutations = {
-  updateToken (state, tokenUpdated) {
+  updateToken(state, tokenUpdated) {
     state.token = tokenUpdated
   },
-  updateUser (state, userUpdated) {
+  updateUser(state, userUpdated) {
     state.user = userUpdated
   },
-  removeUser (state) {
+  removeUser(state) {
     state.user = null
-  },
+  }
 }

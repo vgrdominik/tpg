@@ -1,24 +1,29 @@
 <template>
-  <font-awesome-icon v-if="type==='icon'" :icon="icon" v-on="$listeners" v-bind="$attrs" />
+  <font-awesome-icon
+    v-if="type === 'icon'"
+    :icon="icon"
+    v-bind="$attrs"
+    v-on="$listeners"
+  />
 </template>
 
 <script type="application/javascript">
 export default {
-  name: "CtIcon",
+  name: 'CtIcon',
 
   props: {
-    'type': {
+    type: {
       type: String,
       default: 'icon',
-      validator: function (value) {
+      validator(value) {
         // The value must match one of these strings
-        return ['icon'].indexOf(value) !== -1
+        return ['icon'].includes(value)
       }
     },
-    'icon': {
+    icon: {
       type: Array,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 }
 </script>

@@ -88,8 +88,8 @@ export const state = () => ({
 
       create_date: new Date('now'),
       drop_date: new Date('now'),
-      update_date: new Date('now'),
-    },
+      update_date: new Date('now')
+    }
   ],
 
   // Contain all customers
@@ -100,7 +100,7 @@ export const state = () => ({
       name: null,
       taxonomy_name: null,
       taxonomy_identification: null,
-      reference: null,
+      reference: null
     }
   ]
 })
@@ -111,20 +111,20 @@ export const actions = {
   },
   setCustomersSearch(state, payload) {
     state.commit('updateCustomersSearch', payload)
-  },
+  }
 }
 
 export const getters = {
-  customers: state => {
+  customers: (state) => {
     return state.customers
   }
 }
 
 export const mutations = {
-  updateCustomers (state, customers) {
+  updateCustomers(state, customers) {
     state.customers = customers
   },
-  updateCustomersSearch (state, customers_search) {
+  updateCustomersSearch(state, customers_search) {
     state.customers_search = customers_search
-  },
+  }
 }

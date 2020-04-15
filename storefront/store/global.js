@@ -1,6 +1,10 @@
 export const state = () => ({
   is_container_needed: '',
-  date_format: new Intl.DateTimeFormat('en', { year: 'numeric', month: '2-digit', day: '2-digit' }),
+  date_format: new Intl.DateTimeFormat('en', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }),
 
   // miliseconds
   time_to_sync: 8000,
@@ -15,7 +19,7 @@ export const state = () => ({
       address: null,
       postal_code: null,
       city: null,
-      province: null,
+      province: null
     },
 
     branding: {
@@ -26,15 +30,15 @@ export const state = () => ({
         success: '#4CAF50',
         error: '#FF5252',
         warning: '#FFC107',
-        info: '#D19BA3',
+        info: '#D19BA3'
       },
 
       style: {
         button: 'text',
         form: 'outlined',
         card: 'shaped',
-        dialog_card: 'shaped',
-      },
+        dialog_card: 'shaped'
+      }
     },
 
     customers: false,
@@ -42,7 +46,7 @@ export const state = () => ({
     turns: false,
 
     layout_tpv: {
-      distribution: '1-2x2',
+      distribution: '1-2x2'
     },
 
     // Default config data. Updated by stored file config
@@ -53,7 +57,7 @@ export const state = () => ({
         open_money: false,
         exit: true,
         refresh: true,
-        alerts: true,
+        alerts: true
       },
 
       // Ticket List
@@ -65,7 +69,7 @@ export const state = () => ({
         collect: true,
         collect_direct: true,
         send_custom: true,
-        delete: true,
+        delete: true
       },
 
       // Ticket Opened
@@ -75,7 +79,7 @@ export const state = () => ({
         save_close: true,
         total_price: true,
         send: true,
-        delete: true,
+        delete: true
       },
 
       // Ticket Opened - Customer
@@ -90,7 +94,7 @@ export const state = () => ({
         temporary_apply_equivalence_surcharge: false,
         temporary_apply_irpf: false,
         temporary_apply_rate: '1',
-        temporary_save: true,
+        temporary_save: true
       },
 
       // Ticket - Lines
@@ -101,7 +105,7 @@ export const state = () => ({
         total_price: true,
         complements: true,
         delete: true,
-        send: false,
+        send: false
       },
 
       // Families
@@ -109,23 +113,23 @@ export const state = () => ({
         image: true,
         image_size: 'md',
         text: true,
-        text_size: 'md',
+        text_size: 'md'
       },
 
       // Feature
       feature: {
-          text_size: 'md',
+        text_size: 'md'
       },
 
       // Quantities
       quantities: {
         unfolded: false,
-        linear: true,
+        linear: true
       },
 
       // Search
       search: {
-        show: true,
+        show: true
       },
 
       // Product List
@@ -134,37 +138,37 @@ export const state = () => ({
         image: true,
         image_size: 'md',
         text: true,
-        text_size: 'md',
+        text_size: 'md'
       },
 
       // Barcode
       barcode: {
-        show: false,
+        show: false
       },
 
       // Dining rooms
       dining_room: {
-        show: false,
+        show: false
       }
     },
 
     // Turns
     config_turns: {
       text_size: 'md',
-      description: true,
+      description: true
     },
 
     // SMTP
     smtp: {
-        host: '',
-        user: '',
-        password: '',
-        port: '587',
-        type_encryption: 'TLS',
-        email_equal_user: true,
-        email: '',
-        email_password_equal_user: true,
-        email_password: '',
+      host: '',
+      user: '',
+      password: '',
+      port: '587',
+      type_encryption: 'TLS',
+      email_equal_user: true,
+      email: '',
+      email_password_equal_user: true,
+      email_password: ''
     },
 
     // Directories
@@ -180,80 +184,80 @@ export const state = () => ({
           fields: [
             {
               name: 'id',
-              type: 'int',
+              type: 'int'
             },
             {
               name: 'id_taxonomy',
-              type: 'int',
+              type: 'int'
             },
             {
               name: 'iva',
-              type: 'float',
+              type: 'float'
             },
             {
               name: 'ids_send_to',
-              type: 'array',
+              type: 'array'
             },
             {
               name: 'name',
-              type: 'string',
+              type: 'string'
             },
             {
               name: 'cost',
-              type: 'float',
+              type: 'float'
             },
             {
               name: 'base',
-              type: 'float',
+              type: 'float'
             },
             {
               name: 'total',
-              type: 'float',
+              type: 'float'
             },
             {
               name: 'reference',
-              type: 'string',
+              type: 'string'
             },
             {
               name: 'complement_unique',
-              type: 'boolean',
+              type: 'boolean'
             },
             {
               name: 'complement_show',
-              type: 'boolean',
+              type: 'boolean'
             },
             {
               name: 'complement_ids_available',
-              type: 'string',
+              type: 'string'
             },
             {
               name: 'complement_price',
-              type: 'float',
+              type: 'float'
             },
             {
               name: 'complement_text_tpv',
-              type: 'string',
+              type: 'string'
             },
             {
               name: 'complement_taxonomy',
-              type: 'string',
+              type: 'string'
             },
             {
               name: 'complement_enabled',
-              type: 'boolean',
+              type: 'boolean'
             },
             {
               name: 'enabled',
-              type: 'boolean',
+              type: 'boolean'
             },
             {
               name: 'img',
-              type: 'string',
+              type: 'string'
             },
             {
               name: 'text_tpv',
-              type: 'string',
-            },
+              type: 'string'
+            }
           ],
 
           columns: [
@@ -269,7 +273,7 @@ export const state = () => ({
             'Complemento unico',
             'Mostrar complementos',
             'Imagen',
-            'Texto boton TPV',
+            'Texto boton TPV'
           ],
 
           fields_columns: {
@@ -290,24 +294,24 @@ export const state = () => ({
             complement_enabled: null,
             enabled: null,
             img: 'Imagen',
-            text_tpv: 'Texto boton TPV',
-          },
+            text_tpv: 'Texto boton TPV'
+          }
         },
 
         family: {
           fields: [
             {
               name: 'id',
-              type: 'int',
+              type: 'int'
             },
             {
               name: 'img',
-              type: 'string',
+              type: 'string'
             },
             {
               name: 'text_tpv',
-              type: 'string',
-            },
+              type: 'string'
+            }
           ],
 
           columns: [
@@ -323,41 +327,40 @@ export const state = () => ({
             'borde_gruix',
             'borde_tipus',
             'border_color',
-            'borde_radius',
+            'borde_radius'
           ],
 
           fields_columns: {
             id: 'id_familia',
             img: 'foto',
-            text_tpv: 'descripcio',
-          },
+            text_tpv: 'descripcio'
+          }
         },
 
         ticket: {
-
           fields: [
-            {name: "id", type: 'int'},
-            {name: "id_customer", type: 'int'},
-            {name: "id_user", type: 'int'},
-            {name: "id_terminal", type: 'int'},
-            {name: "id_turn", type: 'int'},
+            { name: 'id', type: 'int' },
+            { name: 'id_customer', type: 'int' },
+            { name: 'id_user', type: 'int' },
+            { name: 'id_terminal', type: 'int' },
+            { name: 'id_turn', type: 'int' },
 
             // Payment parameters
-            {name: "number", type: 'int'},
-            {name: "irpf", type: 'float'},
-            {name: "method_payment", type: 'string'},
-            {name: "discount_prompt_payment", type: 'float'},
-            {name: "discount_customer", type: 'float'},
-            {name: "total", type: 'float'},
+            { name: 'number', type: 'int' },
+            { name: 'irpf', type: 'float' },
+            { name: 'method_payment', type: 'string' },
+            { name: 'discount_prompt_payment', type: 'float' },
+            { name: 'discount_customer', type: 'float' },
+            { name: 'total', type: 'float' },
 
             // Number of customers related with ticket
-            {name: "diners", type: 'int'},
+            { name: 'diners', type: 'int' },
 
             // pending, paid_check, paid
-            {name: "state", type: 'string'},
+            { name: 'state', type: 'string' },
 
-            {name: "create_date", type: 'Date'},
-            {name: "update_date", type: 'Date'},
+            { name: 'create_date', type: 'Date' },
+            { name: 'update_date', type: 'Date' }
           ],
 
           columns: [
@@ -375,7 +378,7 @@ export const state = () => ({
             'comensales',
             'hora',
             'id_terminal',
-            'id_turno',
+            'id_turno'
           ],
 
           fields_columns: {
@@ -400,36 +403,36 @@ export const state = () => ({
             state: 'estat',
 
             create_date: 'fecha',
-            update_date: null,
-          },
+            update_date: null
+          }
         },
 
         ticket_line: {
           fields: [
-            {name: "id_ticket", type: 'int'},
-            {name: "id_ticket_line", type: 'int'},
-            {name: "id_attribute", type: 'int'},
-            {name: "id_user", type: 'int'},
+            { name: 'id_ticket', type: 'int' },
+            { name: 'id_ticket_line', type: 'int' },
+            { name: 'id_attribute', type: 'int' },
+            { name: 'id_user', type: 'int' },
 
             // Used to determine with fields and how show
-            {name: "type", type: 'string'},
+            { name: 'type', type: 'string' },
 
-            {name: "description", type: 'string'},
-            {name: "quantity", type: 'float'},
-            {name: "serial_number", type: 'string'}, // Technological identifier
-            {name: "lot", type: 'string'}, // Nutrition identifier
-            {name: "expiration", type: 'string'}, // It's a informative date
-            {name: "cost", type: 'float'},
-            {name: "price", type: 'float'},
-            {name: "iva", type: 'float'},
-            {name: "surcharge", type: 'float'},
-            {name: "discount", type: 'float'},
+            { name: 'description', type: 'string' },
+            { name: 'quantity', type: 'float' },
+            { name: 'serial_number', type: 'string' }, // Technological identifier
+            { name: 'lot', type: 'string' }, // Nutrition identifier
+            { name: 'expiration', type: 'string' }, // It's a informative date
+            { name: 'cost', type: 'float' },
+            { name: 'price', type: 'float' },
+            { name: 'iva', type: 'float' },
+            { name: 'surcharge', type: 'float' },
+            { name: 'discount', type: 'float' },
 
-            {name: "reference", type: 'string'},
-            {name: "reference_customer", type: 'string'},
+            { name: 'reference', type: 'string' },
+            { name: 'reference_customer', type: 'string' },
 
-            {name: "create_date", type: 'Date'},
-            {name: "update_date", type: 'Date'},
+            { name: 'create_date', type: 'Date' },
+            { name: 'update_date', type: 'Date' }
           ],
 
           columns: [
@@ -454,7 +457,7 @@ export const state = () => ({
             'fecha',
             'usuari',
             'venedor',
-            'compta',
+            'compta'
           ],
 
           fields_columns: {
@@ -482,33 +485,33 @@ export const state = () => ({
             reference_customer: 'referencia_client',
 
             create_date: 'fecha',
-            update_date: null,
-          },
+            update_date: null
+          }
         },
 
         ticket_complement: {
           fields: [
-            {name: "id_ticket_line", type: 'int'},
+            { name: 'id_ticket_line', type: 'int' },
 
-            {name: "id_complement", type: 'int'},
+            { name: 'id_complement', type: 'int' },
 
             // Same structure as ticket_line
-            {name: "description", type: 'string'},
-            {name: "quantity", type: 'float'},
-            {name: "serial_number", type: 'string'}, // Technological identifier
-            {name: "lot", type: 'string'}, // Nutrition identifier
-            {name: "expiration", type: 'string'}, // It's a informative date
-            {name: "cost", type: 'float'},
-            {name: "price", type: 'float'},
-            {name: "iva", type: 'float'},
-            {name: "surcharge", type: 'float'},
-            {name: "discount", type: 'float'},
+            { name: 'description', type: 'string' },
+            { name: 'quantity', type: 'float' },
+            { name: 'serial_number', type: 'string' }, // Technological identifier
+            { name: 'lot', type: 'string' }, // Nutrition identifier
+            { name: 'expiration', type: 'string' }, // It's a informative date
+            { name: 'cost', type: 'float' },
+            { name: 'price', type: 'float' },
+            { name: 'iva', type: 'float' },
+            { name: 'surcharge', type: 'float' },
+            { name: 'discount', type: 'float' },
 
-            {name: "reference", type: 'string'},
-            {name: "reference_customer", type: 'string'},
+            { name: 'reference', type: 'string' },
+            { name: 'reference_customer', type: 'string' },
 
-            {name: "create_date", type: 'Date'},
-            {name: "update_date", type: 'Date'},
+            { name: 'create_date', type: 'Date' },
+            { name: 'update_date', type: 'Date' }
           ],
 
           columns: [
@@ -517,7 +520,7 @@ export const state = () => ({
             'quantitat',
             'complemento',
             'iva',
-            'import',
+            'import'
           ],
 
           fields_columns: {
@@ -541,29 +544,29 @@ export const state = () => ({
             reference_customer: null,
 
             create_date: 'fecha',
-            update_date: null,
-          },
+            update_date: null
+          }
         },
 
         ticket_receipt: {
           fields: [
-            {name: "id_ticket", type: 'int'},
+            { name: 'id_ticket', type: 'int' },
 
             // receipt
-            {name: "id", type: 'int'},
-            {name: "id_invoice", type: 'int'},
-            {name: "id_user", type: 'int'},
-            {name: "id_income_account", type: 'int'},
+            { name: 'id', type: 'int' },
+            { name: 'id_invoice', type: 'int' },
+            { name: 'id_user', type: 'int' },
+            { name: 'id_income_account', type: 'int' },
 
-            {name: "number", type: 'int'},
-            {name: "collection_method", type: 'string'}, // cash, card, transfer, paypal, bizum, other
-            {name: "paid", type: 'float'}, // Float/Boolean
-            {name: "total", type: 'float'},
+            { name: 'number', type: 'int' },
+            { name: 'collection_method', type: 'string' }, // cash, card, transfer, paypal, bizum, other
+            { name: 'paid', type: 'float' }, // Float/Boolean
+            { name: 'total', type: 'float' },
 
-            {name: "paid_date", type: 'Date'},
-            {name: "expiration_date", type: 'Date'},
-            {name: "create_date", type: 'Date'},
-            {name: "update_date", type: 'Date'},
+            { name: 'paid_date', type: 'Date' },
+            { name: 'expiration_date', type: 'Date' },
+            { name: 'create_date', type: 'Date' },
+            { name: 'update_date', type: 'Date' }
           ],
 
           columns: [
@@ -582,7 +585,7 @@ export const state = () => ({
             'usuari',
             'tancat',
             'caixa',
-            'id_torn',
+            'id_torn'
           ],
 
           fields_columns: {
@@ -601,87 +604,470 @@ export const state = () => ({
             paid_date: 'fecha_cobro',
             expiration_date: 'venciment',
             create_date: 'fecha',
-            update_date: null,
-          },
+            update_date: null
+          }
         },
 
         customer: {
           fields: [
-            {label: "Código", description: "Identificador único del cliente.", modifiable: false, name: "id", type: 'int'},
+            {
+              label: 'Código',
+              description: 'Identificador único del cliente.',
+              modifiable: false,
+              name: 'id',
+              type: 'int'
+            },
 
-            {label: "Iva", description: "Impuesto sobre el valor añadido por defecto.", modifiable: true, name: "iva", type: 'float'},
-            {label: "Irpf", description: "Impuesto sobre la renta de las personas físicas por defecto.", modifiable: true, name: "irpf", type: 'float'},
+            {
+              label: 'Iva',
+              description: 'Impuesto sobre el valor añadido por defecto.',
+              modifiable: true,
+              name: 'iva',
+              type: 'float'
+            },
+            {
+              label: 'Irpf',
+              description:
+                'Impuesto sobre la renta de las personas físicas por defecto.',
+              modifiable: true,
+              name: 'irpf',
+              type: 'float'
+            },
 
-            {label: "Nombre comercial", description: "Nombre comercial del cliente.", modifiable: true, name: "corporation_name", type: 'string'},
-            {label: "Nombre interno", description: "Nombre interno de la empresa.", modifiable: true, name: "name", type: 'string'},
-            {label: "Nombre fiscal", description: "Nombre en terminos fiscales del cliente.", modifiable: true, name: "taxonomy_name", type: 'string'},
-            {label: "Identificación fiscal", description: "Identificación fiscal del cliente.", modifiable: true, name: "taxonomy_identification", type: 'string'},
-            {label: "Observaciones", description: "Observaciones internas de la empresa.", modifiable: true, name: "observations", type: 'string'},
-            {label: "Texto TPV", description: "Texto que va a salir en el TPV.", modifiable: true, name: "text_tpv", type: 'string'},
-            {label: "Imagen", description: "Imagen o logo del cliente.", modifiable: true, name: "img", type: 'string'},
-            {label: "Imagen secundaria", description: "Imagen usada cuando el cliente está en el local o activo de alguna forma.", modifiable: true, name: "img_secondary", type: 'string'},
-            {label: "Referencia", description: "Referencia interna y/o externa del cliente.", modifiable: true, name: "reference", type: 'string'},
+            {
+              label: 'Nombre comercial',
+              description: 'Nombre comercial del cliente.',
+              modifiable: true,
+              name: 'corporation_name',
+              type: 'string'
+            },
+            {
+              label: 'Nombre interno',
+              description: 'Nombre interno de la empresa.',
+              modifiable: true,
+              name: 'name',
+              type: 'string'
+            },
+            {
+              label: 'Nombre fiscal',
+              description: 'Nombre en terminos fiscales del cliente.',
+              modifiable: true,
+              name: 'taxonomy_name',
+              type: 'string'
+            },
+            {
+              label: 'Identificación fiscal',
+              description: 'Identificación fiscal del cliente.',
+              modifiable: true,
+              name: 'taxonomy_identification',
+              type: 'string'
+            },
+            {
+              label: 'Observaciones',
+              description: 'Observaciones internas de la empresa.',
+              modifiable: true,
+              name: 'observations',
+              type: 'string'
+            },
+            {
+              label: 'Texto TPV',
+              description: 'Texto que va a salir en el TPV.',
+              modifiable: true,
+              name: 'text_tpv',
+              type: 'string'
+            },
+            {
+              label: 'Imagen',
+              description: 'Imagen o logo del cliente.',
+              modifiable: true,
+              name: 'img',
+              type: 'string'
+            },
+            {
+              label: 'Imagen secundaria',
+              description:
+                'Imagen usada cuando el cliente está en el local o activo de alguna forma.',
+              modifiable: true,
+              name: 'img_secondary',
+              type: 'string'
+            },
+            {
+              label: 'Referencia',
+              description: 'Referencia interna y/o externa del cliente.',
+              modifiable: true,
+              name: 'reference',
+              type: 'string'
+            },
 
-            {label: "Género", description: "Género del cliente. Se pide un uso especialmente responsable de este dato.", modifiable: true, name: "gender", type: 'string'},
-            {label: "Origen", description: "Cómo ha conocido la empresa el cliente. Se pide un uso especialmente responsable de este dato.", modifiable: true, name: "origin", type: 'string'},
-            {label: "Tarjeta de la seguridad social", description: "Tarjeta de la seguridad social del cliente. Se pide un uso especialmente responsable de este dato.", modifiable: true, name: "social_security_card", type: 'string'},
-            {label: "Importe de la pensión", description: "Importe de la pensail del cliente. Se pide un uso especialmente responsable de este dato.", modifiable: true, name: "pension_amount", type: 'float'},
+            {
+              label: 'Género',
+              description:
+                'Género del cliente. Se pide un uso especialmente responsable de este dato.',
+              modifiable: true,
+              name: 'gender',
+              type: 'string'
+            },
+            {
+              label: 'Origen',
+              description:
+                'Cómo ha conocido la empresa el cliente. Se pide un uso especialmente responsable de este dato.',
+              modifiable: true,
+              name: 'origin',
+              type: 'string'
+            },
+            {
+              label: 'Tarjeta de la seguridad social',
+              description:
+                'Tarjeta de la seguridad social del cliente. Se pide un uso especialmente responsable de este dato.',
+              modifiable: true,
+              name: 'social_security_card',
+              type: 'string'
+            },
+            {
+              label: 'Importe de la pensión',
+              description:
+                'Importe de la pensail del cliente. Se pide un uso especialmente responsable de este dato.',
+              modifiable: true,
+              name: 'pension_amount',
+              type: 'float'
+            },
 
-            {label: "Dirección", description: "Dirección del cliente.", modifiable: true, name: "address", type: 'string'},
-            {label: "Código Postal", description: "Código Postal del cliente.", modifiable: true, name: "postal_code", type: 'string'},
-            {label: "Pueblo/Ciudad", description: "Pueblo o ciudad del cliente.", modifiable: true, name: "town", type: 'string'},
-            {label: "Provincia/Estado", description: "Provincia o estado del cliente.", modifiable: true, name: "state", type: 'string'},
+            {
+              label: 'Dirección',
+              description: 'Dirección del cliente.',
+              modifiable: true,
+              name: 'address',
+              type: 'string'
+            },
+            {
+              label: 'Código Postal',
+              description: 'Código Postal del cliente.',
+              modifiable: true,
+              name: 'postal_code',
+              type: 'string'
+            },
+            {
+              label: 'Pueblo/Ciudad',
+              description: 'Pueblo o ciudad del cliente.',
+              modifiable: true,
+              name: 'town',
+              type: 'string'
+            },
+            {
+              label: 'Provincia/Estado',
+              description: 'Provincia o estado del cliente.',
+              modifiable: true,
+              name: 'state',
+              type: 'string'
+            },
 
-            {label: "Nombre de contacto", description: "Nombre para el contacto con el cliente.", modifiable: true, name: "contact_name", type: 'string'},
-            {label: "Teléfono", description: "Teléfono del cliente.", modifiable: true, name: "phone", type: 'string'},
-            {label: "Teléfono secundario", description: "Teléfono secundario del cliente.", modifiable: true, name: "phone2", type: 'string'},
-            {label: "Fax", description: "Fax del cliente", modifiable: true, name: "fax", type: 'string'},
-            {label: "Móvil", description: "Móvil del cliente", modifiable: true, name: "mobile", type: 'string'},
-            {label: "Correo electrónico", description: "Correo electrónico del cliente", modifiable: true, name: "email", type: 'string'},
+            {
+              label: 'Nombre de contacto',
+              description: 'Nombre para el contacto con el cliente.',
+              modifiable: true,
+              name: 'contact_name',
+              type: 'string'
+            },
+            {
+              label: 'Teléfono',
+              description: 'Teléfono del cliente.',
+              modifiable: true,
+              name: 'phone',
+              type: 'string'
+            },
+            {
+              label: 'Teléfono secundario',
+              description: 'Teléfono secundario del cliente.',
+              modifiable: true,
+              name: 'phone2',
+              type: 'string'
+            },
+            {
+              label: 'Fax',
+              description: 'Fax del cliente',
+              modifiable: true,
+              name: 'fax',
+              type: 'string'
+            },
+            {
+              label: 'Móvil',
+              description: 'Móvil del cliente',
+              modifiable: true,
+              name: 'mobile',
+              type: 'string'
+            },
+            {
+              label: 'Correo electrónico',
+              description: 'Correo electrónico del cliente',
+              modifiable: true,
+              name: 'email',
+              type: 'string'
+            },
 
-            {label: "Notificaciones habilitadas", description: "Notificaciones para el cliente habilitadas", modifiable: true, name: "notifications_enabled", type: 'boolean'},
-            {label: "Notificaciones básicas habilitadas", description: "Notificaciones básicas para el cliente habilitadas", modifiable: true, name: "notifications_basic_enabled", type: 'boolean'},
-            {label: "Notificaciones publicitarias habilitadas", description: "Notificaciones publicitarias para el cliente habilitadas", modifiable: true, name: "notifications_publicity_enabled", type: 'boolean'},
-            {label: "Otras notificaciones habilitadas", description: "Otras notificaciones para el cliente habilitadas", modifiable: true, name: "notifications_others_enabled", type: 'boolean'},
+            {
+              label: 'Notificaciones habilitadas',
+              description: 'Notificaciones para el cliente habilitadas',
+              modifiable: true,
+              name: 'notifications_enabled',
+              type: 'boolean'
+            },
+            {
+              label: 'Notificaciones básicas habilitadas',
+              description: 'Notificaciones básicas para el cliente habilitadas',
+              modifiable: true,
+              name: 'notifications_basic_enabled',
+              type: 'boolean'
+            },
+            {
+              label: 'Notificaciones publicitarias habilitadas',
+              description:
+                'Notificaciones publicitarias para el cliente habilitadas',
+              modifiable: true,
+              name: 'notifications_publicity_enabled',
+              type: 'boolean'
+            },
+            {
+              label: 'Otras notificaciones habilitadas',
+              description: 'Otras notificaciones para el cliente habilitadas',
+              modifiable: true,
+              name: 'notifications_others_enabled',
+              type: 'boolean'
+            },
 
-            {label: "Categoría para SMS", description: "Categorización para el envío de sms para el cliente", modifiable: true, name: "taxonomy_sms", type: 'int'},
-            {label: "Categoría para EMAIL", description: "Categorización para el envío de correos electrónicos para el cliente", modifiable: true, name: "taxonomy_email", type: 'int'},
+            {
+              label: 'Categoría para SMS',
+              description:
+                'Categorización para el envío de sms para el cliente',
+              modifiable: true,
+              name: 'taxonomy_sms',
+              type: 'int'
+            },
+            {
+              label: 'Categoría para EMAIL',
+              description:
+                'Categorización para el envío de correos electrónicos para el cliente',
+              modifiable: true,
+              name: 'taxonomy_email',
+              type: 'int'
+            },
 
-            {label: "Puntos", description: "Puntos de fidelización del cliente", modifiable: true, name: "points", type: 'int'},
-            {label: "Nivel", description: "Nivel de fidelización del cliente", modifiable: true, name: "level", type: 'int'},
+            {
+              label: 'Puntos',
+              description: 'Puntos de fidelización del cliente',
+              modifiable: true,
+              name: 'points',
+              type: 'int'
+            },
+            {
+              label: 'Nivel',
+              description: 'Nivel de fidelización del cliente',
+              modifiable: true,
+              name: 'level',
+              type: 'int'
+            },
 
-            {label: "Periodicidad", description: "Periodicidad por defecto del cliente", modifiable: true, name: "periodicity", type: 'string'},
-            {label: "Cuenta de cargos", description: "Cuenta donde se carga el importe de los tíquets", modifiable: true, name: "account_charge", type: 'string'},
-            {label: "Tarifa", description: "Tarifa por defecto del cliente", modifiable: true, name: "rate", type: 'string'},
-            {label: "Recargo", description: "Aplicación del recargo por defecto en los tíquets", modifiable: true, name: "surcharge", type: 'boolean'},
-            {label: "Código contable", description: "Código contable del cliente", modifiable: true, name: "countable_code", type: 'string'},
-            {label: "Día de pago", description: "Día de pago del cliente", modifiable: true, name: "payment_day", type: 'string'},
-            {label: "Día de pago 2", description: "Segundo día de pago del cliente", modifiable: true, name: "payment_day2", type: 'string'},
-            {label: "Banco de la cuenta", description: "Banco de la cuenta del cliente", modifiable: true, name: "payment_bank", type: 'int'},
-            {label: "Entidad bancaria de la cuenta", description: "Entidad bancaria de la cuenta del cliente", modifiable: true, name: "payment_entity", type: 'int'},
-            {label: "Agencia de la cuenta", description: "Agencia de la cuenta del cliente", modifiable: true, name: "payment_agency", type: 'int'},
-            {label: "Dígito de control de la cuenta", description: "Dígito de control de la cuenta del cliente", modifiable: true, name: "payment_control_digit", type: 'int'},
-            {label: "Número de la cuenta", description: "Número de la cuenta del cliente", modifiable: true, name: "payment_account", type: 'int'},
-            {label: "Método de pago", description: "Método de pago del cliente por defecto", modifiable: true, name: "payment_method", type: 'string'},
-            {label: "Descuento de tíquet", description: "Descuento en los tíquets por defecto", modifiable: true, name: "discount_document", type: 'float'},
-            {label: "Descuento de producto", description: "Descuento en los productos por defecto", modifiable: true, name: "discount_product", type: 'float'},
-            {label: "Descuento pronto pago", description: "Descuento de pronto pago por defecto", modifiable: true, name: "discount_prompt_payment", type: 'float'},
+            {
+              label: 'Periodicidad',
+              description: 'Periodicidad por defecto del cliente',
+              modifiable: true,
+              name: 'periodicity',
+              type: 'string'
+            },
+            {
+              label: 'Cuenta de cargos',
+              description: 'Cuenta donde se carga el importe de los tíquets',
+              modifiable: true,
+              name: 'account_charge',
+              type: 'string'
+            },
+            {
+              label: 'Tarifa',
+              description: 'Tarifa por defecto del cliente',
+              modifiable: true,
+              name: 'rate',
+              type: 'string'
+            },
+            {
+              label: 'Recargo',
+              description: 'Aplicación del recargo por defecto en los tíquets',
+              modifiable: true,
+              name: 'surcharge',
+              type: 'boolean'
+            },
+            {
+              label: 'Código contable',
+              description: 'Código contable del cliente',
+              modifiable: true,
+              name: 'countable_code',
+              type: 'string'
+            },
+            {
+              label: 'Día de pago',
+              description: 'Día de pago del cliente',
+              modifiable: true,
+              name: 'payment_day',
+              type: 'string'
+            },
+            {
+              label: 'Día de pago 2',
+              description: 'Segundo día de pago del cliente',
+              modifiable: true,
+              name: 'payment_day2',
+              type: 'string'
+            },
+            {
+              label: 'Banco de la cuenta',
+              description: 'Banco de la cuenta del cliente',
+              modifiable: true,
+              name: 'payment_bank',
+              type: 'int'
+            },
+            {
+              label: 'Entidad bancaria de la cuenta',
+              description: 'Entidad bancaria de la cuenta del cliente',
+              modifiable: true,
+              name: 'payment_entity',
+              type: 'int'
+            },
+            {
+              label: 'Agencia de la cuenta',
+              description: 'Agencia de la cuenta del cliente',
+              modifiable: true,
+              name: 'payment_agency',
+              type: 'int'
+            },
+            {
+              label: 'Dígito de control de la cuenta',
+              description: 'Dígito de control de la cuenta del cliente',
+              modifiable: true,
+              name: 'payment_control_digit',
+              type: 'int'
+            },
+            {
+              label: 'Número de la cuenta',
+              description: 'Número de la cuenta del cliente',
+              modifiable: true,
+              name: 'payment_account',
+              type: 'int'
+            },
+            {
+              label: 'Método de pago',
+              description: 'Método de pago del cliente por defecto',
+              modifiable: true,
+              name: 'payment_method',
+              type: 'string'
+            },
+            {
+              label: 'Descuento de tíquet',
+              description: 'Descuento en los tíquets por defecto',
+              modifiable: true,
+              name: 'discount_document',
+              type: 'float'
+            },
+            {
+              label: 'Descuento de producto',
+              description: 'Descuento en los productos por defecto',
+              modifiable: true,
+              name: 'discount_product',
+              type: 'float'
+            },
+            {
+              label: 'Descuento pronto pago',
+              description: 'Descuento de pronto pago por defecto',
+              modifiable: true,
+              name: 'discount_prompt_payment',
+              type: 'float'
+            },
 
-            {label: "Comensales", description: "Comensales que representa el cliente por defecto", modifiable: true, name: "diners", type: 'int'},
-            {label: "Identificador de mesa", description: "Identificador de mesa del cliente", modifiable: true, name: "table_id", type: 'int'},
-            {label: "Mesa en uso", description: "Valor por defecto de mesa en uso", modifiable: true, name: "table_in_use", type: 'boolean'},
-            {label: "Identificador del comedor", description: "Identificador del comedor por defecto", modifiable: true, name: "dinning_room_id", type: 'int'},
+            {
+              label: 'Comensales',
+              description: 'Comensales que representa el cliente por defecto',
+              modifiable: true,
+              name: 'diners',
+              type: 'int'
+            },
+            {
+              label: 'Identificador de mesa',
+              description: 'Identificador de mesa del cliente',
+              modifiable: true,
+              name: 'table_id',
+              type: 'int'
+            },
+            {
+              label: 'Mesa en uso',
+              description: 'Valor por defecto de mesa en uso',
+              modifiable: true,
+              name: 'table_in_use',
+              type: 'boolean'
+            },
+            {
+              label: 'Identificador del comedor',
+              description: 'Identificador del comedor por defecto',
+              modifiable: true,
+              name: 'dinning_room_id',
+              type: 'int'
+            },
 
-            {label: "Habilitado", description: "Indica si el cliente está habilitado", modifiable: true, name: "enabled", type: 'boolean'},
+            {
+              label: 'Habilitado',
+              description: 'Indica si el cliente está habilitado',
+              modifiable: true,
+              name: 'enabled',
+              type: 'boolean'
+            },
 
-            {label: "Identificador del creador", description: "Identificación del usuario que lo creó", modifiable: true, name: "creator_user_id", type: 'int'},
-            {label: "Identificador del modificador", description: "Identificador del último usuario que lo ha modificado", modifiable: true, name: "update_user_id", type: 'int'},
-            {label: "Identificador del vendedor", description: "Identificador del usuario que atiende al cliente por defecto", modifiable: true, name: "seller_user_id", type: 'int'},
+            {
+              label: 'Identificador del creador',
+              description: 'Identificación del usuario que lo creó',
+              modifiable: true,
+              name: 'creator_user_id',
+              type: 'int'
+            },
+            {
+              label: 'Identificador del modificador',
+              description:
+                'Identificador del último usuario que lo ha modificado',
+              modifiable: true,
+              name: 'update_user_id',
+              type: 'int'
+            },
+            {
+              label: 'Identificador del vendedor',
+              description:
+                'Identificador del usuario que atiende al cliente por defecto',
+              modifiable: true,
+              name: 'seller_user_id',
+              type: 'int'
+            },
 
-            {label: "Fecha de nacimiento", description: "Fecha de nacimiento del cliente", modifiable: true, name: "birthday_date", type: 'Date'},
-            {label: "Fecha de creación", description: "Fecha de creación del cliente", modifiable: true, name: "create_date", type: 'Date'},
-            {label: "Fecha de eliminación", description: "Fecha de eliminación del cliente", modifiable: true, name: "drop_date", type: 'Date'},
-            {label: "Fecha de modificación", description: "Fecha de modificación", modifiable: true, name: "update_date", type: 'Date'},
+            {
+              label: 'Fecha de nacimiento',
+              description: 'Fecha de nacimiento del cliente',
+              modifiable: true,
+              name: 'birthday_date',
+              type: 'Date'
+            },
+            {
+              label: 'Fecha de creación',
+              description: 'Fecha de creación del cliente',
+              modifiable: true,
+              name: 'create_date',
+              type: 'Date'
+            },
+            {
+              label: 'Fecha de eliminación',
+              description: 'Fecha de eliminación del cliente',
+              modifiable: true,
+              name: 'drop_date',
+              type: 'Date'
+            },
+            {
+              label: 'Fecha de modificación',
+              description: 'Fecha de modificación',
+              modifiable: true,
+              name: 'update_date',
+              type: 'Date'
+            }
           ],
 
           columns: [
@@ -741,7 +1127,7 @@ export const state = () => ({
             'import_pensio',
             'periodicitat',
             'punts',
-            'nivell_comisio',
+            'nivell_comisio'
           ],
 
           fields_columns: {
@@ -806,19 +1192,19 @@ export const state = () => ({
             enabled: 'mostrar', // inactiu
             create_date: 'data_alta',
             drop_date: 'data_baixa',
-            update_date: '',
-          },
+            update_date: ''
+          }
         },
 
         customer_search: {
           fields: [
-            {name: "id_customer", type: 'int'},
+            { name: 'id_customer', type: 'int' },
 
-            {name: "corporation_name", type: 'string'},
-            {name: "name", type: 'string'},
-            {name: "taxonomy_name", type: 'string'},
-            {name: "taxonomy_identification", type: 'string'},
-            {name: "reference", type: 'string'},
+            { name: 'corporation_name', type: 'string' },
+            { name: 'name', type: 'string' },
+            { name: 'taxonomy_name', type: 'string' },
+            { name: 'taxonomy_identification', type: 'string' },
+            { name: 'reference', type: 'string' }
           ],
 
           columns: [
@@ -878,7 +1264,7 @@ export const state = () => ({
             'import_pensio',
             'periodicitat',
             'punts',
-            'nivell_comisio',
+            'nivell_comisio'
           ],
 
           fields_columns: {
@@ -887,12 +1273,12 @@ export const state = () => ({
             name: 'nombre',
             taxonomy_name: '',
             taxonomy_identification: 'dni',
-            reference: 'identificaio',
-          },
-        },
-      },
-    },
-  },
+            reference: 'identificaio'
+          }
+        }
+      }
+    }
+  }
 })
 
 export const actions = {
@@ -907,29 +1293,29 @@ export const actions = {
   },
   setTimeToSync(state, payload) {
     state.commit('updateTimeToSync', payload)
-  },
+  }
 }
 
 export const mutations = {
-  updateIsContainerNeeded (state, is_container_needed) {
+  updateIsContainerNeeded(state, is_container_needed) {
     state.is_container_needed = is_container_needed
   },
-  updateConfigComplete (state, config) {
+  updateConfigComplete(state, config) {
     state.config = config
   },
-  updateTimeToSync (state, time_to_sync) {
+  updateTimeToSync(state, time_to_sync) {
     state.time_to_sync = time_to_sync
   },
 
-  updateConfigValue (state, { path, value }) {
-    let pathStack = path.split('>')
+  updateConfigValue(state, { path, value }) {
+    const pathStack = path.split('>')
     let stateConfig = state.config
 
-    while (pathStack.length>1) {
+    while (pathStack.length > 1) {
       stateConfig = stateConfig[pathStack.shift()]
     }
 
-    let elementToUpdate = pathStack.shift()
+    const elementToUpdate = pathStack.shift()
     stateConfig[elementToUpdate] = value
-  },
+  }
 }

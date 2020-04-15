@@ -1,12 +1,17 @@
 <template>
   <div>
-
     <!-- Color Palette -->
     <v-row dense :class="{ 'mt-1': $vuetify.breakpoint.smAndUp }">
       <v-col cols="12" lg="8" class="body-2 justify-center">
-        <CtBtn :type="stored_config.branding.style.button" color="secondary" @click="show_color_palette = ! show_color_palette">Paleta de colores</CtBtn> (Click para mostrar/ocultar)
+        <CtBtn
+          :type="stored_config.branding.style.button"
+          color="secondary"
+          @click="show_color_palette = !show_color_palette"
+          >Paleta de colores</CtBtn
+        >
+        (Click para mostrar/ocultar)
       </v-col>
-      <v-col cols="12" lg="4" v-if="show_color_palette">
+      <v-col v-if="show_color_palette" cols="12" lg="4">
         <v-row dense class="body-1">
           <v-spacer />
           Primario
@@ -19,7 +24,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row dense v-if="show_color_palette">
+    <v-row v-if="show_color_palette" dense>
       <v-col cols="12" lg="4">
         <v-row dense class="body-1">
           <v-spacer />
@@ -57,7 +62,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row dense v-if="show_color_palette">
+    <v-row v-if="show_color_palette" dense>
       <v-col cols="12" lg="4">
         <v-row dense class="body-1">
           <v-spacer />
@@ -99,12 +104,18 @@
     <!-- Styles -->
     <v-row dense :class="{ 'mt-5': $vuetify.breakpoint.smAndUp }">
       <v-col cols="12" sm="8" class="body-2 justify-center">
-        <CtBtn :type="stored_config.branding.style.button" color="secondary" @click="show_style = ! show_style">Estilos</CtBtn> (Click para mostrar/ocultar)
+        <CtBtn
+          :type="stored_config.branding.style.button"
+          color="secondary"
+          @click="show_style = !show_style"
+          >Estilos</CtBtn
+        >
+        (Click para mostrar/ocultar)
       </v-col>
     </v-row>
 
     <!-- Styles Buttons -->
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-col cols="12" sm="3">
         <v-row dense class="body-1">
           <v-spacer />
@@ -134,12 +145,16 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-spacer />
       <v-col cols="12" sm="3">
         <v-row dense>
           <v-spacer />
-          <v-switch v-model="styleButtonRounded" class="ma-4" label="Redondeado" />
+          <v-switch
+            v-model="styleButtonRounded"
+            class="ma-4"
+            label="Redondeado"
+          />
           <v-spacer />
         </v-row>
       </v-col>
@@ -158,7 +173,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-spacer />
       <v-col cols="12" sm="3">
         <v-row dense>
@@ -184,7 +199,7 @@
     </v-row>
 
     <!-- Styles Forms -->
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-col cols="12" sm="3">
         <v-row dense class="body-1">
           <v-spacer />
@@ -202,19 +217,23 @@
       <v-col cols="12" sm="3">
         <v-row dense>
           <v-spacer />
-          <CtTextField ctType="outlined" color="primary" label="Primario" />
+          <CtTextField ct-type="outlined" color="primary" label="Primario" />
           <v-spacer />
         </v-row>
       </v-col>
       <v-col cols="12" sm="3">
         <v-row dense>
           <v-spacer />
-          <CtTextField ctType="outlined" color="secondary" label="Secundario" />
+          <CtTextField
+            ct-type="outlined"
+            color="secondary"
+            label="Secundario"
+          />
           <v-spacer />
         </v-row>
       </v-col>
     </v-row>
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-spacer />
       <v-col cols="12" sm="3">
         <v-row dense>
@@ -226,21 +245,21 @@
       <v-col cols="12" sm="3">
         <v-row dense>
           <v-spacer />
-          <CtTextField ctType="box" color="primary" label="Primario" />
+          <CtTextField ct-type="box" color="primary" label="Primario" />
           <v-spacer />
         </v-row>
       </v-col>
       <v-col cols="12" sm="3">
         <v-row dense>
           <v-spacer />
-          <CtTextField ctType="box" color="secondary" label="Secundario" />
+          <CtTextField ct-type="box" color="secondary" label="Secundario" />
           <v-spacer />
         </v-row>
       </v-col>
     </v-row>
 
     <!-- Styles Cards -->
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-col cols="12" sm="3">
         <v-row dense class="body-1">
           <v-spacer />
@@ -251,7 +270,11 @@
       <v-col cols="12" sm="3">
         <v-row dense>
           <v-spacer />
-          <v-switch v-model="styleCardRounded" class="ma-4" label="Redondeado" />
+          <v-switch
+            v-model="styleCardRounded"
+            class="ma-4"
+            label="Redondeado"
+          />
           <v-spacer />
         </v-row>
       </v-col>
@@ -270,7 +293,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-spacer />
       <v-col cols="12" sm="3">
         <v-row dense>
@@ -294,7 +317,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-spacer />
       <v-col cols="12" sm="3">
         <v-row dense>
@@ -320,7 +343,7 @@
     </v-row>
 
     <!-- Styles Dialogs -->
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-col cols="12" sm="3">
         <v-row dense class="body-1">
           <v-spacer />
@@ -331,7 +354,11 @@
       <v-col cols="12" sm="3">
         <v-row dense>
           <v-spacer />
-          <v-switch v-model="styleDialogRounded" class="ma-4" label="Redondeado" />
+          <v-switch
+            v-model="styleDialogRounded"
+            class="ma-4"
+            label="Redondeado"
+          />
           <v-spacer />
         </v-row>
       </v-col>
@@ -350,7 +377,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-spacer />
       <v-col cols="12" sm="3">
         <v-row dense>
@@ -374,7 +401,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row dense v-if="show_style">
+    <v-row v-if="show_style" dense>
       <v-spacer />
       <v-col cols="12" sm="3">
         <v-row dense>
@@ -403,12 +430,12 @@
 
 <script type="application/javascript">
 export default {
-  name: "Branding",
+  name: 'Branding',
   props: {
-    'model': {
+    model: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
 
   data: () => {
@@ -429,12 +456,12 @@ export default {
 
       styleDialogRounded: false,
       styleDialogBox: false,
-      styleDialogShaped: false,
+      styleDialogShaped: false
     }
   },
 
   computed: {
-    stored_config () {
+    stored_config() {
       return this.$store.state.global.config
     }
   },
@@ -517,7 +544,7 @@ export default {
         this.styleDialogBox = false
         this.model.style.dialog_card = 'shaped'
       }
-    },
+    }
   },
 
   mounted() {
@@ -557,6 +584,6 @@ export default {
     if (this.model.style.dialog_card === 'shaped') {
       this.styleDialogShaped = true
     }
-  },
+  }
 }
 </script>

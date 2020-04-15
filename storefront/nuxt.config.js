@@ -19,7 +19,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'
+      }
     ]
   },
   /*
@@ -33,10 +37,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '@plugins/font-awesome-icon.js',
-    '@plugins/global.js'
-  ],
+  plugins: ['@plugins/font-awesome-icon.js', '@plugins/global.js'],
   /*
    ** Nuxt.js dev-modules
    */

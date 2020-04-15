@@ -4,9 +4,15 @@
     <v-radio-group v-model="distribution">
       <v-row dense>
         <v-col cols="12" lg="8" class="body-2 justify-center">
-          <CtBtn :type="stored_config.branding.style.button" color="secondary" @click="show_layout_tpv = ! show_layout_tpv">Distribución TPV</CtBtn> (Click para mostrar/ocultar)
+          <CtBtn
+            :type="stored_config.branding.style.button"
+            color="secondary"
+            @click="show_layout_tpv = !show_layout_tpv"
+            >Distribución TPV</CtBtn
+          >
+          (Click para mostrar/ocultar)
         </v-col>
-        <v-col cols="12" lg="4" v-if="show_layout_tpv">
+        <v-col v-if="show_layout_tpv" cols="12" lg="4">
           <v-row dense class="body-2">
             <v-spacer />
             1 Columna - 1 Columna grande con 2 filas
@@ -18,16 +24,16 @@
           <v-row dense>
             <v-spacer />
             <v-img
-                    :src="$global_utilities.require_img('distribution1-2x2.svg')"
-                    class="my-3"
-                    contain
-                    width="220"
+              :src="$global_utilities.require_img('distribution1-2x2.svg')"
+              class="my-3"
+              contain
+              width="220"
             />
             <v-spacer />
           </v-row>
         </v-col>
       </v-row>
-      <v-row dense v-if="show_layout_tpv">
+      <v-row v-if="show_layout_tpv" dense>
         <v-col cols="12" lg="4">
           <v-row dense class="body-2">
             <v-spacer />
@@ -40,10 +46,10 @@
           <v-row dense>
             <v-spacer />
             <v-img
-                    :src="$global_utilities.require_img('distribution1-1-1.svg')"
-                    class="my-3"
-                    contain
-                    width="220"
+              :src="$global_utilities.require_img('distribution1-1-1.svg')"
+              class="my-3"
+              contain
+              width="220"
             />
             <v-spacer />
           </v-row>
@@ -60,10 +66,10 @@
           <v-row dense>
             <v-spacer />
             <v-img
-                    :src="$global_utilities.require_img('distribution1-1x2.svg')"
-                    class="my-3"
-                    contain
-                    width="220"
+              :src="$global_utilities.require_img('distribution1-1x2.svg')"
+              class="my-3"
+              contain
+              width="220"
             />
             <v-spacer />
           </v-row>
@@ -80,16 +86,16 @@
           <v-row dense>
             <v-spacer />
             <v-img
-                    :src="$global_utilities.require_img('distribution1-2-1.svg')"
-                    class="my-3"
-                    contain
-                    width="220"
+              :src="$global_utilities.require_img('distribution1-2-1.svg')"
+              class="my-3"
+              contain
+              width="220"
             />
             <v-spacer />
           </v-row>
         </v-col>
       </v-row>
-      <v-row dense v-if="show_layout_tpv">
+      <v-row v-if="show_layout_tpv" dense>
         <v-col cols="12" lg="4">
           <v-row dense class="body-2">
             <v-spacer />
@@ -102,10 +108,10 @@
           <v-row dense>
             <v-spacer />
             <v-img
-                    :src="$global_utilities.require_img('distribution1-3-1.svg')"
-                    class="my-3"
-                    contain
-                    width="220"
+              :src="$global_utilities.require_img('distribution1-3-1.svg')"
+              class="my-3"
+              contain
+              width="220"
             />
             <v-spacer />
           </v-row>
@@ -122,10 +128,10 @@
           <v-row dense>
             <v-spacer />
             <v-img
-                    :src="$global_utilities.require_img('distribution1-3x2.svg')"
-                    class="my-3"
-                    contain
-                    width="220"
+              :src="$global_utilities.require_img('distribution1-3x2.svg')"
+              class="my-3"
+              contain
+              width="220"
             />
             <v-spacer />
           </v-row>
@@ -142,16 +148,16 @@
           <v-row dense>
             <v-spacer />
             <v-img
-                    :src="$global_utilities.require_img('distribution1x2-1.svg')"
-                    class="my-3"
-                    contain
-                    width="220"
+              :src="$global_utilities.require_img('distribution1x2-1.svg')"
+              class="my-3"
+              contain
+              width="220"
             />
             <v-spacer />
           </v-row>
         </v-col>
       </v-row>
-      <v-row dense v-if="show_layout_tpv">
+      <v-row v-if="show_layout_tpv" dense>
         <v-col cols="12" lg="4">
           <v-row dense class="body-2">
             <v-spacer />
@@ -164,10 +170,10 @@
           <v-row dense>
             <v-spacer />
             <v-img
-                    :src="$global_utilities.require_img('distribution2x2-1.svg')"
-                    class="my-3"
-                    contain
-                    width="220"
+              :src="$global_utilities.require_img('distribution2x2-1.svg')"
+              class="my-3"
+              contain
+              width="220"
             />
             <v-spacer />
           </v-row>
@@ -184,10 +190,10 @@
           <v-row dense>
             <v-spacer />
             <v-img
-                    :src="$global_utilities.require_img('distribution3x2-1.svg')"
-                    class="my-3"
-                    contain
-                    width="220"
+              :src="$global_utilities.require_img('distribution3x2-1.svg')"
+              class="my-3"
+              contain
+              width="220"
             />
             <v-spacer />
           </v-row>
@@ -199,23 +205,23 @@
 
 <script type="application/javascript">
 export default {
-  name: "LayoutTPV",
+  name: 'LayoutTPV',
   props: {
-    'model': {
+    model: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
 
   data: () => {
     return {
       show_layout_tpv: false,
-      distribution: null,
+      distribution: null
     }
   },
 
   computed: {
-    stored_config () {
+    stored_config() {
       return this.$store.state.global.config
     }
   },
@@ -228,7 +234,7 @@ export default {
     },
     show_layout_tpv() {
       this.distribution = this.model.distribution
-    },
-  },
+    }
+  }
 }
 </script>

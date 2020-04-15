@@ -42,8 +42,8 @@ export const state = () => ({
 
       enabled: null,
       img: null,
-      text_tpv: null,
-    },
+      text_tpv: null
+    }
   ]
 })
 
@@ -56,17 +56,17 @@ export const actions = {
   },
   setUnits(state, payload) {
     state.commit('updateUnits', payload)
-  },
+  }
 }
 
 export const mutations = {
-  updateProducts (state, products) {
+  updateProducts(state, products) {
     state.products = products
   },
-  updateProductToShow (state, productToShow) {
+  updateProductToShow(state, productToShow) {
     state.product_to_show = productToShow
   },
-  updateUnits (state, units) {
+  updateUnits(state, units) {
     state.units = units
-  },
+  }
 }

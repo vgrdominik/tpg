@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid id="main-content">
+  <v-container id="main-content" fluid>
     <v-row dense>
       <v-col cols="12" md="3">
         <ActionList />
@@ -9,7 +9,9 @@
       <v-col cols="12" md="9">
         <v-expansion-panels v-model="panel" accordion>
           <v-expansion-panel>
-            <v-expansion-panel-header class="primary--text pt-0 pb-0">Familias</v-expansion-panel-header>
+            <v-expansion-panel-header class="primary--text pt-0 pb-0"
+              >Familias</v-expansion-panel-header
+            >
             <v-expansion-panel-content>
               <FamilyList />
             </v-expansion-panel-content>
@@ -23,27 +25,27 @@
 
 <script>
 import { mapActions } from 'vuex'
-import FamilyList from "../components/family/FamilyList";
-import ProductList from "../components/product/ProductList";
-import ActionList from "../components/ticket/ActionList";
-import TicketList from "../components/ticket/TicketList";
-import Ticket from "../components/ticket/Ticket";
+import FamilyList from '../components/family/FamilyList'
+import ProductList from '../components/product/ProductList'
+import ActionList from '../components/ticket/ActionList'
+import TicketList from '../components/ticket/TicketList'
+import Ticket from '../components/ticket/Ticket'
 
 export default {
-  components: {Ticket, TicketList, ActionList, FamilyList, ProductList},
+  components: { Ticket, TicketList, ActionList, FamilyList, ProductList },
   data() {
     return {
-      panel: 0,
+      panel: 0
     }
   },
 
   computed: {
-    stored_config () {
+    stored_config() {
       return this.$store.state.global.config
     },
-    current_ticket () {
+    current_ticket() {
       return this.$store.state.ticket.current_ticket
-    },
+    }
   },
 
   mounted() {
@@ -55,10 +57,8 @@ export default {
   },
 
   methods: {
-    ...mapActions('global', [
-      'setIsContainerNeeded',
-    ]),
-  },
+    ...mapActions('global', ['setIsContainerNeeded'])
+  }
 }
 </script>
 <style>

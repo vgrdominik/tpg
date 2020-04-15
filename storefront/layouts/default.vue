@@ -7,11 +7,7 @@
     >
       <v-list dense>
         <template v-for="item in items">
-          <v-row
-            v-if="item.heading"
-            :key="item.heading"
-            align="center"
-          >
+          <v-row v-if="item.heading" :key="item.heading" align="center">
             <v-col cols="12">
               <v-subheader v-if="item.heading">
                 {{ item.heading }}
@@ -31,12 +27,11 @@
                 </v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item
-              v-for="(child, i) in item.children"
-              :key="i"
-              link
-            >
-              <v-list-item-action v-if="child.icon" @click="$router.push({ path: child.path })">
+            <v-list-item v-for="(child, i) in item.children" :key="i" link>
+              <v-list-item-action
+                v-if="child.icon"
+                @click="$router.push({ path: child.path })"
+              >
                 <CtIcon :icon="child.icon" class="primary--text" />
               </v-list-item-action>
               <v-list-item-content @click="$router.push({ path: child.path })">
@@ -46,11 +41,7 @@
               </v-list-item-content>
             </v-list-item>
           </v-list-group>
-          <v-list-item
-            v-else
-            :key="item.text"
-            link
-          >
+          <v-list-item v-else :key="item.text" link>
             <v-list-item-action @click="$router.push({ path: item.path })">
               <CtIcon :icon="item.icon" class="primary--text" />
             </v-list-item-action>
@@ -83,13 +74,16 @@
       color="primary"
       height="42"
     >
-      <CtBtn type="icon" :icon="['fas', 'chevron-left']" small @click="$router.go(-1)" class="mr-3" />
+      <CtBtn
+        type="icon"
+        :icon="['fas', 'chevron-left']"
+        small
+        class="mr-3"
+        @click="$router.go(-1)"
+      />
 
       <v-app-bar-nav-icon small @click.stop="drawer = !drawer" />
-      <v-toolbar-title
-        style="width: 300px"
-        class="ml-0 pl-4"
-      >
+      <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
         <CtBtn type="text" color="white" to="/">TPV</CtBtn>
       </v-toolbar-title>
       <v-spacer />
@@ -111,12 +105,8 @@
       <CtBtn type="icon" :icon="['fas', 'bell']" small to="/notificaciones" />
     </v-app-bar>
     <v-content id="maincontent" class="pt-8">
-      <router-view v-if="! isContainerNeeded" />
-      <v-container
-        class="fill-height"
-        fluid
-        v-else
-      >
+      <router-view v-if="!isContainerNeeded" />
+      <v-container v-else class="fill-height" fluid>
         <router-view />
       </v-container>
     </v-content>
@@ -134,19 +124,42 @@
       <v-icon>mdi-cached</v-icon>
     </CtBtn>
 
-    <v-footer padless fixed v-if="$router.currentRoute.path !== '/'">
-      <CtCard type="empty" fluid flat tile width="100%" class="primary text-center">
+    <v-footer v-if="$router.currentRoute.path !== '/'" padless fixed>
+      <CtCard
+        type="empty"
+        fluid
+        flat
+        tile
+        width="100%"
+        class="primary text-center"
+      >
         <v-card-text class="pa-0">
           <v-row dense>
-            <v-col cols="12" sm="4" v-if="$vuetify.breakpoint.smAndUp">
-              <CtBtn v-for="footerItem in footerItems" :key="footerItem.title" type="icon" target="_blank" :title="footerItem.title" :href="footerItem.href" :icon="footerItem.icon" class="mx-4 white--text" />
+            <v-col v-if="$vuetify.breakpoint.smAndUp" cols="12" sm="4">
+              <CtBtn
+                v-for="footerItem in footerItems"
+                :key="footerItem.title"
+                type="icon"
+                target="_blank"
+                :title="footerItem.title"
+                :href="footerItem.href"
+                :icon="footerItem.icon"
+                class="mx-4 white--text"
+              />
             </v-col>
-            <v-col cols="12" sm="4" class="white--text pt-3" v-if="$vuetify.breakpoint.smAndUp">
+            <v-col
+              v-if="$vuetify.breakpoint.smAndUp"
+              cols="12"
+              sm="4"
+              class="white--text pt-3"
+            >
               Recuerda pensar en tu producto y tus clientes!
             </v-col>
             <v-col cols="12" sm="4">
               <CtBtn type="text" color="white">Condiciones</CtBtn>
-              <CtBtn type="text" color="white">{{ new Date().getFullYear() }} — Ryu</CtBtn>
+              <CtBtn type="text" color="white"
+                >{{ new Date().getFullYear() }} — Ryu</CtBtn
+              >
             </v-col>
           </v-row>
         </v-card-text>
@@ -156,13 +169,12 @@
 </template>
 
 <script>
-import { ipcRenderer, remote } from 'electron'
 import { mapMutations, mapActions } from 'vuex'
-import _ from "underscore"
+import _ from 'underscore'
 
 export default {
   props: {
-    source: String,
+    source: String
   },
 
   data: () => ({
@@ -181,42 +193,42 @@ export default {
     state: 'synchronized', // not_synchronized, synchronized_error
     items: [
       { icon: ['fas', 'heart'], text: 'TPV', path: '/' },
-      { icon: ['fas', 'cogs'], text: 'Configuración', path: '/configuracion' },
+      { icon: ['fas', 'cogs'], text: 'Configuración', path: '/configuracion' }
     ],
     footerItems: [
       {
         href: 'https://www.facebook.com/iamvalentigamez',
         icon: ['fab', 'facebook'],
-        title: 'Página de Facebook',
+        title: 'Página de Facebook'
       },
       {
         href: 'https://twitter.com/iamvalentigamez',
         icon: ['fab', 'twitter'],
-        title: 'Pperfil de Twitter',
+        title: 'Pperfil de Twitter'
       },
       {
         href: 'https://www.instagram.com/iamvalentigamez/',
         icon: ['fab', 'instagram'],
-        title: 'Perfil de Instagram',
+        title: 'Perfil de Instagram'
       },
       {
         href: 'https://www.youtube.com/vgrdominik',
         icon: ['fab', 'youtube'],
-        title: 'Canal de programación',
-      },
-    ],
+        title: 'Canal de programación'
+      }
+    ]
   }),
 
   computed: {
-    isContainerNeeded () {
+    isContainerNeeded() {
       return this.$store.state.global.is_container_needed
     },
 
-    user () {
+    user() {
       return this.$store.state.user.user
     },
 
-    stored_config () {
+    stored_config() {
       return this.$store.state.global.config
     }
   },
@@ -233,23 +245,30 @@ export default {
       if (newValue === 'synchronized_error') {
         this.stateColor = 'error'
       }
-    },
+    }
   },
 
   mounted() {
-    //console.log(this.stored_config)
+    // console.log(this.stored_config)
     // console.log(JSON.stringify(this.stored_config))
     // Get current config
     this.get_config_main_event = (event, configData) => {
       this.setConfig({ path: 'initialized', value: false })
       this.setConfigComplete(configData)
-      this.$vuetify.theme.themes.light.primary = configData.branding.color_palette.primary
-      this.$vuetify.theme.themes.light.secondary = configData.branding.color_palette.secondary
-      this.$vuetify.theme.themes.light.accent = configData.branding.color_palette.accent
-      this.$vuetify.theme.themes.light.success = configData.branding.color_palette.success
-      this.$vuetify.theme.themes.light.error = configData.branding.color_palette.error
-      this.$vuetify.theme.themes.light.warning = configData.branding.color_palette.warning
-      this.$vuetify.theme.themes.light.info = configData.branding.color_palette.info
+      this.$vuetify.theme.themes.light.primary =
+        configData.branding.color_palette.primary
+      this.$vuetify.theme.themes.light.secondary =
+        configData.branding.color_palette.secondary
+      this.$vuetify.theme.themes.light.accent =
+        configData.branding.color_palette.accent
+      this.$vuetify.theme.themes.light.success =
+        configData.branding.color_palette.success
+      this.$vuetify.theme.themes.light.error =
+        configData.branding.color_palette.error
+      this.$vuetify.theme.themes.light.warning =
+        configData.branding.color_palette.warning
+      this.$vuetify.theme.themes.light.info =
+        configData.branding.color_palette.info
       this.setConfig({ path: 'initialized', value: true })
 
       this.synchronization()
@@ -261,68 +280,74 @@ export default {
       let contentTransformed = []
 
       for (let i = 0; i < content.length; i++) {
-        let contentTransformedElement = this.domainRowTransformerToAppStructure(domain, content[i])
+        const contentTransformedElement = this.domainRowTransformerToAppStructure(
+          domain,
+          content[i]
+        )
         contentTransformed.push(contentTransformedElement)
       }
 
       // Set transformed content to use globally
       if (domain === 'product') {
-        contentTransformed = this.domainRowProductTransformerToAppStructure(contentTransformed)
+        contentTransformed = this.domainRowProductTransformerToAppStructure(
+          contentTransformed
+        )
         this.setProducts(contentTransformed)
       }
       if (domain === 'family') {
         this.setFamilies(contentTransformed)
       }
       if (domain === 'ticket') {
-        contentTransformed = this.domainRowTicketTransformerToAppStructure(contentTransformed)
+        contentTransformed = this.domainRowTicketTransformerToAppStructure(
+          contentTransformed
+        )
         this.setTickets(contentTransformed)
-        ipcRenderer.send('get_content', 'ticket_line', this.stored_config.import.type)
+        console.log('TODO get ticket line from api')
       }
       if (domain === 'ticket_line') {
-        contentTransformed = this.domainRowTicketLineTransformerToAppStructure(contentTransformed)
+        contentTransformed = this.domainRowTicketLineTransformerToAppStructure(
+          contentTransformed
+        )
         this.setTicketsLines(contentTransformed)
-        ipcRenderer.send('get_content', 'ticket_complement', this.stored_config.import.type)
+        console.log('TODO get ticket complement from api')
       }
       if (domain === 'ticket_complement') {
-        contentTransformed = this.domainRowTicketComplementTransformerToAppStructure(contentTransformed)
+        contentTransformed = this.domainRowTicketComplementTransformerToAppStructure(
+          contentTransformed
+        )
         this.setTicketsLinesComplements(contentTransformed)
-        ipcRenderer.send('get_content', 'ticket_receipt', this.stored_config.import.type)
+        console.log('TODO get ticket receipt from api')
       }
       if (domain === 'ticket_receipt') {
-        contentTransformed = this.domainRowReceiptTransformerToAppStructure(contentTransformed)
+        contentTransformed = this.domainRowReceiptTransformerToAppStructure(
+          contentTransformed
+        )
         this.setTicketsReceipts(contentTransformed)
       }
       if (domain === 'customer') {
-        contentTransformed = this.domainRowCustomerTransformerToAppStructure(contentTransformed)
+        contentTransformed = this.domainRowCustomerTransformerToAppStructure(
+          contentTransformed
+        )
         this.setCustomers(contentTransformed)
-        ipcRenderer.send('get_content', 'customer_search', this.stored_config.import.type)
+        console.log('TODO get customer search from api')
       }
       if (domain === 'customer_search') {
         this.setCustomersSearch(contentTransformed)
       }
     }
 
-    ipcRenderer.on('get_config', this.get_config_main_event)
-    ipcRenderer.on('get_content', this.get_content_main_event)
-    ipcRenderer.send('get_config')
+    console.log('TODO listener to get content from api')
+    console.log('TODO listener to get config from api')
+    console.log('TODO get config from api')
 
     setTimeout(() => this.update_time_to_sync(), 1000)
-
-    // In development mode
-    document.addEventListener("keydown", function (e) {
-      if (e.which === 123) {
-        remote.getCurrentWindow().toggleDevTools()
-      } else if (e.which === 116) {
-        location.reload()
-      }
-    })
-    // End in development mode
   },
 
   beforeDestroy() {
     // Destroy listener to get_config and get_content event from main process
-    ipcRenderer.removeListener('get_config', this.get_config_main_event)
-    ipcRenderer.removeListener('get_content', this.get_content_main_event)
+
+    console.log('TODO remove listener to get config from api')
+    console.log('TODO remove listener to get content from api')
   },
 
   methods: {
@@ -338,39 +363,46 @@ export default {
     },
 
     exit() {
-      remote.getCurrentWindow().close()
+      console.log('exit - TO REMOVE')
     },
 
-    afterLogout(){
+    afterLogout() {
       this.setToken('')
       this.removeUser()
       setTimeout(() => this.$router.push({ path: '/' }), 2000)
     },
 
-    logout () {
-      this.$axios.post('/api/logout', {},{
-        headers: { Authorization: 'Bearer ' + this.$store.state.user.token }
-      }).then(() => this.afterLogout())
+    logout() {
+      this.$axios
+        .post(
+          '/api/logout',
+          {},
+          {
+            headers: { Authorization: 'Bearer ' + this.$store.state.user.token }
+          }
+        )
+        .then(() => this.afterLogout())
     },
 
-    synchronization () {
-      ipcRenderer.send('get_content', 'product', this.stored_config.import.type)
-      ipcRenderer.send('get_content', 'family', this.stored_config.import.type)
-      ipcRenderer.send('get_content', 'ticket', this.stored_config.import.type)
-      ipcRenderer.send('get_content', 'customer', this.stored_config.import.type)
+    synchronization() {
+      console.log('TODO get content product from api')
+      console.log('TODO get content family from api')
+      console.log('TODO get content ticket from api')
+      console.log('TODO get content customer from api')
     },
-
 
     // START Import methods
 
     domainRowTransformerToAppStructure(domain, contentRow) {
       // Convert columns to fields
-      let rowContentTransformed = contentRow.map((contentToTransform) => {
-        let contentTransformed = {}
+      const rowContentTransformed = contentRow.map((contentToTransform) => {
+        const contentTransformed = {}
 
         // contentToTransform[z] is { column: 'example', content: 'example' } ====> column = Column/Field of type, csv by default
         // (_.invert(this.stored_config.import.domain[domain].fields_columns))[contentToTransform.column] ====> get key (domain field) from column content (domain column in type, csv by default) ====> gets domain field
-        let domainField = (_.invert(this.stored_config.import.domain[domain].fields_columns))[contentToTransform.column]
+        const domainField = _.invert(
+          this.stored_config.import.domain[domain].fields_columns
+        )[contentToTransform.column]
         if (domainField === undefined) {
           // To columns not defined in global config
           contentTransformed.control = null
@@ -382,13 +414,14 @@ export default {
       })
 
       // Convert array to unique object
-      let normalizedContentTransformed = {}
+      const normalizedContentTransformed = {}
       for (let z = 0; z < rowContentTransformed.length; z++) {
-        let contentKey = Object.keys(rowContentTransformed[z])[0]
+        const contentKey = Object.keys(rowContentTransformed[z])[0]
         // To columns defined in global config
         if (contentKey !== 'control') {
           // Insert content to normalized object with domain key field
-          normalizedContentTransformed[contentKey] = rowContentTransformed[z][contentKey]
+          normalizedContentTransformed[contentKey] =
+            rowContentTransformed[z][contentKey]
         }
       }
 
@@ -396,11 +429,15 @@ export default {
     },
 
     domainRowProductTransformerToAppStructure(contentPreTransformed) {
-      let contentTransformed = []
+      const contentTransformed = []
 
       for (let i = 0; i < contentPreTransformed.length; i++) {
         if (contentPreTransformed[i].complement_ids_available) {
-          contentPreTransformed[i].complement_ids_available = contentPreTransformed[i].complement_ids_available.split(',')
+          contentPreTransformed[
+            i
+          ].complement_ids_available = contentPreTransformed[
+            i
+          ].complement_ids_available.split(',')
         }
 
         contentTransformed.push(contentPreTransformed[i])
@@ -410,21 +447,29 @@ export default {
     },
 
     domainRowTicketTransformerToAppStructure(contentPreTransformed) {
-      let contentTransformed = []
+      const contentTransformed = []
 
       for (let i = 0; i < contentPreTransformed.length; i++) {
-
-
         // State TODO
 
         // Dates transformer
-        if (contentPreTransformed[i].create_date && contentPreTransformed[i].create_date !== '0000-00-00') {
-          contentPreTransformed[i].create_date = new Date(contentPreTransformed[i].create_date)
+        if (
+          contentPreTransformed[i].create_date &&
+          contentPreTransformed[i].create_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].create_date = new Date(
+            contentPreTransformed[i].create_date
+          )
         } else {
           contentPreTransformed[i].create_date = new Date()
         }
-        if (contentPreTransformed[i].update_date && contentPreTransformed[i].update_date !== '0000-00-00') {
-          contentPreTransformed[i].update_date = new Date(contentPreTransformed[i].update_date)
+        if (
+          contentPreTransformed[i].update_date &&
+          contentPreTransformed[i].update_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].update_date = new Date(
+            contentPreTransformed[i].update_date
+          )
         } else {
           contentPreTransformed[i].update_date = new Date()
         }
@@ -436,27 +481,47 @@ export default {
     },
 
     domainRowTicketLineTransformerToAppStructure(contentPreTransformed) {
-      let contentTransformed = []
+      const contentTransformed = []
 
       for (let i = 0; i < contentPreTransformed.length; i++) {
-        if (contentPreTransformed[i].quantity && typeof contentPreTransformed[i].quantity === 'string') {
-          contentPreTransformed[i].quantity = parseFloat(contentPreTransformed[i].quantity.replace(',', '.'))
+        if (
+          contentPreTransformed[i].quantity &&
+          typeof contentPreTransformed[i].quantity === 'string'
+        ) {
+          contentPreTransformed[i].quantity = parseFloat(
+            contentPreTransformed[i].quantity.replace(',', '.')
+          )
         } else {
           contentPreTransformed[i].quantity = 0
         }
-        if (contentPreTransformed[i].iva && typeof contentPreTransformed[i].iva === 'string') {
-          contentPreTransformed[i].iva = parseFloat(contentPreTransformed[i].iva.replace(',', '.'))
+        if (
+          contentPreTransformed[i].iva &&
+          typeof contentPreTransformed[i].iva === 'string'
+        ) {
+          contentPreTransformed[i].iva = parseFloat(
+            contentPreTransformed[i].iva.replace(',', '.')
+          )
         } else {
           contentPreTransformed[i].iva = 0
         }
         // Dates transformer
-        if (contentPreTransformed[i].create_date && contentPreTransformed[i].create_date !== '0000-00-00') {
-          contentPreTransformed[i].create_date = new Date(contentPreTransformed[i].create_date)
+        if (
+          contentPreTransformed[i].create_date &&
+          contentPreTransformed[i].create_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].create_date = new Date(
+            contentPreTransformed[i].create_date
+          )
         } else {
           contentPreTransformed[i].create_date = new Date()
         }
-        if (contentPreTransformed[i].update_date && contentPreTransformed[i].update_date !== '0000-00-00') {
-          contentPreTransformed[i].update_date = new Date(contentPreTransformed[i].update_date)
+        if (
+          contentPreTransformed[i].update_date &&
+          contentPreTransformed[i].update_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].update_date = new Date(
+            contentPreTransformed[i].update_date
+          )
         } else {
           contentPreTransformed[i].update_date = new Date()
         }
@@ -468,17 +533,27 @@ export default {
     },
 
     domainRowTicketComplementTransformerToAppStructure(contentPreTransformed) {
-      let contentTransformed = []
+      const contentTransformed = []
 
       for (let i = 0; i < contentPreTransformed.length; i++) {
         // Dates transformer
-        if (contentPreTransformed[i].create_date && contentPreTransformed[i].create_date !== '0000-00-00') {
-          contentPreTransformed[i].create_date = new Date(contentPreTransformed[i].create_date)
+        if (
+          contentPreTransformed[i].create_date &&
+          contentPreTransformed[i].create_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].create_date = new Date(
+            contentPreTransformed[i].create_date
+          )
         } else {
           contentPreTransformed[i].create_date = new Date()
         }
-        if (contentPreTransformed[i].update_date && contentPreTransformed[i].update_date !== '0000-00-00') {
-          contentPreTransformed[i].update_date = new Date(contentPreTransformed[i].update_date)
+        if (
+          contentPreTransformed[i].update_date &&
+          contentPreTransformed[i].update_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].update_date = new Date(
+            contentPreTransformed[i].update_date
+          )
         } else {
           contentPreTransformed[i].update_date = new Date()
         }
@@ -490,27 +565,47 @@ export default {
     },
 
     domainRowReceiptTransformerToAppStructure(contentPreTransformed) {
-      let contentTransformed = []
+      const contentTransformed = []
 
       for (let i = 0; i < contentPreTransformed.length; i++) {
         // Dates transformer
-        if (contentPreTransformed[i].paid_date && contentPreTransformed[i].paid_date !== '0000-00-00') {
-          contentPreTransformed[i].paid_date = new Date(contentPreTransformed[i].paid_date)
+        if (
+          contentPreTransformed[i].paid_date &&
+          contentPreTransformed[i].paid_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].paid_date = new Date(
+            contentPreTransformed[i].paid_date
+          )
         } else {
           contentPreTransformed[i].paid_date = null
         }
-        if (contentPreTransformed[i].expiration_date && contentPreTransformed[i].expiration_date !== '0000-00-00') {
-          contentPreTransformed[i].expiration_date = new Date(contentPreTransformed[i].expiration_date)
+        if (
+          contentPreTransformed[i].expiration_date &&
+          contentPreTransformed[i].expiration_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].expiration_date = new Date(
+            contentPreTransformed[i].expiration_date
+          )
         } else {
           contentPreTransformed[i].expiration_date = null
         }
-        if (contentPreTransformed[i].create_date && contentPreTransformed[i].create_date !== '0000-00-00') {
-          contentPreTransformed[i].create_date = new Date(contentPreTransformed[i].create_date)
+        if (
+          contentPreTransformed[i].create_date &&
+          contentPreTransformed[i].create_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].create_date = new Date(
+            contentPreTransformed[i].create_date
+          )
         } else {
           contentPreTransformed[i].create_date = new Date()
         }
-        if (contentPreTransformed[i].update_date && contentPreTransformed[i].update_date !== '0000-00-00') {
-          contentPreTransformed[i].update_date = new Date(contentPreTransformed[i].update_date)
+        if (
+          contentPreTransformed[i].update_date &&
+          contentPreTransformed[i].update_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].update_date = new Date(
+            contentPreTransformed[i].update_date
+          )
         } else {
           contentPreTransformed[i].update_date = new Date()
         }
@@ -522,27 +617,47 @@ export default {
     },
 
     domainRowCustomerTransformerToAppStructure(contentPreTransformed) {
-      let contentTransformed = []
+      const contentTransformed = []
 
       for (let i = 0; i < contentPreTransformed.length; i++) {
         // Dates transformer
-        if (contentPreTransformed[i].create_date && contentPreTransformed[i].create_date !== '0000-00-00') {
-          contentPreTransformed[i].create_date = new Date(contentPreTransformed[i].create_date)
+        if (
+          contentPreTransformed[i].create_date &&
+          contentPreTransformed[i].create_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].create_date = new Date(
+            contentPreTransformed[i].create_date
+          )
         } else {
           contentPreTransformed[i].create_date = new Date()
         }
-        if (contentPreTransformed[i].birthday_date && contentPreTransformed[i].birthday_date !== '0000-00-00') {
-          contentPreTransformed[i].birthday_date = new Date(contentPreTransformed[i].birthday_date)
+        if (
+          contentPreTransformed[i].birthday_date &&
+          contentPreTransformed[i].birthday_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].birthday_date = new Date(
+            contentPreTransformed[i].birthday_date
+          )
         } else {
           contentPreTransformed[i].birthday_date = null
         }
-        if (contentPreTransformed[i].drop_date && contentPreTransformed[i].drop_date !== '0000-00-00') {
-          contentPreTransformed[i].drop_date = new Date(contentPreTransformed[i].drop_date)
+        if (
+          contentPreTransformed[i].drop_date &&
+          contentPreTransformed[i].drop_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].drop_date = new Date(
+            contentPreTransformed[i].drop_date
+          )
         } else {
           contentPreTransformed[i].drop_date = null
         }
-        if (contentPreTransformed[i].update_date && contentPreTransformed[i].update_date !== '0000-00-00') {
-          contentPreTransformed[i].update_date = new Date(contentPreTransformed[i].update_date)
+        if (
+          contentPreTransformed[i].update_date &&
+          contentPreTransformed[i].update_date !== '0000-00-00'
+        ) {
+          contentPreTransformed[i].update_date = new Date(
+            contentPreTransformed[i].update_date
+          )
         } else {
           contentPreTransformed[i].update_date = new Date()
         }
@@ -556,38 +671,31 @@ export default {
     // END Import methods
 
     ...mapActions({
-      setToken: 'user/setToken',
+      setToken: 'user/setToken'
     }),
 
     ...mapActions('global', [
       'setConfig',
       'setConfigComplete',
-      'setTimeToSync',
+      'setTimeToSync'
     ]),
 
     ...mapActions('ticket', [
       'setTickets',
       'setTicketsLines',
       'setTicketsLinesComplements',
-      'setTicketsReceipts',
+      'setTicketsReceipts'
     ]),
 
-    ...mapActions('customer', [
-      'setCustomers',
-      'setCustomersSearch',
-    ]),
+    ...mapActions('customer', ['setCustomers', 'setCustomersSearch']),
 
-    ...mapActions('product', [
-      'setProducts',
-    ]),
+    ...mapActions('product', ['setProducts']),
 
-    ...mapActions('family', [
-      'setFamilies',
-    ]),
+    ...mapActions('family', ['setFamilies']),
 
     ...mapMutations({
-      removeUser: 'user/removeUser',
-    }),
-  },
+      removeUser: 'user/removeUser'
+    })
+  }
 }
 </script>

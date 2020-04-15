@@ -1,20 +1,22 @@
 export const state = () => ({
   serverMessage: '',
-  serverMessageTimeout: null,
+  serverMessageTimeout: null
 })
 
 export const actions = {
   setServerMessage(state, serverMessage) {
     state.commit('updateServerMessage', serverMessage)
-    state.serverMessageTimeout = setTimeout(() => { state.commit('updateServerMessage', '') }, 5000)
-  },
+    state.serverMessageTimeout = setTimeout(() => {
+      state.commit('updateServerMessage', '')
+    }, 5000)
+  }
 }
 
 export const mutations = {
-  updateServerMessage (state, serverMessageUpdated) {
+  updateServerMessage(state, serverMessageUpdated) {
     state.serverMessage = serverMessageUpdated
   },
-  removeServerMessage (state) {
+  removeServerMessage(state) {
     state.serverMessage = ''
-  },
+  }
 }

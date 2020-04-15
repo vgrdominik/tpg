@@ -5,7 +5,7 @@ import camelCase from 'lodash/camelCase'
 // Components
 
 const requireComponent = require.context(
-  '../globalComponents',
+  '../components/global',
   false,
   /Ct[A-Z]\w+\.(vue|js)$/
 )
@@ -29,5 +29,5 @@ Vue.prototype.$global_utilities = {
   },
   require_img_product: (image_path) => {
     return `/img/product/barRestaurant/${image_path}`
-  },
+  }
 }

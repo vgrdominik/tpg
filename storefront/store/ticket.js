@@ -69,12 +69,12 @@ export const state = () => ({
               discount: null,
 
               reference: null,
-              reference_customer: null,
+              reference_customer: null
             }
           ],
 
           create_date: new Date('now'),
-          update_date: new Date('now'),
+          update_date: new Date('now')
         }
       ],
 
@@ -96,13 +96,13 @@ export const state = () => ({
           paid_date: new Date('now'),
           expiration_date: new Date('now'),
           create_date: new Date('now'),
-          update_date: new Date('now'),
+          update_date: new Date('now')
         }
       ],
 
       create_date: new Date('now'),
-      update_date: new Date('now'),
-    },
+      update_date: new Date('now')
+    }
   ]
 })
 
@@ -121,16 +121,16 @@ export const actions = {
 
   setTicketsLines(state, payload) {
     // Save ticket collection to assign
-    let assignedTicketsWithLines = []
+    const assignedTicketsWithLines = []
 
-    if (! state.getters.tickets || ! payload.length) {
+    if (!state.getters.tickets || !payload.length) {
       return
     }
 
     // Loop all tickets
     for (let i = 0; i < state.getters.tickets.length; i++) {
       // Save temporal ticket to modify
-      let assignedTicketWithLines = state.getters.tickets[i]
+      const assignedTicketWithLines = state.getters.tickets[i]
       // Reset lines
       assignedTicketWithLines.lines = []
 
@@ -151,42 +151,54 @@ export const actions = {
 
   setTicketsLinesComplements(state, payload) {
     // Save ticket collection to assign
-    let assignedTicketsWithLinesAndComplements = []
+    const assignedTicketsWithLinesAndComplements = []
 
-    if (! state.getters.tickets || ! payload.length) {
+    if (!state.getters.tickets || !payload.length) {
       return
     }
 
     // Loop all tickets
     for (let i = 0; i < state.getters.tickets.length; i++) {
       // Save temporal ticket to modify
-      let assignedTicketWithLinesAndComplements = state.getters.tickets[i]
+      const assignedTicketWithLinesAndComplements = state.getters.tickets[i]
 
-      if (! assignedTicketWithLinesAndComplements.lines) {
+      if (!assignedTicketWithLinesAndComplements.lines) {
         continue
       }
 
       // Loop all lines
-      for (let y = 0; y < assignedTicketWithLinesAndComplements.lines.length; y++) {
+      for (
+        let y = 0;
+        y < assignedTicketWithLinesAndComplements.lines.length;
+        y++
+      ) {
         // Save temporal ticket line to modify
-        let assignedTicketLineWithComplements = assignedTicketWithLinesAndComplements.lines[y]
+        const assignedTicketLineWithComplements =
+          assignedTicketWithLinesAndComplements.lines[y]
         // Reset complements
         assignedTicketLineWithComplements.complements = []
 
         // Loop all components
         for (let z = 0; z < payload.length; z++) {
-          if (assignedTicketLineWithComplements.id_ticket_line === payload[z].id_ticket_line) {
+          if (
+            assignedTicketLineWithComplements.id_ticket_line ===
+            payload[z].id_ticket_line
+          ) {
             // Push complement
             assignedTicketLineWithComplements.complements.push(payload[z])
           }
         }
 
         // Reassign temporal ticket line updated to temporal ticket
-        assignedTicketWithLinesAndComplements.lines[y] = assignedTicketLineWithComplements
+        assignedTicketWithLinesAndComplements.lines[
+          y
+        ] = assignedTicketLineWithComplements
       }
 
       // Reassign temporal ticket to tickets collection
-      assignedTicketsWithLinesAndComplements.push(assignedTicketWithLinesAndComplements)
+      assignedTicketsWithLinesAndComplements.push(
+        assignedTicketWithLinesAndComplements
+      )
     }
 
     state.commit('updateTickets', assignedTicketsWithLinesAndComplements)
@@ -194,16 +206,16 @@ export const actions = {
 
   setTicketsReceipts(state, payload) {
     // Save ticket collection to assign
-    let assignedTicketsWithReceipt = []
+    const assignedTicketsWithReceipt = []
 
-    if (! state.getters.tickets || ! payload.length) {
+    if (!state.getters.tickets || !payload.length) {
       return
     }
 
     // Loop all tickets
     for (let i = 0; i < state.getters.tickets.length; i++) {
       // Save temporal ticket to modify
-      let assignedTicketWithReceipt = state.getters.tickets[i]
+      const assignedTicketWithReceipt = state.getters.tickets[i]
       assignedTicketWithReceipt.receipt = []
 
       // Loop all receipts
@@ -219,33 +231,33 @@ export const actions = {
     }
 
     state.commit('updateTickets', assignedTicketsWithReceipt)
-  },
+  }
 }
 
 export const getters = {
-  tickets: state => {
+  tickets: (state) => {
     return state.tickets
   }
 }
 
 export const mutations = {
-  addTicket (state, ticket) {
+  addTicket(state, ticket) {
     state.tickets.push(ticket)
   },
 
-  updateTickets (state, tickets) {
+  updateTickets(state, tickets) {
     state.tickets = tickets
   },
 
-  updateTicketValue (state, { path, value }) {
-    let pathStack = path.split('>')
+  updateTicketValue(state, { path, value }) {
+    const pathStack = path.split('>')
     let stateConfig = state.config
 
-    while (pathStack.length>1) {
+    while (pathStack.length > 1) {
       stateConfig = stateConfig[pathStack.shift()]
     }
 
-    let elementToUpdate = pathStack.shift()
+    const elementToUpdate = pathStack.shift()
     stateConfig[elementToUpdate] = value
-  },
+  }
 }

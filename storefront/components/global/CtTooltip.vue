@@ -1,43 +1,60 @@
 <template>
-  <v-tooltip v-if="btn" v-on="$listeners" v-bind="$attrs">
+  <v-tooltip v-if="btn" v-bind="$attrs" v-on="$listeners">
     <template v-slot:activator="{ on }">
-      <CtBtn :type="btnType" :color="btnColor" :icon="btnIcon" v-on="on" @click="$listeners.click()">{{ btnText }}</CtBtn>
+      <CtBtn
+        :type="btnType"
+        :color="btnColor"
+        :icon="btnIcon"
+        v-on="on"
+        @click="$listeners.click()"
+        >{{ btnText }}</CtBtn
+      >
     </template>
     <slot />
   </v-tooltip>
-  <v-tooltip v-else v-on="$listeners" v-bind="$attrs">
+  <v-tooltip v-else v-bind="$attrs" v-on="$listeners">
     <slot />
   </v-tooltip>
 </template>
 
 <script type="application/javascript">
 export default {
-  name: "CtTooltip",
+  name: 'CtTooltip',
   props: {
-    'btn': {
+    btn: {
       type: Boolean,
-      default: false,
+      default: false
     },
     'btn-type': {
       type: String,
       default: 'outlined',
-      validator: function (value) {
+      validator(value) {
         // The value must match one of these strings
-        return ['text', 'outlined', 'rounded', 'primary', 'accent', 'icon', 'empty', '', null].indexOf(value) !== -1
+        return [
+          'text',
+          'outlined',
+          'rounded',
+          'primary',
+          'accent',
+          'icon',
+          'empty',
+          '',
+          null
+        ].includes(value)
       }
     },
     'btn-icon': {
       type: Array,
-      default: () => [],
+      default: () => []
     },
     'btn-text': {
       type: String,
-      default: '',
+      default: ''
     },
     'btn-color': {
       type: String,
-      default: '',
-    },
-  },
+      default: ''
+    }
+  }
 }
 </script>

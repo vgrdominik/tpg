@@ -1,32 +1,44 @@
 <template>
-  <v-date-picker v-if="ctType==='outlined'" :dense="! withoutDense" outlined v-on="$listeners" v-bind="$attrs">
+  <v-date-picker
+    v-if="ctType === 'outlined'"
+    :dense="!withoutDense"
+    outlined
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
     <slot />
   </v-date-picker>
-  <v-date-picker v-else-if="ctType==='box'" :dense="! withoutDense" filled v-on="$listeners" v-bind="$attrs">
+  <v-date-picker
+    v-else-if="ctType === 'box'"
+    :dense="!withoutDense"
+    filled
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
     <slot />
   </v-date-picker>
-  <v-date-picker v-else v-on="$listeners" v-bind="$attrs">
+  <v-date-picker v-else v-bind="$attrs" v-on="$listeners">
     <slot />
   </v-date-picker>
 </template>
 
 <script type="application/javascript">
 export default {
-  name: "CtDate",
+  name: 'CtDate',
 
   props: {
-    'ctType': {
+    ctType: {
       type: String,
       default: 'outlined',
-      validator: function (value) {
+      validator(value) {
         // The value must match one of these strings
-        return ['outlined', 'box', 'empty', '', null].indexOf(value) !== -1
+        return ['outlined', 'box', 'empty', '', null].includes(value)
       }
     },
-    'withoutDense': {
+    withoutDense: {
       type: Boolean,
-      default: false,
-    },
-  },
+      default: false
+    }
+  }
 }
 </script>

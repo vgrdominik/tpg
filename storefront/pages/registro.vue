@@ -1,23 +1,60 @@
 <template>
-  <CtCard :type="stored_config.branding.style.card" dense title="Registro" width="300" class="mx-auto">
+  <CtCard
+    :type="stored_config.branding.style.card"
+    dense
+    title="Registro"
+    width="300"
+    class="mx-auto"
+  >
     <v-row dense>
       <v-col cols="12" class="mt-5">
-        <CtTextField :ctType="stored_config.branding.style.form" append-icon="mdi-account" label="Nombre" v-model="signUpData.name"/>
+        <CtTextField
+          v-model="signUpData.name"
+          :ct-type="stored_config.branding.style.form"
+          append-icon="mdi-account"
+          label="Nombre"
+        />
       </v-col>
       <v-col cols="12">
-        <CtTextField :ctType="stored_config.branding.style.form" append-icon="mdi-email" label="Email" v-model="signUpData.email"/>
+        <CtTextField
+          v-model="signUpData.email"
+          :ct-type="stored_config.branding.style.form"
+          append-icon="mdi-email"
+          label="Email"
+        />
       </v-col>
       <v-col cols="12">
-        <CtTextField :ctType="stored_config.branding.style.form" type="password" append-icon="mdi-lock" label="Password" v-model="signUpData.password"/>
+        <CtTextField
+          v-model="signUpData.password"
+          :ct-type="stored_config.branding.style.form"
+          type="password"
+          append-icon="mdi-lock"
+          label="Password"
+        />
       </v-col>
-      <v-col cols="12" v-if="serverMessage" v-html="serverMessage" class="error--text" />
+      <v-col
+        v-if="serverMessage"
+        cols="12"
+        class="error--text"
+        v-html="serverMessage"
+      />
       <v-col cols="12">
-        <CtBtn @click="signUp()" :type="stored_config.branding.style.button" color="primary" block>
+        <CtBtn
+          :type="stored_config.branding.style.button"
+          color="primary"
+          block
+          @click="signUp()"
+        >
           Enviar
         </CtBtn>
       </v-col>
       <v-col cols="12" class="my-5">
-        <CtBtn to="/login" :type="stored_config.branding.style.button" color="secondary" block>
+        <CtBtn
+          to="/login"
+          :type="stored_config.branding.style.button"
+          color="secondary"
+          block
+        >
           Volver
         </CtBtn>
       </v-col>
@@ -29,23 +66,23 @@
 import { mapActions } from 'vuex'
 
 export default {
-  data(){
+  data() {
     return {
       signUpData: {
         name: '',
         email: '',
-        password: '',
-      },
+        password: ''
+      }
     }
   },
 
   computed: {
-    serverMessage () {
+    serverMessage() {
       return this.$store.state.serverMessage.serverMessage
     },
-    stored_config () {
+    stored_config() {
       return this.$store.state.global.config
-    },
+    }
   },
 
   mounted() {
@@ -53,17 +90,18 @@ export default {
   },
 
   methods: {
-    signUp(){
-      this.$axios.post('/api/register', this.signUpData)
-        .then((response) => (response.data === 'User registered') ? this.$router.push({ path: '/' }) : this.setServerMessage(response.data))
+    signUp() {
+      this.$axios
+        .post('/api/register', this.signUpData)
+        .then((response) =>
+          response.data === 'User registered'
+            ? this.$router.push({ path: '/' })
+            : this.setServerMessage(response.data)
+        )
     },
 
-    ...mapActions('serverMessage', [
-      'setServerMessage',
-    ]),
-    ...mapActions('global', [
-      'setIsContainerNeeded',
-    ]),
+    ...mapActions('serverMessage', ['setServerMessage']),
+    ...mapActions('global', ['setIsContainerNeeded'])
   }
 }
 </script>

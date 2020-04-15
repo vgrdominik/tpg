@@ -1,10 +1,15 @@
 <template>
-  <v-dialog :rounded="type === 'rounded'" :tile="type === 'box'" v-on="$listeners" v-bind="$attrs">
+  <v-dialog
+    :rounded="type === 'rounded'"
+    :tile="type === 'box'"
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
     <template v-slot:activator="{ on }">
       <slot name="activator" v-on="on" />
     </template>
     <v-card v-if="type !== 'empty'" :shaped="type === 'shaped'">
-      <v-toolbar flat :dense="dense" :color="titleColor" v-if="title">
+      <v-toolbar v-if="title" flat :dense="dense" :color="titleColor">
         <slot name="leftTitleContent" />
 
         <v-spacer />
@@ -21,9 +26,9 @@
           <slot />
         </v-container>
       </v-content>
-      <slot name="actions"/>
+      <slot name="actions" />
     </v-card>
-    <v-card v-else v-on="$listeners" v-bind="$attrs">
+    <v-card v-else v-bind="$attrs" v-on="$listeners">
       <slot />
     </v-card>
   </v-dialog>
@@ -31,40 +36,40 @@
 
 <script type="application/javascript">
 export default {
-  name: "CtDialog",
+  name: 'CtDialog',
 
   props: {
-    'type': {
+    type: {
       type: String,
       default: 'shaped',
-      validator: function (value) {
+      validator(value) {
         // The value must match one of these strings
-        return ['shaped', 'rounded', 'box', 'empty', '', null].indexOf(value) !== -1
+        return ['shaped', 'rounded', 'box', 'empty', '', null].includes(value)
       }
     },
-    'title': {
+    title: {
       type: String,
-      default: '',
+      default: ''
     },
     'title-color': {
       type: String,
-      default: 'primary',
+      default: 'primary'
     },
-    'fluid': {
+    fluid: {
       type: Boolean,
-      default: false,
+      default: false
     },
-    'dense': {
+    dense: {
       type: Boolean,
-      default: false,
-    },
-  },
+      default: false
+    }
+  }
 }
 </script>
 <style>
-  .ct-card-content {
-    padding: 0 0 0 0 !important;
-    overflow: auto;
-    max-height: 72vh;
-  }
+.ct-card-content {
+  padding: 0 0 0 0 !important;
+  overflow: auto;
+  max-height: 72vh;
+}
 </style>

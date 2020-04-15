@@ -3,7 +3,12 @@
   <CtCard :type="stored_config.branding.style.card" fluid title="Tíquets" dense>
     <template v-slot:rightTitleContent>
       <!-- SHOW SWITCH TO MOBILE -->
-      <v-switch v-model="showListMobile" v-if="$vuetify.breakpoint.smAndDown" class="mt-5" color="secondary" />
+      <v-switch
+        v-if="$vuetify.breakpoint.smAndDown"
+        v-model="showListMobile"
+        class="mt-5"
+        color="secondary"
+      />
     </template>
 
     <!-- LIST -->
@@ -11,12 +16,16 @@
       <v-row class="pt-0 pb-2">
         <!-- CUSTOMER TYPES TO INIT NEW TICKET -->
         <v-col
-                v-for="customerType in customerTypes"
-                :key="customerType.label"
-                class="text-center pt-0 pb-0"
-                @click="executeCustomerType(customerType.action)"
+          v-for="customerType in customerTypes"
+          :key="customerType.label"
+          class="text-center pt-0 pb-0"
+          @click="executeCustomerType(customerType.action)"
         >
-          <CtBtn :type="stored_config.branding.style.button" block :color="stored_config.branding.color_palette.primary">
+          <CtBtn
+            :type="stored_config.branding.style.button"
+            block
+            :color="stored_config.branding.color_palette.primary"
+          >
             {{ customerType.label }}
           </CtBtn>
         </v-col>
@@ -27,27 +36,44 @@
       <div class="ct-card-content-ticket-list">
         <!-- TICKET LIST -->
         <v-data-table
-                v-model="selectedTickets"
-                :headers="headers"
-                :sort-by="sortBy"
-                :sort-desc="sortDesc"
-                :items="tickets"
-                :items-per-page.sync="ticketsPerPage"
-                :page="page"
-                :single-select="false"
-                item-key="id"
-                show-select
-                hide-default-footer
-                hide-default-header
-                class="elevation-1">
+          v-model="selectedTickets"
+          :headers="headers"
+          :sort-by="sortBy"
+          :sort-desc="sortDesc"
+          :items="tickets"
+          :items-per-page.sync="ticketsPerPage"
+          :page="page"
+          :single-select="false"
+          item-key="id"
+          show-select
+          hide-default-footer
+          hide-default-header
+          class="elevation-1"
+        >
           <template v-slot:header="{ props: { headers } }">
             <thead>
               <tr>
-                <th v-for="header in headers" :key="'header-' + header.value" :class="header.class" :width="header.width">
-                  <span v-html="header.text" v-if="header.text" />
+                <th
+                  v-for="header in headers"
+                  :key="'header-' + header.value"
+                  :class="header.class"
+                  :width="header.width"
+                >
+                  <span v-if="header.text" v-html="header.text" />
                   <span v-else>
-                    <CtBtn type="icon" :icon="['fas', 'paper-plane']" color="primary" v-if="header.value === 'id'" @click="sendCheckedTickets()" />
-                    <v-checkbox v-model="allTicketsChecked" class="pa-0" height="0" v-else />
+                    <CtBtn
+                      v-if="header.value === 'id'"
+                      type="icon"
+                      :icon="['fas', 'paper-plane']"
+                      color="primary"
+                      @click="sendCheckedTickets()"
+                    />
+                    <v-checkbox
+                      v-else
+                      v-model="allTicketsChecked"
+                      class="pa-0"
+                      height="0"
+                    />
                   </span>
                 </th>
               </tr>
@@ -56,16 +82,38 @@
           <template v-slot:item="{ item }">
             <tr>
               <td>
-                <v-checkbox v-model="ticketsChecked['ticket' + item.id]" class="pa-0" height="0" v-if="item.id" />
+                <v-checkbox
+                  v-if="item.id"
+                  v-model="ticketsChecked['ticket' + item.id]"
+                  class="pa-0"
+                  height="0"
+                />
               </td>
-              <td v-html="item.id_customer" class="pr-0 pl-0 text-center" />
-              <td v-html="(item.receipt ? paid(item) : 0)" class="pr-0 pl-0 text-center" />
+              <td class="pr-0 pl-0 text-center" v-html="item.id_customer" />
               <td
+                class="pr-0 pl-0 text-center"
+                v-html="item.receipt ? paid(item) : 0"
+              />
+              <td
+                :class="{
+                  'warning--text': item.receipt && pending(item),
+                  'pr-0': true,
+                  'pl-0': true,
+                  'text-center': true
+                }"
                 v-html="item.receipt && pending(item) ? pending(item) : '-'"
-                :class="{ 'warning--text': item.receipt && pending(item), 'pr-0': true, 'pl-0': true, 'text-center': true }" />
-              <td v-html="item.total ? totalPriceTicketWithIva(item) : 0" class="pr-0 pl-0 text-center" />
+              />
+              <td
+                class="pr-0 pl-0 text-center"
+                v-html="item.total ? totalPriceTicketWithIva(item) : 0"
+              />
               <td class="pl-0 pr-0 text-center">
-                <CtBtn type="icon" :icon="['fas', 'edit']" color="primary" @click="$store.state.ticket.current_ticket = item.id" />
+                <CtBtn
+                  type="icon"
+                  :icon="['fas', 'edit']"
+                  color="primary"
+                  @click="$store.state.ticket.current_ticket = item.id"
+                />
               </td>
             </tr>
           </template>
@@ -75,38 +123,44 @@
     <template v-slot:actions>
       <v-divider v-if="$vuetify.breakpoint.mdAndUp || showListMobile" />
       <!-- PAGINATION -->
-      <v-row dense class="body-2" v-if="$vuetify.breakpoint.mdAndUp || showListMobile">
+      <v-row
+        v-if="$vuetify.breakpoint.mdAndUp || showListMobile"
+        dense
+        class="body-2"
+      >
         <v-spacer />
         <span class="ml-1 mr-4 mt-3 primary--text">
-            Página {{ page }} de {{ numberOfPages }}
-          </span>
-        <v-btn
-                fab
-                small
-                color="secondary"
-                class="mr-1"
-                @click="formerPage"
-        >
+          Página {{ page }} de {{ numberOfPages }}
+        </span>
+        <v-btn fab small color="secondary" class="mr-1" @click="formerPage">
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
-        <v-btn
-                fab
-                small
-                color="secondary"
-                class="ml-1"
-                @click="nextPage"
-        >
+        <v-btn fab small color="secondary" class="ml-1" @click="nextPage">
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
         <v-spacer />
       </v-row>
     </template>
 
-    <CtDialog v-model="customerToCreateTicket" maxWidth="500" :type="stored_config.branding.style.card" fluid :title="'Elegir cliente para crear un nuevo tíquet'" dense>
+    <CtDialog
+      v-model="customerToCreateTicket"
+      max-width="500"
+      :type="stored_config.branding.style.card"
+      fluid
+      :title="'Elegir cliente para crear un nuevo tíquet'"
+      dense
+    >
       <v-row dense>
         <v-spacer />
         <v-col cols="10">
-          <CtSelect v-model="customerToCreateTicket" :items="$store.state.customer.customers_search" item-text="name" item-value="id_customer" class="ma-4" label="Cliente" />
+          <CtSelect
+            v-model="customerToCreateTicket"
+            :items="$store.state.customer.customers_search"
+            item-text="name"
+            item-value="id_customer"
+            class="ma-4"
+            label="Cliente"
+          />
         </v-col>
         <v-spacer />
       </v-row>
@@ -118,7 +172,7 @@
 import price from '../../mixins/price'
 import ticket from '../../mixins/ticket'
 export default {
-  name: "TicketList",
+  name: 'TicketList',
 
   mixins: [price, ticket],
 
@@ -127,21 +181,52 @@ export default {
       customerTypes: [
         {
           label: 'Ventas contado',
-          action: 'cashSales', // Method included in this component
+          action: 'cashSales' // Method included in this component
         },
         {
           label: 'Clientes',
-          action: 'customers', // Method included in this component
-        },
+          action: 'customers' // Method included in this component
+        }
       ],
 
       selectedTickets: [],
       headers: [
-        { text: 'Cliente', align: 'start', class: 'pr-0 pl-0 text-center', sortable: false, value: 'id_customer', width: 'auto' },
-        { text: 'Pago', class: 'pr-0 pl-0 text-center', sortable: false, value: 'receipt.paid', width: 'auto' },
-        { text: 'Pend.', class: 'text--warning pr-0 pl-0 text-center', sortable: false, value: 'total-receipt.paid', width: 'auto' },
-        { text: 'Total', class: 'pl-0 pr-0 text-center', sortable: false, value: 'total', width: 'auto' },
-        { text: '', class: 'pr-0 pl-0 text-center', sortable: false, value: 'id', width: 1 },
+        {
+          text: 'Cliente',
+          align: 'start',
+          class: 'pr-0 pl-0 text-center',
+          sortable: false,
+          value: 'id_customer',
+          width: 'auto'
+        },
+        {
+          text: 'Pago',
+          class: 'pr-0 pl-0 text-center',
+          sortable: false,
+          value: 'receipt.paid',
+          width: 'auto'
+        },
+        {
+          text: 'Pend.',
+          class: 'text--warning pr-0 pl-0 text-center',
+          sortable: false,
+          value: 'total-receipt.paid',
+          width: 'auto'
+        },
+        {
+          text: 'Total',
+          class: 'pl-0 pr-0 text-center',
+          sortable: false,
+          value: 'total',
+          width: 'auto'
+        },
+        {
+          text: '',
+          class: 'pr-0 pl-0 text-center',
+          sortable: false,
+          value: 'id',
+          width: 1
+        }
       ],
 
       sortDesc: true,
@@ -152,37 +237,46 @@ export default {
       customerToCreateTicket: 0,
 
       allTicketsChecked: false,
-      ticketsChecked: {},
+      ticketsChecked: {}
     }
   },
 
   computed: {
-    stored_config () {
+    stored_config() {
       return this.$store.state.global.config
     },
-    tickets () {
-      return (this.$vuetify.breakpoint.mdAndUp || this.showListMobile) ? this.$store.state.ticket.tickets : this.lastTicket
+    tickets() {
+      return this.$vuetify.breakpoint.mdAndUp || this.showListMobile
+        ? this.$store.state.ticket.tickets
+        : this.lastTicket
     },
 
-    numberOfPages () {
+    numberOfPages() {
       return Math.ceil(this.tickets.length / this.ticketsPerPage)
     },
 
-    ticketsAddedToResolution () {
-      return window.innerHeight > 750 ? window.innerHeight > 1000 ? 5 : 2 : 0
+    ticketsAddedToResolution() {
+      // TODO return window.innerHeight > 750 ? (window.innerHeight > 1000 ? 5 : 2) : 0
+      return 5
     },
     ticketsPerPage: {
       get() {
-        return (this.$vuetify.breakpoint.smAndDown ? 6 : this.$vuetify.breakpoint.lgAndUp ? 10 : 5) + this.ticketsAddedToResolution
+        return (
+          (this.$vuetify.breakpoint.smAndDown
+            ? 6
+            : this.$vuetify.breakpoint.lgAndUp
+            ? 10
+            : 5) + this.ticketsAddedToResolution
+        )
       },
       set(newValue) {
         return newValue
-      },
+      }
     },
 
-    lastTicket () {
-      let tickets = this.$store.state.ticket.tickets
-      if (! tickets.length) {
+    lastTicket() {
+      const tickets = this.$store.state.ticket.tickets
+      if (!tickets.length) {
         return null
       }
 
@@ -192,7 +286,7 @@ export default {
 
   watch: {
     allTicketsChecked(newValue) {
-      if (! this.tickets) {
+      if (!this.tickets) {
         return
       }
 
@@ -201,7 +295,7 @@ export default {
         checkTo = true
       }
 
-      for(let i = 0; i < this.tickets.length; i++) {
+      for (let i = 0; i < this.tickets.length; i++) {
         this.ticketsChecked['ticket' + this.tickets[i].id] = checkTo
       }
     },
@@ -215,7 +309,7 @@ export default {
     '$store.state.ticket.current_ticket': {
       deep: true,
       handler(newValue, oldValue) {
-        if(newValue && oldValue && newValue.total !== oldValue.total) {
+        if (newValue && oldValue && newValue.total !== oldValue.total) {
           this.$forceUpdate()
         }
       }
@@ -224,8 +318,12 @@ export default {
 
   mounted() {
     // Set mobile and desktop heights
-    let mobileContentTicketListElements = document.getElementsByClassName('ct-card-content-ticket-list')
-    let mobileCardContentElements = document.getElementsByClassName('ct-card-content')
+    const mobileContentTicketListElements = document.getElementsByClassName(
+      'ct-card-content-ticket-list'
+    )
+    const mobileCardContentElements = document.getElementsByClassName(
+      'ct-card-content'
+    )
     if (this.$vuetify.breakpoint.smAndDown) {
       for (let i = 0; i < mobileContentTicketListElements.length; i++) {
         mobileContentTicketListElements[i].style.maxHeight = '52vh'
@@ -242,7 +340,7 @@ export default {
   methods: {
     // Add ticket actions
     executeCustomerType(action, parameter = null) {
-      if (! parameter) {
+      if (!parameter) {
         this[action]()
       } else {
         this[action](parameter)
@@ -263,17 +361,18 @@ export default {
     paidWithoutFormatting(ticket) {
       let totalPaid = 0
 
-      if (! ticket.receipt) {
+      if (!ticket.receipt) {
         return totalPaid
       }
 
       for (let i = 0; i < ticket.receipt.length; i++) {
         if (ticket.receipt[i].total) {
-          totalPaid += parseFloat(ticket.receipt[i].total.toString().replace(',', '.'))
+          totalPaid += parseFloat(
+            ticket.receipt[i].total.toString().replace(',', '.')
+          )
         }
       }
       return totalPaid
-
     },
 
     paid(ticket) {
@@ -281,12 +380,14 @@ export default {
     },
 
     pending(ticket) {
-      if (! ticket.total) {
+      if (!ticket.total) {
         return 0
       }
 
-      let totalPending = parseFloat(ticket.total.toString().replace(',', '.')) - this.paidWithoutFormatting(ticket)
-      if (! totalPending) {
+      const totalPending =
+        parseFloat(ticket.total.toString().replace(',', '.')) -
+        this.paidWithoutFormatting(ticket)
+      if (!totalPending) {
         return 0
       }
 
@@ -299,20 +400,20 @@ export default {
     },
 
     // Pagination
-    nextPage () {
+    nextPage() {
       if (this.page + 1 <= this.numberOfPages) this.page += 1
     },
-    formerPage () {
+    formerPage() {
       if (this.page - 1 >= 1) this.page -= 1
-    },
-  },
+    }
+  }
 }
 </script>
 <style>
-  .ct-card-content {
-    overflow-x: hidden !important;
-  }
-  .ct-card-content-ticket-list {
-    overflow-x: hidden;
-  }
+.ct-card-content {
+  overflow-x: hidden !important;
+}
+.ct-card-content-ticket-list {
+  overflow-x: hidden;
+}
 </style>

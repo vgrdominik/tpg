@@ -6,19 +6,19 @@ export const state = () => ({
     {
       id: null,
       img: null,
-      text_tpv: null,
-    },
+      text_tpv: null
+    }
   ]
 })
 
 export const actions = {
   setFamilies(state, payload) {
     state.commit('updateFamilies', payload)
-  },
+  }
 }
 
 export const mutations = {
-  updateFamilies (state, families) {
+  updateFamilies(state, families) {
     state.families = families
-  },
+  }
 }
