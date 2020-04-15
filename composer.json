@@ -1,5 +1,5 @@
 {
-    "keywords": ["tpg", "symfony", "sylius", "distribution", "ecommerce", "cart", "shopping"],
+    "keywords": ["tpg", "Vue Storefront", "symfony", "sylius", "distribution", "ecommerce", "cart", "shopping"],
     "type": "project",
     "license": "public domain or sylius license",
     "homepage": "https://twitter.com/search?q=%23tpg&src=typed_query",
@@ -7,15 +7,6 @@
         {
             "name": "Ryu"
         },
-        {
-            "name": "Paweł Jędrzejewski"
-        },
-        {
-            "name": "Sylius project"
-        },
-        {
-            "name": "Community contributions"
-        }
     ],
     "repositories": [
         {
