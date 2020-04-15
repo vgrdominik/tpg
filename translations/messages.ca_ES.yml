@@ -20,7 +20,7 @@ ctic:
         apply: Aplicar
         shop_now: Comprar Ara
         top_phrase: Enviament gratuït en comandes superiors a 50EUR
-        your_store: Radge
+        your_store: Comunitat Valentí Gàmez
         faqs: Preguntes freqüents
         your_cart: La teva cistella
         help: Ajuda
@@ -29,9 +29,9 @@ ctic:
         shipping: Enviament
         get_in_touch: Estem en contacte
         get_in_touch_phrase: Alguna pregunta? Pots utilitzar les nostres xarxes socials o el nostre contacte a ryu@radge.cat
-        link_sn_facebook: https://www.facebook.com/chanzaStore
-        link_sn_instagram: https://www.instagram.com/chanzastore
-        link_sn_twitter: https://www.twitter.com
+        link_sn_facebook: https://www.facebook.com/iamvalentigamez
+        link_sn_instagram: https://www.instagram.com/iamvalentigamez
+        link_sn_twitter: https://www.twitter.com/iamvalentigamez
         newsletter: Newsletter
         subscribe: Subscriu-te
         remove: Eliminar
@@ -45,7 +45,7 @@ ctic:
         cookies_privacy: Aquest site utilitza cookies. Si continues navegant considarem que acceptes el seu ús.
         cookies_privacy_button: Més informació
         facebook:
-            app_id: 269763246989784
+            app_id: 333333333333333
         page: Pàgina
 
 sylius:
@@ -89,7 +89,7 @@ sylius:
         edit_your_items_apply_coupon_or_proceed_to_the_checkout: Edita els teus articles, aplica un cupó o procedeix amb el pagament
         you_may_also_like: També et podria agradar
         need_assistance: Necessites Ajuda? Truca'ns!
-        call_us: 646 615 577
+        call_us: 777 777 777
         access_your_store_account_or_create_a_new_one: Accedeix al teu compte o crea un de nou
         forgot_password: Has oblidat la contrasenya?
         new_customers: Nous clients

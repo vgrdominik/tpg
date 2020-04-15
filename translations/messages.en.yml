@@ -14,7 +14,7 @@ ctic:
         apply: Apply
         shop_now: Shop Now
         top_phrase: Free shipping for order over $60
-        your_store: Radge
+        your_store: Valentí Gàmez Comunity
         faqs: FAQ's
         your_cart: Your Cart
         help: Help
@@ -23,9 +23,9 @@ ctic:
         shipping: Shipping
         get_in_touch: Get In Touch
         get_in_touch_phrase: Any questions? You can use our social networks or contact at ryu@radge.cat
-        link_sn_facebook: https://www.facebook.com/chanzaStore
-        link_sn_instagram: https://www.instagram.com/chanzastore
-        link_sn_twitter: https://www.twitter.com
+        link_sn_facebook: https://www.facebook.com/iamvalentigamez
+        link_sn_instagram: https://www.instagram.com/iamvalentigamez
+        link_sn_twitter: https://www.twitter.com/iamvalentigamez
         newsletter: Newsletter
         subscribe: Subscribe
         remove: Delete
@@ -39,7 +39,7 @@ ctic:
         cookies_privacy: This site use cookies.
         cookies_privacy_button: Information
         facebook:
-            app_id: 269763246989784
+            app_id: 333333333333333
         page: Page
 
 sylius:
@@ -48,7 +48,7 @@ sylius:
         logout: Logout
         show_product_list: Show more
         add_your_review: Add your review
-        call_us: 646 615 577
+        call_us: 777 777 777
 
 bitbag_sylius_elasticsearch_plugin:
     ui:

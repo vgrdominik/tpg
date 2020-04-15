@@ -2,6 +2,7 @@
 
 Tienda virtual (Terminal punto de gestión) generada apartir de la api y el administrador de Sylius, el pwa open source Vue Storefront y el tpv creado por Ryu. 
 
+https://sylius.com/
 https://www.vuestorefront.io/
 https://github.com/vgrdominik/tpv
 
@@ -18,6 +19,8 @@ yarn install
 yarn build
 //npm install
 ```
+
+Steps to install storefront in /vue-storefront/README.md.
 
 OPTIONAL: Can load /dbs/basic-data***.sql to your db. Must drop current data on affected tables, /dbs/basic-data***-tables-affected.txt
 

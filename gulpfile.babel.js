@@ -49,12 +49,7 @@ export const watchShop = function watchShop() {
 };
 watchShop.description = 'Watch shop asset sources and rebuild on changes.';
 
-export const build = gulp.parallel(buildAdmin, buildShop);
+// Sylius default shop bundle disabled
+// export const build = gulp.parallel(buildAdmin, buildShop);
+export const build = gulp.parallel(buildAdmin);
 build.description = 'Build assets.';
-
-gulp.task('admin', buildAdmin);
-gulp.task('admin-watch', watchAdmin);
-gulp.task('shop', buildShop);
-gulp.task('shop-watch', watchShop);
-
-export default build;

@@ -69,6 +69,10 @@
     "type": "git",
     "url": "git+https://github.com/Sylius/Sylius.git"
   },
+  "bugs": {
+    "url": "https://github.com/vgrdominik/tpg/issues"
+  },
+  "homepage": "https://github.com/vgrdominik/tpg/README.md",
   "author": "Ryu",
-  "license": "MIT"
+  "license": "public domain or sylius license"
 }
