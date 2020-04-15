@@ -1,3 +1,9 @@
+bitbag_sylius_cms_plugin:
+    ui:
+        media_header: Media
+        media_subheader: Manage media files
+        csv_file: .csv
+        import: Import
 ctic:
     ui:
         shop_now: Shop Now

@@ -1,5 +1,9 @@
 bitbag_sylius_cms_plugin:
     ui:
+        media_header: Fitxers
+        media_subheader: Gestionar els fitxers de la botiga
+        csv_file: .csv
+        import: Importar
         media: Fitxers
         default: Per defecte
         blocks: Blocs

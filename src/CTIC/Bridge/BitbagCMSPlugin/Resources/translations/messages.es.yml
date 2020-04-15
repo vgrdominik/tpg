@@ -1,5 +1,9 @@
 bitbag_sylius_cms_plugin:
     ui:
+        media_header: Ficheros
+        media_subheader: Gestionar los ficheros de la tienda
+        csv_file: .csv
+        import: Importar
         media: Ficheros
         default: Por defecto
         blocks: Bloques
