@@ -1,8 +1,11 @@
-ctic_bridge_bitbag_cms_plugin_shop_landing:
-    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/shop/landing.yml"
+# Sylius default shop bundle disabled
+#ctic_bridge_bitbag_cms_plugin_shop_landing:
+#    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/shop/landing.yml"
 
-ctic_bridge_bitbag_cms_plugin_shop_home:
-    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/shop/home.yml"
+# Sylius default shop bundle disabled
+#ctic_bridge_bitbag_cms_plugin_shop_home:
+#    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/shop/home.yml"
 
-ctic_bridge_bitbag_cms_plugin_shop_page:
-    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/shop/page.yml"
+# Sylius default shop bundle disabled
+#ctic_bridge_bitbag_cms_plugin_shop_page:
+#    resource: "@CTICBridgeBitbagCMSPlugin/Resources/config/routing/shop/page.yml"

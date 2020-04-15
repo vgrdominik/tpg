@@ -4,7 +4,8 @@ imports:
     - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusAdminApiBundle/Resources/config/app/config.yml" }
 
-    - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
+    # Sylius default shop bundle disabled
+    #- { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
 
     #BitBag Repositories
     - { resource: "@BitBagSyliusCmsPlugin/Resources/config/config.yml" }
@@ -254,9 +255,9 @@ sylius_user:
                 classes:
                     model: App\Entity\User\UserOAuth
 
-sylius_shop:
-    product_grid:
-        include_all_descendants: true
+#sylius_shop:
+#    product_grid:
+#        include_all_descendants: true
 
 sylius_theme:
     sources:

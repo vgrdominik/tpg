@@ -1,2 +1,3 @@
-ctic_bridge_sylius_bundle_shop_product:
-    resource: "@CTICBridgeSyliusBundle/Resources/config/routing/shop/product.yml"
+# Sylius default shop bundle disabled
+#ctic_bridge_sylius_bundle_shop_product:
+#    resource: "@CTICBridgeSyliusBundle/Resources/config/routing/shop/product.yml"
