@@ -1,0 +1,2 @@
+ctic_bridge_sylius_bundle_admin_branding:
+    resource: "@CTICBridgeSyliusBundle/Resources/config/routing/admin/branding.yml"

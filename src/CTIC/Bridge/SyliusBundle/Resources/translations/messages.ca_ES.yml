@@ -1,0 +1,37 @@
+sylius:
+    ui:
+        bulk_actions: Accions masives
+        option: Opció
+    form:
+        promotion_rule:
+            taxonomy: Categoria
+        channel:
+            taxonomies: Categories
+    menu:
+        admin:
+            main:
+                catalog:
+                    taxons: Categories
+
+ctic_bridge_sylius_bundle:
+    ui:
+        branding: Marca
+        brandings: Marques
+        channel: Canal
+        enabled: Habilitat
+        primary_color: Color primari
+        secondary_color: Color secundari
+        accent_color: Color destacat
+        success_color: Color validat
+        error_color: Color error
+        warning_color: Color alerta
+        info_color: Color informació
+        style_button: Estil botó
+        style_form: Estil formulari
+        style_card: Estil targeta
+        style_card_dialog: Estil targeta diàleg
+        branding_header: Marca
+        branding_subheader: Crea marca per els teus canales
+    branding:
+        name:
+            not_blank: El nom de la marca no pot estar buït

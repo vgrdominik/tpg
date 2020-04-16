@@ -1,0 +1,8 @@
+services:
+    ctic_bridge_sylius_bundle.form.type.branding:
+        class: CTIC\Bridge\SyliusBundle\Form\Type\BrandingType
+        arguments:
+            - "%ctic_bridge_sylius_bundle.model.branding.class%"
+            - ['cticbridgesyliusbundle']
+        tags:
+            - { name: form.type }

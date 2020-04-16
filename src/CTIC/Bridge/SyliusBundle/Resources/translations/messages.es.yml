@@ -12,3 +12,26 @@ sylius:
             main:
                 catalog:
                     taxons: Categorías
+
+ctic_bridge_sylius_bundle:
+    ui:
+        branding: Marca
+        brandings: Marcas
+        channel: Canal
+        enabled: Habilitado
+        primary_color: Color primario
+        secondary_color: Color secundario
+        accent_color: Color destacado
+        success_color: Color validado
+        error_color: Color error
+        warning_color: Color alerta
+        info_color: Color información
+        style_button: Estilo botón
+        style_form: Estilo formulario
+        style_card: Estilo tarjeta
+        style_card_dialog: Estilo tarjeta diálogo
+        branding_header: Marca
+        branding_subheader: Crea marca para tus canales
+    branding:
+        name:
+            not_blank: El nombre de la marca no puede estar vacío

@@ -1,3 +1,7 @@
+ctic_bridge_sylius_bundle_admin:
+    resource: "@CTICBridgeSyliusBundle/Resources/config/routing/admin.yml"
+    prefix: /admin
+
 ctic_bridge_sylius_bundle_shop:
     resource: "@CTICBridgeSyliusBundle/Resources/config/routing/shop.yml"
     prefix: /{_locale}

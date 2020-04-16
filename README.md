@@ -1,9 +1,8 @@
 # TPG
 
-Tienda virtual (Terminal punto de gestión) generada apartir de la api y el administrador de Sylius, el pwa open source Vue Storefront y el tpv creado por Ryu. 
+Tienda virtual (Terminal punto de gestión) generada apartir de la api y el administrador de Sylius y el tpv creado por Ryu. 
 
 https://sylius.com/
-https://www.vuestorefront.io/
 https://github.com/vgrdominik/tpv
 
 Importante: el bundle de sylius shop está deshabilitado.
@@ -11,16 +10,14 @@ Importante: el bundle de sylius shop está deshabilitado.
 ## Project setup
 ```
 php bin/console sylius:install
-php bin/console doctrine:migrations:diff
 php bin/console doctrine:migrations:migrate
 php bin/console assets:install --symlink
 php bin/console sylius:theme:assets:install --symlink
 yarn install
 yarn build
-//npm install
 ```
 
-Steps to install storefront in /vue-storefront/README.md.
+Steps to install storefront in /storefront/README.md.
 
 OPTIONAL: Can load /dbs/basic-data***.sql to your db. Must drop current data on affected tables, /dbs/basic-data***-tables-affected.txt
 

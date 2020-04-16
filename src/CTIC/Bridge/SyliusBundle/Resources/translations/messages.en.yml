@@ -12,3 +12,26 @@ sylius:
             main:
                 catalog:
                     taxons: Categories
+
+ctic_bridge_sylius_bundle:
+    ui:
+        branding: Branding
+        brandings: Brandings
+        channel: Channel
+        enabled: Enabled
+        primary_color: Primary color
+        secondary_color: Secondary color
+        accent_color: Accent color
+        success_color: Success color
+        error_color: Error color
+        warning_color: Warning color
+        info_color: Info color
+        style_button: Style button
+        style_form: Style form
+        style_card: Style card
+        style_card_dialog: Style card dialog
+        branding_header: Branding
+        branding_subheader: Create branding to your channels
+    branding:
+        name:
+            not_blank: Branding name can not be empty

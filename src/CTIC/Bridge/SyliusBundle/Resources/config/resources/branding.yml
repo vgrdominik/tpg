@@ -1,0 +1,9 @@
+sylius_resource:
+    resources:
+        ctic_bridge_sylius_bundle.branding:
+            driver: doctrine/orm
+            classes:
+                model: CTIC\Bridge\SyliusBundle\Entity\Branding
+                repository: CTIC\Bridge\SyliusBundle\Repository\BrandingRepository
+                form: CTIC\Bridge\SyliusBundle\Form\Type\BrandingType
+                controller: CTIC\Bridge\SyliusBundle\Controller\BrandingController

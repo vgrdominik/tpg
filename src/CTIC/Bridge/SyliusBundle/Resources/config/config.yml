@@ -1,2 +1,4 @@
 imports:
+    - { resource: "@CTICBridgeSyliusBundle/Resources/config/resources.yml" }
+    - { resource: "@CTICBridgeSyliusBundle/Resources/config/grids.yml" }
     - { resource: "@CTICBridgeSyliusBundle/Resources/config/services.yml" }

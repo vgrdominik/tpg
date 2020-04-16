@@ -1,0 +1,39 @@
+{% extends '@SyliusUi/Form/theme.html.twig' %}
+
+{% block _sylius_product_attribute_configuration_choices_entry_widget %}
+    {% import '@SyliusUi/Macro/flags.html.twig' as flags %}
+
+    <div class="title">
+        {{ 'sylius.ui.option'|trans }}
+    </div>
+    <br>
+    <div class="ui styled fluid accordion">
+        {% for choice_entry in form %}
+            {% if choice_entry.vars.name == 'landing' %}
+                <div class="ui content">
+                    {{ form_row(choice_entry, {'remote_url': path('ctic_bridget_bitbag_cms_plugin_admin_ajax_landing_by_name_phrase'), 'load_edit_url': path('ctic_bridge_bitbag_cms_plugin_admin_ajax_landing_by_code')}) }}
+                </div>
+            {% else %}
+                <div data-locale="{{ choice_entry.vars.name }}">
+                    <div class="title{% if 1 == loop.index0 %} active{% endif %}">
+                        <i class="dropdown icon"></i>
+                        {{ flags.fromLocaleCode(choice_entry.vars.name) }} {{ choice_entry.vars.name|sylius_locale_name }}
+                    </div>
+                    <div class="ui content{% if 1 == loop.index0 %} active{% endif %}">
+                        {{ form_widget(choice_entry) }}
+                        {{- form_errors(form) -}}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <br>
+{% endblock %}
+
+{% block sylius_taxon_autocomplete_choice_row %}
+    {{ form_row(form, {'remote_url': path('sylius_admin_ajax_taxon_by_name_phrase'), 'load_edit_url': path('sylius_admin_ajax_taxon_by_code')}) }}
+{% endblock %}
+
+{% block sylius_product_autocomplete_choice_row %}
+    {{ form_row(form, {'remote_url': path('sylius_admin_ajax_product_by_name_phrase'), 'load_edit_url': path('sylius_admin_ajax_product_by_code')}) }}
+{% endblock %}

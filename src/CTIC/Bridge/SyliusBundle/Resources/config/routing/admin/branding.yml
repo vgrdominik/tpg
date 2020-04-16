@@ -1,0 +1,36 @@
+ctic_bridge_sylius_bundle_admin_branding:
+    resource: |
+        alias: ctic_bridge_sylius_bundle.branding
+        section: admin
+        templates: CTICBridgeSyliusBundle:Branding
+        except: ['show']
+        redirect: update
+        grid: ctic_bridge_sylius_bundle_admin_branding
+        permission: true
+        vars:
+            all:
+                header: ctic_bridge_sylius_bundle.ui.branding_header
+                subheader: ctic_bridge_sylius_bundle.ui.branding_subheader
+                templates:
+                    form: CTICBridgeSyliusBundle:Branding:Crud/_form.html.twig
+            index:
+                icon: block layout
+    type: sylius.resource
+
+ctic_bridge_sylius_bundle_admin_branding_create:
+    path: /branding/new
+    methods: [GET, POST]
+    defaults:
+        _controller: ctic_bridge_sylius_bundle.controller.branding:createAction
+        _sylius:
+            section: admin
+            template: CTICBridgeSyliusBundle:Branding:create.html.twig
+            redirect:
+                route: ctic_bridge_sylius_bundle_admin_branding_update
+                parameters: ~
+            permission: true
+            vars:
+                header: ctic_bridge_sylius_bundle.ui.branding_header
+                subheader: ctic_bridge_sylius_bundle.ui.branding_subheader
+                templates:
+                    form: CTICBridgeSyliusBundle:Branding:Crud/_form.html.twig

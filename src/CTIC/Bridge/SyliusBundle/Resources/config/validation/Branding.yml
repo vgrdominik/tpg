@@ -1,0 +1,6 @@
+CTIC\Bridge\SyliusBundle\Entity\Branding:
+    properties:
+        channel:
+            - NotBlank:
+                message: 'ctic_bridge_sylius_bundle.branding.name.not_blank'
+                groups: ['cticbridgesyliusbundle']

@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@CTICBridgeSyliusBundle/Resources/config/grids/admin.yml" }

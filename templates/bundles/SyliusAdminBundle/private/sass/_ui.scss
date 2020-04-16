@@ -1,4 +1,4 @@
-$sylius-brand-color: #1abb9c;
+$sylius-brand-color: #0098d0;
 $segment-spacing: 1.8em;
 $segment-title-spacing: 1.2em 1.8em;
 $accordion-title-spacing: 1.2em 1.8em;
@@ -34,7 +34,7 @@ a {
 
 .ui.primary.button {
     background-color: $sylius-brand-color;
-    &:hover, &:focus { background-color: #279c7f; }
+    &:hover, &:focus { background-color: #669fb4; }
 }
 
 .ui.labeled.icon.button {

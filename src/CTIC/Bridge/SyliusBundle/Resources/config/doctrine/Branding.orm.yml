@@ -1,0 +1,67 @@
+CTIC\Bridge\SyliusBundle\Entity\Branding:
+    type: mappedSuperclass
+    table: ctic_config_branding
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        colorPrimary:
+            column: color_primary
+            type: string
+        colorSecondary:
+            column: color_secondary
+            type: string
+        colorAccent:
+            column: color_accent
+            type: string
+        colorSuccess:
+            column: color_success
+            type: string
+        colorError:
+            column: color_error
+            type: string
+        colorWarning:
+            column: color_warning
+            type: string
+        colorInfo:
+            column: color_info
+            type: string
+        styleButton:
+            column: style_button
+            type: string
+        styleForm:
+            column: style_form
+            type: string
+        styleCard:
+            column: style_card
+            type: string
+        styleDialogCard:
+            column: style_dialog_card
+            type: string
+        enabled:
+            column: enabled
+            type: boolean
+        createdAt:
+            column: created_at
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: create
+        updatedAt:
+            column: updated_at
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: update
+    manyToOne:
+        channel:
+            targetEntity: Sylius\Component\Channel\Model\Channel
+            joinColumns:
+                channel_id:
+                    referencedColumnName: id
+                    nullable: false

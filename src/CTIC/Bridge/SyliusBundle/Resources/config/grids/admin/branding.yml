@@ -1,0 +1,57 @@
+sylius_grid:
+    grids:
+        ctic_bridge_sylius_bundle_admin_branding:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%ctic_bridge_sylius_bundle.model.branding.class%"
+                    repository:
+                        method: createListQueryBuilder
+            sorting:
+                id: asc
+            limits: [10, 25, 50]
+            fields:
+                id:
+                    type: string
+                    label: sylius.ui.id
+                    sortable: ~
+                channel.name:
+                    type: string
+                    label: ctic_bridge_sylius_bundle.ui.channel
+                    sortable: ~
+                enabled:
+                    type: twig
+                    label: sylius.ui.enabled
+                    sortable: ~
+                    options:
+                        template: "@SyliusUi/Grid/Field/enabled.html.twig"
+                createdAt:
+                    type: datetime
+                    label: sylius.ui.creation_date
+                    options:
+                        format: d-m-Y H:i
+                updatedAt:
+                    type: datetime
+                    label: sylius.ui.updating_date
+                    options:
+                        format: d-m-Y H:i
+            filters:
+                search:
+                    type: string
+                    label: sylius.ui.search
+                    options:
+                        fields: [id, name]
+                enabled:
+                    type: boolean
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+                bulk:
+                    delete:
+                        type: delete
