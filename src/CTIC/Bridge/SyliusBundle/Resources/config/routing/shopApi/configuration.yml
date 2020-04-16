@@ -1,0 +1,8 @@
+ctic_bridge_sylius_bundle_shop_api_configuration_show:
+    #path: /configuration/{slug}
+    path: /configuration
+    methods: [GET]
+    defaults:
+        _controller: ctic_bridge_sylius_bundle.shop_api.controller.configuration.show
+    #requirements:
+    #    slug: .+

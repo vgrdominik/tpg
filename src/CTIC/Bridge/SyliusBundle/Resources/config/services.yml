@@ -20,6 +20,13 @@ services:
         tags:
             - { name: kernel.event_listener, event: sylius.menu.admin.main, method: buildMenu }
 
+# add branding repository as service
+    ctic_bridge_sylius_bundle.branding.custom_repository:
+        class: CTIC\Bridge\SyliusBundle\Repository\BrandingRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - CTIC\Bridge\SyliusBundle\Entity\Branding
+
     ctic_bridge_sylius_bundle.context.channel_request_query_based:
         class: CTIC\Bridge\SyliusBundle\Context\RequestQueryChannelContext
         arguments:
@@ -27,3 +34,14 @@ services:
             - '@request_stack'
         tags:
             - { name: sylius.context.channel, priority: 100 }
+
+# controller to configuration shop-api
+    ctic_bridge_sylius_bundle.shop_api.controller.configuration.show:
+        class: CTIC\Bridge\SyliusBundle\Controller\ShopApi\ShowConfigurationAction
+        arguments:
+            - '@ctic_bridge_sylius_bundle.branding.custom_repository'
+            - '@sylius.repository.channel'
+            - '@fos_rest.view_handler'
+            - '@sylius.context.channel'
+        tags:
+            - { name: controller.service_arguments }

@@ -7,3 +7,7 @@ ctic_bridge_sylius_bundle_shop:
     prefix: /{_locale}
     requirements:
         _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
+
+ctic_bridge_sylius_bundle_shop_api_configuration:
+    resource: "@CTICBridgeSyliusBundle/Resources/config/routing/shopApi/configuration.yml"
+    prefix: /shop-api
