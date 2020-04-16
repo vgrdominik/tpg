@@ -50,11 +50,18 @@ sylius:
         about_us: Sobre mi
         about_us_content: Puedes encontrarme en las redes sociales como @iamvalentigamez
     form:
+        channel:
+            menu_taxon: Familia madre
+            shop_billing_data: Datos de facturación
+            tax_id: Identifición fiscal
         login:
             username: Nombre de usuario
             password: Contraseña
             remember_me: Recuérdame
     ui:
+        look_and_feel: Visualización
+        money: Dinero
+        general: General
         toggle_all: Marcar/Desmarcar todo
         get_support: Soporte
         documentation: Documentación

@@ -67,11 +67,19 @@ sylius:
                 order_history: 'Historial de comandes'
                 personal_information: 'Dades personals'
     form:
+        channel:
+            menu_taxon: Família mare
+            shop_billing_data: Dades de facturació
+            billing_data:
+                tax_id: Identifició fiscal
         login:
             username: Nom d'usuari
             password: Contrasenya
             remember_me: Recordar
     ui:
+        look_and_feel: Visualització
+        money: Diners
+        general: General
         toggle_all: Marcar/Desmarcar tot
         logout: Logout
         add_your_review: Envia la teva resenya

@@ -43,7 +43,15 @@ ctic:
         page: Page
 
 sylius:
+    form:
+        channel:
+            menu_taxon: Root category
+            shop_billing_data: Billing data
+            tax_id: Tax identification
     ui:
+        look_and_feel: Visualization
+        money: Money
+        general: General
         login: Login
         logout: Logout
         show_product_list: Show more

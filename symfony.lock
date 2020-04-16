@@ -278,6 +278,9 @@
     "lchrusciel/api-test-case": {
         "version": "v3.1.3"
     },
+    "lcobucci/jwt": {
+        "version": "3.3.1"
+    },
     "league/csv": {
         "version": "9.6.0"
     },
@@ -301,6 +304,18 @@
     },
     "league/uri-schemes": {
         "version": "1.2.0"
+    },
+    "lexik/jwt-authentication-bundle": {
+        "version": "2.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.5",
+            "ref": "5b2157bcd5778166a5696e42f552ad36529a07a6"
+        },
+        "files": [
+            "./config/packages/lexik_jwt_authentication.yaml"
+        ]
     },
     "liip/imagine-bundle": {
         "version": "1.8",
@@ -332,6 +347,9 @@
     "myclabs/deep-copy": {
         "version": "1.8.1"
     },
+    "namshi/jose": {
+        "version": "7.2.3"
+    },
     "nelmio/alice": {
         "version": "3.2",
         "recipe": {
@@ -340,6 +358,18 @@
             "version": "3.2",
             "ref": "5ef2976310e8f9621c1a722a73bfbe115c1559a3"
         }
+    },
+    "nelmio/cors-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "6388de23860284db9acce0a7a5d9d13153bcb571"
+        },
+        "files": [
+            "./config/packages/nelmio_cors.yaml"
+        ]
     },
     "nette/finder": {
         "version": "v2.4.2"
@@ -653,6 +683,9 @@
     "sylius/resource-bundle": {
         "version": "v1.4.4"
     },
+    "sylius/shop-api-plugin": {
+        "version": "v1.0.0"
+    },
     "sylius/sylius": {
         "version": "v1.3.6"
     },
@@ -767,6 +800,18 @@
     "symfony/intl": {
         "version": "v4.1.3"
     },
+    "symfony/messenger": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "8a2675c061737658bed85102e9241c752620e575"
+        },
+        "files": [
+            "./config/packages/messenger.yaml"
+        ]
+    },
     "symfony/mime": {
         "version": "v4.3.1"
     },
@@ -800,6 +845,9 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.9.0"
     },
+    "symfony/polyfill-php56": {
+        "version": "v1.15.0"
+    },
     "symfony/polyfill-php70": {
         "version": "v1.9.0"
     },
@@ -810,6 +858,9 @@
         "version": "v1.11.0"
     },
     "symfony/polyfill-php80": {
+        "version": "v1.15.0"
+    },
+    "symfony/polyfill-util": {
         "version": "v1.15.0"
     },
     "symfony/process": {

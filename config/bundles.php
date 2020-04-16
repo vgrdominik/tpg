@@ -67,4 +67,7 @@ return [
     CTIC\Bridge\RbacPlugin\CTICBridgeRbacPlugin::class => ['all' => true],
     Prooph\Bundle\ServiceBus\ProophServiceBusBundle::class => ['all' => true],
     Sylius\RbacPlugin\SyliusRbacPlugin::class => ['all' => true],
+    Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle::class => ['all' => true],
+    Sylius\ShopApiPlugin\SyliusShopApiPlugin::class => ['all' => true],
+    Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
 ];

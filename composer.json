@@ -20,9 +20,11 @@
         "bitbag/elasticsearch-plugin": "^1.5",
         "enqueue/fs": "^0.8.24",
         "friendsofsylius/sylius-import-export-plugin": "^0.18.0",
+        "nelmio/cors-bundle": "^2.0",
         "portphp/csv": "^1.1",
         "portphp/excel": "^1.1",
         "sylius/rbac-plugin": "^0.3.0",
+        "sylius/shop-api-plugin": "^1.0",
         "sylius/sylius": "~1.7.0@rc",
         "symfony/dotenv": "^4.4",
         "symfony/flex": "^1.2"

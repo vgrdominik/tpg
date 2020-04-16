@@ -1,0 +1,4 @@
+imports: # <-- Add this section if it does not already exist and add the lines below
+    # ...
+    - { resource: "@SyliusShopApiPlugin/Resources/config/app/config.yml" }
+    - { resource: "@SyliusShopApiPlugin/Resources/config/app/sylius_mailer.yml" }
