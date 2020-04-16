@@ -53,7 +53,7 @@ sylius:
         channel:
             menu_taxon: Familia madre
             shop_billing_data: Datos de facturación
-            tax_id: Identifición fiscal
+            billing_data.tax_id: Identifición fiscal
         login:
             username: Nombre de usuario
             password: Contraseña

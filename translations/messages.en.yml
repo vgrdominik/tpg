@@ -47,7 +47,7 @@ sylius:
         channel:
             menu_taxon: Root category
             shop_billing_data: Billing data
-            tax_id: Tax identification
+            billing_data.tax_id: Tax identification
     ui:
         look_and_feel: Visualization
         money: Money
