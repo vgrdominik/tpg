@@ -46,8 +46,6 @@ return [
     Sylius\Bundle\PayumBundle\SyliusPayumBundle::class => ['all' => true],
     Sylius\Bundle\ThemeBundle\SyliusThemeBundle::class => ['all' => true],
     Sylius\Bundle\AdminBundle\SyliusAdminBundle::class => ['all' => true],
-    // Sylius default shop bundle disabled
-    // Sylius\Bundle\ShopBundle\SyliusShopBundle::class => ['all' => true],
     FOS\OAuthServerBundle\FOSOAuthServerBundle::class => ['all' => true],
     Sylius\Bundle\AdminApiBundle\SyliusAdminApiBundle::class => ['all' => true],
     Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true, 'test' => true, 'test_cached' => true],
@@ -56,22 +54,17 @@ return [
     Nelmio\Alice\Bridge\Symfony\NelmioAliceBundle::class => ['dev' => true, 'test' => true, 'test_cached' => true],
     FriendsOfBehat\SymfonyExtension\Bundle\FriendsOfBehatSymfonyExtensionBundle::class => ['test' => true, 'test_cached' => true],
     Sylius\Behat\Application\SyliusTestPlugin\SyliusTestPlugin::class => ['test' => true, 'test_cached' => true],
-
     FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
     SitemapPlugin\SitemapPlugin::class => ['all' => true],
-
-    // BitBag
     BitBag\SyliusCmsPlugin\BitBagSyliusCmsPlugin::class => ['all' => true],
     FOS\ElasticaBundle\FOSElasticaBundle::class => ['all' => true],
     BitBag\SyliusElasticsearchPlugin\BitBagSyliusElasticsearchPlugin::class => ['all' => true],
-
-    // Friends Of Sylius
     FriendsOfSylius\SyliusImportExportPlugin\FOSSyliusImportExportPlugin::class => ['all' => true],
-
-
-    // OWN
     CTIC\Bridge\BitbagCMSPlugin\CTICBridgeBitbagCMSPlugin::class => ['all' => true],
     CTIC\Bridge\SyliusBundle\CTICBridgeSyliusBundle::class => ['all' => true],
     CTIC\Bridge\SyliusComponent\CTICBridgeSyliusComponent::class => ['all' => true],
     CTIC\Bridge\FOSImportExportPlugin\CTICBridgeFOSImportExportPlugin::class => ['all' => true],
+    CTIC\Bridge\RbacPlugin\CTICBridgeRbacPlugin::class => ['all' => true],
+    Prooph\Bundle\ServiceBus\ProophServiceBusBundle::class => ['all' => true],
+    Sylius\RbacPlugin\SyliusRbacPlugin::class => ['all' => true],
 ];

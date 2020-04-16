@@ -17,6 +17,7 @@ imports:
     - { resource: "@CTICBridgeSyliusBundle/Resources/config/config.yml" }
     - { resource: "@CTICBridgeSyliusComponent/Resources/config/config.yml" }
     - { resource: "@CTICBridgeFOSImportExportPlugin/Resources/config/config.yml" }
+    - { resource: "@CTICBridgeRbacPlugin/Resources/config/config.yml" }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'

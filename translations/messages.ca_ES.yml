@@ -103,6 +103,28 @@ sylius:
         cheapest_first: Barats primer
         most_expensive_first: Cars primer
 
+sylius_rbac:
+    ui:
+        rbac: Rols
+        rbac_role: Rol
+        administration_roles: Administrar rols
+        administration_role: Rol d'administrador
+        new_administration_role: Rol d'administrador nou
+        permissions: Permisos
+        edit_administration_role: Editor de rol
+        permission:
+            bitbag_cms: Gestió de continguts
+            branding: Marca
+            rbac: Rols
+            catalog_management: Catàleg
+            configuration: Configuració
+            customers_management: Clients
+            marketing_management: Màrqueting
+            sales_management: Vendes
+            operation_type:
+                read: Llegir
+                write: Escriure
+
 bitbag_sylius_elasticsearch_plugin:
     ui:
         filter: Filtrar

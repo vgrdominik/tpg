@@ -73,6 +73,29 @@ sylius:
         forgot_password: ¿Has olvidado tu contraseña?
         if_you_have_an_account_sign_in_with_your_email_address: Si tienes una cuenta, inicia sesión con tu correo electrónico.
 
+sylius_rbac:
+    you_are_not_allowed_to_do_that: No tienes acceso
+    ui:
+        rbac: Roles
+        rbac_role: Rol
+        administration_roles: Administrar roles
+        administration_role: Rol de administrador
+        new_administration_role: Rol de administrador nuevo
+        permissions: Permisos
+        edit_administration_role: Editor de rol
+        permission:
+            bitbag_cms: Gestión de contenidos
+            branding: Marca
+            rbac: Roles
+            catalog_management: Catálogo
+            configuration: Configuración
+            customers_management: Clientes
+            marketing_management: Márqueting
+            sales_management: Ventas
+            operation_type:
+                read: Leer
+                write: Escribir
+
 bitbag_sylius_elasticsearch_plugin:
     ui:
         filter: Filtrar

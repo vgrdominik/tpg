@@ -66,3 +66,6 @@ ctic_bridge_sylius_bundle:
 
 ctic_bridge_fos_import_export_plugin:
     resource: "@CTICBridgeFOSImportExportPlugin/Resources/config/routing.yml"
+
+ctic_bridge_rbac_plugin:
+    resource: "@CTICBridgeRbacPlugin/Resources/config/routing.yml"

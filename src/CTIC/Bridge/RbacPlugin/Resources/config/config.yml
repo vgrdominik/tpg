@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@CTICBridgeRbacPlugin/Resources/config/services.yml" }

@@ -50,6 +50,28 @@ sylius:
         add_your_review: Add your review
         call_us: 777 777 777
 
+sylius_rbac:
+    ui:
+        rbac: Roles
+        rbac_role: Role
+        administration_roles: Administrate roles
+        administration_role: Administrate role
+        new_administration_role: New administrate role
+        permissions: Permissions
+        edit_administration_role: Rol editor
+        permission:
+            bitbag_cms: Content management
+            branding: Branding
+            rbac: Roles
+            catalog_management: Catalog
+            configuration: Configuration
+            customers_management: Customers
+            marketing_management: Marketing
+            sales_management: Sales
+            operation_type:
+                read: Read
+                write: Write
+
 bitbag_sylius_elasticsearch_plugin:
     ui:
         filter: Filter

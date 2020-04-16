@@ -1,0 +1,3 @@
+services:
+    Sylius\RbacPlugin\Access\Checker\RouteNameCheckerInterface:
+        class: CTIC\Bridge\RbacPlugin\Access\Checker\HardcodedRouteNameChecker
