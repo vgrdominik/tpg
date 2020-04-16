@@ -20,9 +20,6 @@ final class ShowConfigurationAction
     private $brandingRepository;
 
     /** @var RepositoryInterface */
-    private $shopBillingDataRepository;
-
-    /** @var RepositoryInterface */
     private $channelRepository;
 
     /** @var ViewHandlerInterface */
@@ -33,7 +30,6 @@ final class ShowConfigurationAction
 
     public function __construct(
         BrandingRepositoryInterface $brandingRepository,
-        RepositoryInterface $shopBillingDataRepository,
         RepositoryInterface $channelRepository,
         ViewHandlerInterface $viewHandler,
         ChannelContextInterface $channelContext

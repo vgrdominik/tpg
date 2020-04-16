@@ -172,8 +172,9 @@ export default {
       if (!current_customer && !customerId) {
         current_customer = this.$store.state.customer.customers.filter(
           (customer) =>
-            customer.name.toLowerCase() === 'ventas contado' ||
-            customer.name.toLowerCase() === 'vendes comptat'
+            typeof customer.name === 'string' &&
+            (customer.name.toLowerCase() === 'ventas contado' ||
+              customer.name.toLowerCase() === 'vendes comptat')
         )[0]
       }
       if (!current_customer) {

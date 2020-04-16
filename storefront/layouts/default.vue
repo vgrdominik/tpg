@@ -52,18 +52,6 @@
             </v-list-item-content>
           </v-list-item>
         </template>
-
-        <!-- Exit -->
-        <v-list-item link>
-          <v-list-item-action @click="exit()">
-            <CtIcon :icon="['fas', 'sign-out-alt']" class="primary--text" />
-          </v-list-item-action>
-          <v-list-item-content @click="exit()">
-            <v-list-item-title class="primary--text">
-              Salir
-            </v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -191,10 +179,7 @@ export default {
     drawer: false,
     stateColor: 'primary', // primary = synchronized, secondary = not_synchronized, error = synchronized_error
     state: 'synchronized', // not_synchronized, synchronized_error
-    items: [
-      { icon: ['fas', 'heart'], text: 'TPV', path: '/' },
-      { icon: ['fas', 'cogs'], text: 'Configuración', path: '/configuracion' }
-    ],
+    items: [{ icon: ['fas', 'heart'], text: 'TPV', path: '/' }],
     footerItems: [
       {
         href: 'https://www.facebook.com/iamvalentigamez',
@@ -253,6 +238,10 @@ export default {
     // console.log(JSON.stringify(this.stored_config))
     // Get current config
     this.get_config_main_event = (event, configData) => {
+      // Added to api
+      configData = this.configDataTransformerToAppStructure(configData)
+      // END Added to api
+
       this.setConfig({ path: 'initialized', value: false })
       this.setConfigComplete(configData)
       this.$vuetify.theme.themes.light.primary =
@@ -268,6 +257,21 @@ export default {
       this.$vuetify.theme.themes.light.warning =
         configData.branding.color_palette.warning
       this.$vuetify.theme.themes.light.info =
+        configData.branding.color_palette.info
+
+      this.$vuetify.theme.themes.dark.primary =
+        configData.branding.color_palette.primary
+      this.$vuetify.theme.themes.dark.secondary =
+        configData.branding.color_palette.secondary
+      this.$vuetify.theme.themes.dark.accent =
+        configData.branding.color_palette.accent
+      this.$vuetify.theme.themes.dark.success =
+        configData.branding.color_palette.success
+      this.$vuetify.theme.themes.dark.error =
+        configData.branding.color_palette.error
+      this.$vuetify.theme.themes.dark.warning =
+        configData.branding.color_palette.warning
+      this.$vuetify.theme.themes.dark.info =
         configData.branding.color_palette.info
       this.setConfig({ path: 'initialized', value: true })
 
@@ -338,9 +342,13 @@ export default {
 
     console.log('TODO listener to get content from api')
     console.log('TODO listener to get config from api')
-    console.log('TODO get config from api')
+    return this.$axios
+      .get('http://localhost:8000/shop-api/configuration?channelCode=default')
+      .then((response) => {
+        this.get_config_main_event({}, response.data.data)
+      })
 
-    setTimeout(() => this.update_time_to_sync(), 1000)
+    // setTimeout(() => this.update_time_to_sync(), 1000)
   },
 
   beforeDestroy() {
@@ -392,6 +400,58 @@ export default {
     },
 
     // START Import methods
+
+    // Used only in webapp
+    configDataTransformerToAppStructure(configData) {
+      this.setConfig({
+        path: 'branding>color_palette>primary',
+        value: configData.branding.colorPrimary
+      })
+      this.setConfig({
+        path: 'branding>color_palette>secondary',
+        value: configData.branding.colorSecondary
+      })
+      this.setConfig({
+        path: 'branding>color_palette>accent',
+        value: configData.branding.colorAccent
+      })
+      this.setConfig({
+        path: 'branding>color_palette>success',
+        value: configData.branding.colorSuccess
+      })
+      this.setConfig({
+        path: 'branding>color_palette>error',
+        value: configData.branding.colorError
+      })
+      this.setConfig({
+        path: 'branding>color_palette>warning',
+        value: configData.branding.colorWarning
+      })
+      this.setConfig({
+        path: 'branding>color_palette>info',
+        value: configData.branding.colorInfo
+      })
+
+      this.setConfig({
+        path: 'branding>style>button',
+        value: configData.branding.styleButton
+      })
+      this.setConfig({
+        path: 'branding>style>form',
+        value: configData.branding.styleForm
+      })
+      this.setConfig({
+        path: 'branding>style>card',
+        value: configData.branding.styleCard
+      })
+      this.setConfig({
+        path: 'branding>style>dialog_card',
+        value: configData.branding.styleDialogCard
+      })
+
+      return this.$store.state.global.config
+    },
+    // END Used only in webapp
 
     domainRowTransformerToAppStructure(domain, contentRow) {
       // Convert columns to fields
@@ -674,24 +734,31 @@ export default {
       setToken: 'user/setToken'
     }),
 
-    ...mapActions('global', [
-      'setConfig',
-      'setConfigComplete',
-      'setTimeToSync'
-    ]),
+    ...mapActions({
+      setConfig: 'global/setConfig',
+      setConfigComplete: 'global/setConfigComplete',
+      setTimeToSync: 'global/setTimeToSync'
+    }),
 
-    ...mapActions('ticket', [
-      'setTickets',
-      'setTicketsLines',
-      'setTicketsLinesComplements',
-      'setTicketsReceipts'
-    ]),
+    ...mapActions({
+      setTickets: 'ticket/setTickets',
+      setTicketsLines: 'ticket/setTicketsLines',
+      setTicketsLinesComplements: 'ticket/setTicketsLinesComplements',
+      setTicketsReceipts: 'ticket/setTicketsReceipts'
+    }),
 
-    ...mapActions('customer', ['setCustomers', 'setCustomersSearch']),
+    ...mapActions({
+      setCustomers: 'customer/setCustomers',
+      setCustomersSearch: 'customer/setCustomers'
+    }),
 
-    ...mapActions('product', ['setProducts']),
+    ...mapActions({
+      setProducts: 'product/setProducts'
+    }),
 
-    ...mapActions('family', ['setFamilies']),
+    ...mapActions({
+      setFamilies: 'family/setFamilies'
+    }),
 
     ...mapMutations({
       removeUser: 'user/removeUser'
