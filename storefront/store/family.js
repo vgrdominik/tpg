@@ -14,11 +14,17 @@ export const state = () => ({
 export const actions = {
   setFamilies(state, payload) {
     state.commit('updateFamilies', payload)
+  },
+  setCurrentFamily(state, payload) {
+    state.commit('updateCurrentFamily', payload)
   }
 }
 
 export const mutations = {
   updateFamilies(state, families) {
     state.families = families
+  },
+  updateCurrentFamily(state, family) {
+    state.current_family = family
   }
 }

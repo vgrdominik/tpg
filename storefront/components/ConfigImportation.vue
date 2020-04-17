@@ -165,7 +165,9 @@ export default {
       console.log('TODO get headers from api')
     },
 
-    ...mapActions('global', ['setConfig'])
+    ...mapActions({
+      setConfig: 'global/setConfig'
+    })
   }
 }
 </script>

@@ -1,0 +1,5 @@
+ctic_bridge_sylius_bundle_shop_api_configuration:
+    resource: "@CTICBridgeSyliusBundle/Resources/config/routing/shopApi/configuration.yml"
+
+ctic_bridge_sylius_bundle_shop_api_content:
+    resource: "@CTICBridgeSyliusBundle/Resources/config/routing/shopApi/content.yml"

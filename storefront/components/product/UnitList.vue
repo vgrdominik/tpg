@@ -59,7 +59,9 @@ export default {
   },
 
   methods: {
-    ...mapActions('product', ['setUnits'])
+    ...mapActions({
+      setUnits: 'product/setUnits'
+    })
   }
 }
 </script>

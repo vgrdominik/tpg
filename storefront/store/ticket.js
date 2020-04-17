@@ -115,6 +115,10 @@ export const actions = {
     state.commit('updateTicketValue', payload)
   },
 
+  setCurrentTicket(state, payload) {
+    state.commit('updateCurrentTicket', payload)
+  },
+
   addTicket(state, payload) {
     state.commit('addTicket', payload)
   },
@@ -247,6 +251,10 @@ export const mutations = {
 
   updateTickets(state, tickets) {
     state.tickets = tickets
+  },
+
+  updateCurrentTicket(state, currentTicket) {
+    state.current_ticket = currentTicket
   },
 
   updateTicketValue(state, { path, value }) {

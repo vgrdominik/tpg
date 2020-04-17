@@ -4,56 +4,130 @@ declare(strict_types=1);
 
 namespace App\Entity\Taxonomy;
 
+use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockTranslationInterface;
+use CTIC\Bridge\BitbagCMSPlugin\Entity\Landing;
+use CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonCover;
+use CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonCoverInterface;
+use CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\Taxon as BaseTaxon;
 use Sylius\Component\Taxonomy\Model\TaxonTranslationInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="sylius_taxon")
  */
-class Taxon extends BaseTaxon
+class Taxon extends BaseTaxon implements TaxonInterface
 {
-    /** @var string|null */
-    protected $cover;
-
-    /** @var int|null */
-    protected $landing;
+    /**
+     * @var Collection|BlockTranslationInterface[]
+     */
+    protected $blocks = '';
 
     /**
-     * @return string|null
+     * @var TaxonCover
      */
-    public function getCover(): ?string
+    protected $cover;
+
+    /**
+     * @var Landing
+     */
+    protected $landing;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->initializeBlocksCollection();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function initializeBlocksCollection(): void
+    {
+        $this->blocks = new ArrayCollection();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getBlocks(): ?Collection
+    {
+        return $this->blocks;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setBlocks($blocks): void
+    {
+        $this->initializeBlocksCollection();
+        foreach($blocks as $children)
+        {
+            $this->addBlocks($children);
+        }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function hasBlocks(BlockTranslationInterface $blocks): ?bool
+    {
+        return $this->blocks->contains($blocks);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function addBlocks(BlockTranslationInterface $blocks): void
+    {
+        $this->blocks->add($blocks);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function removeBlocks(BlockTranslationInterface $blocks): void
+    {
+        if (true === $this->hasBlocks($blocks)) {
+            $this->blocks->removeElement($blocks);
+        }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getCover(): ?TaxonCoverInterface
     {
         return $this->cover;
     }
 
     /**
-     * @param string|null $cover
+     * @inheritdoc
      */
-    public function setCover(?string $cover): void
+    public function setCover(TaxonCover $cover): void
     {
+        $cover->setOwner($this);
+
         $this->cover = $cover;
     }
 
     /**
-     * @return int|null
+     * @inheritdoc
      */
-    public function getLanding(): ?int
+    public function getLanding()
     {
         return $this->landing;
     }
 
     /**
-     * @param int|null $landing
+     * @inheritdoc
      */
-    public function setLanding(?int $landing): void
+    public function setLanding(Landing $landing): void
     {
         $this->landing = $landing;
-    }
-
-    protected function createTranslation(): TaxonTranslationInterface
-    {
-        return new TaxonTranslation();
     }
 }

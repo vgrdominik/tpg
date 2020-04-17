@@ -195,7 +195,7 @@ export default {
           this.$store.state.ticket.tickets.length - 1
         ]
         currentTicketId = parseInt(lastTicket.id) + 1
-        this.$store.state.ticket.current_ticket = currentTicketId
+        this.setCurrentTicket(currentTicketId)
         this.addTicket({
           id: currentTicketId,
           id_customer: current_customer.id,
@@ -229,12 +229,12 @@ export default {
       } else {
         // Reset pipe to others components when current ticket it's set
         currentTicketId = this.current_ticket.id
-        this.$store.state.ticket.current_ticket = 0
+        this.setCurrentTicket(0)
       }
 
       this.$nextTick(() => {
         // It's reset pipe to update all components with current ticket dependency
-        this.$store.state.ticket.current_ticket = currentTicketId
+        this.setCurrentTicket(currentTicketId)
         if (
           !this.current_ticket ||
           this.current_ticket.state ||
@@ -389,10 +389,10 @@ export default {
       })
 
       this.current_ticket.state = 1
-      this.$store.state.ticket.current_ticket = 0
+      this.setCurrentTicket(0)
     },
 
-    ...mapActions('ticket', ['addTicket', 'setTickets']),
+    ...mapActions('ticket', ['addTicket', 'setTickets', 'setCurrentTicket']),
 
     ...mapActions('product', ['setUnits', 'setProductToShow'])
   }

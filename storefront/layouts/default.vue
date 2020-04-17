@@ -281,71 +281,82 @@ export default {
     // Get and transform content from domain file to import
     this.get_content_main_event = (event, domain, content) => {
       // Transform domain content to app structure defined at global config
-      let contentTransformed = []
 
-      for (let i = 0; i < content.length; i++) {
-        const contentTransformedElement = this.domainRowTransformerToAppStructure(
-          domain,
-          content[i]
-        )
-        contentTransformed.push(contentTransformedElement)
-      }
+      const contentTransformed = this.domainRowTransformerToAppStructure(
+        domain,
+        content
+      )
 
       // Set transformed content to use globally
-      if (domain === 'product') {
-        contentTransformed = this.domainRowProductTransformerToAppStructure(
-          contentTransformed
-        )
-        this.setProducts(contentTransformed)
+      if (domain === 'product' || domain === 'all') {
+        // console.log(contentTransformed.product)
+        if (contentTransformed.product === undefined) {
+          this.setProducts(contentTransformed)
+        } else {
+          this.setProducts(contentTransformed.product)
+        }
       }
-      if (domain === 'family') {
-        this.setFamilies(contentTransformed)
+
+      if (domain === 'family' || domain === 'all') {
+        // console.log(contentTransformed.family)
+        if (contentTransformed.family === undefined) {
+          this.setFamilies(contentTransformed)
+        } else {
+          this.setFamilies(contentTransformed.family)
+        }
       }
-      if (domain === 'ticket') {
-        contentTransformed = this.domainRowTicketTransformerToAppStructure(
-          contentTransformed
-        )
-        this.setTickets(contentTransformed)
-        console.log('TODO get ticket line from api')
-      }
-      if (domain === 'ticket_line') {
-        contentTransformed = this.domainRowTicketLineTransformerToAppStructure(
-          contentTransformed
-        )
-        this.setTicketsLines(contentTransformed)
-        console.log('TODO get ticket complement from api')
-      }
-      if (domain === 'ticket_complement') {
-        contentTransformed = this.domainRowTicketComplementTransformerToAppStructure(
-          contentTransformed
-        )
-        this.setTicketsLinesComplements(contentTransformed)
-        console.log('TODO get ticket receipt from api')
-      }
-      if (domain === 'ticket_receipt') {
-        contentTransformed = this.domainRowReceiptTransformerToAppStructure(
-          contentTransformed
-        )
-        this.setTicketsReceipts(contentTransformed)
-      }
-      if (domain === 'customer') {
-        contentTransformed = this.domainRowCustomerTransformerToAppStructure(
-          contentTransformed
-        )
-        this.setCustomers(contentTransformed)
-        console.log('TODO get customer search from api')
-      }
-      if (domain === 'customer_search') {
-        this.setCustomersSearch(contentTransformed)
-      }
+      // if (domain === 'ticket' || domain === 'all') {
+      //   contentTransformed = this.domainRowTicketTransformerToAppStructure(
+      //     contentTransformed
+      //   )
+      //   this.setTickets(contentTransformed)
+      //   console.log('TODO get ticket line from api')
+      // }
+      // if (domain === 'ticket_line' || domain === 'all') {
+      //   contentTransformed = this.domainRowTicketLineTransformerToAppStructure(
+      //     contentTransformed
+      //   )
+      //   this.setTicketsLines(contentTransformed)
+      //   console.log('TODO get ticket complement from api')
+      // }
+      // if (domain === 'ticket_complement' || domain === 'all') {
+      //   contentTransformed = this.domainRowTicketComplementTransformerToAppStructure(
+      //     contentTransformed
+      //   )
+      //   this.setTicketsLinesComplements(contentTransformed)
+      //   console.log('TODO get ticket receipt from api')
+      // }
+      // if (domain === 'ticket_receipt' || domain === 'all') {
+      //   contentTransformed = this.domainRowReceiptTransformerToAppStructure(
+      //     contentTransformed
+      //   )
+      //   this.setTicketsReceipts(contentTransformed)
+      // }
+      // if (domain === 'customer' || domain === 'all') {
+      //   contentTransformed = this.domainRowCustomerTransformerToAppStructure(
+      //     contentTransformed
+      //   )
+      //   this.setCustomers(contentTransformed)
+      //   console.log('TODO get customer search from api')
+      // }
+      // if (domain === 'customer_search' || domain === 'all') {
+      //   this.setCustomersSearch(contentTransformed)
+      // }
     }
 
     console.log('TODO listener to get content from api')
     console.log('TODO listener to get config from api')
-    return this.$axios
+    this.$axios
       .get('http://localhost:8000/shop-api/configuration?channelCode=default')
       .then((response) => {
         this.get_config_main_event({}, response.data.data)
+      })
+    this.$axios
+      .get(
+        'http://localhost:8000/shop-api/content?channelCode=default&locale=es'
+      )
+      .then((response) => {
+        this.get_content_main_event({}, 'all', response.data.data)
       })
 
     // setTimeout(() => this.update_time_to_sync(), 1000)
@@ -455,37 +466,60 @@ export default {
 
     domainRowTransformerToAppStructure(domain, contentRow) {
       // Convert columns to fields
-      const rowContentTransformed = contentRow.map((contentToTransform) => {
-        const contentTransformed = {}
-
-        // contentToTransform[z] is { column: 'example', content: 'example' } ====> column = Column/Field of type, csv by default
-        // (_.invert(this.stored_config.import.domain[domain].fields_columns))[contentToTransform.column] ====> get key (domain field) from column content (domain column in type, csv by default) ====> gets domain field
-        const domainField = _.invert(
-          this.stored_config.import.domain[domain].fields_columns
-        )[contentToTransform.column]
-        if (domainField === undefined) {
-          // To columns not defined in global config
-          contentTransformed.control = null
-          return contentTransformed
-        }
-        contentTransformed[domainField] = contentToTransform.content
-
-        return contentTransformed
-      })
-
-      // Convert array to unique object
-      const normalizedContentTransformed = {}
-      for (let z = 0; z < rowContentTransformed.length; z++) {
-        const contentKey = Object.keys(rowContentTransformed[z])[0]
-        // To columns defined in global config
-        if (contentKey !== 'control') {
-          // Insert content to normalized object with domain key field
-          normalizedContentTransformed[contentKey] =
-            rowContentTransformed[z][contentKey]
-        }
+      let domains = [domain]
+      if (domain === 'all') {
+        domains = ['product', 'family']
       }
 
-      return normalizedContentTransformed
+      const rowContentTransformed = {}
+      for (let i = 0; i < domains.length; i++) {
+        let currentDomain = domains[i]
+
+        if (domains[i] === 'product') {
+          currentDomain = 'product.items'
+        }
+        if (domains[i] === 'family') {
+          currentDomain = 'family[0].children'
+        }
+        if (domains[i] !== 'product' && domains[i] !== 'family') {
+          continue // TO remove when domains be made
+        }
+
+        rowContentTransformed[domains[i]] = Object.byString(
+          contentRow,
+          currentDomain
+        ).map((contentToTransform) => {
+          const contentTransformed = {}
+
+          // contentToTransform[z] is { column: 'example', content: 'example' } ====> column = Column/Field of type, csv by default
+          // (_.invert(this.stored_config.import.domain[domain].fields_columns))[contentToTransform.column] ====> get key (domain field) from column content (domain column in type, csv by default) ====> gets domain field
+          const domainFields = _.invert(
+            this.stored_config.import.domain[domains[i]].fields_columns
+          )
+          if (domainFields === undefined) {
+            // To columns not defined in global config
+            contentTransformed.control = null
+            return contentTransformed
+          }
+          Object.entries(domainFields).forEach((element) => {
+            const externalField = element[0]
+            const domainField = element[1]
+            if (externalField === 'null') {
+              contentTransformed[domainField] = null
+              return
+            }
+
+            contentTransformed[domainField] = Object.byString(
+              contentToTransform,
+              externalField.replace('[id]', '.' + contentTransformed.id)
+            )
+          })
+
+          return contentTransformed
+        })
+      }
+
+      return rowContentTransformed
     },
 
     domainRowProductTransformerToAppStructure(contentPreTransformed) {

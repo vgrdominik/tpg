@@ -177,7 +177,7 @@ export const state = () => ({
 
     // Import
     import: {
-      type: 'csv', // Currently only support csv. Api support soon.
+      type: 'json', // Currently only support json.
 
       domain: {
         product: {
@@ -261,40 +261,61 @@ export const state = () => ({
           ],
 
           columns: [
-            'Codigo',
-            'Codigo familia',
-            'IVA',
-            'Enviar a',
-            'Descripcion',
-            'Coste',
-            'Base',
-            'PVP',
-            'Referencia',
-            'Complemento unico',
-            'Mostrar complementos',
-            'Imagen',
-            'Texto boton TPV'
+            'page',
+            'limit',
+            'pages',
+            'total',
+            '_links',
+            '_links.self',
+            '_links.first',
+            '_links.last',
+            '_links.next',
+            'items.code',
+            'items.name',
+            'items.slug',
+            'items.channelCode',
+            'items.averageRating',
+            'items.taxons.main',
+            'items.taxons.others[]',
+            'items.variants',
+            'items.variants.code',
+            'items.variants.axis[]',
+            'items.variants.nameAxis',
+            'items.variants.price',
+            'items.variants.price.current',
+            'items.variants.price.currency',
+            'items.variants.originalPrice',
+            'items.variants.originalPrice.current',
+            'items.variants.originalPrice.currency',
+            'items.variants.images',
+            'items.attributes[]',
+            'items.associations[]',
+            'items.images[]',
+            'items._links',
+            'items._links.self',
+            'items._links.self.href'
           ],
 
           fields_columns: {
-            id: 'Codigo',
-            id_taxonomy: 'Codigo familia',
-            iva: 'IVA',
-            ids_send_to: 'Enviar a',
-            name: 'Descripcion',
-            cost: 'Coste',
-            base: 'Base',
-            total: 'PVP',
-            reference: 'Referencia',
-            complement_unique: 'Complemento unico',
+            id: 'code',
+            id_taxonomy: 'taxons.main',
+            iva: null,
+            ids_send_to: null,
+            name: 'name',
+            cost: 'variants[id].originalPrice.current',
+            base: null,
+            total: 'variants[id].price.current',
+            reference: null,
+            complement_unique: null,
             complement_ids_available: null,
             complement_price: null,
             complement_text_tpv: null,
             complement_taxonomy: null,
             complement_enabled: null,
             enabled: null,
-            img: 'Imagen',
-            text_tpv: 'Texto boton TPV'
+            // img: 'images[]',
+            img: null,
+            text_tpv: 'name'
           }
         },
 
@@ -315,25 +336,20 @@ export const state = () => ({
           ],
 
           columns: [
-            'id_familia',
-            'descripcio',
-            'de',
-            'foto',
-            'mostrar_text',
-            'cos',
-            'orden',
-            'color_fons',
-            'color_lletra',
-            'borde_gruix',
-            'borde_tipus',
-            'border_color',
-            'borde_radius'
+            'code',
+            'name',
+            'slug',
+            'description',
+            'position',
+            'images[]',
+            'children[]'
           ],
 
           fields_columns: {
-            id: 'id_familia',
-            img: 'foto',
-            text_tpv: 'descripcio'
+            id: 'code',
+            // img: 'images[]',
+            img: null,
+            text_tpv: 'name'
           }
         },
 

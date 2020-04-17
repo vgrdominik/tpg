@@ -33,8 +33,8 @@
                 "
                 @click="
                   $store.state.family.current_family === item.id
-                    ? ($store.state.family.current_family = 0)
-                    : ($store.state.family.current_family = item.id)
+                    ? setCurrentFamily(0)
+                    : setCurrentFamily(item.id)
                 "
               >
                 <v-row class="pt-4">
@@ -108,6 +108,7 @@
 </template>
 
 <script type="application/javascript">
+import { mapActions } from 'vuex'
 export default {
   name: 'FamilyList',
   data: () => {
@@ -173,7 +174,11 @@ export default {
     },
     formerPage() {
       if (this.page - 1 >= 1) this.page -= 1
-    }
+    },
+
+    ...mapActions({
+      setCurrentFamily: 'family/setCurrentFamily'
+    })
   }
 }
 </script>
