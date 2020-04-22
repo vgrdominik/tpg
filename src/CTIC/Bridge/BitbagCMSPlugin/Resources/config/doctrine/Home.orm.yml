@@ -33,7 +33,7 @@ CTIC\Bridge\BitbagCMSPlugin\Entity\Home:
                     referencedColumnName: id
                     nullable: false
         channel:
-            targetEntity: Sylius\Component\Channel\Model\Channel
+            targetEntity: Sylius\Component\Channel\Model\ChannelInterface
             joinColumns:
                 channel_id:
                     referencedColumnName: id

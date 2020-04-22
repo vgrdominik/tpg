@@ -60,7 +60,7 @@ CTIC\Bridge\SyliusBundle\Entity\Branding:
                     on: update
     manyToOne:
         channel:
-            targetEntity: Sylius\Component\Channel\Model\Channel
+            targetEntity: Sylius\Component\Channel\Model\ChannelInterface
             joinColumns:
                 channel_id:
                     referencedColumnName: id
