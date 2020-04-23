@@ -305,13 +305,14 @@ export default {
           this.setFamilies(contentTransformed.family)
         }
       }
-      // if (domain === 'ticket' || domain === 'all') {
-      //   contentTransformed = this.domainRowTicketTransformerToAppStructure(
-      //     contentTransformed
-      //   )
-      //   this.setTickets(contentTransformed)
-      //   console.log('TODO get ticket line from api')
-      // }
+      if (domain === 'ticket' || domain === 'all') {
+        // console.log(contentTransformed.family)
+        if (contentTransformed.ticket === undefined) {
+          this.setTickets(contentTransformed)
+        } else {
+          this.setTickets(contentTransformed.ticket)
+        }
+      }
       // if (domain === 'ticket_line' || domain === 'all') {
       //   contentTransformed = this.domainRowTicketLineTransformerToAppStructure(
       //     contentTransformed
@@ -332,20 +333,24 @@ export default {
       //   )
       //   this.setTicketsReceipts(contentTransformed)
       // }
-      // if (domain === 'customer' || domain === 'all') {
-      //   contentTransformed = this.domainRowCustomerTransformerToAppStructure(
-      //     contentTransformed
-      //   )
-      //   this.setCustomers(contentTransformed)
-      //   console.log('TODO get customer search from api')
-      // }
+      if (domain === 'customer' || domain === 'all') {
+        // console.log(contentTransformed.customer)
+        if (contentTransformed.customer === undefined) {
+          this.setCustomers(contentTransformed)
+        } else {
+          this.setCustomers(contentTransformed.customer)
+        }
+      }
       // if (domain === 'customer_search' || domain === 'all') {
-      //   this.setCustomersSearch(contentTransformed)
+      //   // console.log(contentTransformed.customer_search)
+      //   if (contentTransformed.customer_search === undefined) {
+      //     this.setCustomersSearch(contentTransformed)
+      //   } else {
+      //     this.setCustomersSearch(contentTransformed.customer_search)
+      //   }
       // }
     }
 
-    console.log('TODO listener to get content from api')
-    console.log('TODO listener to get config from api')
     this.$axios
       .get('http://localhost:8000/shop-api/configuration?channelCode=default')
       .then((response) => {
@@ -468,7 +473,7 @@ export default {
       // Convert columns to fields
       let domains = [domain]
       if (domain === 'all') {
-        domains = ['product', 'family']
+        domains = ['product', 'family', 'customer']
       }
 
       const rowContentTransformed = {}
@@ -481,7 +486,14 @@ export default {
         if (domains[i] === 'family') {
           currentDomain = 'family[0].children'
         }
-        if (domains[i] !== 'product' && domains[i] !== 'family') {
+        if (domains[i] === 'customer') {
+          currentDomain = 'customer'
+        }
+        if (
+          domains[i] !== 'product' &&
+          domains[i] !== 'family' &&
+          domains[i] !== 'customer'
+        ) {
           continue // TO remove when domains be made
         }
 

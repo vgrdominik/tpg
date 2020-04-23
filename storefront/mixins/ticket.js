@@ -190,6 +190,7 @@ export default {
 
       // Set new ticket if have not current selected
       let currentTicketId = 0
+
       if (!this.current_ticket && this.$store.state.ticket.tickets) {
         const lastTicket = this.$store.state.ticket.tickets[
           this.$store.state.ticket.tickets.length - 1

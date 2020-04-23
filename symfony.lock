@@ -29,9 +29,6 @@
     "bitbag/cms-plugin": {
         "version": "v2.3.4"
     },
-    "bitbag/elasticsearch-plugin": {
-        "version": "v1.5.6"
-    },
     "clue/stream-filter": {
         "version": "v1.4.0"
     },
@@ -122,9 +119,6 @@
     "egulias/email-validator": {
         "version": "2.1.5"
     },
-    "elasticsearch/elasticsearch": {
-        "version": "v6.7.2"
-    },
     "enqueue/fs": {
         "version": "0.4",
         "recipe": {
@@ -170,16 +164,16 @@
     "friendsofsymfony/ckeditor-bundle": {
         "version": "1.2.0"
     },
-    "friendsofsymfony/elastica-bundle": {
-        "version": "5.0",
+    "friendsofsymfony/jsrouting-bundle": {
+        "version": "2.3",
         "recipe": {
             "repo": "github.com/symfony/recipes-contrib",
             "branch": "master",
-            "version": "5.0",
-            "ref": "46c9cd2c1e07f0fcfd97e96f12b03b2e0845c4cd"
+            "version": "2.3",
+            "ref": "a9f2e49180f75cdc71ae279a929c4b2e0638de84"
         },
         "files": [
-            "./config/packages/fos_elastica.yaml"
+            "./config/routes/fos_js_routing.yaml"
         ]
     },
     "friendsofsymfony/oauth-server-bundle": {
@@ -211,12 +205,6 @@
     },
     "guzzlehttp/psr7": {
         "version": "1.4.2"
-    },
-    "guzzlehttp/ringphp": {
-        "version": "1.1.1"
-    },
-    "guzzlehttp/streams": {
-        "version": "3.0.0"
     },
     "hamcrest/hamcrest-php": {
         "version": "v2.0.0"
@@ -569,12 +557,6 @@
     "ramsey/uuid": {
         "version": "3.8.0"
     },
-    "react/promise": {
-        "version": "v2.7.1"
-    },
-    "ruflin/elastica": {
-        "version": "6.1.1"
-    },
     "sebastian/code-unit-reverse-lookup": {
         "version": "1.0.1"
     },
@@ -664,6 +646,19 @@
     },
     "sylius-labs/polyfill-symfony-event-dispatcher": {
         "version": "v1.0.0"
+    },
+    "sylius/admin-order-creation-plugin": {
+        "version": "0.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "0.6",
+            "ref": "3ac19aedc8c846cc48cc61ee62ab5b280823efbf"
+        },
+        "files": [
+            "./config/packages/sylius_admin_order_creation.yaml",
+            "./config/routes/sylius_admin_order_creation.yaml"
+        ]
     },
     "sylius/fixtures-bundle": {
         "version": "v1.4.1"
@@ -892,6 +887,9 @@
             "version": "3.3",
             "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
+    },
+    "symfony/serializer": {
+        "version": "v5.0.7"
     },
     "symfony/service-contracts": {
         "version": "v1.1.6"

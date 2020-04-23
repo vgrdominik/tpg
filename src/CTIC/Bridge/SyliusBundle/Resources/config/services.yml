@@ -51,11 +51,14 @@ services:
         class: CTIC\Bridge\SyliusBundle\Controller\ShopApi\ShowContentAction
         arguments:
             - '@sylius.repository.taxon'
+            - '@sylius.shop_api_plugin.provider.current_user_provider'
             - '@sylius.shop_api_plugin.view_repository.product_catalog_view_repository'
             - '@sylius.repository.channel'
+            - '@sylius.repository.customer'
             - '@fos_rest.view_handler'
             - '@sylius.context.channel'
             - '@sylius.shop_api_plugin.factory.taxon_details_view_factory'
+            - '@sylius.shop_api_plugin.view_repository.placed_order_view_repository'
             - '@sylius.shop_api_plugin.http.request_based_locale_provider'
         tags:
             - { name: controller.service_arguments }

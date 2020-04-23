@@ -9,7 +9,6 @@ imports:
 
     #BitBag Repositories
     - { resource: "@BitBagSyliusCmsPlugin/Resources/config/config.yml" }
-    - { resource: "@BitBagSyliusElasticsearchPlugin/Resources/config/config.yml" }
     - { resource: "@SitemapPlugin/Resources/config/config.yml" }
 
     #Own
@@ -292,19 +291,3 @@ sitemap:
     exclude_taxon_root:   true
     absolute_url:         true
     hreflang:             false
-
-fos_elastica:
-    clients:
-        cloud:
-            host: '%env(resolve:ctic_elasticsearch_host)%'
-            port: '%env(resolve:ctic_elasticsearch_port)%'
-            transport: '%env(resolve:ctic_elasticsearch_transport)%'
-            headers:
-                Authorization: '%env(resolve:ctic_elasticsearch_authorization)%' 
-    indexes:
-        bitbag_attribute_taxons:
-            client: cloud
-        bitbag_shop_product:
-            client: cloud
-        bitbag_option_taxons:
-            client: cloud

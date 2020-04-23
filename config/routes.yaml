@@ -1,18 +1,6 @@
 bitbag_sylius_cms_plugin:
     resource: "@BitBagSyliusCmsPlugin/Resources/config/routing.yml"
 
-bitbag_sylius_elasticsearch_plugin:
-    resource: "@BitBagSyliusElasticsearchPlugin/Resources/config/routing.yml"
-
-# Sylius default shop bundle disabled
-#bitbag_sylius_elasticsearch_plugin_shop_list_products:
-#    path: /{_locale}/productos/{slug}
-#    defaults:
-#        _controller: bitbag_sylius_elasticsearch_plugin.controller.action.shop.list_products
-#        template: "@BitBagSyliusElasticsearchPlugin/Shop/Product/index.html.twig"
-#    requirements:
-#        slug: .+
-
 # Sylius default shop bundle disabled
 #bitbag_sylius_cms_plugin_shop_page_show:
 #    path: /{_locale}/info/{slug}
