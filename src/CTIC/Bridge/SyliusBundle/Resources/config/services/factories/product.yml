@@ -1,0 +1,25 @@
+parameters:
+    sylius.shop_api.view.product.class: CTIC\Bridge\SyliusBundle\View\Product\ProductView
+
+services:
+    sylius.shop_api_plugin.factory.product_view_factory:
+        class: CTIC\Bridge\SyliusBundle\Factory\Product\ProductViewFactory
+        arguments:
+            - '@sylius.shop_api_plugin.factory.image_view_factory'
+            - '@sylius.shop_api_plugin.factory.limited_product_attribute_values_view_factory'
+            - '%sylius.shop_api.view.product.class%'
+            - '%sylius.shop_api.view.product_taxon.class%'
+            - '%locale%'
+
+    sylius.shop_api_plugin.factory.detailed_product_view_factory:
+        class: CTIC\Bridge\SyliusBundle\Factory\Product\DetailedProductViewFactory
+        arguments:
+            - '@sylius.shop_api_plugin.factory.list_product_view_factory'
+            - '@sylius.shop_api_plugin.generator.product_breadcrumb_generator'
+
+    sylius.shop_api_plugin.factory.list_product_view_factory:
+        class: CTIC\Bridge\SyliusBundle\Factory\Product\ListProductViewFactory
+        arguments:
+            - '@sylius.shop_api_plugin.factory.image_view_factory'
+            - '@sylius.shop_api_plugin.factory.product_view_factory'
+            - '@sylius.shop_api_plugin.factory.product_variant_view_factory'

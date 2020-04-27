@@ -1,0 +1,7 @@
+services:
+    sylius.shop_api_plugin.factory.cart_item_view_factory:
+        class: CTIC\Bridge\SyliusBundle\Factory\Cart\CartItemViewFactory
+        arguments:
+            - '@sylius.shop_api_plugin.factory.product_view_factory'
+            - '@sylius.shop_api_plugin.factory.product_variant_view_factory'
+            - '%sylius.shop_api.view.cart_item.class%'

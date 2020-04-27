@@ -272,6 +272,7 @@ export const state = () => ({
             '_links.next',
             'items.code',
             'items.name',
+            'items.taxRateAmount',
             'items.slug',
             'items.channelCode',
             'items.averageRating',
@@ -299,7 +300,7 @@ export const state = () => ({
           fields_columns: {
             id: 'code',
             id_taxonomy: 'taxons.main',
-            iva: null,
+            iva: 'taxRateAmount',
             ids_send_to: null,
             name: 'name',
             cost: 'variants[id].originalPrice.current',

@@ -119,6 +119,22 @@ export const actions = {
     state.commit('updateCurrentTicket', payload)
   },
 
+  setCurrentTicketTotal(state, payload) {
+    state.commit('updateCurrentTicketTotal', payload)
+  },
+
+  pushCurrentTicketLine(state, payload) {
+    state.commit('pushCurrentTicketLine', payload)
+  },
+
+  pushCurrentTicketComplement(state, payload) {
+    state.commit('pushCurrentTicketComplement', payload)
+  },
+
+  pushCurrentTicketReceipt(state, payload) {
+    state.commit('pushCurrentTicketReceipt', payload)
+  },
+
   addTicket(state, payload) {
     state.commit('addTicket', payload)
   },
@@ -255,6 +271,55 @@ export const mutations = {
 
   updateCurrentTicket(state, currentTicket) {
     state.current_ticket = currentTicket
+  },
+
+  updateCurrentTicketTotal(state, total) {
+    if (state.current_ticket === 0) {
+      return
+    }
+
+    state.tickets.filter(
+      (ticket) => ticket.id === state.current_ticket
+    )[0].total = total
+  },
+
+  pushCurrentTicketLine(state, line) {
+    if (state.current_ticket === 0) {
+      return
+    }
+
+    state.tickets
+      .filter((ticket) => ticket.id === state.current_ticket)[0]
+      .lines.push(line)
+  },
+
+  pushCurrentTicketComplement(state, complement) {
+    if (state.current_ticket === 0) {
+      return
+    }
+
+    const current_ticket = state.tickets.filter(
+      (ticket) => ticket.id === state.current_ticket
+    )[0]
+
+    const current_ticket_line =
+      current_ticket.lines[current_ticket.lines.length - 1]
+
+    if (current_ticket_line === undefined) {
+      return
+    }
+
+    current_ticket_line.ticket_complements.push(complement)
+  },
+
+  pushCurrentTicketReceipt(state, receipt) {
+    if (state.current_ticket === 0) {
+      return
+    }
+
+    state.tickets
+      .filter((ticket) => ticket.id === state.current_ticket)[0]
+      .receipt.push(receipt)
   },
 
   updateTicketValue(state, { path, value }) {

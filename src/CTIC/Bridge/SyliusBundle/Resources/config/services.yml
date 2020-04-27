@@ -1,5 +1,6 @@
 imports:
     - { resource: "@CTICBridgeSyliusBundle/Resources/config/services/form.yml" }
+    - { resource: "@CTICBridgeSyliusBundle/Resources/config/services/factory.yml" }
 
 services:
     ctic.bridge.sylius.eventlistener.themerequest:
@@ -62,3 +63,30 @@ services:
             - '@sylius.shop_api_plugin.http.request_based_locale_provider'
         tags:
             - { name: controller.service_arguments }
+
+# Replace product repositories to shop api
+    sylius.shop_api_plugin.view_repository.product_details_view_repository:
+        class: CTIC\Bridge\SyliusBundle\ViewRepository\Product\ProductDetailsViewRepository
+        arguments:
+            - '@sylius.repository.channel'
+            - '@sylius.repository.product'
+            - '@sylius.shop_api_plugin.factory.detailed_product_view_factory'
+            - '@sylius.shop_api_plugin.provider.supported_locale_provider'
+
+    sylius.shop_api_plugin.view_repository.product_catalog_view_repository:
+        class: CTIC\Bridge\SyliusBundle\ViewRepository\Product\ProductCatalogViewRepository
+        arguments:
+            - '@sylius.repository.channel'
+            - '@sylius.repository.product'
+            - '@sylius.repository.taxon'
+            - '@sylius.shop_api_plugin.factory.list_product_view_factory'
+            - '@sylius.shop_api_plugin.factory.page_view_factory'
+            - '@sylius.shop_api_plugin.provider.supported_locale_provider'
+
+    sylius.shop_api_plugin.view_repository.product_latest_view_repository:
+        class: CTIC\Bridge\SyliusBundle\ViewRepository\Product\ProductLatestViewRepository
+        arguments:
+            - '@sylius.repository.channel'
+            - '@sylius.repository.product'
+            - '@sylius.shop_api_plugin.factory.list_product_view_factory'
+            - '@sylius.shop_api_plugin.provider.supported_locale_provider'

@@ -1,0 +1,3 @@
+imports:
+    - { resource: "@CTICBridgeSyliusBundle/Resources/config/services/factories/cart.yml" }
+    - { resource: "@CTICBridgeSyliusBundle/Resources/config/services/factories/product.yml" }

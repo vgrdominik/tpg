@@ -290,6 +290,9 @@ export default {
       // Set transformed content to use globally
       if (domain === 'product' || domain === 'all') {
         // console.log(contentTransformed.product)
+        contentTransformed.product = this.domainRowProductTransformerToAppStructure(
+          contentTransformed.product
+        )
         if (contentTransformed.product === undefined) {
           this.setProducts(contentTransformed)
         } else {
@@ -473,7 +476,7 @@ export default {
       // Convert columns to fields
       let domains = [domain]
       if (domain === 'all') {
-        domains = ['product', 'family', 'customer']
+        domains = ['product', 'family', 'customer', 'ticket']
       }
 
       const rowContentTransformed = {}
@@ -489,9 +492,13 @@ export default {
         if (domains[i] === 'customer') {
           currentDomain = 'customer'
         }
+        if (domains[i] === 'ticket') {
+          currentDomain = 'ticket'
+        }
         if (
           domains[i] !== 'product' &&
           domains[i] !== 'family' &&
+          domains[i] !== 'ticket' &&
           domains[i] !== 'customer'
         ) {
           continue // TO remove when domains be made
@@ -538,12 +545,11 @@ export default {
       const contentTransformed = []
 
       for (let i = 0; i < contentPreTransformed.length; i++) {
-        if (contentPreTransformed[i].complement_ids_available) {
-          contentPreTransformed[
-            i
-          ].complement_ids_available = contentPreTransformed[
-            i
-          ].complement_ids_available.split(',')
+        if (contentPreTransformed[i].cost) {
+          contentPreTransformed[i].cost = contentPreTransformed[i].cost / 100
+        }
+        if (contentPreTransformed[i].total) {
+          contentPreTransformed[i].total = contentPreTransformed[i].total / 100
         }
 
         contentTransformed.push(contentPreTransformed[i])

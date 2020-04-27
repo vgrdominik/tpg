@@ -195,7 +195,11 @@ export default {
         const lastTicket = this.$store.state.ticket.tickets[
           this.$store.state.ticket.tickets.length - 1
         ]
-        currentTicketId = parseInt(lastTicket.id) + 1
+        if (lastTicket === undefined) {
+          currentTicketId = 1
+        } else {
+          currentTicketId = parseInt(lastTicket.id) + 1
+        }
         this.setCurrentTicket(currentTicketId)
         this.addTicket({
           id: currentTicketId,
@@ -255,7 +259,7 @@ export default {
         }
 
         // Set new current ticket line
-        this.current_ticket.lines.push({
+        this.pushCurrentTicketLine({
           id_ticket_line: currentTicketLineId,
           id_attribute: null,
           id_user: null,
@@ -317,7 +321,7 @@ export default {
                   parseInt(currentTicketLine.id_complement) + 1
               }
               // Set new current ticket line with complement
-              currentTicketLine.ticket_complements.push({
+              this.pushCurrentTicketComplement({
                 id_ticket_line: currentTicketLine.id_ticket_line,
 
                 id_complement: currentTicketLineComplementId,
@@ -349,7 +353,7 @@ export default {
         }
 
         // Set current ticket total
-        this.current_ticket.total = this.totalTicketWithIva(this.current_ticket)
+        this.setCurrentTicketTotal(this.totalTicketWithIva(this.current_ticket))
 
         // Set current units to one
         this.setUnits(1)
@@ -370,7 +374,7 @@ export default {
           ) + 1
       }
 
-      this.current_ticket.receipt.push({
+      this.pushCurrentTicketReceipt({
         id_ticket: this.current_ticket.id,
 
         id: currentTicketReceiptId,
@@ -393,7 +397,15 @@ export default {
       this.setCurrentTicket(0)
     },
 
-    ...mapActions('ticket', ['addTicket', 'setTickets', 'setCurrentTicket']),
+    ...mapActions('ticket', [
+      'addTicket',
+      'setTickets',
+      'setCurrentTicket',
+      'pushCurrentTicketLine',
+      'pushCurrentTicketComplement',
+      'pushCurrentTicketReceipt',
+      'setCurrentTicketTotal'
+    ]),
 
     ...mapActions('product', ['setUnits', 'setProductToShow'])
   }
