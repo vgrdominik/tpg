@@ -50,15 +50,19 @@ const shopRootPath = upath.joinSafe(rootPath, 'shop');
 const nodeModulesPath = upath.normalizeSafe(argv.nodeModulesPath);
 const shopPath = upath.joinSafe(rootPath, '../../templates/bundles/SyliusShopBundle/');
 const uiPath = upath.joinSafe(rootPath, '../../templates/bundles/SyliusUiBundle/');
-const vendorPath = upath.normalizeSafe(argv.vendorPath || '.');
-const vendorShopPath = vendorPath === '.' ? '.' : upath.joinSafe(vendorPath, 'ShopBundle');
-const vendorUiPath = vendorPath === '.' ? '../UiBundle/' : upath.joinSafe(vendorPath, 'UiBundle');
+// const vendorPath = upath.normalizeSafe(argv.vendorPath || '.');
+// const vendorShopPath = vendorPath === '.' ? '.' : upath.joinSafe(vendorPath, 'ShopBundle');
+// const vendorUiPath = vendorPath === '.' ? '../UiBundle/' : upath.joinSafe(vendorPath, 'UiBundle');
+
+// console.log('-----------------');
+// console.log(rootPath);
+// console.log(shopPath);
+// console.log('-----------------');
 
 const paths = {
   shop: {
     js: [
       upath.joinSafe(nodeModulesPath, 'jquery/dist/jquery.min.js'),
-      upath.joinSafe(nodeModulesPath, 'jquery-number/jquery.number.min.js'),
       upath.joinSafe(nodeModulesPath, 'animsition/dist/js/animsition.min.js'),
       upath.joinSafe(nodeModulesPath, 'popper/dist/popper.min.js'),
       upath.joinSafe(nodeModulesPath, 'bootstrap/js/dist/bootstrap.min.js'),
@@ -95,6 +99,7 @@ const paths = {
       upath.joinSafe(nodeModulesPath, 'magnific-popup/dist/magnific-popup.css'),
       upath.joinSafe(nodeModulesPath, 'perfect-scrollbar/css/perfect-scrollbar.css'),
       upath.joinSafe(nodeModulesPath, 'lightbox2/dist/css/lightbox.css'),
+      upath.joinSafe(nodeModulesPath, 'semantic-ui-css/semantic.min.css'),
       upath.joinSafe(uiPath, 'private/css/**'),
       upath.joinSafe(shopPath, 'private/css/**'),
     ],
@@ -140,13 +145,13 @@ const mapSourcePath = function mapSourcePath(sourcePath) {
 
 export const buildShopJs = async function buildShopJs() {
   const bundle = await rollup({
-    input: upath.joinSafe(vendorShopPath, 'private/js/app.js'),
+    input: upath.joinSafe(shopPath, 'private/js/app.js'),
     plugins: [
       {
         name: 'shim-app',
 
         transform(code, id) {
-          if (upath.relative('', id) === upath.relative('', upath.joinSafe(vendorShopPath, 'private/js/app.js'))) {
+          if (upath.relative('', id) === upath.relative('', upath.joinSafe(shopPath, 'private/js/app.js'))) {
             return {
               code: dedent`
                 import './shim/shim-polyfill';
@@ -203,7 +208,7 @@ export const buildShopJs = async function buildShopJs() {
           ['fast-async'],
           ['module-resolver', {
             alias: {
-              'sylius/ui': upath.relative('', upath.joinSafe(vendorUiPath, 'private/js')),
+              'sylius/ui': upath.relative('', upath.joinSafe(uiPath, 'private/js')),
             },
           }],
           ['transform-object-rest-spread', {

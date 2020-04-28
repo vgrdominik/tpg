@@ -1,43 +1,40 @@
 bitbag_sylius_cms_plugin:
     resource: "@BitBagSyliusCmsPlugin/Resources/config/routing.yml"
 
-# Sylius default shop bundle disabled
-#bitbag_sylius_cms_plugin_shop_page_show:
-#    path: /{_locale}/info/{slug}
-#    methods: [GET]
-#    defaults:
-#        _controller: bitbag_sylius_cms_plugin.controller.page:showAction
-#        _sylius:
-#            template: "@BitBagSyliusCmsPlugin/Shop/Page/show.html.twig"
-#            repository:
-#                method: findOneEnabledBySlug
-#                arguments:
-#                    - $slug
-#                    - "expr:service('sylius.context.locale').getLocaleCode()"
+bitbag_sylius_cms_plugin_shop_page_show:
+    path: /{_locale}/info/{slug}
+    methods: [GET]
+    defaults:
+        _controller: bitbag_sylius_cms_plugin.controller.page:showAction
+        _sylius:
+            template: "@BitBagSyliusCmsPlugin/Shop/Page/show.html.twig"
+            repository:
+                method: findOneEnabledBySlug
+                arguments:
+                    - $slug
+                    - "expr:service('sylius.context.locale').getLocaleCode()"
 
-# Sylius default shop bundle disabled
-#bitbag_sylius_cms_plugin_shop_page_show_link_by_code:
-#    path: /{_locale}/info/codigo/{code}
-#    methods: [GET]
-#    defaults:
-#        _controller: bitbag_sylius_cms_plugin.controller.page:renderLinkAction
-#        _sylius:
-#            template: $template
-#            repository:
-#                method: findOneEnabledByCode
-#                arguments:
-#                    - $code
-#                    - "expr:service('sylius.context.locale').getLocaleCode()"
+bitbag_sylius_cms_plugin_shop_page_show_link_by_code:
+    path: /{_locale}/info/codigo/{code}
+    methods: [GET]
+    defaults:
+        _controller: bitbag_sylius_cms_plugin.controller.page:renderLinkAction
+        _sylius:
+            template: $template
+            repository:
+                method: findOneEnabledByCode
+                arguments:
+                    - $code
+                    - "expr:service('sylius.context.locale').getLocaleCode()"
 
-# Sylius default shop bundle disabled
-#bitbag_sylius_cms_plugin_shop_page_index_by_section_code:
-#    path: /{_locale}/toda-la-info/{sectionCode}
-#    methods: [GET]
-#    defaults:
-#        _controller: bitbag_sylius_cms_plugin.controller.page:indexAction
-#        _sylius:
-#            template: "@BitBagSyliusCmsPlugin/Shop/Page/index.html.twig"
-#            grid: bitbag_sylius_cms_plugin_shop_page
+bitbag_sylius_cms_plugin_shop_page_index_by_section_code:
+    path: /{_locale}/toda-la-info/{sectionCode}
+    methods: [GET]
+    defaults:
+        _controller: bitbag_sylius_cms_plugin.controller.page:indexAction
+        _sylius:
+            template: "@BitBagSyliusCmsPlugin/Shop/Page/index.html.twig"
+            grid: bitbag_sylius_cms_plugin_shop_page
 
 sylius_sitemap:
     resource: "@SitemapPlugin/Resources/config/routing.yml"

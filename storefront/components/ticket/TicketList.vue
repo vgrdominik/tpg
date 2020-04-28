@@ -13,8 +13,7 @@
 
     <!-- LIST -->
     <v-card-text class="pr-0 pl-0">
-      <v-row class="pt-0 pb-2">
-        <!-- CUSTOMER TYPES TO INIT NEW TICKET -->
+      <!-- <v-row class="pt-0 pb-2">
         <v-col
           v-for="customerType in customerTypes"
           :key="customerType.label"
@@ -29,7 +28,7 @@
             {{ customerType.label }}
           </CtBtn>
         </v-col>
-      </v-row>
+      </v-row> -->
 
       <v-divider />
 
@@ -178,7 +177,7 @@ export default {
 
   data: () => {
     return {
-      customerTypes: [
+      /* customerTypes: [
         {
           label: 'Ventas contado',
           action: 'cashSales' // Method included in this component
@@ -187,7 +186,7 @@ export default {
           label: 'Clientes',
           action: 'customers' // Method included in this component
         }
-      ],
+      ], */
 
       selectedTickets: [],
       headers: [

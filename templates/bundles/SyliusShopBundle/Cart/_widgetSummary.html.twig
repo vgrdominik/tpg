@@ -34,7 +34,7 @@
                             {% set source_path = product.images.first.path %}
                             {% set path = source_path|imagine_filter(filter|default('sylius_shop_product_large_thumbnail')) %}
                         {% else %}
-                            {% set path = original_path %}
+                            {% set path = '#' %}
                         {% endif %}
 
                         <li class="header-cart-item flex-w flex-t m-b-12">

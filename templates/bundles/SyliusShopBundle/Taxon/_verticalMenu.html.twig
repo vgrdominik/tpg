@@ -2,7 +2,7 @@
 
 <div class="sui container center-layer">
     {% if taxon.parent is not empty and not taxon.parent.isRoot() %}
-        <a href="{{ path('bitbag_sylius_elasticsearch_plugin_shop_list_products', {'slug': taxon.parent.slug, '_locale': taxon.parent.translation.locale}) }}" class="item">
+        <a href="#" class="item">
             <i class="up arrow icon"></i> {{ 'sylius.ui.go_level_up'|trans }}
         </a>
     {% endif %}
@@ -18,7 +18,7 @@
                         <img src="{{ asset('assets/shop/img/familiaEnBlanco.jpg') }}" alt="{{ child.name }}">
                     {% endif %}
 
-                    <a href="{{ path('bitbag_sylius_elasticsearch_plugin_shop_list_products', {'slug': child.slug, '_locale': child.translation.locale}) }}" class="block1-txt ab-t-l s-full flex-col-l-sb p-all-28 trans-03 respon3">
+                    <a href="#" class="block1-txt ab-t-l s-full flex-col-l-sb p-all-28 trans-03 respon3">
                         <div class="block1-txt-child1 mw-135 flex-col-l">
                             <span class="block1-name ltext-102 trans-04 p-b-8">
                                 {{ child.name }}

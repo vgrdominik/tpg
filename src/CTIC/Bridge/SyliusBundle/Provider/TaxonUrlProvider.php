@@ -93,9 +93,7 @@ final class TaxonUrlProvider implements UrlProviderInterface
             $taxonUrl->setPriority(0.5);
             /** @var TaxonTranslationInterface $translation */
             foreach ($taxon->getTranslations() as $translation) {
-                $location = $this->router->generate('bitbag_sylius_elasticsearch_plugin_shop_list_products', [
-                    'slug' => $translation->getSlug(),
-                ]);
+                $location = '#';
                 if ($translation->getLocale() === $this->localeContext->getLocaleCode()) {
                     $taxonUrl->setLocalization($location);
                     continue;

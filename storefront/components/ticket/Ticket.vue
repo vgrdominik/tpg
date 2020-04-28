@@ -365,11 +365,11 @@ export default {
     return {
       actions: [
         {
-          label: 'Cobrar',
+          label: 'Pagar',
           action: 'pay' // Method included in this component
         },
         {
-          label: 'Cobrar directo',
+          label: 'Pagar directo',
           action: 'payDirect' // Method included in this component
         }
       ],

@@ -17,14 +17,14 @@
     </div>
     <div class="clear">&nbsp;</div>
 
-    <form method="get" id="search_form_taxon" action="{{ path('bitbag_sylius_elasticsearch_plugin_shop_list_products', {'slug': app.request.attributes.get('slug')}) }}">
+    <form method="get" id="search_form_taxon" action="#">
         <!-- Filters -->
         <div class="dis-none panel-filter w-full p-t-10 p-b-15">
             <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
                 {% include '@SyliusShop/Product/Index/_filterForm.html.twig' %}
                 <!--<div class="sui center-layer">
                     <button type="submit" class="ui positive icon labeled button pos-relative float-l"><i class="check icon"></i> {{ 'ctic.ui.apply'|trans }}</button>
-                    <a href="{{ path('bitbag_sylius_elasticsearch_plugin_shop_list_products', {'slug': app.request.attributes.get('slug')}) }}" class="ui negative icon labeled button pos-relative float-r">
+                    <a href="#" class="ui negative icon labeled button pos-relative float-r">
                         <i class="cancel icon"></i> {{ 'ctic.ui.cancel'|trans }}
                     </a>
                     <div class="clear">&nbsp;</div>

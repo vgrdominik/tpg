@@ -7,6 +7,8 @@
  * file that was distributed with this source code.
  */
 
+/* eslint-disable */
+
 import 'semantic-ui-css/components/accordion';
 import 'semantic-ui-css/components/checkbox';
 import 'semantic-ui-css/components/dimmer';

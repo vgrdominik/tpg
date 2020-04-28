@@ -28,6 +28,10 @@ final class CTICStringExtension extends \Twig_Extension
      */
     public function renderStringMax(\Twig_Environment $twigEnvironment, $text, $count): string
     {
+        if (! $text) {
+            return '';
+        }
+
         if (strlen($text) > $count) {
             return substr($text, 0, $count) . '...';
         }
