@@ -7,14 +7,22 @@ https://github.com/vgrdominik/tpv
 
 Importante: el bundle de sylius shop está deshabilitado.
 
+## KNOWN BUGS
+* Create database to MARIADB not work by json rbac tables.
+
 ## Project setup
 ```
+composer install
 php bin/console sylius:install
 php bin/console doctrine:migrations:migrate
 php bin/console assets:install --symlink
 php bin/console sylius:theme:assets:install --symlink
 yarn install
 yarn build
+mkdir public/media
+mkdir public/media/image
+chmod 775 public/media
+chmod 775 public/media/image
 ```
 
 Follow https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#installation
