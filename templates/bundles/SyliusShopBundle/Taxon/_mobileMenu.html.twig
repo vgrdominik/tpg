@@ -3,7 +3,7 @@
 
     {% if taxon.children|length > 0 %}
         <li>
-            <a href="#">{{ taxon.name }}</a>
+            <a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}">{{ taxon.name }}</a>
             <ul class="sub-menu-m">
                 {% for childTaxon in taxon.children %}
                     {{ macros.item(childTaxon) }}
@@ -15,7 +15,7 @@
         </li>
     {% else %}
         <li>
-            <a href="#">{{ taxon.name }}</a>
+            <a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}">{{ taxon.name }}</a>
         </li>
     {% endif %}
 {% endmacro %}

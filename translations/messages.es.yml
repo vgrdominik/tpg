@@ -3,7 +3,7 @@ ctic:
         menu:
             campaign: Campaña
             videos: Videos
-            schedule: Programación
+            schedule: Calendario
             rol: Rol
     ui:
         taxons: Categoríes

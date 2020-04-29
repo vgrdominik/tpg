@@ -1,7 +1,6 @@
 {% if is_granted('ROLE_USER') %}
     <ul class="main-menu">
         <li>
-            <span class="flex-c-m trans-04 p-lr-25">{{ 'sylius.ui.hello'|trans }} {{ app.user.customer.fullName }}!</span>
             <a href="{{ path('sylius_shop_account_dashboard') }}">{{ 'sylius.ui.my_account'|trans }}</a>
         </li>
         <li>

@@ -1,32 +1,23 @@
 {% import '@SyliusUi/Macro/messages.html.twig' as messages %}
 {% import '@SyliusUi/Macro/pagination.html.twig' as pagination %}
 
-{% include '@SyliusShop/Product/Index/_search.html.twig' %}
+{{ sylius_template_event('sylius.shop.product.index.search', _context) }}
 
 <div class="ui clearing hidden divider"></div>
 
-{{ sonata_block_render_event('sylius.shop.product.index.before_list', {'products': products}) }}
+{{ sylius_template_event('sylius.shop.product.index.before_list', {'products': resources.data}) }}
 
-<div class="container center-layer">
-    {% if products|length > 0 %}
-        <div class="row isotope-grid">
+{% if resources.data|length > 0 %}
+    <div class="ui three cards" id="products" {{ sylius_test_html_attribute('products') }}>
+        {% for product in resources.data %}
+            {% include '@SyliusShop/Product/_box.html.twig' %}
+        {% endfor %}
+    </div>
+    <div class="ui hidden divider"></div>
 
-            {% for product in products %}
-                {% include '@SyliusShop/Product/_box.html.twig' %}
-            {% endfor %}
+    {{ sylius_template_event('sylius.shop.product.index.before_pagination', {'products': resources.data}) }}
 
-            {{ sonata_block_render_event('sylius.shop.product.index.before_pagination', {'products': products}) }}
-        </div>
-
-        <div class="sui">
-            {{ pagination.simple(products) }}
-        </div>
-    {% else %}
-        <div class="row isotope-grid p-b-100">
-            <div class="sui">
-                {{ messages.info('sylius.ui.no_results_to_display') }}
-            </div>
-        </div>
-    {% endif %}
-    <br>
-</div>
+    {{ pagination.simple(resources.data) }}
+{% else %}
+    {{ messages.info('sylius.ui.no_results_to_display') }}
+{% endif %}

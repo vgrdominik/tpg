@@ -1,0 +1,20 @@
+{% set route = app.request.attributes.get('_route') %}
+{% set slug = app.request.get('slug') %}
+{% set availableLimits = constant('BitBag\\SyliusElasticsearchPlugin\\Controller\\RequestDataHandler\\PaginationDataHandlerInterface::AVAILABLE_LIMITS') %}
+{% set queryParameters = app.request.query.all|unset_elements(['limit']) %}
+
+<div class="ui two wide column">
+    <div class="mtext-102 cl2 p-b-15">
+        {{ 'sylius.ui.show'|trans }} {{ products.maxPerPage }}
+    </div>
+
+    <ul>
+        {% for limit in availableLimits %}
+            <li class="p-b-6">
+                <a href="{{ path(route, {'slug': slug, 'limit': limit}|merge(queryParameters)) }}" class="filter-link stext-106 trans-04">
+                    {{ limit }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

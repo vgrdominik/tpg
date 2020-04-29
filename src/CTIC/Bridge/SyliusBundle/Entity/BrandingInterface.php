@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\SyliusBundle\Entity;
 
-use Sylius\Component\Channel\Model\Channel;
+use Sylius\Component\Channel\Model\ChannelInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\ToggleableInterface;
 use Sylius\Component\Resource\Model\TimestampableInterface;
@@ -16,12 +16,12 @@ interface BrandingInterface extends
 {
 
     /**
-     * @return Channel
+     * @return ChannelInterface
      */
     public function getChannel();
 
     /**
-     * @param Channel $channel
+     * @param ChannelInterface $channel
      */
-    public function setChannel(Channel $channel): void;
+    public function setChannel(ChannelInterface $channel): void;
 }

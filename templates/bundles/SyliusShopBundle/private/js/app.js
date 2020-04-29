@@ -53,23 +53,19 @@ import 'magnific-popup/dist/jquery.magnific-popup.min.js';
 // upath.joinSafe(nodeModulesPath, 'isotope-layout/dist/isotope.pkgd.min.js'),
 // import 'isotope-layout/dist/isotope.pkgd.min.js';
 // upath.joinSafe(shopPath, 'private/lib/sweetalert/sweetalert.min.js'),
-import './../lib/sweetalert/sweetalert.min.js';
+// import './../lib/sweetalert/sweetalert.min.js';
 // upath.joinSafe(nodeModulesPath, 'perfect-scrollbar/dist/perfect-scrollbar.min.js'),
 import 'perfect-scrollbar/dist/perfect-scrollbar.min.js';
 // upath.joinSafe(nodeModulesPath, 'lightbox2/dist/js/lightbox.js'),
 import 'lightbox2/dist/js/lightbox.js';
+// upath.joinSafe(shopPath, 'private/lib/cookies/js/privacycookie.js'),
+import './../lib/cookies/js/privacycookie.js';
 // import main.js
 import './main.js';
 
 (function($) {
   $(document).ready(() => {
     $('.popup-js').popup();
-
-    $('.cart.button')
-      .popup({
-        popup: $('.cart.popup'),
-        on: 'click',
-      });
 
     $('.star.rating').rating({
       fireOnInit: true,

@@ -50,50 +50,6 @@
 
         <v-divider />
 
-        <v-row class="pt-0 pb-2 mt-2">
-          <!-- CUSTOMER -->
-          <v-col cols="4" class="text-center pt-0 pb-0 mt-2">
-            Cliente:
-          </v-col>
-          <v-col
-            cols="4"
-            class="text-center pt-0 pb-0"
-            @click="updateCustomer()"
-          >
-            <CtBtn
-              :type="stored_config.branding.style.button"
-              block
-              :color="stored_config.branding.color_palette.primary"
-              @click="updateCustomer()"
-            >
-              {{ current_ticket.id_customer }}
-            </CtBtn>
-          </v-col>
-          <v-col cols="4" class="text-center pt-0 pb-0">
-            <CtBtn
-              type="icon"
-              :icon="['fas', 'edit']"
-              color="primary"
-              @click="updateCustomer()"
-            />
-          </v-col>
-          <CtDialog
-            v-if="currentCustomerToTemporaryModify"
-            v-model="currentCustomerToTemporaryModify"
-            max-width="700"
-            :type="stored_config.branding.style.card"
-            fluid
-            :title="
-              'Modificar datos del cliente ' + current_customer.corporation_name
-            "
-            dense
-          >
-            <Customer :customer="current_customer" />
-          </CtDialog>
-        </v-row>
-
-        <v-divider />
-
         <!-- TOTAL LINE -->
         <v-row class="pt-0 pb-2 primary">
           <v-col
@@ -354,11 +310,11 @@
 <script type="application/javascript">
 import price from '../../mixins/price'
 import ticket from '../../mixins/ticket'
-import Customer from '../customer/Customer'
+// import Customer from '../customer/Customer'
 
 export default {
   name: 'Ticket',
-  components: { Customer },
+  // components: { Customer },
   mixins: [price, ticket],
 
   data: () => {

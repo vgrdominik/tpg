@@ -4,7 +4,7 @@
 
 <div class="card-slick">
     <div class="card card-sm">
-        <a class="card-img card-img-lg" href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">
+        <a class="card-img card-img-md" href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">
             {% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': product} %}
         </a>
         <div class="card-body">
@@ -20,8 +20,7 @@
         <div class="card-footer">
             <a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}"><i class="zmdi zmdi-shopping-cart-plus"></i> {{ 'sylius.ui.view_more'|trans }}</a>
             <div class="ml-auto">
-                <a href="#"><i class="zmdi zmdi-comment-alt"></i> 675</a>
-                <a class="ml-1" href="#"><i class="zmdi zmdi-label-heart"></i> 49</a>
+                &nbsp;
             </div>
         </div>
     </div>

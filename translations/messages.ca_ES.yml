@@ -3,7 +3,7 @@ ctic:
         menu:
             campaign: Campanya
             videos: Videos
-            schedule: Programació
+            schedule: Calendari
             rol: Rol
     ui:
         get_support: Suport

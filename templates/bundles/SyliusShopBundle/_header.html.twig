@@ -1,12 +1,6 @@
 {% macro customMenu(extension_class) %}
     <ul class="main-menu{{ extension_class }}">
         <li>
-            <a href="#">{{ 'ctic.radge.menu.campaign'|trans }}</a>
-        </li>
-        <li>
-            <a href="#">{{ 'ctic.radge.menu.videos'|trans }}</a>
-        </li>
-        <li>
             <a href="#">{{ 'ctic.radge.menu.schedule'|trans }}</a>
         </li>
         <li>
@@ -105,7 +99,7 @@
 </div>
 
 <!-- Modal Search -->
-<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+<!-- <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
     <div class="container-search-header">
         <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
             <img src="{{ asset('assets/shop/img/icons/icon-close2.png') }}" alt="CLOSE">
@@ -118,6 +112,6 @@
             <input class="plh3" type="text" name="name" placeholder="Search...">
         </form>
     </div>
-</div>
+</div> -->
 
 {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widgetSummary.html.twig'})) }}

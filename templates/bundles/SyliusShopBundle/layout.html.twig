@@ -78,7 +78,7 @@
 
 {% block header %}
     <header>
-        {% include '@SyliusShop/_header.html.twig' %}
+        {{ sylius_template_event('sylius.shop.layout.header') }}
 
         {{ sonata_block_render_event('sylius.shop.layout.after_header') }}
     </header>
@@ -130,7 +130,7 @@
 
     {{ sonata_block_render_event('sylius.shop.layout.javascripts') }}
 {% endblock %}
-<!--<script>(function(){var privacyCookieBanner=new eZ.PrivacyCookieBanner({cookieName:'privacidadCookies',days:365,path:'/'});setTimeout(function(){privacyCookieBanner.show()},1000);})();</script>-->
+<script>(function(){var privacyCookieBanner=new eZ.PrivacyCookieBanner({cookieName:'privacidadCookies',days:365,path:'/'});setTimeout(function(){privacyCookieBanner.show()},1000);})();</script>
 
 {% include '@SyliusUi/Modal/_confirmation.html.twig' %}
 {{ sonata_block_render_event('sylius.shop.layout.after_body') }}

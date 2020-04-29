@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\SyliusBundle\Form\Type;
 
+use App\Entity\Channel\Channel;
 use Doctrine\ORM\EntityRepository;
 use Sylius\Bundle\ChannelBundle\Doctrine\ORM\ChannelRepository;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
-use Sylius\Component\Channel\Model\Channel;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;

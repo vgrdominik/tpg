@@ -1,0 +1,14 @@
+
+{% set taxonImage = taxon.images|last %}
+
+<meta name="description" content="{{ taxon.description }} {{ 'ctic.ui.page'|trans }} {{ app.request.get('page', '1') }}. {{ sylius.channel.description }}">
+
+<meta property="og:description" content="{{ taxon.description }} {{ 'ctic.ui.page'|trans }} {{ app.request.get('page', '1') }}. {{ sylius.channel.description }}" />
+
+{% if taxonImage != '' %}
+    <meta property="og:image" content="{{ taxonImage.path|imagine_filter('taxon') }}" />
+    <meta property="og:image:secure_url" content="{{ taxonImage.path|imagine_filter('taxon') }}" />
+    <meta property="twitter:image" content="{{ taxonImage.path|imagine_filter('taxon') }}" />
+{% endif %}
+
+<meta property="twitter:description" content="{{ taxon.description }} {{ 'ctic.ui.page'|trans }} {{ app.request.get('page', '1') }}. {{ sylius.channel.description }}" />

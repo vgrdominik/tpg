@@ -1,6 +1,6 @@
 <template>
   <v-content class="pa-0">
-    <v-row class="ml-2 mr-2" align="center" justify="center">
+    <!-- <v-row class="ml-2 mr-2" align="center" justify="center">
       <v-col
         v-if="$vuetify.breakpoint.smAndUp"
         dense
@@ -8,7 +8,7 @@
       >
         <UnitList />
       </v-col>
-    </v-row>
+    </v-row> -->
     <CtCard
       :type="stored_config.branding.style.card"
       fluid
@@ -34,6 +34,7 @@
           hide-details
           class="ml-3"
           label="Buscador"
+          autofocus
         />
         <v-spacer />
       </template>
@@ -161,12 +162,12 @@
 <script type="application/javascript">
 import price from '../../mixins/price'
 import ticket from '../../mixins/ticket'
-import UnitList from './UnitList'
+// import UnitList from './UnitList'
 import Product from './Product'
 
 export default {
   name: 'ProductList',
-  components: { Product, UnitList },
+  components: { Product }, // , UnitList
   mixins: [price, ticket],
   data: () => {
     return {

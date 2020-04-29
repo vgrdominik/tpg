@@ -5,8 +5,5 @@
 <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart cart button" id="sylius-cart-button" data-notify="{{ cart.items|length }}">
     {{ sylius_template_event('sylius.shop.cart.widget.button', {'cart': cart}) }}
 </div>
-<div class="ui large flowing cart hidden popup">
-    {{ sylius_template_event('sylius.shop.cart.widget.popup', {'cart': cart}) }}
-</div>
 
 {{ sonata_block_render_event('sylius.shop.partial.cart.summary.after_widget_content', {'cart': cart}) }}

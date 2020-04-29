@@ -90,7 +90,7 @@ const paths = {
       upath.joinSafe(shopPath, 'private/css/material-design-iconic-font.min.css'),
       upath.joinSafe(shopPath, 'private/css/icon-font.min.css'),
       upath.joinSafe(shopPath, 'private/lib/animate/animate.css'),
-      // upath.joinSafe(shopPath, 'private/lib/cookies/css/privacycookie.css'),
+      upath.joinSafe(shopPath, 'private/lib/cookies/css/privacycookie.css'),
       upath.joinSafe(nodeModulesPath, 'hamburgers/dist/hamburgers.min.css'),
       upath.joinSafe(nodeModulesPath, 'animsition/dist/css/animsition.min.css'),
       upath.joinSafe(nodeModulesPath, 'select2/dist/css/select2.min.css'),

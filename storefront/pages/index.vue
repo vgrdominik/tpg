@@ -1,11 +1,12 @@
 <template>
   <v-container id="main-content" fluid>
     <v-row dense>
-      <v-col cols="12" md="3">
+      <!-- Currently is only search engine <v-col cols="12" md="3">
         <TicketList v-if="current_ticket === 0" />
         <Ticket v-else />
       </v-col>
-      <v-col cols="12" md="9">
+      <v-col cols="12" md="9"> -->
+      <v-col cols="12">
         <v-expansion-panels v-model="panel" accordion>
           <v-expansion-panel>
             <v-expansion-panel-header class="primary--text pt-0 pb-0"
@@ -26,11 +27,11 @@
 import { mapActions } from 'vuex'
 import FamilyList from '../components/family/FamilyList'
 import ProductList from '../components/product/ProductList'
-import TicketList from '../components/ticket/TicketList'
-import Ticket from '../components/ticket/Ticket'
+// import TicketList from '../components/ticket/TicketList'
+// import Ticket from '../components/ticket/Ticket'
 
 export default {
-  components: { Ticket, TicketList, FamilyList, ProductList },
+  components: { FamilyList, ProductList }, // Ticket, TicketList,
   data() {
     return {
       panel: 0

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\SyliusBundle\Entity;
 
-use Sylius\Component\Channel\Model\Channel;
+use Sylius\Component\Channel\Model\ChannelInterface;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 use Sylius\Component\Resource\Model\ToggleableTrait;
 
@@ -19,7 +19,7 @@ class Branding implements BrandingInterface
     protected $id;
 
     /**
-     * @var Channel
+     * @var ChannelInterface
      */
     protected $channel;
 
@@ -87,7 +87,7 @@ class Branding implements BrandingInterface
     }
 
     /**
-     * @return Channel
+     * @return ChannelInterface
      */
     public function getChannel()
     {
@@ -95,9 +95,9 @@ class Branding implements BrandingInterface
     }
 
     /**
-     * @param Channel $channel
+     * @param ChannelInterface $channel
      */
-    public function setChannel(Channel $channel): void
+    public function setChannel(ChannelInterface $channel): void
     {
         $this->channel = $channel;
     }

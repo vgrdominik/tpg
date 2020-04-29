@@ -103,10 +103,10 @@
                 {% set ancestors = taxon.ancestors|reverse %}
 
                 {% for ancestor in ancestors %}
-                    <a href="#" class="stext-106 cl6 hov1 m-l-5 section">{{ ancestor.name }}</a>,
+                    <a href="{{ path('sylius_shop_product_index', {'slug': ancestor.slug, '_locale': ancestor.translation.locale}) }}" class="stext-106 cl6 hov1 m-l-5 section">{{ ancestor.name }}</a>,
                 {% endfor %}
 
-                    <a href="#" class="stext-106 cl6 hov1 m-l-5 section">{{ taxon.name }}</a>
+                    <a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}" class="stext-106 cl6 hov1 m-l-5 section">{{ taxon.name }}</a>
             {% endif %}
 			</span>
     </div>

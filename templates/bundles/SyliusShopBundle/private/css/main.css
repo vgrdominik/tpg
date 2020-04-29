@@ -12,10 +12,10 @@
 /*------------------------------------------------------------------
 [COLOR CODES]
 
-# Text Color      :  
-# Primary Color 01:  
-# Primary Color 02:   
-# Primary Color 03:  
+# Text Color      :
+# Primary Color 01:
+# Primary Color 02:
+# Primary Color 03:
 
 ------------------------------------------------------------------*/
 /*------------------------------------------------------------------
@@ -479,7 +479,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   bottom: 101%;
   left: 0;
   background-color: rgba(255,255,255,0.9);
-  padding: 50px 15px 100px 15px;
+  padding: 60px 0 0 0;
 }
 
 .show-modal-search {

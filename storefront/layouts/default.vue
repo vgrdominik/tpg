@@ -1,6 +1,7 @@
 <template>
   <v-app id="inspire">
-    <v-content id="maincontent" class="pt-8">
+    <v-content id="maincontent" class="pt-2">
+      <h1 class="display-2 white--text text-center">Buscador rápido</h1>
       <router-view v-if="!isContainerNeeded" />
       <v-container v-else class="fill-height" fluid>
         <router-view />
@@ -647,3 +648,11 @@ export default {
   }
 }
 </script>
+<style>
+@media (min-width: 600px) {
+  body,
+  html {
+    overflow: hidden;
+  }
+}
+</style>

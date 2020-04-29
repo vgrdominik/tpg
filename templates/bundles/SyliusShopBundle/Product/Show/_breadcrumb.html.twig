@@ -10,12 +10,12 @@
                 {% if ancestor.isRoot() %}
                     <div class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5 section">{{ ancestor.name }}</div>
                 {% else %}
-                    <a href="#" class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5 section">{{ ancestor.name }}</a>
+                    <a href="{{ path('sylius_shop_product_index', {'slug': ancestor.slug, '_locale': ancestor.translation.locale}) }}" class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5 section">{{ ancestor.name }}</a>
                 {% endif %}
                 <div class="divider"> / </div>
             {% endfor %}
 
-            <a href="#" class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5 section">{{ taxon.name }}</a>
+            <a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}" class="stext-106 cl6 hov1 bor3 trans-04 m-r-16 m-l-16 m-tb-5 section">{{ taxon.name }}</a>
             <div class="divider"> / </div>
         {% endif %}
 

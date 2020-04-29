@@ -1,0 +1,44 @@
+{% if products.nbResults > 0 %}
+    {% set route = app.request.attributes.get('_route') %}
+    {% set slug = app.request.get('slug') %}
+    {% set queryParameters = app.request.query.all|unset_elements(['order_by', 'sort', 'page']) %}
+
+    <div class="ui three wide column">
+        <div class="mtext-102 cl2 p-b-15">
+            {{ 'sylius.ui.sort'|trans }}
+        </div>
+
+        <ul>
+            <li class="p-b-6">
+                <a href="{{ path(route, {'slug': slug, 'order_by': 'sold_units', 'sort': 'desc'}|merge(queryParameters)) }}" class="filter-link stext-106 trans-04" data-text="{{ 'sylius.ui.by_position'|trans|lower }}">
+                    {{ 'sylius.ui.by_position'|trans }}
+                </a>
+            </li>
+
+            <li class="p-b-6">
+                <a href="{{ path(route, {'slug': slug, 'order_by': 'product_created_at', 'sort': 'desc'}|merge(queryParameters)) }}" class="filter-link stext-106 trans-04" data-text="{{ 'sylius.ui.newest_first'|trans|lower }}">
+                    {{ 'sylius.ui.newest_first'|trans }}
+                </a>
+            </li>
+
+            <li class="p-b-6">
+                <a href="{{ path(route, {'slug': slug, 'order_by': 'product_created_at', 'sort': 'asc'}|merge(queryParameters)) }}" class="filter-link stext-106 trans-04" data-text="{{ 'sylius.ui.oldest_first'|trans|lower }}">
+                    {{ 'sylius.ui.oldest_first'|trans }}
+                </a>
+            </li>
+
+            <li class="p-b-6">
+                <a href="{{ path(route, {'slug': slug, 'order_by': 'price', 'sort': 'asc'}|merge(queryParameters)) }}" class="filter-link stext-106 trans-04" data-text="{{ 'sylius.ui.cheapest_first'|trans|lower }}">
+                    {{ 'sylius.ui.cheapest_first'|trans }}
+                </a>
+            </li>
+
+            <li class="p-b-6">
+                <a href="{{ path(route, {'slug': slug, 'order_by': 'price', 'sort': 'desc'}|merge(queryParameters)) }}" class="filter-link stext-106 trans-04" data-text="{{ 'sylius.ui.most_expensive_first'|trans|lower }}">
+                    {{ 'sylius.ui.most_expensive_first'|trans }}
+                </a>
+            </li>
+        </ul>
+    </div>
+
+{% endif %}

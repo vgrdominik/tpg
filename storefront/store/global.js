@@ -306,7 +306,7 @@ export const state = () => ({
             cost: 'variants[id].originalPrice.current',
             base: null,
             total: 'variants[id].price.current',
-            reference: null,
+            reference: 'slug',
             complement_unique: null,
             complement_ids_available: null,
             complement_price: null,

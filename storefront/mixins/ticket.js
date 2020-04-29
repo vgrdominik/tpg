@@ -153,12 +153,15 @@ export default {
 
   methods: {
     addOrShowProductToTicket(product = null, customerId = null) {
-      if (product.complement_show && product.complement_show !== '0') {
+      // Iframe connection
+      location.href = 'http://127.0.0.1:8000/es/producto/' + product.reference
+
+      /* Will be activated to fast buy if (product.complement_show && product.complement_show !== '0') {
         this.setProductToShow(product)
         return true
       }
 
-      this.addProductToTicket(product, customerId)
+      this.addProductToTicket(product, customerId) */
     },
 
     addProductToTicket(

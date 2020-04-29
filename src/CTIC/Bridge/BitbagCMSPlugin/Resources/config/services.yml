@@ -116,6 +116,26 @@ services:
     bitbag_sylius_cms_plugin.resolver.block_template:
         class: CTIC\Bridge\BitbagCMSPlugin\Resolver\BlockTemplateResolver
 
+# override twig render block extension
+    bitbag_sylius_cms_plugin.twig.extension.block:
+        class: CTIC\Bridge\BitbagCMSPlugin\Twig\Extension\RenderBlockExtension
+        arguments:
+            - "@bitbag_sylius_cms_plugin.repository.block"
+            - "@bitbag_sylius_cms_plugin.resolver.block_resource"
+            - "@bitbag_sylius_cms_plugin.resolver.block_template"
+            - "@templating"
+        tags:
+            - { name: twig.extension }
+
+# override resolver block resource
+    bitbag_sylius_cms_plugin.resolver.block_resource:
+        class: CTIC\Bridge\BitbagCMSPlugin\Resolver\BlockResourceResolver
+        public: true
+        arguments:
+            - "@bitbag_sylius_cms_plugin.repository.block"
+            - "@logger"
+            - "@sylius.context.channel"
+
 # override target entities
 doctrine:
     orm:

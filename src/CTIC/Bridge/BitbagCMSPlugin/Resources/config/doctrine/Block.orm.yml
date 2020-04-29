@@ -13,6 +13,11 @@ CTIC\Bridge\BitbagCMSPlugin\Entity\Block:
             type: string
             length: 64
             unique: true
+        type:
+            column: type
+            type: string
+            length: 64
+            unique: true
         enabled:
             column: enabled
             type: boolean

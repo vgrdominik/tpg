@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\BitbagCMSPlugin\Repository;
 
-use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockInterface;
-use BitBag\SyliusCmsPlugin\Repository\BlockRepository as BaseBlockRepository;
 use Doctrine\ORM\QueryBuilder;
 
 class BlockRepository extends BaseBlockRepository implements BlockRepositoryInterface
