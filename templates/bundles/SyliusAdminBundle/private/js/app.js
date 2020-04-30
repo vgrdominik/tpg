@@ -7,6 +7,8 @@
  * file that was distributed with this source code.
  */
 
+/* eslint-disable */
+
 import 'semantic-ui-css/components/accordion';
 import $ from 'jquery';
 import 'jquery.dirtyforms/jquery.dirtyforms';
@@ -29,6 +31,11 @@ import './sylius-chart';
 
 import SyliusTaxonomyTree from './sylius-taxon-tree';
 import formsList from './sylius-forms-list';
+
+/* OWN
+upath.joinSafe(nodeModulesPath, 'slick-carousel/slick/slick.min.js'),
+ */
+import 'slick-carousel/slick/slick.min.js';
 
 $(document).ready(() => {
   $('#sylius_product_variant_pricingCalculator').handlePrototypes({
@@ -109,6 +116,10 @@ $(document).ready(() => {
   $('.variants-accordion__title').on('click', '.icon.button', function(e) {
     $(e.delegateTarget).next('.variants-accordion__content').toggle();
     $(this).find('.dropdown.icon').toggleClass('counterclockwise rotated');
+  });
+
+  $('textarea').each(function() {
+    console.log($(this).attr('id'))
   });
 });
 
