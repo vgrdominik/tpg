@@ -1,6 +1,6 @@
 {% extends '@SyliusShop/layout.html.twig' %}
 
-{% block title %}{{ page.title }}{{ 'ctic.ui.your_store'|trans }}{% endblock %}
+{% block title %}{{ page.title }} - {{ 'ctic.ui.your_store'|trans }}{% endblock %}
 
 {% block metatags %}
     {% if page.metaKeywords is not empty %}
@@ -40,6 +40,7 @@
     <div class="container">
 
         {% if page.image is null %}
+        <br>
         <div class="row">
             <div class="col-12">
                 <h1>{{ page.title }}</h1>
