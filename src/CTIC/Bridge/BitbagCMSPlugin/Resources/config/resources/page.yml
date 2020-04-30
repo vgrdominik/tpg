@@ -3,3 +3,4 @@ sylius_resource:
         bitbag_sylius_cms_plugin.page:
             classes:
                 model: CTIC\Bridge\BitbagCMSPlugin\Entity\Page
+                repository: CTIC\Bridge\BitbagCMSPlugin\Repository\PageRepository
