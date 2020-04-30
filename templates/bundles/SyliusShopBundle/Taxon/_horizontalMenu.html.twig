@@ -20,7 +20,7 @@
 {% import _self as macros %}
 
 {% if sylius.channel.menuTaxon.children|length > 0 %}
-<div class="menu-desktop m-all-4">
+<div class="menu-desktop">
     <ul class="main-menu">
         {% for taxon in sylius.channel.menuTaxon.children %}
             {{ macros.item(taxon) }}

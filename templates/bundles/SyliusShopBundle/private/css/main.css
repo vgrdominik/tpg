@@ -3445,3 +3445,7 @@ a {
 #price_max_price{
   max-width: 50%;
 }
+
+header {
+    height: 60px !important;
+}
