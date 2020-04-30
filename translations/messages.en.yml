@@ -4,9 +4,9 @@ ctic:
             campaign: Campaign
             videos: Videos
             schedule: Calendar
-            schedule_link: /en/calendar
+            schedule_slug: calendar
             rol: Role
-            rol_link: /es/role
+            rol_slug: role
     ui:
         taxons: Categories
         sku: SKU

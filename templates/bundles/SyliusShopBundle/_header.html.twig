@@ -1,7 +1,7 @@
 {% macro customMenu(extension_class) %}
     <ul class="main-menu{{ extension_class }}">
         <li>
-            <a href="{{ 'ctic.radge.menu.schedule_link'|trans }}">{{ 'ctic.radge.menu.schedule'|trans }}</a>
+            <a href="{{ render(path('bitbag_sylius_cms_plugin_shop_page_show', {'slug' : 'ctic.radge.menu.schedule_slug'|trans})) }}">{{ 'ctic.radge.menu.schedule'|trans }}</a>
         </li>
         <li>
             <a href="{{ 'ctic.radge.menu.rol_link'|trans }}">{{ 'ctic.radge.menu.rol'|trans }}</a>

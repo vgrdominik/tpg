@@ -4,9 +4,9 @@ ctic:
             campaign: Campaña
             videos: Videos
             schedule: Calendario
-            schedule_link: /es/calendario
+            schedule_slug: calendario
             rol: Rol
-            rol_link: /es/rol
+            rol_slug: rol
     ui:
         taxons: Categoríes
         sku: Referència
