@@ -208,7 +208,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .right-top-bar a:hover {
-  color: #948774;
+  color: #FF877A;
 }
 
 
@@ -395,7 +395,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
   text-decoration: none;
-  color: #948774;
+  color: #FF877A;
 }
 
 .main-menu > li:hover > .sub-menu {
@@ -413,7 +413,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .sub-menu > li:hover > a {
-  color: #948774;
+  color: #FF877A;
   text-decoration: none;
 }
 
@@ -534,7 +534,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .wrap-search-header button:hover {
-  color: #948774;
+  color: #FF877A;
 }
 
 /*---------------------------------------------*/
@@ -593,7 +593,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*---------------------------------------------*/
 .main-menu > li.active-menu > a {
-  color: #948774;
+  color: #FF877A;
 }
 
 
@@ -1078,7 +1078,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow:hover:after {
-  color: #948774;
+  color: #FF877A;
 }
 
 
@@ -1110,12 +1110,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .rs1-select2 .select2-container .select2-results__option[aria-selected="true"] {
-  background: #948774;
+  background: #FF877A;
   color: white;
 }
 
 .rs1-select2 .select2-container .select2-results__option--highlighted[aria-selected] {
-  background: #948774;
+  background: #FF877A;
   color: white;
 }
 
@@ -1186,7 +1186,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .item-slick1-btn:hover {
-  color: #948774 !important;
+  color: #FF877A !important;
 }
 
 .item-slick1-btn {
@@ -1746,13 +1746,13 @@ button.mfp-close {
 }
 
 .filter-link:hover {
-  color: #948774;
-  border-bottom: 1px solid #948774;
+  color: #FF877A;
+  border-bottom: 1px solid #FF877A;
 }
 
 .filter-link-active {
-  color: #948774;
-  border-bottom: 1px solid #948774;
+  color: #FF877A;
+  border-bottom: 1px solid #FF877A;
 }
 
 @media (max-width: 767px) {
@@ -2763,7 +2763,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .js-addedwish-detail {
-  color: #948774;
+  color: #FF877A;
 }
 
 /*---------------------------------------------*/
@@ -3015,8 +3015,8 @@ input.num-product::-webkit-inner-spin-button {
 
 .hov-cl0:hover {color: #fff;}
 .hov-bg0:hover {background-color: #fff;}
-.hov-cl1:hover {color: #948774;}
-.hov-bg1:hover {background-color: #948774;}
+.hov-cl1:hover {color: #FF877A;}
+.hov-bg1:hover {background-color: #FF877A;}
 
 /*---------------------------------------------*/
 .hov-img0 {
