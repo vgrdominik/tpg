@@ -188,7 +188,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   font-family: Nunito;
   font-size: 12px;
   line-height: 1.8;
-  color: #b2b2b2;
+  color: #70B0CC;
 }
 
 
@@ -199,7 +199,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   line-height: 1.8;
 
   height: 100%;
-  color: #b2b2b2;
+  color: #70B0CC;
   border-right: 1px solid rgba(255,255,255,0.3);
 }
 
@@ -2093,7 +2093,7 @@ input.num-product::-webkit-inner-spin-button {
 .cl4 {color: #999;}
 .cl5 {color: #267699;}
 .cl6 {color: #888;}
-.cl7 {color: #b2b2b2;}
+.cl7 {color: #70B0CC;}
 .cl8 {color: #555;}
 .cl9 {color: #aaa;}
 .cl10 {color: #1d1d1d;}
@@ -2741,10 +2741,10 @@ input.num-product::-webkit-inner-spin-button {
 .plh0::-moz-placeholder { color: #999999;}
 .plh0:-ms-input-placeholder { color: #999999;}
 
-.plh1::-webkit-input-placeholder { color: #b2b2b2;}
-.plh1:-moz-placeholder { color: #b2b2b2;}
-.plh1::-moz-placeholder { color: #b2b2b2;}
-.plh1:-ms-input-placeholder { color: #b2b2b2;}
+.plh1::-webkit-input-placeholder { color: #70B0CC;}
+.plh1:-moz-placeholder { color: #70B0CC;}
+.plh1::-moz-placeholder { color: #70B0CC;}
+.plh1:-ms-input-placeholder { color: #70B0CC;}
 
 .plh2::-webkit-input-placeholder { color: #333;}
 .plh2:-moz-placeholder { color: #333;}
@@ -3365,7 +3365,7 @@ a {
 }
 
 .sui a {
-  color: #b2b2b2;
+  color: #70B0CC;
 }
 
 #criteria_search_value{
