@@ -4,7 +4,9 @@ ctic:
             campaign: Campanya
             videos: Videos
             schedule: Calendari
+            schedule_link: /ca_ES/calendari
             rol: Rol
+            rol_link: /es/rol
     ui:
         get_support: Suport
         documentation: Documentació
