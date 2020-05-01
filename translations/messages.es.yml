@@ -24,10 +24,11 @@ ctic:
         returns: Devoluciones
         shipping: Envío
         get_in_touch: Estamos en contacto
-        get_in_touch_phrase: ¿Alguna pregunta? Puedes usar nuestras redes sociales o nuestro contacto en ryu@radge.cat
+        get_in_touch_phrase: ¿Alguna pregunta? Puedes usar nuestras redes sociales o nuestro contacto en iam@valentigamez.com
         link_sn_facebook: https://www.facebook.com/iamvalentigamez
         link_sn_instagram: https://www.instagram.com/iamvalentigamez
         link_sn_twitter: https://www.twitter.com/iamvalentigamez
+        link_sn_twitch: https://www.twitch.tv/iamvalentigamez
         newsletter: Newsletter
         subscribe: Suscribirse
         remove: Eliminar
