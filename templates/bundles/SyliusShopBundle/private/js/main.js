@@ -115,7 +115,7 @@
     $('.js-show-modal-search').on('click', function(){
         /* $('.modal-search-header').addClass('show-modal-search');
         $(this).css('opacity','0'); */
-      location.href = 'http://localhost:3000'
+      location.href = 'https://comunidad-dev.valentigamez.com/'
     });
 
     $('.js-hide-modal-search').on('click', function(){
