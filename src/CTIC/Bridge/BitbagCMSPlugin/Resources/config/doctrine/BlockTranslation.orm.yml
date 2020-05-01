@@ -9,7 +9,7 @@ CTIC\Bridge\BitbagCMSPlugin\Entity\BlockTranslation:
             cascade: [ALL]
     manyToOne:
         taxon:
-            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Taxon
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonInterface
             inversedBy: blocks
             joinColumn:
                 name: taxon_id
