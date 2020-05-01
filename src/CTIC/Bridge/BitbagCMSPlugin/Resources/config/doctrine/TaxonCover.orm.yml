@@ -3,7 +3,7 @@ CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonCover:
     table: sylius_taxon_cover
     oneToOne:
         owner:
-            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\Taxon
+            targetEntity: CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonInterface
             inversedBy: cover
             cascade: [ALL]
             joinColumn:

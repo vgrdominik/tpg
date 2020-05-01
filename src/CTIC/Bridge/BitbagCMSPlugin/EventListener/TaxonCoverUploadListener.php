@@ -8,6 +8,7 @@ use CTIC\Bridge\BitbagCMSPlugin\Entity\BlockInterface;
 use BitBag\SyliusCmsPlugin\Entity\BlockTranslationInterface;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonCover;
 use CTIC\Bridge\BitbagCMSPlugin\Entity\TaxonInterface;
+use Doctrine\ORM\EntityManagerInterface;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
 use Sylius\Component\Core\Uploader\ImageUploaderInterface;
 use Webmozart\Assert\Assert;
@@ -20,11 +21,18 @@ final class TaxonCoverUploadListener
     private $uploader;
 
     /**
-     * @param ImageUploaderInterface $uploader
+     * @var EntityManagerInterface
      */
-    public function __construct(ImageUploaderInterface $uploader)
+    private $em;
+
+    /**
+     * @param ImageUploaderInterface $uploader
+     * @param EntityManagerInterface $em
+     */
+    public function __construct(ImageUploaderInterface $uploader, EntityManagerInterface $em)
     {
         $this->uploader = $uploader;
+        $this->em = $em;
     }
 
     /**
@@ -42,6 +50,8 @@ final class TaxonCoverUploadListener
 
         if (null !== $image && true === $image->hasFile()) {
             $this->uploader->upload($image);
+            $this->em->persist($image);
+            $this->em->flush();
         }else{
             $path = $image->getPath();
             if($path === null)
