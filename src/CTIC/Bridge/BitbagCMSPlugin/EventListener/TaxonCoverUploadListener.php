@@ -21,18 +21,11 @@ final class TaxonCoverUploadListener
     private $uploader;
 
     /**
-     * @var EntityManagerInterface
-     */
-    private $em;
-
-    /**
      * @param ImageUploaderInterface $uploader
-     * @param EntityManagerInterface $em
      */
-    public function __construct(ImageUploaderInterface $uploader, EntityManagerInterface $em)
+    public function __construct(ImageUploaderInterface $uploader)
     {
         $this->uploader = $uploader;
-        $this->em = $em;
     }
 
     /**
@@ -50,8 +43,6 @@ final class TaxonCoverUploadListener
 
         if (null !== $image && true === $image->hasFile()) {
             $this->uploader->upload($image);
-            $this->em->persist($image);
-            $this->em->flush();
         }else{
             $path = $image->getPath();
             if($path === null)

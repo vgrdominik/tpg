@@ -39,10 +39,9 @@ services:
         class: CTIC\Bridge\BitbagCMSPlugin\EventListener\TaxonCoverUploadListener
         arguments:
             - "@sylius.image_uploader"
-            - "@doctrine.orm.entity_manager"
         tags:
-            - { name: kernel.event_listener, event: sylius.taxon.post_create, method: uploadImage }
-            - { name: kernel.event_listener, event: sylius.taxon.post_update, method: uploadImage }
+            - { name: kernel.event_listener, event: sylius.taxon.pre_create, method: uploadImage }
+            - { name: kernel.event_listener, event: sylius.taxon.pre_update, method: uploadImage }
 
 # add admin options to menu
     ctic_bridge_bitbag_cms_plugin.menu.content_management:

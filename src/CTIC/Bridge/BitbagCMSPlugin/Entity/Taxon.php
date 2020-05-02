@@ -95,9 +95,11 @@ class Taxon extends BaseTaxon implements TaxonInterface
     /**
      * @inheritdoc
      */
-    public function setCover(TaxonCover $cover): void
+    public function setCover(TaxonCoverInterface $cover): void
     {
-        $cover->setOwner($this);
+        if ($cover !== null) {
+            $cover->setOwner($this);
+        }
 
         $this->cover = $cover;
     }

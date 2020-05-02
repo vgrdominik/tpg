@@ -46,9 +46,9 @@ interface TaxonInterface
     public function getCover(): ?TaxonCoverInterface;
 
     /**
-     * @param TaxonCover $cover
+     * @param TaxonCoverInterface $cover
      */
-    public function setCover(TaxonCover $cover): void;
+    public function setCover(TaxonCoverInterface $cover): void;
 
     /**
      * @return Landing
