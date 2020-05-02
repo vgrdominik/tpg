@@ -73,6 +73,7 @@ sylius:
         issue_tracker: Reportar bug
         youtube: Youtube
         login: Login
+        latest_products: Últimas misiones
         logout: Logout
         add_your_review: Envia tu reseña
         your_shopping_cart: Tu carrito
