@@ -50,10 +50,8 @@ final class TaxonCoverUploadListener
 
         if (null !== $image && true === $image->hasFile()) {
             $this->uploader->upload($image);
-            if ($image->getPath()) {
-                $this->em->persist($image);
-                $this->em->flush();
-            }
+            $this->em->persist($image);
+            $this->em->flush();
         }else{
             $path = $image->getPath();
             if($path === null)
