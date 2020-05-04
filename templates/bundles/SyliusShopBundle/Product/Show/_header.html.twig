@@ -1,8 +1,9 @@
 {% set taxon = product.mainTaxon %}
 {% set productCover = taxon.cover %}
 {% for productImage in product.images %}
- {% if productImage.type == 'cover' %}
-    {% set productCover = productImage %}
+    {% if productImage.type == 'cover' %}
+        {% set productCover = productImage %}
+    {% endif %}
 {% endfor %}
 <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="{% if productCover is not null and productCover.path is not null and productCover.path != '' %}background-image: url('{{ productCover.path|imagine_filter('cover') }}');{% else %}background-color: #D3D3D3;{% endif %}">
     <h1 class="ltext-105 cl0 txt-center">
