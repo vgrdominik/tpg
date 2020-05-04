@@ -57,6 +57,9 @@
         <span class="sylius-total">{{ money.convertAndFormat(item.subtotal) }}</span>
     </td>
     <td class="remove">
-        <a href="{{ path('sylius_shop_cart_item_remove', {'id': item.id}) }}" class="ui circular icon button sylius-cart-remove-button" data-csrf-token="{{ csrf_token(item.id) }}"><i class="remove icon"></i></a>
+        <form action="{{ path('sylius_shop_cart_item_remove', {'id': item.id}) }}" method="delete">
+            <input type="hidden" name="token" value="{{ csrf_token(item.id) }}"/>
+            <button type="submit" class="ui circular icon button sylius-cart-remove-button"><i class="remove icon"></i></button>
+        </form>
     </td>
 </tr>
