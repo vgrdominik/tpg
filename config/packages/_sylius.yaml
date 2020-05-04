@@ -265,6 +265,15 @@ sylius_theme:
             directories:
                 - "%kernel.project_dir%/themes"
 
+sylius_mailer:
+    sender:
+        name: Valentí Gàmez
+        address: comunidad@valentigamez.eu
+#    emails:
+#        out_of_stock:
+#            subject: "A product has become out of stock!"
+#            template: "Email/out_of_stock.html.twig"
+
 fos_sylius_import_export:
     importer:
         web_ui:               true
