@@ -85,6 +85,7 @@ sylius:
     ui:
         look_and_feel: Visualització
         taxes_total: Total impostos
+        paid_orders: Comandes pagades
         money: Diners
         general: General
         toggle_all: Marcar/Desmarcar tot
