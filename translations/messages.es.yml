@@ -61,6 +61,9 @@ sylius:
             username: Nombre de usuario
             password: Contraseña
             remember_me: Recuérdame
+        checkout:
+            addressing:
+                different_shipping_address: Dirección de envío diferente
     ui:
         look_and_feel: Visualización
         money: Dinero

@@ -79,6 +79,9 @@ sylius:
             username: Nom d'usuari
             password: Contrasenya
             remember_me: Recordar
+        checkout:
+            addressing:
+                different_shipping_address: Direcció d'enviament diferent
     ui:
         look_and_feel: Visualització
         money: Diners
