@@ -86,6 +86,11 @@ sylius:
         look_and_feel: Visualització
         taxes_total: Total impostos
         paid_orders: Comandes pagades
+        resend_the_shipment_confirmation_email: Reenviar correu de confirmació de enviament
+        resend_the_order_confirmation_email: Reenviar confirmació de comanda
+        edit_addresses: Modificar direcció
+        unit_discount: Descompte unitat
+        distributed_order_discount: Descompte comanda
         money: Diners
         general: General
         toggle_all: Marcar/Desmarcar tot
@@ -118,6 +123,10 @@ sylius:
         oldest_first: Vells primer
         cheapest_first: Barats primer
         most_expensive_first: Cars primer
+
+sylius_admin_order_creation:
+    ui:
+        order_discount: Total descompte comanda
 
 sylius_rbac:
     ui:

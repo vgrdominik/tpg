@@ -68,6 +68,11 @@ sylius:
         look_and_feel: Visualización
         taxes_total: Total impuestos
         paid_orders: Pedidos pagados
+        resend_the_shipment_confirmation_email: Reenviar correo de confirmación de envío
+        resend_the_order_confirmation_email: Reenviar confirmació de pedido
+        edit_addresses: Editar dirección
+        unit_discount: Descuento unidad
+        distributed_order_discount: Descuento pedido
         money: Dinero
         general: General
         toggle_all: Marcar/Desmarcar todo
@@ -88,6 +93,10 @@ sylius:
         access_your_store_account_or_create_a_new_one: Accede a tu cuenta o crea una nueva
         forgot_password: ¿Has olvidado tu contraseña?
         if_you_have_an_account_sign_in_with_your_email_address: Si tienes una cuenta, inicia sesión con tu correo electrónico.
+
+sylius_admin_order_creation:
+    ui:
+        order_discount: Total descuento pedido
 
 sylius_rbac:
     you_are_not_allowed_to_do_that: No tienes acceso
