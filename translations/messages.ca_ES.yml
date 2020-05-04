@@ -84,6 +84,7 @@ sylius:
                 different_shipping_address: Direcció d'enviament diferent
     ui:
         look_and_feel: Visualització
+        taxes_total: Total impostos
         money: Diners
         general: General
         toggle_all: Marcar/Desmarcar tot

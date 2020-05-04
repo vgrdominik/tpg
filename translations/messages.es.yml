@@ -66,6 +66,7 @@ sylius:
                 different_shipping_address: Dirección de envío diferente
     ui:
         look_and_feel: Visualización
+        taxes_total: Total impuestos
         money: Dinero
         general: General
         toggle_all: Marcar/Desmarcar todo
