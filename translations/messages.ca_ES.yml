@@ -127,6 +127,7 @@ sylius:
 sylius_admin_order_creation:
     ui:
         order_discount: Total descompte comanda
+        reorder: Tornar a demanar
 
 sylius_rbac:
     ui:

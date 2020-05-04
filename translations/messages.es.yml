@@ -97,6 +97,7 @@ sylius:
 sylius_admin_order_creation:
     ui:
         order_discount: Total descuento pedido
+        reorder: Volver a pedir
 
 sylius_rbac:
     you_are_not_allowed_to_do_that: No tienes acceso
