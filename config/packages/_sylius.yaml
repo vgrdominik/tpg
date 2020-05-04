@@ -267,8 +267,8 @@ sylius_theme:
 
 sylius_mailer:
     sender:
-        name: Valentí Gàmez
-        address: comunidad@valentigamez.eu
+        name: "%env(resolve:ctic_email_sender_name)%"
+        address: "%env(resolve:ctic_email_sender_address)%"
 #    emails:
 #        out_of_stock:
 #            subject: "A product has become out of stock!"
