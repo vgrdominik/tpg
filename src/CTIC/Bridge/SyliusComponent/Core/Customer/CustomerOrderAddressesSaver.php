@@ -14,10 +14,10 @@ use Sylius\Component\Customer\Context\CustomerContextInterface;
 final class CustomerOrderAddressesSaver implements OrderAddressesSaverInterface
 {
     /** @var CustomerAddressAdderInterface */
-    private $addressAdder;
+    public $addressAdder;
 
     /** @var CustomerContextInterface */
-    private $customerContext;
+    public $customerContext;
 
     public function __construct(CustomerAddressAdderInterface $addressAdder, CustomerContextInterface $customerContext)
     {
