@@ -7,6 +7,8 @@ services:
     sylius.customer_order_addresses_saver:
         class:  CTIC\Bridge\SyliusComponent\Core\Customer\CustomerOrderAddressesSaver
         arguments: ['@sylius.customer_unique_address_adder', '@sylius.context.customer']
+    Sylius\Component\Core\Customer\OrderAddressesSaverInterface:
+        alias: sylius.customer_order_addresses_saver
 
 # override target entities
 doctrine:
