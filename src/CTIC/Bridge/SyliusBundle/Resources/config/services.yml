@@ -67,9 +67,9 @@ services:
 # add customer checker to sylius order complete
     ctic_bridge_sylius_bundle.listener.check_order_customer:
         class:  CTIC\Bridge\SyliusBundle\EventListener\Core\Customer\CheckOrderCustomerListener
-        arguments: ['@sylius.context.customer']
+        arguments: ['@sylius.context.customer', '@doctrine.orm.entity_manager']
         tags:
-            - { name: sylius.order.pre_complete }
+            - { name: sylius.order.post_payment }
 
 # Replace product repositories to shop api
     sylius.shop_api_plugin.view_repository.product_details_view_repository:
