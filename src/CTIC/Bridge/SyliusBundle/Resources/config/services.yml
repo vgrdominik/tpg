@@ -64,10 +64,6 @@ services:
         tags:
             - { name: controller.service_arguments }
 
-    <service id="sylius.customer_order_addresses_saver" class="Sylius\Component\Core\Customer\CustomerOrderAddressesSaver">
-    <argument type="service" id="sylius.customer_unique_address_adder" />
-    </service>
-    <service id="Sylius\Component\Core\Customer\OrderAddressesSaverInterface" alias="sylius.customer_order_addresses_saver" />
 # add customer checker to sylius order complete
     ctic_bridge_sylius_bundle.listener.check_order_customer:
         class:  CTIC\Bridge\SyliusBundle\EventListener\Core\Customer\CheckOrderCustomerListener
