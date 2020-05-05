@@ -64,6 +64,11 @@ services:
         tags:
             - { name: controller.service_arguments }
 
+# override sylius order address
+    sylius.customer_order_addresses_saver:
+        class:  CTIC\Bridge\SyliusBundle\Core\Customer\CustomerOrderAddressesSaver
+        arguments: ['@sylius.customer_unique_address_adder', '@sylius.context.customer']
+
 # Replace product repositories to shop api
     sylius.shop_api_plugin.view_repository.product_details_view_repository:
         class: CTIC\Bridge\SyliusBundle\ViewRepository\Product\ProductDetailsViewRepository

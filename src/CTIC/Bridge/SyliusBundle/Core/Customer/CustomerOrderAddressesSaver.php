@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CTIC\Bridge\SyliusComponent\Core\Customer;
+namespace CTIC\Bridge\SyliusBundle\Core\Customer;
 
 use Sylius\Component\Core\Customer\CustomerAddressAdderInterface;
 use Sylius\Component\Core\Customer\OrderAddressesSaverInterface;

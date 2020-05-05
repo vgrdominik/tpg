@@ -3,12 +3,6 @@ services:
         class: CTIC\Bridge\SyliusComponent\Locale\Converter\LocaleConverter
         arguments: ['@sylius.context.locale']
 
-# override sylius order address
-    sylius.customer_order_addresses_saver:
-        public: true
-        class:  CTIC\Bridge\SyliusComponent\Core\Customer\CustomerOrderAddressesSaver
-        arguments: ['@sylius.customer_unique_address_adder', '@sylius.context.customer']
-
 # override target entities
 doctrine:
     orm:
