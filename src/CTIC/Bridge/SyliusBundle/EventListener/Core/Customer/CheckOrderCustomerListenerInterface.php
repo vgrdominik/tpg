@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace CTIC\Bridge\SyliusBundle\EventListener\Core\Customer;
 
-use Sylius\Component\Core\Model\OrderInterface;
+use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
 
 interface CheckOrderCustomerListenerInterface
 {
-    public function checkCustomer(OrderInterface $order): void;
+    public function checkCustomer(ResourceControllerEvent $event): void;
 }

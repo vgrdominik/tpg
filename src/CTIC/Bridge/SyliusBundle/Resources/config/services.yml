@@ -69,7 +69,7 @@ services:
         class:  CTIC\Bridge\SyliusBundle\EventListener\Core\Customer\CheckOrderCustomerListener
         arguments: ['@sylius.context.customer', '@doctrine.orm.entity_manager']
         tags:
-            - { name: sylius.order.post_payment }
+            - { name: kernel.event_listener, event: sylius.order.post_payment, method: checkCustomer }
 
 # Replace product repositories to shop api
     sylius.shop_api_plugin.view_repository.product_details_view_repository:
