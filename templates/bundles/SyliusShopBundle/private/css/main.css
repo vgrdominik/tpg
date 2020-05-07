@@ -3449,3 +3449,10 @@ a {
 header {
     height: 60px !important;
 }
+
+#sylius-cart-total{
+    font-size: 18px;
+}
+.cart.icon {
+    font-size: 18px;
+}
