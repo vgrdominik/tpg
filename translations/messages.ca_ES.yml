@@ -101,7 +101,7 @@ sylius:
         logout: Logout
         add_your_review: Envia la teva resenya
         view_more: Veure Més
-        login: Iniciar sessió
+        login: Login
         register: Registrar-se
         your_cart_is_empty: La seva cistella és buida
         latest_products: Últimes missions
