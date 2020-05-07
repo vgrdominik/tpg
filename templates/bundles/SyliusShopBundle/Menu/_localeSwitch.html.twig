@@ -2,12 +2,12 @@
     <!--<a href="#" class="flex-c-m trans-04 p-lr-25 underlined">{{ active|sylius_locale_name }}</a>-->
     {% for code in locales %}
         {% if code is not same as(active) %}
-            <a href="{{ path('sylius_shop_switch_locale', {'code': code}) }}" class="flex-c-m trans-04 p-lr-25">
+            <a href="{{ path('sylius_shop_switch_locale', {'code': code}) }}" class="flex-c-m trans-04 p-lr-10">
                 {% if code == 'ca_ES' %}
-                    <img src="{{ asset('assets/shop/img/miniCat.jpg') }}" width="30" alt="{{ code|sylius_locale_name }}" />
+                    <img src="{{ asset('assets/shop/img/miniCat.jpg') }}" width="20" alt="{{ code|sylius_locale_name }}" />
                 {% endif %}
                 {% if code == 'es' %}
-                    <img src="{{ asset('assets/shop/img/miniEsp.jpg') }}" width="30" alt="{{ code|sylius_locale_name }}" />
+                    <img src="{{ asset('assets/shop/img/miniEsp.jpg') }}" width="20" alt="{{ code|sylius_locale_name }}" />
                 {% endif %}
                 {% if code != 'ca_ES' and code != 'es' %}
                     {{ code|sylius_locale_name }}
