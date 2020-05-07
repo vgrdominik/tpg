@@ -7,6 +7,10 @@ ctic:
             schedule_slug: nosaltros
             rol: Como funcionamos
             rol_slug: como-funcionamos
+            conditions: Condiciones de servicio
+            conditions_slug: condiciones-servicio
+            cert: Certificación ecológica
+            cert_slug: certificacion-ecologica
     ui:
         taxons: Categoríes
         sku: Referència

@@ -7,6 +7,10 @@ ctic:
             schedule_slug: about
             rol: How work
             rol_slug: how-work
+            conditions: Condicions de servei
+            conditions_slug: condicions-servei
+            cert: Certificació ecològica
+            cert_slug: certificacio-ecologica
     ui:
         taxons: Categories
         sku: SKU

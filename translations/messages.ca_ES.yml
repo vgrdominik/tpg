@@ -7,6 +7,10 @@ ctic:
             schedule_slug: nosaltres
             rol: Com funcionem
             rol_slug: com-funcionem
+            conditions: Condicions de servei
+            conditions_slug: condicions-servei
+            cert: Certificació ecològica
+            cert_slug: certificacio-ecologica
     ui:
         get_support: Suport
         documentation: Documentació
