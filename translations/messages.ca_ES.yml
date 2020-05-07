@@ -5,11 +5,11 @@ ctic:
             videos: Videos
             schedule: Nosaltres
             schedule_slug: nosaltres
-            rol: Com funcionem
+            rol: Funcionament
             rol_slug: com-funcionem
             conditions: Condicions de servei
             conditions_slug: condicions-servei
-            cert: Certificació ecològica
+            cert: Certificació
             cert_slug: certificacio-ecologica
     ui:
         get_support: Suport

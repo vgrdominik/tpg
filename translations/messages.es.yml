@@ -5,11 +5,11 @@ ctic:
             videos: Videos
             schedule: Nosotros
             schedule_slug: nosaltros
-            rol: Como funcionamos
+            rol: Funcionamiento
             rol_slug: como-funcionamos
             conditions: Condiciones de servicio
             conditions_slug: condiciones-servicio
-            cert: Certificación ecológica
+            cert: Certificación
             cert_slug: certificacion-ecologica
     ui:
         taxons: Categoríes
