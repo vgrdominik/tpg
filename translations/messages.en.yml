@@ -3,10 +3,10 @@ ctic:
         menu:
             campaign: Campaign
             videos: Videos
-            schedule: Calendar
-            schedule_slug: calendar
-            rol: Role
-            rol_slug: role
+            schedule: About
+            schedule_slug: about
+            rol: How work
+            rol_slug: how-work
     ui:
         taxons: Categories
         sku: SKU

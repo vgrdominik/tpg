@@ -3,10 +3,10 @@ ctic:
         menu:
             campaign: Campaña
             videos: Videos
-            schedule: Calendario
-            schedule_slug: calendario
-            rol: Rol
-            rol_slug: rol
+            schedule: Nosotros
+            schedule_slug: nosaltros
+            rol: Como funcionamos
+            rol_slug: como-funcionamos
     ui:
         taxons: Categoríes
         sku: Referència

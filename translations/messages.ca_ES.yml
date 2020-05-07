@@ -3,10 +3,10 @@ ctic:
         menu:
             campaign: Campanya
             videos: Videos
-            schedule: Calendari
-            schedule_slug: calendari
-            rol: Rol
-            rol_slug: rol
+            schedule: Nosaltres
+            schedule_slug: nosaltres
+            rol: Com funcionem
+            rol_slug: com-funcionem
     ui:
         get_support: Suport
         documentation: Documentació
