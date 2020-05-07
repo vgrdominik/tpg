@@ -10,7 +10,7 @@
                         {{ 'ctic.ui.your_store'|trans }}
                     </h4>
 
-                    {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@SyliusShop/Taxon/_footerMenu.html.twig'})) }}
+                    {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'misiones', 'template': '@SyliusShop/Taxon/_footerMenu.html.twig'})) }}
                 </div>
 
                 <div class="ui four wide column p-b-50">
@@ -20,27 +20,23 @@
 
                     <ul>
                         <li class="p-b-10">
+                            {{ render(path('bitbag_sylius_cms_plugin_shop_page_show_link_by_code', {'code' : 'envasos', 'template' : '@SyliusShop/_footerLink.html.twig'})) }}
+                        </li>
+
+                        <li class="p-b-10">
+                            {{ render(path('bitbag_sylius_cms_plugin_shop_page_show_link_by_code', {'code' : 'ciaxes-fusta', 'template' : '@SyliusShop/_footerLink.html.twig'})) }}
+                        </li>
+
+                        <li class="p-b-10">
+                            {{ render(path('bitbag_sylius_cms_plugin_shop_page_show_link_by_code', {'code' : 'certificacio-ecologica', 'template' : '@SyliusShop/_footerLink.html.twig'})) }}
+                        </li>
+
+                        <li class="p-b-10">
                             {{ render(path('bitbag_sylius_cms_plugin_shop_page_show_link_by_code', {'code' : 'seguimiento_pedidos', 'template' : '@SyliusShop/_footerLink.html.twig'})) }}
                         </li>
 
                         <li class="p-b-10">
-                            {{ render(path('bitbag_sylius_cms_plugin_shop_page_show_link_by_code', {'code' : 'devoluciones', 'template' : '@SyliusShop/_footerLink.html.twig'})) }}
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="https://www.ciclotic.com/sobre-ciclotic.php#condiciones" target="_blank" title="{{ 'ctic.ui.condiciones'|trans }}" class="stext-107 cl7 hov-cl1 trans-04">
-                                {{ 'ctic.ui.condiciones'|trans }}
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            <a href="https://www.ciclotic.com/sobre-ciclotic.php#privacidad" target="_blank" title="{{ 'ctic.ui.condiciones'|trans }}" class="stext-107 cl7 hov-cl1 trans-04">
-                                {{ 'ctic.ui.privacidad'|trans }}
-                            </a>
-                        </li>
-
-                        <li class="p-b-10">
-                            {{ render(path('bitbag_sylius_cms_plugin_shop_page_show_link_by_code', {'code' : 'faqs', 'template' : '@SyliusShop/_footerLink.html.twig'})) }}
+                            {{ render(path('bitbag_sylius_cms_plugin_shop_page_show_link_by_code', {'code' : 'condicions-servei', 'template' : '@SyliusShop/_footerLink.html.twig'})) }}
                         </li>
                     </ul>
                 </div>

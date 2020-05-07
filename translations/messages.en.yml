@@ -16,7 +16,7 @@ ctic:
         apply: Apply
         shop_now: Shop Now
         top_phrase: Free shipping for order over $60
-        your_store: Valentí Gàmez Comunity
+        your_store: Els Masovers
         faqs: FAQ's
         your_cart: Your Cart
         help: Help
@@ -24,11 +24,11 @@ ctic:
         returns: Returns
         shipping: Shipping
         get_in_touch: Get In Touch
-        get_in_touch_phrase: Any questions? You can use my social networks or contact at iam@valentigamez.com
-        link_sn_facebook: https://www.facebook.com/iamvalentigamez
-        link_sn_instagram: https://www.instagram.com/iamvalentigamez
-        link_sn_twitter: https://www.twitter.com/iamvalentigamez
-        link_sn_twitch: https://www.twitch.tv/iamvalentigamez
+        get_in_touch_phrase: Any questions? You can use my social networks or contact at ...
+        link_sn_facebook: https://www.facebook.com/
+        link_sn_instagram: https://www.instagram.com/
+        link_sn_twitter: https://www.twitter.com/
+        link_sn_twitch: https://www.twitch.tv/
         newsletter: Newsletter
         subscribe: Subscribe
         remove: Delete

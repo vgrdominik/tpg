@@ -16,7 +16,7 @@ ctic:
         apply: Aplicar
         shop_now: Comprar Ahora
         top_phrase: Envío gratis en pedidos superiores a 50EUR
-        your_store: Comunidad Valentí Gàmez
+        your_store: Els Masovers
         faqs: Preguntas frequentes
         your_cart: Tu Carrito
         help: Ayuda
@@ -24,11 +24,11 @@ ctic:
         returns: Devoluciones
         shipping: Envío
         get_in_touch: Estamos en contacto
-        get_in_touch_phrase: ¿Alguna pregunta? Puedes usar mis redes sociales o mi contacto en iam@valentigamez.com
-        link_sn_facebook: https://www.facebook.com/iamvalentigamez
-        link_sn_instagram: https://www.instagram.com/iamvalentigamez
-        link_sn_twitter: https://www.twitter.com/iamvalentigamez
-        link_sn_twitch: https://www.twitch.tv/iamvalentigamez
+        get_in_touch_phrase: 'Els Masovers<br>- Informació sobre productes: info@elsMasovers.cat - 661 561 158<br>- Informació sobre el funcionament de la web: admin@elsMasovers.cat - 661 246 170<br>Email: clients@elsMasovers.cat'
+        link_sn_facebook: https://www.facebook.com/
+        link_sn_instagram: https://www.instagram.com/
+        link_sn_twitter: https://www.twitter.com/
+        link_sn_twitch: https://www.twitch.tv/
         newsletter: Newsletter
         subscribe: Suscribirse
         remove: Eliminar
@@ -51,7 +51,7 @@ sylius:
         newsletter_description: Infórmate de todas las novedades de la comunidad
         subscribe: Suscríbete
         about_us: Sobre mi
-        about_us_content: Puedes encontrarme en las redes sociales como @iamvalentigamez
+        about_us_content: Puedes encontrarnos en las redes sociales como elsmasovers
     form:
         channel:
             menu_taxon: Familia madre

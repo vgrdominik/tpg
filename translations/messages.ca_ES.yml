@@ -22,7 +22,7 @@ ctic:
         apply: Aplicar
         shop_now: Comprar Ara
         top_phrase: Enviament gratuït en comandes superiors a 50EUR
-        your_store: Comunitat Valentí Gàmez
+        your_store: Els Masovers
         faqs: Preguntes freqüents
         your_cart: La teva cistella
         help: Ajuda
@@ -30,11 +30,11 @@ ctic:
         returns: Devolucions
         shipping: Enviament
         get_in_touch: Estem en contacte
-        get_in_touch_phrase: Alguna pregunta? Pots utilitzar les meves xarxes socials o el meu contacte a iam@valentigamez.com
-        link_sn_facebook: https://www.facebook.com/iamvalentigamez
-        link_sn_instagram: https://www.instagram.com/iamvalentigamez
-        link_sn_twitter: https://www.twitter.com/iamvalentigamez
-        link_sn_twitch: https://www.twitch.tv/iamvalentigamez
+        get_in_touch_phrase: 'Els Masovers<br>- Informació sobre productes: info@elsMasovers.cat - 661 561 158<br>- Informació sobre el funcionament de la web: admin@elsMasovers.cat - 661 246 170<br>Email: clients@elsMasovers.cat'
+        link_sn_facebook: https://www.facebook.com/
+        link_sn_instagram: https://www.instagram.com/
+        link_sn_twitter: https://www.twitter.com/
+        link_sn_twitch: https://www.twitch.tv/
         newsletter: Newsletter
         subscribe: Subscriu-te
         remove: Eliminar
@@ -44,7 +44,7 @@ ctic:
         condiciones: Condicions de Venda
         privacidad: Privacitat de Dades
         proximamente: Pròximament.
-        aceptar_condiciones: Al continuar acceptes les condicions de venda de Radge. Les pots consultar en el següent enllaç
+        aceptar_condiciones: Al continuar acceptes les condicions de venda de Els masovers. Les pots consultar en el següent enllaç
         cookies_privacy: Aquest site utilitza cookies. Si continues navegant considarem que acceptes el seu ús.
         cookies_privacy_button: Més informació
         facebook:
@@ -57,7 +57,7 @@ sylius:
         newsletter_description: Informa't de totes les novetats de la comunitat
         subscribe: Subscriu-te
         about_us: Sobre mi
-        about_us_content: Pots trobar-me a les xarxes socials com a @iamvalentigamez
+        about_us_content: Pots trobar-nos a les xarxes socials com a elsmasovers
     lightbox:
         image_album_label: 'Imatge %1 de %2'
     menu:
