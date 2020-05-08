@@ -30,3 +30,17 @@ bitbag_sylius_cms_plugin_admin_page_index:
             vars:
                 header: bitbag_sylius_cms_plugin.ui.pages_header
                 subheader: bitbag_sylius_cms_plugin.ui.pages_subheader
+
+ctic_bridge_bitbag_cms_plugin_admin_ajax_page_product_by_name_phrase:
+    path: /ajax/ctic-page-product/search
+    methods: [GET]
+    defaults:
+        _format: json
+        _controller: ctic_bridge_bitbag_cms_plugin.controller.page:searchProductAction
+
+#ctic_bridge_bitbag_cms_plugin_admin_ajax_landing_by_code:
+    #path: /ajax/ctic-page-product/get
+    #methods: [GET]
+    #defaults:
+        #_format: json
+        #_controller: ctic_bridge_bitbag_cms_plugin.controller.page:getProductAction

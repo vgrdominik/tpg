@@ -4,3 +4,4 @@ sylius_resource:
             classes:
                 model: CTIC\Bridge\BitbagCMSPlugin\Entity\Page
                 repository: CTIC\Bridge\BitbagCMSPlugin\Repository\PageRepository
+                controller: CTIC\Bridge\BitbagCMSPlugin\Controller\PageController
