@@ -6,6 +6,7 @@ namespace CTIC\Bridge\BitbagCMSPlugin\Controller;
 
 use BitBag\SyliusCmsPlugin\Entity\PageImageInterface;
 use BitBag\SyliusCmsPlugin\Entity\PageInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\View\View;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Sylius\Component\Resource\ResourceActions;
@@ -111,10 +112,15 @@ final class PageController extends ResourceController
         $configuration = $this->requestConfigurationFactory->create($this->metadata, $request);
 
         $productRepository = $this->get('sylius.repository.product');
-        $locale = $this->get('sylius.context.locale')->getCode();
-        $resource = $productRepository->findByNamePart($request->get('phrase', ''), $locale);
+        $locales = $this->get('sylius.repository.locale')->findAll();
+        $resources = [];
+        foreach ($locales as $locale) {
+            if ($resource = $productRepository->findByNamePart($request->get('phrase', ''), $locale)) {
+                $resources = array_merge($resources, $resource->toArray());
+            }
+        }
 
-        $view = View::create($resource);
+        $view = View::create(new ArrayCollection($resources));
 
         return $this->viewHandler->handle($configuration, $view);
     }
