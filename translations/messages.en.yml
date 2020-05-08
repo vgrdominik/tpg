@@ -59,7 +59,7 @@ sylius:
         look_and_feel: Visualization
         money: Money
         general: General
-        latest_products: Latest missions
+        latest_products: Latest products
         login: Login
         logout: Logout
         show_product_list: Show more

@@ -104,7 +104,7 @@ sylius:
         login: Login
         register: Registrar-se
         your_cart_is_empty: La seva cistella és buida
-        latest_products: Últimes missions
+        latest_products: Últims productes
         powered_by: Creat per
         confirm_your_action: Confirma aquesta acció
         are_your_sure_you_want_to_perform_this_action: Estas segur de fer aquesta acció?

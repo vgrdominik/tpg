@@ -56,17 +56,13 @@
                 </div>
             </div>
         </div>
-        {% if page.products|length > 0 %}
-            <div class="row">
-                <h2>
-                    {{ 'bitbag_sylius_cms_plugin.ui.page_related_products'|trans }}
-                </h2>
-            </div>
-            <div class="row">
-                {% include '@SyliusShop/Product/_horizontalList.html.twig' with {'products': page.products} %}
-            </div>
-        {% endif %}
-        </div>
     </div>
+    <section class="sec-relate-product bg0 p-t-45 p-b-105">
+        <div class="container center-layer">
+            {% if page.products|length > 0 %}
+                {% include '@SyliusShop/Product/_horizontalList.html.twig' with {'products': page.products} %}
+            {% endif %}
+        </div>
+    </section>
     <br><br>
 {% endblock %}
