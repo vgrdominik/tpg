@@ -124,7 +124,12 @@ final class PageController extends ResourceController
             $resourcesToView[$resource->getId()] = $resource;
         }
 
-        $view = View::create($resourcesToView);
+        $resourcesToViewWithoutKey = [];
+        foreach ($resourcesToView as $resourceToView) {
+            $resourcesToViewWithoutKey[] = $resourceToView;
+        }
+
+        $view = View::create($resourcesToViewWithoutKey);
 
         return $this->viewHandler->handle($configuration, $view);
     }
