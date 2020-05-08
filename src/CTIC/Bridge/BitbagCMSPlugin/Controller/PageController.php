@@ -115,7 +115,7 @@ final class PageController extends ResourceController
         $locales = $this->get('sylius.repository.locale')->findAll();
         $resources = [];
         foreach ($locales as $locale) {
-            if ($resource = $productRepository->findByNamePart($request->get('phrase', ''), $locale)) {
+            if ($resource = $productRepository->findByNamePart($request->get('phrase', ''), $locale->getCode())) {
                 $resources = array_merge($resources, $resource->toArray());
             }
         }
