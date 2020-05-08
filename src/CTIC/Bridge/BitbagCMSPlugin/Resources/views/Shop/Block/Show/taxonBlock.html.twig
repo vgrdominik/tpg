@@ -22,3 +22,11 @@
         </div>
     </a>
 </div>
+
+{% if block.products|length > 0 %}
+    <section class="sec-relate-product bg0 p-t-45 p-b-105">
+        <div class="container center-layer">
+            {% include '@SyliusShop/Product/_horizontalList.html.twig' with {'products': block.products} %}
+        </div>
+    </section>
+{% endif %}

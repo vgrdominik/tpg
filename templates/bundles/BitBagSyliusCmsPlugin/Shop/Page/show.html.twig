@@ -57,12 +57,13 @@
             </div>
         </div>
     </div>
+
+    {% if page.products|length > 0 %}
     <section class="sec-relate-product bg0 p-t-45 p-b-105">
         <div class="container center-layer">
-            {% if page.products|length > 0 %}
-                {% include '@SyliusShop/Product/_horizontalList.html.twig' with {'products': page.products} %}
-            {% endif %}
+            {% include '@SyliusShop/Product/_horizontalList.html.twig' with {'products': page.products} %}
         </div>
     </section>
+    {% endif %}
     <br><br>
 {% endblock %}
