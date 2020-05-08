@@ -36,7 +36,7 @@ ctic_bridge_bitbag_cms_plugin_admin_ajax_page_product_by_name_phrase:
     methods: [GET]
     defaults:
         _format: json
-        _controller: ctic_bridge_bitbag_cms_plugin.controller.page:searchProductAction
+        _controller: bitbag_sylius_cms_plugin.controller.page:searchProductAction
 
 #ctic_bridge_bitbag_cms_plugin_admin_ajax_landing_by_code:
     #path: /ajax/ctic-page-product/get
