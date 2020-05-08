@@ -61,9 +61,9 @@
                 <h2>
                     {{ 'bitbag_sylius_cms_plugin.ui.page_related_products'|trans }}
                 </h2>
-                <div class="bitbag-page-products">
-                    {% include '@SyliusShop/Product/_horizontalList.html.twig' with {'products': page.products} %}
-                </div>
+            </div>
+            <div class="row">
+                {% include '@SyliusShop/Product/_horizontalList.html.twig' with {'products': page.products} %}
             </div>
         {% endif %}
         </div>
