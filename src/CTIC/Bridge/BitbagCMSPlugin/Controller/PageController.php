@@ -116,7 +116,7 @@ final class PageController extends ResourceController
         $resources = [];
         foreach ($locales as $locale) {
             if ($resource = $productRepository->findByNamePart($request->get('phrase', ''), $locale->getCode())) {
-                $resources = array_merge($resources, $resource->toArray());
+                $resources = array_merge($resources, $resource);
             }
         }
 
