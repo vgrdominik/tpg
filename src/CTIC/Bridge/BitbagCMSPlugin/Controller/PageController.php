@@ -119,8 +119,12 @@ final class PageController extends ResourceController
                 $resources = array_merge($resources, $resource);
             }
         }
+        $resourcesToView = [];
+        foreach ($resources as $resource) {
+            $resourcesToView[$resource->getId()] = $resource;
+        }
 
-        $view = View::create($resources);
+        $view = View::create($resourcesToView);
 
         return $this->viewHandler->handle($configuration, $view);
     }
