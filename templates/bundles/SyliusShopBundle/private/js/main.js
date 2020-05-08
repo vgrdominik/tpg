@@ -115,7 +115,7 @@
     $('.js-show-modal-search').on('click', function(){
         /* $('.modal-search-header').addClass('show-modal-search');
         $(this).css('opacity','0'); */
-      location.href = 'https://comunidad-dev.valentigamez.com/'
+      location.href = 'https://buscador.elsmasovers.com.es/'
     });
 
     $('.js-hide-modal-search').on('click', function(){
