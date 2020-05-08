@@ -185,13 +185,13 @@ export default {
     }
 
     this.$axios
-      .get('http://localhost:8000/shop-api/configuration?channelCode=default')
+      .get('https://elsmasovers.com.es/shop-api/configuration?channelCode=default')
       .then((response) => {
         this.get_config_main_event({}, response.data.data)
       })
     this.$axios
       .get(
-        'http://localhost:8000/shop-api/content?channelCode=default&locale=es'
+        'https://elsmasovers.com.es/shop-api/content?channelCode=default&locale=es'
       )
       .then((response) => {
         this.get_content_main_event({}, 'all', response.data.data)
