@@ -1,15 +1,15 @@
 {{ sonata_block_render_event('sylius.shop.product.index.before_vertical_menu', {'taxon': taxon}) }}
 
-<div class="sui container center-layer">
+<div class="container">
     {% if taxon.parent is not empty and not taxon.parent.isRoot() %}
         <a href="{{ path('sylius_shop_product_index', {'slug': taxon.parent.slug, '_locale': taxon.parent.translation.locale}) }}" class="item">
             <i class="up arrow icon"></i> {{ 'sylius.ui.go_level_up'|trans }}
         </a>
     {% endif %}
-    <div class="ui four column doubling stackable grid">
+    <div class="row">
     {% for child in taxon.children %}
         {% set image = child.images|last %}
-        <div class="ui six wide column">
+        <div class="col-md-4">
             <div class="block1 wrap-pic-w">
                 {% if image != '' %}
                     <img src="{{ image.path|imagine_filter('taxon') }}" alt="{{ child.name }}">
