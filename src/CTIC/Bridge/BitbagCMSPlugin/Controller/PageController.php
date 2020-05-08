@@ -111,7 +111,7 @@ final class PageController extends ResourceController
         $configuration = $this->requestConfigurationFactory->create($this->metadata, $request);
 
         $productRepository = $this->get('sylius.repository.product');
-        $locale = $this->get('sylius.context.locale')->getLocaleCode();
+        $locale = $this->get('sylius.context.locale')->getCode();
         $resource = $productRepository->findByNamePart($request->get('phrase', ''), $locale);
 
         $view = View::create($resource);
