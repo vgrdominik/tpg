@@ -22,7 +22,7 @@ final class PageTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedTypes(): string
+    public function getExtendedType(): string
     {
         return PageType::class;
     }
