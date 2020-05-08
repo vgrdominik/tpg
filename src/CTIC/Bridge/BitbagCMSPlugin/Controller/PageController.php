@@ -120,7 +120,7 @@ final class PageController extends ResourceController
             }
         }
 
-        $view = View::create(new ArrayCollection($resources));
+        $view = View::create($resources);
 
         return $this->viewHandler->handle($configuration, $view);
     }
