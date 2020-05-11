@@ -36,7 +36,7 @@ import formsList from './sylius-forms-list';
 upath.joinSafe(nodeModulesPath, 'slick-carousel/slick/slick.min.js'),
  */
 import 'slick-carousel/slick/slick.min.js';
-import 'grapesjs/dist/grapes.min.js';
+import grapesjs from 'grapesjs/dist/grapes.min.js';
 
 $(document).ready(() => {
   $('#sylius_product_variant_pricingCalculator').handlePrototypes({
