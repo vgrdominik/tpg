@@ -1,0 +1,5 @@
+ctic_bridge_bitbag_cms_plugin_admin_builder_index:
+    path: /html-builder
+    methods: [GET]
+    defaults:
+        _controller: ctic_bridge_bitbag_cms_plugin_admin.controller.builder:indexAction

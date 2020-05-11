@@ -1,0 +1,15 @@
+{% extends '@SyliusAdmin/layout.html.twig' %}
+
+{% block title %}HTML Builder {{ parent() }}{% endblock %}
+
+{% block content %}
+    <div id="gjs"></div>
+
+    <script type="text/javascript">
+        var editor = grapesjs.init({
+            container : '#gjs',
+            components: '<div class="txt-red">Hello world!</div>',
+            style: '.txt-red{color: red}',
+        });
+    </script>
+{% endblock %}

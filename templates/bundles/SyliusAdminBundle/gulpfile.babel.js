@@ -64,6 +64,7 @@ const paths = {
       upath.joinSafe(nodeModulesPath, 'semantic-ui-css/semantic.min.js'),
       upath.joinSafe(nodeModulesPath, 'animsition/dist/js/animsition.min.js'),
       upath.joinSafe(nodeModulesPath, 'slick-carousel/slick/slick.min.js'),
+      upath.joinSafe(nodeModulesPath, 'grapesjs/dist/grapes.min.js'),
       upath.joinSafe(uiPath, 'private/js/**'),
       upath.joinSafe(adminPath, 'private/js/**'),
     ],
@@ -77,6 +78,7 @@ const paths = {
       upath.joinSafe(shopPath, 'private/lib/animate/animate.css'),
       upath.joinSafe(nodeModulesPath, 'animsition/dist/css/animsition.min.css'),
       upath.joinSafe(nodeModulesPath, 'slick-carousel/slick/slick.css'),
+      upath.joinSafe(nodeModulesPath, 'grapesjs/dist/css/grapes.min.css'),
       upath.joinSafe(adminPath, 'private/css/**'),
     ],
     fonts: [
