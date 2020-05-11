@@ -76,6 +76,13 @@ sylius:
             subject: 'Verificar correo electrónico'
             to_verify_your_email_address: 'Para verificar el correo electrónico - puedes hacer click en el siguiente enlace'
             verify_your_email_address: 'Verificar tu cuenta de correo'
+        shipment_confirmation:
+            has_been_sent_using: 'ha sido enviado utilizando'
+            subject: 'Transporte confirmado'
+            thank_you_for_transaction: 'Gracias por confiar en nosotros.'
+            tracking_code: 'código del transporte.'
+            you_can_check_its_location: 'Puedes ver la localización de tu paquete'
+            your_order_with_number: 'Tu pedido con el número'
     homepage:
         newsletter: Boletín de noticias
         newsletter_description: Infórmate de todas las novedades de la comunidad

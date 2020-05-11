@@ -82,6 +82,13 @@ sylius:
             subject: 'Verificar correu electrònic'
             to_verify_your_email_address: 'Per verificar el correu electrònic - pots fer click en el següent enllaç'
             verify_your_email_address: 'Verificar la teva compte de correu'
+        shipment_confirmation:
+            has_been_sent_using: 'ha esta enviat utilitzant'
+            subject: 'Enviament confirmat'
+            thank_you_for_transaction: 'Gracies per confiar en nosaltres.'
+            tracking_code: 'códi del transport.'
+            you_can_check_its_location: 'Pots veure la localització del teu paquet'
+            your_order_with_number: 'La teva comanda amb número'
     homepage:
         newsletter: Butlletí de notícies
         newsletter_description: Informa't de totes les novetats de la comunitat
