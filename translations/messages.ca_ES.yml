@@ -63,7 +63,7 @@ sylius:
             subject: 'Petició de contacte'
         order_confirmation:
             has_been_successfully_placed: 'ha estat demanat correctament.'
-            subject: 'Confirmació de comanda'
+            subject: 'Comanda confirmada'
             view_order_or_change_payment_method: 'Veure comanda o canviar mètode de pagament'
             thank_you: 'Gràcies per comprar en la nostre botiga!'
             your_order_number: 'El teu número de comanda.'
@@ -79,7 +79,7 @@ sylius:
             you_have_just_been_registered: 'T`has registrat. Gràcies.'
         verification_token:
             hello: 'Hola'
-            subject: 'Verificació del correu electrònic'
+            subject: 'Verificar correu electrònic'
             to_verify_your_email_address: 'Per verificar el correu electrònic - pots fer click en el següent enllaç'
             verify_your_email_address: 'Verificar la teva compte de correu'
     homepage:
