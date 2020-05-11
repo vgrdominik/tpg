@@ -139,6 +139,7 @@ services:
 # Custom url to show html builder
     ctic_bridge_bitbag_cms_plugin_admin.controller.builder:
         class: CTIC\Bridge\BitbagCMSPlugin\Controller\BuilderController
+        public: true
         arguments:
             - "@fos_rest.view_handler.default"
 
