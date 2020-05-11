@@ -7,12 +7,16 @@
             <div style="max-width: 600px; margin: 20px auto;">
                 <div style="margin-bottom: 30px; text-align: center;">
                     <a href="{{ homepageUrl|raw }}">
-                        <img src="{{ logo }}" alt="{{ your_store|trans }}" style="width: 170px">
+                        <img src="{{ logo }}" alt="{{ your_store|trans({}, null, localeCode) }}" style="width: 170px">
                     </a>
                 </div>
 
                 <div style="background: #fff; padding: 40px 30px;">
                     {% block content %}{% endblock %}
+                </div>
+
+                <div style="text-align: center; padding: 20px 0;">
+                    <a href="{{ homepageUrl|raw }}" target="_blank" style="color: #1abb9c; text-decoration: none;">{{ your_store|trans({}, null, localeCode) }}</a>
                 </div>
             </div>
         </div>
