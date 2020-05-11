@@ -45,6 +45,7 @@ ctic:
         shop_now: Comprar ara
 ctic_bridge_bitbag_cms_plugin:
     ui:
+        html_builder: Constructor HTML
         page: Pàgina
         cover: Portada
         taxon: Categoria

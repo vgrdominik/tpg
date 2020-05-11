@@ -45,6 +45,7 @@ ctic:
         shop_now: Comprar Ahora
 ctic_bridge_bitbag_cms_plugin:
     ui:
+        html_builder: Constructor HTML
         page: Página
         cover: Portada
         taxon: Categoría

@@ -34,5 +34,13 @@ final class ContentManagementMenuBuilder
             ->setLabel('ctic_bridge_bitbag_cms_plugin.ui.home')
             ->setLabelAttribute('icon', 'block layout')
         ;
+
+        $cmsRootMenuItem
+            ->addChild('html_builder', [
+                'route' => 'ctic_bridge_bitbag_cms_plugin_admin_builder_index',
+            ])
+            ->setLabel('ctic_bridge_bitbag_cms_plugin.ui.html_builder')
+            ->setLabelAttribute('icon', 'block layout')
+        ;
     }
 }
