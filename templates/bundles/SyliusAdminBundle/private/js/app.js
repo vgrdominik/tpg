@@ -126,3 +126,5 @@ $(document).ready(() => {
 
 window.$ = $;
 window.jQuery = $;
+
+window.grapesjs = grapesjs
