@@ -37,6 +37,7 @@ upath.joinSafe(nodeModulesPath, 'slick-carousel/slick/slick.min.js'),
  */
 import 'slick-carousel/slick/slick.min.js';
 import grapesjs from 'grapesjs/dist/grapes.min.js';
+import grapesjsPresetWebpage from 'grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.js';
 
 $(document).ready(() => {
   $('#sylius_product_variant_pricingCalculator').handlePrototypes({
@@ -128,3 +129,4 @@ window.$ = $;
 window.jQuery = $;
 
 window.grapesjs = grapesjs
+window.grapesjsPresetWebpage = grapesjsPresetWebpage

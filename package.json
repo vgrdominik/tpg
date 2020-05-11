@@ -8,6 +8,7 @@
     "fancy-log": "^1.3.3",
     "font-awesome": "4.7.0",
     "grapesjs": "^0.16.12",
+    "grapesjs-preset-webpage": "^0.1.11",
     "gulp-prefix-css": "0.0.4",
     "hamburgers": "0.9.3",
     "isotope-layout": "3.0.4",
