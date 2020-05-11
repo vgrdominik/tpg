@@ -3,14 +3,10 @@ ctic:
         menu:
             campaign: Campaña
             videos: Videos
-            schedule: Nosotros
-            schedule_slug: nosaltros
-            rol: Funcionamiento
-            rol_slug: como-funcionamos
-            conditions: Condiciones de servicio
-            conditions_slug: condiciones-servicio
-            cert: Certificación
-            cert_slug: certificacion-ecologica
+            schedule: Calendario
+            schedule_slug: calendario
+            rol: Rol
+            rol_slug: rol
     ui:
         taxons: Categoríes
         sku: Referència
@@ -20,7 +16,7 @@ ctic:
         apply: Aplicar
         shop_now: Comprar Ahora
         top_phrase: Envío gratis en pedidos superiores a 50EUR
-        your_store: Els Masovers
+        your_store: Comunidad Valentí Gàmez
         faqs: Preguntas frequentes
         your_cart: Tu Carrito
         help: Ayuda
@@ -28,11 +24,11 @@ ctic:
         returns: Devoluciones
         shipping: Envío
         get_in_touch: Estamos en contacto
-        get_in_touch_phrase: 'Els Masovers<br>- Información sobre productos: info@elsMasovers.cat - 661 561 158<br>- Información sobre el uso de la web: admin@elsMasovers.cat - 661 246 170<br>Email: clients@elsMasovers.cat'
-        link_sn_facebook: https://www.facebook.com/
-        link_sn_instagram: https://www.instagram.com/
-        link_sn_twitter: https://www.twitter.com/
-        link_sn_twitch: https://www.twitch.tv/
+        get_in_touch_phrase: ¿Alguna pregunta? Puedes usar mis redes sociales o mi contacto en iam@valentigamez.com
+        link_sn_facebook: https://www.facebook.com/iamvalentigamez
+        link_sn_instagram: https://www.instagram.com/iamvalentigamez
+        link_sn_twitter: https://www.twitter.com/iamvalentigamez
+        link_sn_twitch: https://www.twitch.tv/iamvalentigamez
         newsletter: Newsletter
         subscribe: Suscribirse
         remove: Eliminar
@@ -41,7 +37,7 @@ ctic:
         product_price: Precio
         condiciones: Condiciones de Venta
         privacidad: Privacidad de Datos
-        proximamente: <a href="https://elsmasovers.us3.list-manage.com/subscribe?u=d079645dfd0eb49896a7f8853&id=1c0c17ebaa" title="Boletín de noticias">Sigue este enlace para suscribirte al boletín de noticias.</a>
+        proximamente: Próximamente.
         aceptar_condiciones: Al continuar estas aceptado las condiciones de venta de Radge. Las puedes consultar en el siguiente enlace
         cookies_privacy: Este sitio web utiliza cookies. Si continúas navegando consideramos que aceptas su uso.
         cookies_privacy_button: Más información
@@ -88,7 +84,7 @@ sylius:
         newsletter_description: Infórmate de todas las novedades de la comunidad
         subscribe: Suscríbete
         about_us: Sobre mi
-        about_us_content: Puedes encontrarnos en las redes sociales como elsmasovers
+        about_us_content: Puedes encontrarme en las redes sociales como @iamvalentigamez
     form:
         channel:
             menu_taxon: Familia madre
@@ -120,13 +116,13 @@ sylius:
         issue_tracker: Reportar bug
         youtube: Youtube
         login: Login
-        latest_products: Últimos productos
+        latest_products: Últimas misiones
         logout: Logout
         add_your_review: Envia tu reseña
         your_shopping_cart: Tu carrito
         edit_your_items_apply_coupon_or_proceed_to_the_checkout: Edita tus artículos, aplica un cupón o procede con el pago
         you_may_also_like: También te podría gustar
-        call_us: 661 246 170
+        call_us: 653 569 439
         access_your_store_account_or_create_a_new_one: Accede a tu cuenta o crea una nueva
         forgot_password: ¿Has olvidado tu contraseña?
         if_you_have_an_account_sign_in_with_your_email_address: Si tienes una cuenta, inicia sesión con tu correo electrónico.

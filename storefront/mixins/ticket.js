@@ -154,7 +154,7 @@ export default {
   methods: {
     addOrShowProductToTicket(product = null, customerId = null) {
       // Iframe connection
-      location.href = 'https://elsmasovers.com.es/es/producto/' + product.reference
+      location.href = 'https://valentigamez.es/es/producto/' + product.reference
 
       /* Will be activated to fast buy if (product.complement_show && product.complement_show !== '0') {
         this.setProductToShow(product)

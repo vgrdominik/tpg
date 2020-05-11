@@ -185,13 +185,13 @@ export default {
     }
 
     this.$axios
-      .get('https://elsmasovers.com.es/shop-api/configuration?channelCode=default')
+      .get('https://valentigames.es/shop-api/configuration?channelCode=default')
       .then((response) => {
         this.get_config_main_event({}, response.data.data)
       })
     this.$axios
       .get(
-        'https://elsmasovers.com.es/shop-api/content?channelCode=default&locale=es'
+        'https://valentigames.es/shop-api/content?channelCode=default&locale=es'
       )
       .then((response) => {
         this.get_content_main_event({}, 'all', response.data.data)
