@@ -6,12 +6,23 @@
     <div id="gjs"></div>
 
     <script type="text/javascript">
-        (function() {
-            var editor = grapesjs.init({
+        const initGrapejs = function() {
+            const editor = grapesjs.init({
                 container: '#gjs',
                 components: '<div class="txt-red">Hello world!</div>',
                 style: '.txt-red{color: red}',
             });
-        })();
+        };
+
+        if (document.readyState === "complete"){
+            initGrapejs();
+        }else if (document.addEventListener){
+            document.addEventListener('DOMContentLoaded', initGrapejs);
+        }else document.attachEvent('onreadystatechange', function(){
+            // IE <= 8
+            if (document.readyState=='complete'){
+                initGrapejs();
+            }
+        });
     </script>
 {% endblock %}
