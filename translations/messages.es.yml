@@ -50,6 +50,32 @@ ctic:
         page: Página
 
 sylius:
+    email:
+        contact_request:
+            content: 'Contenido'
+            message_from: 'Mensaje desde'
+            subject: 'Petición de contacto'
+        order_confirmation:
+            has_been_successfully_placed: 'ha sido pedido correctamente.'
+            subject: 'Confirmación de pedido'
+            view_order_or_change_payment_method: 'Ver pedido o cambiar método de pago'
+            thank_you: 'Gracias por comprar en nuestra tienda!'
+            your_order_number: 'Tu número de pedido.'
+        password_reset:
+            hello: 'Hola'
+            reset_your_password: 'Modificar tu password'
+            subject: 'Modificación de password'
+            to_reset_your_password: 'Para modificar tu password - puedes hacer click en el siguiente enlace'
+        user_registration:
+            start_shopping: 'Empezar a comprar'
+            subject: 'Registro de usuario'
+            welcome_to_our_store: 'Bienvenido a nuestra tienda!'
+            you_have_just_been_registered: 'Te has registrado. Gracias.'
+        verification_token:
+            hello: 'Hola'
+            subject: 'Verificación de correo electrónico'
+            to_verify_your_email_address: 'Para verificar el correo electrónico - puedes hacer click en el siguiente enlace'
+            verify_your_email_address: 'Verificar tu cuenta de correo'
     homepage:
         newsletter: Boletín de noticias
         newsletter_description: Infórmate de todas las novedades de la comunidad

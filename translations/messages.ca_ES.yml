@@ -56,6 +56,32 @@ ctic:
         page: Pàgina
 
 sylius:
+    email:
+        contact_request:
+            content: 'Contingut'
+            message_from: 'Missatge desde'
+            subject: 'Petició de contacte'
+        order_confirmation:
+            has_been_successfully_placed: 'ha estat demanat correctament.'
+            subject: 'Confirmació de comanda'
+            view_order_or_change_payment_method: 'Veure comanda o canviar mètode de pagament'
+            thank_you: 'Gràcies per comprar en la nostre botiga!'
+            your_order_number: 'El teu número de comanda.'
+        password_reset:
+            hello: 'Hola'
+            reset_your_password: 'Canviar el teu password'
+            subject: 'Canviar password'
+            to_reset_your_password: 'Per canviar el teu password - pots fer click al següent enllaç'
+        user_registration:
+            start_shopping: 'Començar a comprar'
+            subject: 'Registre d`usuari'
+            welcome_to_our_store: 'Benvingut a la nuestre botiga!'
+            you_have_just_been_registered: 'T`has registrat. Gràcies.'
+        verification_token:
+            hello: 'Hola'
+            subject: 'Verificació del correu electrònic'
+            to_verify_your_email_address: 'Per verificar el correu electrònic - pots fer click en el següent enllaç'
+            verify_your_email_address: 'Verificar la teva compte de correu'
     homepage:
         newsletter: Butlletí de notícies
         newsletter_description: Informa't de totes les novetats de la comunitat
