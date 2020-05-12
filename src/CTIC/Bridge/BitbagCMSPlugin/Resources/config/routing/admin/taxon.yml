@@ -1,6 +1,7 @@
 sylius_admin_taxon:
     resource: |
         alias: sylius.taxon
+        path: taxons
         section: admin
         templates: SyliusAdminBundle:Taxon
         except: ['show', 'index']

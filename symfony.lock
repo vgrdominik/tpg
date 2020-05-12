@@ -119,6 +119,9 @@
     "egulias/email-validator": {
         "version": "2.1.5"
     },
+    "enqueue/dsn": {
+        "version": "0.10.1"
+    },
     "enqueue/fs": {
         "version": "0.4",
         "recipe": {
@@ -782,6 +785,9 @@
     },
     "symfony/http-client": {
         "version": "v5.0.5"
+    },
+    "symfony/http-client-contracts": {
+        "version": "v2.0.1"
     },
     "symfony/http-foundation": {
         "version": "v4.1.3"

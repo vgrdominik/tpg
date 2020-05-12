@@ -22,9 +22,9 @@
 
 {% import _self as macros %}
 
-{% if taxons|length > 0 %}
+{% if sylius.channel.menuTaxon.children|length > 0 %}
 <ul class="main-menu-m">
-    {% for taxon in taxons %}
+    {% for taxon in sylius.channel.menuTaxon.children %}
         {{ macros.item(taxon) }}
     {% endfor %}
 </ul>

@@ -9,12 +9,6 @@ services:
         tags:
           - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
 
-    sylius.sitemap_provider.taxon:
-        class: CTIC\Bridge\SyliusBundle\Provider\TaxonUrlProvider
-        arguments: ['@sylius.repository.taxon', '@router', '@sylius.sitemap_url_factory', '@sylius.context.locale', '%sylius.sitemap_exclude_taxon_root%']
-        tags:
-          - { name: sylius.sitemap_provider }
-
 # add admin options to menu
     ctic_bridge_sylius_bundle.menu.content_management:
         class: CTIC\Bridge\SyliusBundle\Menu\BrandingMenuBuilder

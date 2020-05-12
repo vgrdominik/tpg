@@ -1,5 +1,0 @@
-sylius_taxonomy:
-    resources:
-        taxon:
-            classes:
-                model: CTIC\Bridge\BitbagCMSPlugin\Entity\Taxon

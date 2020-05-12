@@ -26,7 +26,7 @@
 
             {{ macros.customMenu() }}
 
-            {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
+            {{ render(url('sylius_shop_partial_channel_menu_taxon_index', {'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
 
             <!-- Icon header -->
             <div class="wrap-icon-header flex-w flex-r-m">
@@ -95,7 +95,7 @@
 
     {{ macros.customMenu('-m') }}
 
-    {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@SyliusShop/Taxon/_mobileMenu.html.twig'})) }}
+    {{ render(url('sylius_shop_partial_channel_menu_taxon_index', {'template': '@SyliusShop/Taxon/_mobileMenu.html.twig'})) }}
 </div>
 
 <!-- Modal Search -->
